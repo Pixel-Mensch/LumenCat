@@ -1,0 +1,68 @@
+# ==========================================================
+# LumenCat – .gitignore
+# Webdesign • Automationen • KI
+# ==========================================================
+
+# --- Operating System ---
+.DS_Store
+Thumbs.db
+
+# --- VS Code ---
+.vscode/
+.history/
+*.code-workspace
+
+# --- Logs ---
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# --- Dependency folders (for später, falls du bundler nutzt) ---
+node_modules/
+bower_components/
+
+# --- Build outputs ---
+dist/
+build/
+out/
+.tmp/
+.temp/
+
+# --- Cache ---
+.cache/
+.parcel-cache/
+.next/
+nuxt-dist/
+webpack-stats.json
+
+# --- Environment variables ---
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+
+# --- Lock files (falls du später Tools nutzt) ---
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# --- OS Trash ---
+.Trash/
+$RECYCLE.BIN/
+
+# --- Misc ---
+*.pid
+*.seed
+*.log
+*.sqlite
+*.bak
+*.swp
+*.tmp
+
+# --- Local preview files ---
+*.local
+*.preview
