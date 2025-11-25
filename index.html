@@ -2,9 +2,85 @@
 <html lang="de">
   <head>
     <meta charset="UTF-8" />
-    <title>Lumencat – Webdesign, Automationen &amp; KI</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Lumencat – Moderne Websites, intelligente Automationen und smarte KI-Assistenten für dein Business. Webdesign, n8n-Flows und Custom Chatbots."
+    />
+    <meta
+      property="og:title"
+      content="Lumencat – Webdesign, Automationen &amp; KI"
+    />
+    <meta
+      property="og:description"
+      content="Websites, die im Dunkeln leuchten. Webdesign, Automationen und KI-Assistenten, die dein Business voranbringen."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://lumencat.de" />
+    <meta name="theme-color" content="#000000" />
+    <link rel="canonical" href="https://lumencat.de/" />
+    <meta
+      name="robots"
+      content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+    />
+    <meta
+      property="og:image"
+      content="https://lumencat.de/Bilder/lumencatLogo.png"
+    />
+    <meta property="og:image:alt" content="Lumencat Logo" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Lumencat – Webdesign, Automationen &amp; KI"
+    />
+    <meta
+      name="twitter:description"
+      content="Websites, die im Dunkeln leuchten. Webdesign, Automationen und KI-Assistenten."
+    />
+    <meta
+      name="keywords"
+      content="Webdesign, Automationen, KI, n8n, Chatbot, Website-Entwicklung, Business Automation"
+    />
+    <title>Lumencat – Webdesign, Automationen &amp; KI</title>
     <link rel="stylesheet" href="css/styles.css" />
+    <script>
+      // Prevent Flash of Unstyled/Wrong Theme on load
+      (function () {
+        const savedTheme = localStorage.getItem("lumencat-theme");
+        const theme = savedTheme === "light" ? "light" : "dark";
+        document.documentElement.classList.add("theme-" + theme);
+        document.body.classList.add("theme-" + theme);
+      })();
+    </script>
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Lumencat",
+        "description": "Webdesign, Automationen und KI-Assistenten für dein Business",
+        "url": "https://lumencat.de",
+        "logo": "https://lumencat.de/Bilder/lumencatLogo.png",
+        "image": "https://lumencat.de/Bilder/HeroMain.png",
+        "email": "hello@lumencat.de",
+        "telephone": "+49 152 26580980",
+        "sameAs": [],
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "DE"
+        },
+        "areaServed": "DE",
+        "priceRange": "$$",
+        "knowsAbout": [
+          "Web Design",
+          "Automation",
+          "Artificial Intelligence",
+          "Chatbots",
+          "n8n"
+        ],
+        "serviceType": ["Web Design", "Business Automation", "AI Assistants"]
+      }
+    </script>
   </head>
   <body class="theme-dark">
     <header class="site-header">
@@ -154,6 +230,59 @@
             </div>
           </article>
         </div>
+        <!-- Ablauf -->
+        <section
+          id="ablauf"
+          class="section section--padded section--accent reveal"
+        >
+          <header class="section__header">
+            <h2 class="reveal reveal-delay-1">
+              So läuft ein Projekt mit Lumencat ab
+            </h2>
+            <p class="reveal reveal-delay-2">
+              Klarer Ablauf statt Chaos – damit du jederzeit weißt, was als
+              Nächstes passiert.
+            </p>
+          </header>
+
+          <div class="process-grid">
+            <article class="process-step reveal reveal-delay-1">
+              <span class="process-step__badge">1</span>
+              <h3>Erstgespräch &amp; Analyse</h3>
+              <p>
+                Wir klären Ziele, Budget und Umfang. Du erzählst, wie du
+                arbeitest – ich höre zu und stelle die richtigen Fragen.
+              </p>
+            </article>
+
+            <article class="process-step reveal reveal-delay-2">
+              <span class="process-step__badge">2</span>
+              <h3>Konzept, Design &amp; Struktur</h3>
+              <p>
+                Navigationsstruktur, Seitenaufbau, Look &amp; Feel. Du bekommst
+                ein klares Bild davon, wie deine Seite wirken wird.
+              </p>
+            </article>
+
+            <article class="process-step reveal reveal-delay-3">
+              <span class="process-step__badge">3</span>
+              <h3>Umsetzung &amp; Automationen</h3>
+              <p>
+                Ich baue deine Website, verknüpfe Formulare, Workflows und erste
+                Automationen – technisch sauber und erweiterbar.
+              </p>
+            </article>
+
+            <article class="process-step reveal reveal-delay-3">
+              <span class="process-step__badge">4</span>
+              <h3>Launch &amp; Betreuung</h3>
+              <p>
+                Wir gehen live, testen alles und besprechen, wie Wartung,
+                Updates und weitere Automationen aussehen können.
+              </p>
+            </article>
+          </div>
+        </section>
       </section>
 
       <!-- Automationen & KI -->
@@ -202,46 +331,56 @@
       </section>
 
       <!-- Kontakt -->
-      <section id="kontakt" class="section section--padded" reveal>
-        <header class="section__header">
-          <h2>Bereit, dein Projekt zu starten?</h2>
-          <p>
-            Schreib in ein paar Sätzen, was du vorhast – der Rest kommt Schritt
-            für Schritt.
-          </p>
-        </header>
+      <section
+        id="kontakt"
+        class="section section--padded section--contact reveal"
+      >
+        <div class="contact-shell">
+          <header class="section__header">
+            <h2>Bereit, dein Projekt zu starten?</h2>
+            <p>
+              Schreib in ein paar Sätzen, was du vorhast – der Rest kommt
+              Schritt für Schritt.
+            </p>
+          </header>
 
-        <form class="contact-form">
-          <div class="form-row">
-            <label for="name">Name</label>
-            <input id="name" name="name" type="text" placeholder="Dein Name" />
-          </div>
-          <div class="form-row">
-            <label for="email">E-Mail</label>
-            <input
-              id="email"
-              name="email"
-              type="email"
-              placeholder="deine@mail.de"
-            />
-          </div>
-          <div class="form-row">
-            <label for="nachricht">Projektbeschreibung</label>
-            <textarea
-              id="nachricht"
-              name="nachricht"
-              rows="5"
-              placeholder="Erzähl kurz, worum es geht – Website, Automationen, KI ..."
-            ></textarea>
-          </div>
-          <button class="btn btn--primary" type="submit">
-            Nachricht senden (Platzhalter)
-          </button>
-          <p class="contact-form__hint">
-            Das Formular ist aktuell ein Platzhalter. Später wird es an deine
-            echte Mail / Automation angebunden.
-          </p>
-        </form>
+          <form class="contact-form">
+            <div class="form-row">
+              <label for="name">Name</label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                placeholder="Dein Name"
+              />
+            </div>
+            <div class="form-row">
+              <label for="email">E-Mail</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="deine@mail.de"
+              />
+            </div>
+            <div class="form-row">
+              <label for="nachricht">Projektbeschreibung</label>
+              <textarea
+                id="nachricht"
+                name="nachricht"
+                rows="5"
+                placeholder="Erzähl kurz, worum es geht – Website, Automationen, KI ..."
+              ></textarea>
+            </div>
+            <button class="btn btn--primary contact-form__button" type="submit">
+              Nachricht senden (Platzhalter)
+            </button>
+            <p class="contact-form__hint">
+              Das Formular ist aktuell ein Platzhalter. Später wird es an deine
+              echte Mail / Automation angebunden.
+            </p>
+          </form>
+        </div>
       </section>
     </main>
 

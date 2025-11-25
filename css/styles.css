@@ -173,10 +173,6 @@ a {
   background-attachment: fixed;
 }
 
-body.theme-light .hero {
-  background-image: url("../Bilder/Hintergrund_Hell.png");
-}
-
 .hero__overlay {
   position: absolute;
   inset: 0;
@@ -418,6 +414,69 @@ body.theme-light .project-card {
   font-size: 0.78rem;
   opacity: 0.8;
 }
+/* Ablauf / Prozess */
+
+.process-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.process-step {
+  position: relative;
+  background: rgba(3, 4, 14, 0.92);
+  border-radius: 1.4rem;
+  padding: 1.5rem 1.4rem 1.4rem 1.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+body.theme-light .process-step {
+  background: var(--color-surface);
+  border-color: rgba(10, 10, 30, 0.12);
+}
+
+.process-step__badge {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 600;
+  background: linear-gradient(
+    135deg,
+    var(--color-accent-cyan),
+    var(--color-accent-purple)
+  );
+  color: #050509;
+  box-shadow: var(--shadow-neon);
+}
+
+.process-step h3 {
+  margin-top: 0;
+  margin-bottom: 0.4rem;
+  padding-left: 1.9rem;
+}
+
+.process-step p {
+  margin: 0;
+  padding-left: 1.9rem;
+  color: var(--color-text-soft);
+}
+
+@media (min-width: 768px) {
+  .process-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .process-step {
+    height: 100%;
+  }
+}
 
 /* Listen */
 
@@ -471,6 +530,108 @@ body.theme-light .form-row textarea {
   font-size: 0.8rem;
   color: var(--color-text-soft);
   margin-top: 0.5rem;
+}
+/* Kontaktbereich als eigenes Panel */
+
+.section--contact {
+  position: relative;
+  padding-top: 4rem;
+  padding-bottom: 4.5rem;
+}
+
+.section--contact::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* leichte Abdunkelung + Glow unten, damit das Panel sich absetzt */
+  background: radial-gradient(
+      circle at bottom,
+      rgba(20, 248, 255, 0.18),
+      transparent 60%
+    ),
+    rgba(0, 0, 0, 0.55);
+  z-index: 0;
+}
+
+body.theme-light .section--contact::before {
+  background: radial-gradient(
+      circle at bottom,
+      rgba(138, 43, 255, 0.16),
+      transparent 60%
+    ),
+    rgba(247, 250, 255, 0.85);
+}
+
+.contact-shell {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 2.25rem;
+  border-radius: 1.8rem;
+  background: radial-gradient(
+    circle at top,
+    rgba(25, 247, 255, 0.07),
+    rgba(3, 4, 14, 0.96)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.85), 0 0 24px rgba(25, 247, 255, 0.25);
+  backdrop-filter: blur(14px);
+}
+
+body.theme-light .contact-shell {
+  background: radial-gradient(
+    circle at top,
+    rgba(25, 247, 255, 0.12),
+    rgba(255, 255, 255, 0.96)
+  );
+  border-color: rgba(10, 10, 30, 0.18);
+}
+
+/* Header im Kontaktbereich etwas mittiger */
+
+.section--contact .section__header {
+  margin-bottom: 2.2rem;
+  text-align: left;
+}
+
+@media (min-width: 720px) {
+  .section--contact .section__header {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .contact-form {
+    margin: 0 auto;
+  }
+}
+
+/* Inputs minimal breiter & sauberer auf dem Panel */
+
+.section--contact .form-row input,
+.section--contact .form-row textarea {
+  background: rgba(0, 0, 0, 0.85);
+}
+
+body.theme-light .section--contact .form-row input,
+body.theme-light .section--contact .form-row textarea {
+  background: rgba(255, 255, 255, 0.96);
+}
+
+/* Button über volle Breite */
+
+.contact-form__button {
+  width: 100%;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+/* Kleiner Abstand unterhalb des Hinweises */
+
+.section--contact .contact-form__hint {
+  margin-bottom: 0;
+  text-align: center;
 }
 
 /* Footer */
