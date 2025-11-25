@@ -1,54 +1,258 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <title>Lumencat – Webdesign, Automationen & KI</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body class="theme-dark">
-    <header>
-        <nav>
-            <a href="index.html">Lumencat</a>
-            <a href="index.html#leistungen">Leistungen</a>
-            <a href="index.html#projekte">Projekte</a>
-            <a href="index.html#automationen">Automationen &amp; KI</a>
-            <a href="index.html#kontakt">Kontakt</a>
-            <a href="shop.html">Shop</a>
-        </nav>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Lumencat – Webdesign, Automationen &amp; KI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body class="theme-dark">
+    <header class="site-header">
+      <nav class="nav">
+        <a href="index.html" class="nav__brand">
+          <img
+            src="Bilder/lumencatLogo.png"
+            alt="Lumencat Logo"
+            class="nav__logo"
+          />
+          <span class="nav__brand-name">Lumencat</span>
+        </a>
+
+        <button class="nav__toggle" id="navToggle" aria-label="Menü öffnen">
+          ☰
+        </button>
+
+        <div class="nav__links" id="navLinks">
+          <a href="#leistungen">Leistungen</a>
+          <a href="#projekte">Projekte</a>
+          <a href="#automationen">Automationen &amp; KI</a>
+          <a href="#kontakt">Kontakt</a>
+          <a href="shop.html">Shop</a>
+
+          <button
+            class="theme-toggle"
+            id="themeToggle"
+            type="button"
+            aria-label="Darstellung wechseln"
+          >
+            🌙
+          </button>
+        </div>
+      </nav>
     </header>
 
     <main>
-        <section id="hero">
-        <h1>Lumencat</h1>
-        <p>Moderne Websites, Automationen &amp; KI – aus einer Hand.</p>
-    </section>
+      <!-- Hero -->
+      <section id="hero" class="hero" reveal>
+        <div class="hero__overlay"></div>
+        <div class="hero__inner">
+          <div class="hero__content">
+            <p class="hero__kicker">Webdesign • Automationen • KI</p>
+            <h1 class="hero__title">Websites, die im Dunkeln leuchten.</h1>
+            <p class="hero__subtitle">
+              Lumencat entwickelt moderne Webauftritte, automatisierte Workflows
+              und smarte KI-Assistenten, damit dein Business online sichtbarer,
+              effizienter und einfacher wird.
+            </p>
+            <div class="hero__actions">
+              <a href="#kontakt" class="btn btn--primary">Projekt anfragen</a>
+              <a href="#projekte" class="btn btn--ghost">Beispiele ansehen</a>
+            </div>
+            <p class="hero__note">
+              Ideal für Selbstständige und kleine Unternehmen.
+            </p>
+          </div>
+        </div>
+      </section>
 
-    <section id="leistungen">
-        <h2>Leistungen</h2>
-        <p>Hier kommen später die Details zu Webdesign, Automationen &amp; KI.</p>
-    </section>
+      <!-- Leistungen -->
+      <section id="leistungen" class="section section--padded reveal">
+        <header class="section__header">
+          <h2 class="reveal reveal-delay-1">Was Lumencat für dich baut</h2>
+          <p class="reveal reveal-delay-2">
+            Websites, Automationen und KI – abgestimmt auf dein Business, nicht
+            von der Stange.
+          </p>
+        </header>
 
-    <section id="projekte">
-        <h2>Projekte</h2>
-        <p>Hier präsentierst du später deine Referenzen wie Bistro Aurora &amp; Lüftungsbau Meier.</p>
-    </section>
+        <div class="grid-3">
+          <article class="card reveal reveal-delay-1">
+            <h3>Websites &amp; Markenauftritt</h3>
+            <p>
+              Moderne, mobile-first Websites, die klar kommunizieren, schnell
+              laden und dein Angebot verständlich präsentieren.
+            </p>
+          </article>
 
-    <section id="automationen">
-        <h2>Automationen &amp; KI</h2>
-        <p>Hier erklärst du, welche Workflows, n8n-Flows und KI-Assistenten du anbietest.</p>
-    </section>
+          <article class="card reveal reveal-delay-2">
+            <h3>Automationen &amp; Workflows</h3>
+            <p>
+              n8n-Flows, E-Mail-Automationen und smarte Verknüpfungen, damit
+              wiederkehrende Aufgaben im Hintergrund laufen.
+            </p>
+          </article>
 
-    <section id="kontakt">
-        <h2>Kontakt</h2>
-        <p>Hier kommt später dein Kontaktformular hin.</p>
-    </section>
+          <article class="card reveal reveal-delay-3">
+            <h3>KI-Assistenten</h3>
+            <p>
+              Eigene Chatbots, die Fragen deiner Besucher beantworten, Preise
+              erklären und bei der Entscheidung helfen.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="projekte" class="section section--padded reveal">
+        <header class="section__header">
+          <h2 class="reveal reveal-delay-1">Projekte &amp; Referenzen</h2>
+          <p class="reveal reveal-delay-2">
+            Ein Blick in Welten, die Lumencat bereits gebaut hat – reale
+            Beispiele folgen.
+          </p>
+        </header>
+
+        <div class="projects">
+          <article class="project-card reveal reveal-delay-1">
+            <div
+              class="project-card__image project-card__image--placeholder"
+            ></div>
+            <div class="project-card__body">
+              <h3>Lüftungsbau Meier</h3>
+              <p>
+                Seriöse Firmen-Website für ein Bau- &amp; Handwerksunternehmen
+                mit klarem Fokus auf Anfragen.
+              </p>
+              <p class="project-card__tag">B2B • Mehrseitig</p>
+            </div>
+          </article>
+
+          <article class="project-card reveal reveal-delay-2">
+            <div
+              class="project-card__image project-card__image--placeholder"
+            ></div>
+            <div class="project-card__body">
+              <h3>Bistro Aurora</h3>
+              <p>
+                Emotionale Gastro-Seite mit Fokus auf Atmosphäre, Speisekarte
+                und Reservierung.
+              </p>
+              <p class="project-card__tag">Gastronomie • Storytelling</p>
+            </div>
+          </article>
+
+          <article class="project-card reveal reveal-delay-3">
+            <div
+              class="project-card__image project-card__image--placeholder"
+            ></div>
+            <div class="project-card__body">
+              <h3>Lumencat Demo</h3>
+              <p>
+                Beispielseite für Automationen &amp; KI – zeigt, was technisch
+                möglich ist.
+              </p>
+              <p class="project-card__tag">Demo • Automationen &amp; KI</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Automationen & KI -->
+      <section
+        id="automationen"
+        class="section section--padded section--accent"
+        reveal
+      >
+        <header class="section__header">
+          <h2>Automationen &amp; KI – dein unfairer Vorteil</h2>
+          <p>
+            Deine Website soll nicht nur gut aussehen, sondern dir aktiv Arbeit
+            abnehmen.
+          </p>
+        </header>
+
+        <div class="grid-2">
+          <div>
+            <h3>Beispiele für Automationen</h3>
+            <ul class="list">
+              <li>
+                Kontaktformular → automatische Antwortmail + Eintrag in eine
+                Liste.
+              </li>
+              <li>
+                Neue Anfrage → Benachrichtigung per Mail/Telegram + To-do im
+                System.
+              </li>
+              <li>
+                Blog/News → automatische Veröffentlichung in Social Media.
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3>KI auf deiner Seite</h3>
+            <p>
+              Später: Ein Lumencat-Assistent auf deiner Seite, der Fragen zu
+              Angebot, Preisen und nächsten Schritten beantwortet.
+            </p>
+            <p>
+              Du lieferst die Inhalte, Lumencat verbindet sie mit KI &amp;
+              Automationen.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Kontakt -->
+      <section id="kontakt" class="section section--padded" reveal>
+        <header class="section__header">
+          <h2>Bereit, dein Projekt zu starten?</h2>
+          <p>
+            Schreib in ein paar Sätzen, was du vorhast – der Rest kommt Schritt
+            für Schritt.
+          </p>
+        </header>
+
+        <form class="contact-form">
+          <div class="form-row">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Dein Name" />
+          </div>
+          <div class="form-row">
+            <label for="email">E-Mail</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="deine@mail.de"
+            />
+          </div>
+          <div class="form-row">
+            <label for="nachricht">Projektbeschreibung</label>
+            <textarea
+              id="nachricht"
+              name="nachricht"
+              rows="5"
+              placeholder="Erzähl kurz, worum es geht – Website, Automationen, KI ..."
+            ></textarea>
+          </div>
+          <button class="btn btn--primary" type="submit">
+            Nachricht senden (Platzhalter)
+          </button>
+          <p class="contact-form__hint">
+            Das Formular ist aktuell ein Platzhalter. Später wird es an deine
+            echte Mail / Automation angebunden.
+          </p>
+        </form>
+      </section>
     </main>
 
-    <footer>
-        <small>&copy; 2025 Lumencat – Webdesign, Automationen &amp; KI</small>
+    <footer class="site-footer">
+      <small>&copy; 2025 Lumencat – Webdesign, Automationen &amp; KI</small>
+      <nav class="footer-nav">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </nav>
     </footer>
 
     <script src="js/main.js"></script>
-</body>
+  </body>
 </html>
