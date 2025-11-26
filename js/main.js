@@ -96,4 +96,47 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+
+  // --- Kontaktformular-Handling ---
+  const contactForm = document.getElementById("contactForm");
+  const contactHint = document.getElementById("contactHint");
+
+  if (contactForm && contactHint) {
+    contactForm.addEventListener("submit", async (event) => {
+      // Ich verhindere den normalen Formular-Submit,
+      // damit ich alles schön per fetch machen kann.
+      event.preventDefault();
+
+      contactHint.textContent = "Ich sende deine Nachricht...";
+      contactHint.style.color = ""; // Standardfarbe
+
+      const formData = new FormData(contactForm);
+
+      try {
+        const response = await fetch(contactForm.action, {
+          method: "POST",
+          body: formData,
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+          contactHint.textContent = data.message || "Danke für deine Nachricht!";
+          contactHint.style.color = "#19f7ff";
+          // Formular leeren
+          contactForm.reset();
+        } else {
+          contactHint.textContent =
+            data.message ||
+            "Da ist etwas schiefgelaufen. Bitte prüf deine Eingaben.";
+          contactHint.style.color = "#ff9494";
+        }
+      } catch (error) {
+        console.error("Kontaktformular-Fehler:", error);
+        contactHint.textContent =
+          "Ich konnte deine Nachricht gerade nicht senden. Bitte versuch es später noch einmal oder schreib direkt an hello@lumencat.de.";
+        contactHint.style.color = "#ff9494";
+      }
+    });
+  }
 });
