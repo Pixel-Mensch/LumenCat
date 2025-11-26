@@ -2,34 +2,553 @@
 <html lang="de">
   <head>
     <meta charset="UTF-8" />
-    <title>Lumencat – Shop</title>
+    <title>Lumencat – Pakete, Preise & Automationen</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body class="theme-dark">
-    <header>
-      <nav>
-        <a href="index.html">Lumencat</a>
-        <a href="index.html#leistungen">Leistungen</a>
-        <a href="index.html#projekte">Projekte</a>
-        <a href="index.html#automationen">Automationen &amp; KI</a>
-        <a href="kontakt.html">Kontakt</a>
-        <a href="shop.html">Shop</a>
+    <header class="site-header">
+      <nav class="nav">
+        <a href="index.html" class="nav__brand">
+          <img
+            src="Bilder/lumencatLogo.png"
+            alt="Lumencat Logo"
+            class="nav__logo"
+          />
+          <span class="nav__brand-name">Lumencat</span>
+        </a>
+
+        <button class="nav__toggle" id="navToggle" aria-label="Menü öffnen">
+          ☰
+        </button>
+
+        <div class="nav__links" id="navLinks">
+          <a href="index.html#leistungen">Leistungen</a>
+          <a href="index.html#projekte">Projekte</a>
+          <a href="index.html#automationen">Automationen &amp; KI</a>
+          <a href="kontakt.html">Kontakt</a>
+          <a href="shop.html">Shop</a>
+
+          <button
+            class="theme-toggle"
+            id="themeToggle"
+            type="button"
+            aria-label="Darstellung wechseln"
+          >
+            🌙
+          </button>
+        </div>
       </nav>
     </header>
 
     <main>
-      <section id="shop" reveal>
-        <h1>Lumencat Shop</h1>
-        <p>
-          Hier werden später deine digitalen Produkte und Automations-Pakete
-          angezeigt.
-        </p>
+      <!-- Shop Hero -->
+      <section id="shop-hero" class="section section--padded shop-hero reveal">
+        <div class="shop-hero__inner">
+          <p class="shop-hero__kicker">Preise &amp; Pakete 2025</p>
+          <h1 class="shop-hero__title">
+            Klare Pakete. Faire Preise. Volle Transparenz.
+          </h1>
+          <p class="shop-hero__lead">
+            Wähle, womit du starten willst: Website, Automationen, Bots oder
+            laufende Betreuung. Alles ist modular – du kannst klein anfangen und
+            später erweitern.
+          </p>
+
+          <div class="shop-hero__actions">
+            <a href="#webseiten" class="btn btn--primary">Webseiten-Pakete</a>
+            <a href="#bots" class="btn btn--ghost">Automationen &amp; Bots</a>
+          </div>
+
+          <p class="shop-hero__note">
+            Alle Preise sind Richtwerte. Das genaue Angebot bekommst du nach
+            einem kurzen Gespräch.
+          </p>
+        </div>
+      </section>
+
+      <!-- Webseiten-Pakete -->
+      <section id="webseiten" class="section section--padded reveal">
+        <header class="section__header">
+          <h2 class="reveal reveal-delay-1">Webseiten-Pakete</h2>
+          <p class="reveal reveal-delay-2">
+            Vom schnellen One-Pager bis zur umfangreichen Firmen-Website – alle
+            Projekte sind mobile-first, modern und technisch sauber aufgebaut.
+          </p>
+        </header>
+
+        <div class="pricing-grid">
+          <!-- Landingpage -->
+          <article class="pricing-card reveal reveal-delay-1">
+            <div class="pricing-card__header">
+              <span class="pricing-card__badge">Beliebt für den Einstieg</span>
+              <h3 class="pricing-card__title">Landingpage / One-Pager</h3>
+              <p class="pricing-card__price">800 – 1.200 €</p>
+              <p class="pricing-card__subtitle">
+                Für kleine Betriebe, schnelle Präsentationen, Aktionen oder
+                einzelne Angebote.
+              </p>
+            </div>
+            <ul class="pricing-card__list">
+              <li>Moderne, aufgeräumte Seite mit klarer Struktur</li>
+              <li>Mobile-first Design</li>
+              <li>Kontaktformular</li>
+              <li>SEO-Basis (Titles, Descriptions, saubere Struktur)</li>
+            </ul>
+            <a href="kontakt.html" class="btn btn--primary pricing-card__cta">
+              Projekt anfragen
+            </a>
+          </article>
+
+          <!-- Business-Website -->
+          <article
+            class="pricing-card pricing-card--highlight reveal reveal-delay-2"
+          >
+            <div class="pricing-card__header">
+              <span class="pricing-card__badge pricing-card__badge--accent"
+                >Für die meisten Firmen</span
+              >
+              <h3 class="pricing-card__title">
+                Business-Website
+                <span class="pricing-card__meta">(3–6 Seiten)</span>
+              </h3>
+              <p class="pricing-card__price">1.200 – 1.800 €</p>
+              <p class="pricing-card__subtitle">
+                Ideal für klare Firmenauftritte: Startseite, Über uns,
+                Leistungen, Kontakt, Referenzen oder Galerie.
+              </p>
+            </div>
+            <ul class="pricing-card__list">
+              <li>Individuelles Layout im Lumencat-Stil</li>
+              <li>Struktur für mehrere Unterseiten</li>
+              <li>Kontaktmöglichkeiten &amp; klare Call-to-Actions</li>
+              <li>Grundlegende Performance- &amp; SEO-Optimierung</li>
+            </ul>
+            <a href="kontakt.html" class="btn btn--primary pricing-card__cta">
+              Business-Website anfragen
+            </a>
+          </article>
+
+          <!-- Premium-Website -->
+          <article class="pricing-card reveal reveal-delay-3">
+            <div class="pricing-card__header">
+              <span class="pricing-card__badge">Für komplexe Projekte</span>
+              <h3 class="pricing-card__title">
+                Premium-Website
+                <span class="pricing-card__meta">(7+ Seiten)</span>
+              </h3>
+              <p class="pricing-card__price">ab 2.000 €</p>
+              <p class="pricing-card__subtitle">
+                Für Unternehmen mit vielen Inhalten, Unterkategorien oder
+                speziellen Strukturen.
+              </p>
+            </div>
+            <ul class="pricing-card__list">
+              <li>Individuelle Informationsarchitektur</li>
+              <li>Mehrere Unterbereiche und Seitentypen</li>
+              <li>Option für mehrsprachige Inhalte</li>
+              <li>Erweiterbar um Automationen &amp; Bots</li>
+            </ul>
+            <a href="kontakt.html" class="btn btn--primary pricing-card__cta">
+              Premium-Projekt besprechen
+            </a>
+          </article>
+
+          <!-- Redesign -->
+          <article class="pricing-card reveal reveal-delay-3">
+            <div class="pricing-card__header">
+              <span class="pricing-card__badge"
+                >Bestehende Seite modernisieren</span
+              >
+              <h3 class="pricing-card__title">Redesign / Relaunch</h3>
+              <p class="pricing-card__price">900 – 1.600 €</p>
+              <p class="pricing-card__subtitle">
+                Deine aktuelle Website bleibt inhaltlich, bekommt aber ein
+                neues, zeitgemäßes Design.
+              </p>
+            </div>
+            <ul class="pricing-card__list">
+              <li>Analyse der bestehenden Seite</li>
+              <li>Neues Layout &amp; modernisiertes Styling</li>
+              <li>Übernahme der Inhalte (Texte/Bilder)</li>
+              <li>Technisches Aufräumen, wo sinnvoll</li>
+            </ul>
+            <a href="kontakt.html" class="btn btn--ghost pricing-card__cta">
+              Redesign anfragen
+            </a>
+          </article>
+        </div>
+      </section>
+
+      <!-- Website-Extras -->
+      <section id="extras-web" class="section section--padded reveal">
+        <header class="section__header">
+          <h2 class="reveal reveal-delay-1">
+            Zusatzleistungen für deine Website
+          </h2>
+          <p class="reveal reveal-delay-2">
+            Nicht jede Website braucht alles – diese Bausteine kannst du bei
+            Bedarf ergänzen.
+          </p>
+        </header>
+
+        <div class="addon-grid">
+          <article class="addon-card reveal reveal-delay-1">
+            <h3>Performance-Optimierung</h3>
+            <p class="addon-card__price">150 – 350 €</p>
+            <p class="addon-card__text">
+              Ladezeiten verbessern, Bilder optimieren, CSS/JS aufräumen. Ideal
+              für bestehende Seiten, die träge wirken.
+            </p>
+          </article>
+
+          <article class="addon-card reveal reveal-delay-2">
+            <h3>SEO-Basisoptimierung</h3>
+            <p class="addon-card__price">80 – 150 €</p>
+            <p class="addon-card__text">
+              Saubere Keyword-Struktur, Titles, Descriptions, ALT-Texte –
+              Grundlage für bessere Auffindbarkeit.
+            </p>
+          </article>
+
+          <article class="addon-card reveal reveal-delay-3">
+            <h3>Texterstellung</h3>
+            <p class="addon-card__price">30 – 70 € pro Seite</p>
+            <p class="addon-card__text">
+              Klarer, verständlicher Text in gutem Deutsch, basierend auf deinen
+              Stichpunkten oder bestehenden Inhalten.
+            </p>
+          </article>
+
+          <article class="addon-card reveal reveal-delay-3">
+            <h3>Logo (modern, KI-gestützt)</h3>
+            <p class="addon-card__price">50 – 120 €</p>
+            <p class="addon-card__text">
+              Logo-Entwürfe im Lumencat-Stil inklusive Varianten und
+              Feinschliff.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Wartung & Betreuung -->
+      <section
+        id="wartung"
+        class="section section--padded section--accent reveal"
+      >
+        <header class="section__header">
+          <h2 class="reveal reveal-delay-1">
+            Wartung &amp; laufende Betreuung
+          </h2>
+          <p class="reveal reveal-delay-2">
+            Deine Website und deine Bots sollen nicht nur starten – sie sollen
+            zuverlässig laufen.
+          </p>
+        </header>
+
+        <div class="maintenance-grid">
+          <article class="maintenance-card reveal reveal-delay-1">
+            <h3>Website-Wartung</h3>
+            <p class="maintenance-card__price">25 € / Monat</p>
+            <ul class="maintenance-card__list">
+              <li>Regelmäßige Backups</li>
+              <li>Kleine Text- &amp; Bildänderungen</li>
+              <li>Sicherheits- &amp; Erreichbarkeits-Check</li>
+              <li>Updates &amp; technischer Überblick</li>
+              <li>„Alles läuft“-Service</li>
+            </ul>
+          </article>
+
+          <article class="maintenance-card reveal reveal-delay-2">
+            <h3>Bot-Wartung (n8n)</h3>
+            <p class="maintenance-card__price">10 € pro Bot / Monat</p>
+            <ul class="maintenance-card__list">
+              <li>Monitoring &amp; Log-Check</li>
+              <li>Kleine Fixes bei Änderungen</li>
+              <li>API-Änderungen im Blick</li>
+              <li>Funktionsgarantie für deine Workflows</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <!-- Automationen & Bots -->
+      <section id="bots" class="section section--padded reveal">
+        <header class="section__header">
+          <h2 class="reveal reveal-delay-1">
+            Automationen &amp; Lumencat Bots
+          </h2>
+          <p class="reveal reveal-delay-2">
+            n8n-Workflows, die dir Arbeit abnehmen: von einfachen E-Mail-Flows
+            bis zu komplexen CRM-Anbindungen.
+          </p>
+        </header>
+
+        <div class="bots-grid">
+          <article class="bot-card reveal reveal-delay-1">
+            <h3>Standard-Bots</h3>
+            <p class="bot-card__price">50 – 100 €</p>
+            <p class="bot-card__text">
+              Einfache Workflows, die sofort spürbar helfen.
+            </p>
+            <ul class="bot-card__list">
+              <li>Kontaktformular → E-Mail</li>
+              <li>Formular → Google Sheet / Liste</li>
+              <li>E-Mail → WhatsApp / Telegram</li>
+              <li>Einfache Reminder-Bots</li>
+            </ul>
+          </article>
+
+          <article class="bot-card reveal reveal-delay-2">
+            <h3>Premium-Bots</h3>
+            <p class="bot-card__price">150 – 300 €</p>
+            <p class="bot-card__text">
+              Komplexere Workflows mit mehreren Schritten oder externen
+              Systemen.
+            </p>
+            <ul class="bot-card__list">
+              <li>Terminbestätigung mit E-Mail / Kalender</li>
+              <li>Rechnungs- oder Kundenerstellung</li>
+              <li>CRM-Anbindungen</li>
+              <li>Social-Media-Planung</li>
+              <li>PDF-Generierung &amp; Versand</li>
+            </ul>
+          </article>
+
+          <article class="bot-card bot-card--note reveal reveal-delay-3">
+            <h3>Verbrauchskosten</h3>
+            <p class="bot-card__text">
+              WhatsApp, OpenAI und andere Dienste werden 1:1 weitergegeben. Du
+              zahlst nur deine tatsächliche Nutzung – ohne Aufschläge.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Hosting & Domain -->
+      <section id="hosting" class="section section--padded reveal">
+        <header class="section__header">
+          <h2 class="reveal reveal-delay-1">Hosting &amp; Domain (Hetzner)</h2>
+          <p class="reveal reveal-delay-2">
+            Du möchtest dich nicht um Server, SSL und Domain kümmern? Übernehme
+            ich für dich.
+          </p>
+        </header>
+
+        <div class="hosting-card reveal reveal-delay-3">
+          <h3>Hosting-Einrichtung &amp; Domain-Setup</h3>
+          <p class="hosting-card__price">40 – 80 € einmalig</p>
+          <ul class="hosting-card__list">
+            <li>Domain verbinden</li>
+            <li>SSL-Zertifikat aktivieren</li>
+            <li>E-Mail-Adresse(n) einrichten (falls gewünscht)</li>
+            <li>Ordnerstruktur anlegen</li>
+            <li>Projekt auf den Server hochladen</li>
+          </ul>
+          <p class="hosting-card__hint">
+            Das Hosting selbst zahlst du direkt bei Hetzner. Empfohlen:
+            Webhosting S (ca. 4–6 € / Monat).
+          </p>
+        </div>
+      </section>
+
+      <!-- Zusatzleistungen -->
+      <section id="zusatz" class="section section--padded reveal">
+        <header class="section__header">
+          <h2 class="reveal reveal-delay-1">Weitere Services</h2>
+          <p class="reveal reveal-delay-2">
+            Kleine Bausteine, die dein Gesamtpaket abrunden – vor allem für
+            lokale Sichtbarkeit.
+          </p>
+        </header>
+
+        <div class="addon-grid addon-grid--small">
+          <article class="addon-card reveal reveal-delay-1">
+            <h3>Google Business Profil</h3>
+            <p class="addon-card__price">40 – 100 €</p>
+            <p class="addon-card__text">
+              Einrichtung oder Optimierung deines Google-Profils für bessere
+              lokale Auffindbarkeit.
+            </p>
+          </article>
+
+          <article class="addon-card reveal reveal-delay-2">
+            <h3>Google Maps Integration</h3>
+            <p class="addon-card__price">20 – 40 €</p>
+            <p class="addon-card__text">
+              Einbindung einer Karte auf deiner Website, inkl. Verlinkung zu
+              deinem Standort.
+            </p>
+          </article>
+
+          <article class="addon-card reveal reveal-delay-3">
+            <h3>KI-Bilder (Hero, Team, Räume)</h3>
+            <p class="addon-card__price">20 – 60 € pro Paket</p>
+            <p class="addon-card__text">
+              Auf deinen Stil angepasste KI-Bilder, damit deine Website auch
+              visuell zusammenpasst.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Service immer inklusive -->
+      <section
+        id="service"
+        class="section section--padded section--accent reveal"
+      >
+        <header class="section__header">
+          <h2 class="reveal reveal-delay-1">
+            Immer inklusive: Einführung &amp; Übergabe
+          </h2>
+          <p class="reveal reveal-delay-2">
+            Egal welches Paket du buchst – du bekommst eine saubere Übergabe und
+            weißt, wie du mit deiner Website umgehen kannst.
+          </p>
+        </header>
+
+        <div class="service-grid">
+          <article class="service-card reveal reveal-delay-1">
+            <h3>Was du bekommst</h3>
+            <ul class="service-card__list">
+              <li>Erklärung der Projektstruktur</li>
+              <li>Wie du Texte &amp; Bilder selbst austauschst</li>
+              <li>Hinweise, was du selbst tun kannst</li>
+              <li>Was du lieber mir überlassen solltest</li>
+            </ul>
+          </article>
+
+          <article class="service-card reveal reveal-delay-2">
+            <h3>Daten &amp; Transparenz</h3>
+            <ul class="service-card__list">
+              <li>Vollständige Datenübergabe</li>
+              <li>Bild- und Dateiliste</li>
+              <li>Hinweise zu Backups &amp; Sicherheit</li>
+              <li>Keine versteckten Abos</li>
+            </ul>
+          </article>
+
+          <article
+            class="service-card service-card--highlight reveal reveal-delay-3"
+          >
+            <h3>Preis</h3>
+            <p class="service-card__price">0 €</p>
+            <p class="service-card__text">
+              Die Einführung ist immer Teil des Projekts. Kein Aufpreis, keine
+              extra Position.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Abschluss-CTA -->
+      <section
+        id="cta-shop"
+        class="section section--padded section--cta reveal"
+      >
+        <div class="cta-shell">
+          <h2 class="cta-title reveal reveal-delay-1">
+            Nicht sicher, welches Paket zu dir passt?
+          </h2>
+          <p class="cta-subtitle reveal reveal-delay-2">
+            Schreib kurz, wo du stehst und was du dir wünschst. Ich melde mich
+            mit einer Empfehlung und einem klaren Vorschlag.
+          </p>
+          <div class="cta-actions reveal reveal-delay-3">
+            <a href="kontakt.html" class="btn btn--primary btn--cta">
+              Jetzt Kontakt aufnehmen
+            </a>
+            <a href="index.html" class="btn btn--ghost btn--cta">
+              Zur Startseite
+            </a>
+          </div>
+        </div>
       </section>
     </main>
 
-    <footer>
-      <small>&copy; 2025 Lumencat – Webdesign, Automationen &amp; KI</small>
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <div class="footer-grid">
+          <!-- Brand -->
+          <div class="footer-col footer-col--brand">
+            <a href="index.html" class="footer-brand">
+              <img
+                src="Bilder/lumencatLogo.png"
+                alt="Lumencat Logo"
+                class="footer-brand__logo"
+                loading="lazy"
+              />
+              <div class="footer-brand__text">
+                <span class="footer-brand__name">Lumencat</span>
+                <span class="footer-brand__tagline">
+                  Webdesign. Automationen. KI.
+                </span>
+              </div>
+            </a>
+            <p class="footer-brand__description">
+              Moderne Websites, n8n-Workflows und smarte Assistenten. Klarer
+              Code, ehrliche Beratung, wenig Blabla.
+            </p>
+          </div>
+
+          <!-- Navigation -->
+          <div class="footer-col">
+            <h3 class="footer-heading">Navigation</h3>
+            <ul class="footer-links">
+              <li><a href="index.html#leistungen">Leistungen</a></li>
+              <li><a href="index.html#projekte">Projekte</a></li>
+              <li>
+                <a href="index.html#automationen">Automationen &amp; KI</a>
+              </li>
+              <li><a href="shop.html">Pakete &amp; Preise</a></li>
+              <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+          </div>
+
+          <!-- Services -->
+          <div class="footer-col">
+            <h3 class="footer-heading">Services</h3>
+            <ul class="footer-links">
+              <li>Landingpages &amp; Business-Websites</li>
+              <li>n8n-Bots &amp; Automationen</li>
+              <li>Website-Wartung</li>
+              <li>Bot-Monitoring</li>
+              <li>Hosting-Setup (Hetzner)</li>
+            </ul>
+          </div>
+
+          <!-- Kontakt -->
+          <div class="footer-col">
+            <h3 class="footer-heading">Kontakt</h3>
+            <ul class="footer-links footer-links--contact">
+              <li>
+                <a href="mailto:lumencat@mail.de">lumencat@mail.de</a>
+              </li>
+              <li>
+                <a href="tel:+4915679735298">+49 1567 9735298</a>
+              </li>
+              <li>
+                Nachricht per Formular:<br /><a href="kontakt.html"
+                  >kontakt.html</a
+                >
+              </li>
+            </ul>
+            <p class="footer-note">
+              Projekte nach Absprache von Montag bis Freitag.
+            </p>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <small class="footer-copy">
+            &copy; 2025 Lumencat. Alle Rechte vorbehalten.
+          </small>
+          <nav class="footer-nav">
+            <a href="impressum.html">Impressum</a>
+            <a href="datenschutz.html">Datenschutz</a>
+          </nav>
+        </div>
+      </div>
     </footer>
 
     <script src="js/main.js"></script>
