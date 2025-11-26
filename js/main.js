@@ -121,7 +121,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const data = await response.json();
 
         if (data.success) {
-          contactHint.textContent = data.message || "Danke für deine Nachricht!";
+          contactHint.textContent =
+            data.message || "Danke für deine Nachricht!";
           contactHint.style.color = "#19f7ff";
           // Formular leeren
           contactForm.reset();

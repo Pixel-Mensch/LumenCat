@@ -100,10 +100,8 @@ if (!$success) {
     exit;
 }
 
-// 7. (Optional) Hook zu n8n – hier kannst du später eine Webhook-URL eintragen
-//    Ich kommentiere das vorerst aus, damit nichts kaputt geht.
-/*
-$n8nWebhookUrl = ''; // z.B. 'https://dein-n8n.de/webhook/lumencat-contact';
+// 7. Hook zu n8n – Webhook ist aktiv
+$n8nWebhookUrl = 'https://automation.lumencat.de/webhook/81c2e7ea-90b3-4919-8d75-9726cf88d9ad';
 if ($n8nWebhookUrl !== '') {
     // Ich sende die Daten zusätzlich an n8n (ohne die Antwort abzuwarten).
     $payload = json_encode([
@@ -126,7 +124,6 @@ if ($n8nWebhookUrl !== '') {
     curl_exec($ch);
     curl_close($ch);
 }
-*/
 
 // 8. Erfolgs-Antwort
 echo json_encode([
