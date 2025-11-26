@@ -17,7 +17,7 @@
 }
 
 /* Light Mode – ich überschreibe nur die wichtigsten Sachen */
-body.theme-light {
+html.theme-light {
   --color-bg: #f7faff;
   --color-bg-soft: #e5eaf3;
   --color-surface: #ffffff;
@@ -817,6 +817,10 @@ body.theme-light .why-card {
   display: flex;
   flex-direction: column;
   margin-bottom: 1rem;
+}
+
+.form-row--hidden {
+  display: none;
 }
 
 .form-row label {
