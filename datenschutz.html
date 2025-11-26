@@ -2,31 +2,292 @@
 <html lang="de">
   <head>
     <meta charset="UTF-8" />
-    <title>Lumencat – Datenschutz</title>
+    <title>Datenschutzerklärung – Lumencat</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Datenschutzerklärung für die Website von Lumencat – Webdesign, Automationen & KI."
+    />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body class="theme-dark">
-    <header>
-      <nav>
-        <a href="index.html">Lumencat</a>
-        <a href="index.html#leistungen">Leistungen</a>
-        <a href="index.html#projekte">Projekte</a>
-        <a href="index.html#automationen">Automationen &amp; KI</a>
-        <a href="kontakt.html">Kontakt</a>
-        <a href="shop.html">Shop</a>
+    <header class="site-header">
+      <nav class="nav">
+        <a href="index.html" class="nav__brand">
+          <img
+            src="Bilder/lumencatLogo.png"
+            alt="Lumencat Logo"
+            class="nav__logo"
+            loading="lazy"
+          />
+          <span class="nav__brand-name">Lumencat</span>
+        </a>
+
+        <button
+          class="nav__toggle"
+          id="navToggle"
+          aria-label="Menü öffnen"
+          aria-expanded="false"
+          aria-controls="navLinks"
+        >
+          ☰
+        </button>
+
+        <div class="nav__links" id="navLinks">
+          <a href="index.html#leistungen">Leistungen</a>
+          <a href="index.html#projekte">Projekte</a>
+          <a href="index.html#automationen">Automationen &amp; KI</a>
+          <a href="kontakt.html">Kontakt</a>
+          <a href="shop.html">Shop</a>
+
+          <button
+            class="theme-toggle"
+            id="themeToggle"
+            type="button"
+            aria-label="Darstellung wechseln"
+          >
+            🌙
+          </button>
+        </div>
       </nav>
     </header>
 
     <main>
-      <section id="datenschutz" reveal>
-        <h1>Datenschutzerklärung</h1>
-        <p>Hier kommt später deine Datenschutzerklärung hin.</p>
+      <section class="section section--padded reveal">
+        <header class="section__header">
+          <h1>Datenschutzerklärung</h1>
+          <p>
+            Mit den folgenden Informationen informiere ich dich über die
+            Verarbeitung personenbezogener Daten bei Nutzung dieser Website.
+          </p>
+        </header>
+
+        <div class="card reveal legal-card">
+          <h2>1. Verantwortlicher</h2>
+          <p>
+            Verantwortlich im Sinne der Datenschutz-Grundverordnung (DSGVO) ist:
+          </p>
+          <p>
+            <strong>Marc André Kommer (Lumencat)</strong><br />
+            Webdesign, Automationen &amp; KI<br />
+            Haydnstr. 25<br />
+            44147 Dortmund<br />
+            Deutschland<br />
+            E-Mail:
+            <a href="mailto:pixelmensch@mail.de">pixelmensch@mail.de</a><br />
+            Telefon:
+            <a href="tel:015226580980">015226580980</a>
+          </p>
+
+          <h2>2. Erhebung und Speicherung personenbezogener Daten</h2>
+          <p>
+            Diese Website verarbeitet personenbezogene Daten nur, soweit dies
+            zur Bereitstellung einer funktionsfähigen Website sowie meiner
+            Inhalte und Leistungen erforderlich ist. Es werden keine Cookies zu
+            Tracking- oder Marketingzwecken eingesetzt.
+          </p>
+
+          <h3>2.1 Server-Logfiles</h3>
+          <p>
+            Beim Aufruf dieser Website werden durch den Hostinganbieter
+            automatisch Informationen in sogenannten Server-Logfiles erhoben und
+            gespeichert. Dies sind unter anderem:
+          </p>
+          <ul class="list">
+            <li>IP-Adresse (in der Regel gekürzt/anonymisiert)</li>
+            <li>Datum und Uhrzeit des Abrufs</li>
+            <li>aufgerufene Seite/Datei</li>
+            <li>übertragene Datenmenge</li>
+            <li>verwendeter Browser und Betriebssystem</li>
+            <li>Referrer-URL (die zuvor besuchte Seite)</li>
+          </ul>
+          <p>
+            Rechtsgrundlage hierfür ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes
+            Interesse an einem sicheren und stabilen Betrieb der Website). Die
+            Logfiles werden vom Hoster nach einer angemessenen Frist automatisch
+            gelöscht.
+          </p>
+
+          <h2>3. Kontaktaufnahme</h2>
+          <h3>3.1 Kontakt per E-Mail</h3>
+          <p>
+            Wenn du mich per E-Mail kontaktierst, werden deine Angaben
+            (E-Mail-Adresse, Inhalt der Nachricht, ggf. Name) zur Bearbeitung
+            der Anfrage verarbeitet. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b
+            DSGVO (Vertragserfüllung bzw. vorvertragliche Maßnahmen).
+          </p>
+
+          <h3>3.2 Kontaktformular</h3>
+          <p>
+            Soweit ein Kontaktformular eingesetzt wird, werden die dort
+            eingegebenen Daten (Name, E-Mail-Adresse, Nachricht) ebenfalls zur
+            Bearbeitung deiner Anfrage verwendet.
+          </p>
+          <p>
+            Die Daten werden nicht ohne deine Einwilligung an Dritte
+            weitergegeben und nach Abschluss der Bearbeitung gelöscht, sofern
+            keine gesetzlichen Aufbewahrungspflichten bestehen.
+          </p>
+
+          <h2>4. Cookies und Tracking</h2>
+          <p>
+            Diese Website verwendet derzeit keine Cookies, die einer
+            Einwilligung bedürfen, und keine Tracking- oder Analyse-Tools wie
+            Google Analytics oder ähnliche Dienste.
+          </p>
+
+          <h2>5. Einbindung von Diensten und Inhalten Dritter</h2>
+          <p>
+            Soweit auf dieser Website Inhalte Dritter (z. B. eingebettete
+            Karten, Videos oder Schriften) eingesetzt werden, können diese
+            Anbieter die IP-Adresse der Nutzer verarbeiten. Derzeit sind keine
+            externen Dienste eingebunden, die personenbezogene Daten erheben.
+          </p>
+
+          <h2>6. Hosting</h2>
+          <p>
+            Diese Website wird bei einem europäischen Hostinganbieter betrieben
+            (voraussichtlich Hetzner). Die Datenverarbeitung erfolgt auf
+            Grundlage eines Auftragsverarbeitungsvertrags gemäß Art. 28 DSGVO.
+          </p>
+
+          <h2>7. Speicherdauer</h2>
+          <p>
+            Personenbezogene Daten werden nur so lange gespeichert, wie es für
+            die jeweiligen Zwecke erforderlich ist oder wie es gesetzliche
+            Aufbewahrungspflichten vorsehen.
+          </p>
+
+          <h2>8. Rechtsgrundlagen der Verarbeitung</h2>
+          <p>
+            Die Verarbeitung personenbezogener Daten erfolgt – je nach
+            Einzelfall – auf Grundlage von:
+          </p>
+          <ul class="list">
+            <li>Art. 6 Abs. 1 lit. b DSGVO (Vertrag / Anfrage)</li>
+            <li>Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse)</li>
+          </ul>
+
+          <h2>9. Deine Rechte</h2>
+          <p>Du hast im Rahmen der DSGVO insbesondere das Recht auf:</p>
+          <ul class="list">
+            <li>Auskunft über die verarbeiteten Daten (Art. 15 DSGVO)</li>
+            <li>Berichtigung unrichtiger Daten (Art. 16 DSGVO)</li>
+            <li>Löschung (Art. 17 DSGVO)</li>
+            <li>Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
+            <li>Datenübertragbarkeit (Art. 20 DSGVO)</li>
+            <li>Widerspruch gegen bestimmte Verarbeitungen (Art. 21 DSGVO)</li>
+          </ul>
+          <p>
+            Hierzu sowie zu weiteren Fragen zum Thema Datenschutz kannst du dich
+            jederzeit an mich wenden:
+            <a href="mailto:pixelmensch@mail.de">pixelmensch@mail.de</a>
+          </p>
+
+          <h2>10. Beschwerderecht bei einer Aufsichtsbehörde</h2>
+          <p>
+            Du hast außerdem das Recht, dich bei einer datenschutzrechtlichen
+            Aufsichtsbehörde über die Verarbeitung deiner personenbezogenen
+            Daten zu beschweren.
+          </p>
+
+          <h2>11. Änderungen dieser Datenschutzerklärung</h2>
+          <p>
+            Ich behalte mir vor, diese Datenschutzerklärung anzupassen, wenn
+            sich die rechtlichen oder technischen Rahmenbedingungen ändern.
+          </p>
+        </div>
       </section>
     </main>
 
-    <footer>
-      <small>&copy; 2025 Lumencat – Webdesign, Automationen &amp; KI</small>
+    <!-- Footer wie auf den anderen Seiten -->
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <div class="footer-grid">
+          <!-- Brand -->
+          <div class="footer-col footer-col--brand">
+            <a href="index.html" class="footer-brand">
+              <img
+                src="Bilder/lumencatLogo.png"
+                alt="Lumencat Logo"
+                class="footer-brand__logo"
+                loading="lazy"
+              />
+              <div class="footer-brand__text">
+                <span class="footer-brand__name">Lumencat</span>
+                <span class="footer-brand__tagline">
+                  Webdesign. Automationen. KI.
+                </span>
+              </div>
+            </a>
+            <p class="footer-brand__description">
+              Moderne Websites, n8n-Workflows und smarte Assistenten. Klarer
+              Code, ehrliche Beratung, wenig Blabla.
+            </p>
+          </div>
+
+          <!-- Navigation -->
+          <div class="footer-col">
+            <h3 class="footer-heading">Navigation</h3>
+            <ul class="footer-links">
+              <li><a href="index.html#leistungen">Leistungen</a></li>
+              <li><a href="index.html#projekte">Projekte</a></li>
+              <li>
+                <a href="index.html#automationen">Automationen &amp; KI</a>
+              </li>
+              <li><a href="shop.html">Pakete &amp; Preise</a></li>
+              <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+          </div>
+
+          <!-- Leistungen -->
+          <div class="footer-col">
+            <h3 class="footer-heading">Leistungen</h3>
+            <ul class="footer-links">
+              <li>
+                <a href="shop.html#webseiten"
+                  >Landingpages &amp; Business-Websites</a
+                >
+              </li>
+              <li><a href="shop.html#bots">n8n-Bots &amp; Automationen</a></li>
+              <li><a href="shop.html#wartung">Website-Wartung</a></li>
+              <li><a href="shop.html#wartung">Bot-Monitoring</a></li>
+              <li><a href="shop.html#hosting">Hosting-Setup (Hetzner)</a></li>
+            </ul>
+          </div>
+
+          <!-- Kontakt -->
+          <div class="footer-col">
+            <h3 class="footer-heading">Kontakt</h3>
+            <ul class="footer-links footer-links--contact">
+              <li>
+                <a href="mailto:lumencat@mail.de">lumencat@mail.de</a>
+              </li>
+              <li>
+                <a href="tel:+4915679735298">+49 1567 9735298</a>
+              </li>
+              <li>
+                Nachricht per Formular:<br /><a href="kontakt.html"
+                  >kontakt.html</a
+                >
+              </li>
+            </ul>
+            <p class="footer-note">
+              Projekte nach Absprache von Montag bis Freitag.
+            </p>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <small class="footer-copy">
+            &copy; 2025 Lumencat. Alle Rechte vorbehalten.
+          </small>
+          <nav class="footer-nav">
+            <a href="impressum.html">Impressum</a>
+            <a href="datenschutz.html">Datenschutz</a>
+          </nav>
+        </div>
+      </div>
     </footer>
 
     <script src="js/main.js"></script>

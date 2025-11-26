@@ -2,34 +2,244 @@
 <html lang="de">
   <head>
     <meta charset="UTF-8" />
-    <title>Lumencat – Impressum</title>
+    <title>Impressum – Lumencat</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Impressum von Lumencat – Webdesign, Automationen & KI."
+    />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body class="theme-dark">
-    <header>
-      <nav>
-        <a href="index.html">Lumencat</a>
-        <a href="index.html#leistungen">Leistungen</a>
-        <a href="index.html#projekte">Projekte</a>
-        <a href="index.html#automationen">Automationen &amp; KI</a>
-        <a href="kontakt.html">Kontakt</a>
-        <a href="shop.html">Shop</a>
+    <header class="site-header">
+      <nav class="nav">
+        <a href="index.html" class="nav__brand">
+          <img
+            src="Bilder/lumencatLogo.png"
+            alt="Lumencat Logo"
+            class="nav__logo"
+            loading="lazy"
+          />
+          <span class="nav__brand-name">Lumencat</span>
+        </a>
+
+        <button
+          class="nav__toggle"
+          id="navToggle"
+          aria-label="Menü öffnen"
+          aria-expanded="false"
+          aria-controls="navLinks"
+        >
+          ☰
+        </button>
+
+        <div class="nav__links" id="navLinks">
+          <a href="index.html#leistungen">Leistungen</a>
+          <a href="index.html#projekte">Projekte</a>
+          <a href="index.html#automationen">Automationen &amp; KI</a>
+          <a href="kontakt.html">Kontakt</a>
+          <a href="shop.html">Shop</a>
+
+          <button
+            class="theme-toggle"
+            id="themeToggle"
+            type="button"
+            aria-label="Darstellung wechseln"
+          >
+            🌙
+          </button>
+        </div>
       </nav>
     </header>
 
     <main>
-      <section id="impressum" reveal>
-        <h1>Impressum</h1>
-        <p>
-          Hier trägst du später deine rechtlichen Angaben ein (Name, Anschrift,
-          etc.).
-        </p>
+      <section class="section section--padded reveal">
+        <header class="section__header">
+          <h1>Impressum</h1>
+          <p>Angaben gemäß § 5 TMG.</p>
+        </header>
+
+        <div class="card reveal legal-card">
+          <div class="legal-section">
+            <h2>Verantwortlicher Anbieter dieser Website</h2>
+            <p>
+              <strong>Marc André Kommer (Lumencat)</strong><br />
+              Webdesign, Automationen &amp; KI<br />
+              Haydnstr. 25<br />
+              44147 Dortmund<br />
+              Deutschland
+            </p>
+          </div>
+
+          <div class="legal-section">
+            <h2>Kontakt</h2>
+            <p>
+              E-Mail:
+              <a href="mailto:pixelmensch@mail.de">pixelmensch@mail.de</a><br />
+              Telefon:
+              <a href="tel:015226580980">015226580980</a>
+            </p>
+          </div>
+
+          <div class="legal-section">
+            <h2>Umsatzsteuer</h2>
+            <p>
+              Kleinunternehmer gemäß § 19 UStG. Es wird keine Umsatzsteuer
+              ausgewiesen.
+            </p>
+          </div>
+
+          <div class="legal-section">
+            <h2>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
+            <p>
+              Marc André Kommer<br />
+              Haydnstr. 25<br />
+              44147 Dortmund<br />
+              Deutschland
+            </p>
+          </div>
+
+          <div class="legal-section">
+            <h2>Haftung für Inhalte</h2>
+            <p>
+              Als Diensteanbieter bin ich gemäß § 7 Abs. 1 TMG für eigene
+              Inhalte auf diesen Seiten nach den allgemeinen Gesetzen
+              verantwortlich. Nach §§ 8 bis 10 TMG bin ich jedoch nicht
+              verpflichtet, übermittelte oder gespeicherte fremde Informationen
+              zu überwachen oder nach Umständen zu forschen, die auf eine
+              rechtswidrige Tätigkeit hinweisen.
+            </p>
+            <p>
+              Verpflichtungen zur Entfernung oder Sperrung der Nutzung von
+              Informationen nach den allgemeinen Gesetzen bleiben hiervon
+              unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem
+              Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich.
+              Bei Bekanntwerden von entsprechenden Rechtsverletzungen werde ich
+              diese Inhalte umgehend entfernen.
+            </p>
+          </div>
+
+          <div class="legal-section">
+            <h2>Haftung für Links</h2>
+            <p>
+              Mein Angebot enthält Links zu externen Websites Dritter, auf deren
+              Inhalte ich keinen Einfluss habe. Deshalb kann ich für diese
+              fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der
+              verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber
+              der Seiten verantwortlich. Bei Bekanntwerden von
+              Rechtsverletzungen werde ich derartige Links umgehend entfernen.
+            </p>
+          </div>
+
+          <div class="legal-section">
+            <h2>Urheberrecht</h2>
+            <p>
+              Die durch mich erstellten Inhalte und Werke auf diesen Seiten
+              unterliegen dem deutschen Urheberrecht. Die Vervielfältigung,
+              Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der
+              Grenzen des Urheberrechts bedürfen meiner schriftlichen
+              Zustimmung.
+            </p>
+            <p>
+              Soweit die Inhalte auf dieser Seite nicht von mir erstellt wurden,
+              werden die Urheberrechte Dritter beachtet. Solltest du trotzdem
+              auf eine Urheberrechtsverletzung aufmerksam werden, bitte ich um
+              einen entsprechenden Hinweis. Bei Bekanntwerden von
+              Rechtsverletzungen werde ich derartige Inhalte umgehend entfernen.
+            </p>
+          </div>
+        </div>
       </section>
     </main>
 
-    <footer>
-      <small>&copy; 2025 Lumencat – Webdesign, Automationen &amp; KI</small>
+    <!-- Footer wie auf den anderen Seiten -->
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <div class="footer-grid">
+          <!-- Brand -->
+          <div class="footer-col footer-col--brand">
+            <a href="index.html" class="footer-brand">
+              <img
+                src="Bilder/lumencatLogo.png"
+                alt="Lumencat Logo"
+                class="footer-brand__logo"
+                loading="lazy"
+              />
+              <div class="footer-brand__text">
+                <span class="footer-brand__name">Lumencat</span>
+                <span class="footer-brand__tagline">
+                  Webdesign. Automationen. KI.
+                </span>
+              </div>
+            </a>
+            <p class="footer-brand__description">
+              Moderne Websites, n8n-Workflows und smarte Assistenten. Klarer
+              Code, ehrliche Beratung, wenig Blabla.
+            </p>
+          </div>
+
+          <!-- Navigation -->
+          <div class="footer-col">
+            <h3 class="footer-heading">Navigation</h3>
+            <ul class="footer-links">
+              <li><a href="index.html#leistungen">Leistungen</a></li>
+              <li><a href="index.html#projekte">Projekte</a></li>
+              <li>
+                <a href="index.html#automationen">Automationen &amp; KI</a>
+              </li>
+              <li><a href="shop.html">Pakete &amp; Preise</a></li>
+              <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+          </div>
+
+          <!-- Leistungen -->
+          <div class="footer-col">
+            <h3 class="footer-heading">Leistungen</h3>
+            <ul class="footer-links">
+              <li>
+                <a href="shop.html#webseiten"
+                  >Landingpages &amp; Business-Websites</a
+                >
+              </li>
+              <li><a href="shop.html#bots">n8n-Bots &amp; Automationen</a></li>
+              <li><a href="shop.html#wartung">Website-Wartung</a></li>
+              <li><a href="shop.html#wartung">Bot-Monitoring</a></li>
+              <li><a href="shop.html#hosting">Hosting-Setup (Hetzner)</a></li>
+            </ul>
+          </div>
+
+          <!-- Kontakt -->
+          <div class="footer-col">
+            <h3 class="footer-heading">Kontakt</h3>
+            <ul class="footer-links footer-links--contact">
+              <li>
+                <a href="mailto:lumencat@mail.de">lumencat@mail.de</a>
+              </li>
+              <li>
+                <a href="tel:+4915679735298">+49 1567 9735298</a>
+              </li>
+              <li>
+                Nachricht per Formular:<br /><a href="kontakt.html"
+                  >kontakt.html</a
+                >
+              </li>
+            </ul>
+            <p class="footer-note">
+              Projekte nach Absprache von Montag bis Freitag.
+            </p>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <small class="footer-copy">
+            &copy; 2025 Lumencat. Alle Rechte vorbehalten.
+          </small>
+          <nav class="footer-nav">
+            <a href="impressum.html">Impressum</a>
+            <a href="datenschutz.html">Datenschutz</a>
+          </nav>
+        </div>
+      </div>
     </footer>
 
     <script src="js/main.js"></script>
