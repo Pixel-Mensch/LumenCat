@@ -55,6 +55,9 @@ body.theme-light {
   body {
     background-attachment: fixed;
   }
+  .hero {
+    background-attachment: fixed;
+  }
 }
 
 img {
@@ -83,11 +86,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
-}
-
-.nav__brand {
-  display: inline-flex;
+  /* Background is now provided via an inline <picture> in the HTML for modern formats */
   align-items: center;
   gap: 0.5rem;
   text-decoration: none;
@@ -100,12 +99,126 @@ a {
   box-shadow: var(--shadow-neon);
 }
 
+/* Brand: force horizontal layout and prevent wrapping; add neon underline effect */
+.nav__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.nav__brand a,
+.nav__brand,
+.nav__brand-name {
+  text-decoration: none !important;
+}
+
 .nav__brand-name {
   font-weight: 600;
   letter-spacing: 0.06em;
   font-size: 0.95rem;
   text-transform: uppercase;
   color: var(--color-accent-cyan);
+  position: relative;
+  display: inline-block;
+  padding-bottom: 2px;
+  white-space: nowrap;
+}
+/* Apply a similar neon underline and hover-lift to header buttons/links */
+.nav__links a,
+.theme-toggle,
+.nav__toggle {
+  position: relative;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.nav__links a::after,
+.theme-toggle::after,
+.nav__toggle::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -6px;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    var(--color-accent-cyan),
+    var(--color-accent-purple)
+  );
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 520ms cubic-bezier(0.22, 0.8, 0.22, 1),
+    box-shadow 520ms ease;
+  border-radius: 999px;
+  pointer-events: none;
+}
+
+.nav__links a:hover::after,
+.nav__links a:focus::after,
+.nav__links a:focus-visible::after,
+.theme-toggle:hover::after,
+.theme-toggle:focus::after,
+.nav__toggle:hover::after,
+.nav__toggle:focus::after {
+  transform: scaleX(1);
+  box-shadow: 0 0 14px rgba(25, 247, 255, 0.45),
+    0 0 28px rgba(138, 43, 255, 0.32);
+}
+
+/* Lift header buttons slightly on hover to bring them forward */
+.nav__links a:hover,
+.nav__links a:focus,
+.theme-toggle:hover,
+.theme-toggle:focus,
+.nav__toggle:hover,
+.nav__toggle:focus {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.45), 0 0 18px rgba(25, 247, 255, 0.12);
+}
+
+/* More vertical spacing between sections to avoid overlap */
+.section {
+  margin-bottom: 3.5rem;
+}
+
+@media (min-width: 720px) {
+  .section {
+    margin-bottom: 5rem;
+  }
+  .section--padded {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+}
+
+.nav__brand-name::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--color-accent-cyan),
+    var(--color-accent-purple)
+  );
+  transform: scaleX(0);
+  transform-origin: left;
+  /* langsamere, weichere Animation */
+  transition: transform 520ms cubic-bezier(0.22, 0.8, 0.22, 1),
+    box-shadow 520ms ease;
+  border-radius: 999px;
+}
+
+.nav__brand:hover .nav__brand-name::after,
+.nav__brand:focus .nav__brand-name::after,
+.nav__brand:focus-visible .nav__brand-name::after {
+  transform: scaleX(1);
+  box-shadow: 0 0 20px rgba(25, 247, 255, 0.6),
+    0 0 36px rgba(138, 43, 255, 0.45);
 }
 
 .nav__links {
@@ -170,7 +283,6 @@ a {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
 }
 
 .hero__overlay {
@@ -185,11 +297,26 @@ a {
     rgba(0, 0, 0, 0.7);
 }
 
+/* Hero background image injected via <picture>. Position it behind overlay and content. */
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  display: block;
+}
+.hero__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 body.theme-light .hero__overlay {
+  /* Subtler overlay in light mode so the hero image keeps its contrast */
   background: linear-gradient(
     to bottom,
-    rgba(247, 250, 255, 0.35),
-    rgba(247, 250, 255, 0.9)
+    rgba(247, 250, 255, 0.12),
+    rgba(247, 250, 255, 0.28)
   );
 }
 
@@ -372,6 +499,7 @@ body.theme-light .section--cta::before {
   max-width: 820px;
   margin: 0 auto;
   padding: 2.5rem 1.5rem;
+  overflow: hidden; /* clip the scan-line to the CTA shell */
 }
 
 .cta-title {
@@ -381,7 +509,8 @@ body.theme-light .section--cta::before {
 
 .cta-subtitle {
   color: var(--color-text-soft);
-  max-width: 600px;
+  border-radius: 1.8rem;
+  overflow: hidden; /* ensure scan-line stays inside the CTA box */
   margin: 0 auto 2rem;
 }
 
@@ -396,6 +525,85 @@ body.theme-light .section--cta::before {
   padding: 0.8rem 1.4rem;
   font-size: 1rem;
   border-radius: 1rem;
+}
+/* === CTA Effekte: Neon-Scan-Line, Puls-Button, Vertical Light Edge === */
+
+/* A) Neon-Scan-Line oben im CTA-Block */
+.section--cta.reveal--visible .cta-shell::before {
+  content: "";
+  position: absolute;
+  left: 0%;
+  right: 5%;
+  top: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-accent-cyan),
+    var(--color-accent-purple),
+    transparent
+  );
+  box-shadow: 0 0 12px rgba(25, 247, 255, 0.6);
+  opacity: 0;
+  pointer-events: none;
+  border-radius: 999px;
+  animation: ctaScan 4s linear infinite;
+}
+
+@keyframes ctaScan {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  88% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+/* C) Vertikale Lichtkante hinter dem CTA */
+
+/* B) Pulsierender Glow nur auf dem CTA-Primary-Button */
+.section--cta .btn--primary {
+  animation: ctaPulse 4s ease-in-out infinite;
+}
+
+.section--cta .btn--primary:hover {
+  /* Beim Hover nicht ständig weiterpumpen, wirkt ruhiger */
+  animation-play-state: paused;
+  transform: translateY(-1px);
+}
+
+@keyframes ctaPulse {
+  0%,
+  60%,
+  100% {
+    transform: scale(1);
+    box-shadow: var(--shadow-neon);
+  }
+  30% {
+    transform: scale(1.03);
+    box-shadow: 0 0 22px rgba(25, 247, 255, 0.75),
+      0 0 40px rgba(138, 43, 255, 0.85);
+  }
+}
+
+/* Kleine Anpassung für sehr kleine Screens */
+@media (max-width: 600px) {
+  .section--cta.reveal--visible::after {
+    right: 4%;
+  }
+
+  .section--cta.reveal--visible .cta-shell::before {
+    left: -30%;
+    width: 60%;
+  }
 }
 
 /* Grids */
@@ -470,6 +678,14 @@ body.theme-light .project-card {
 .project-card__image--placeholder {
   background-image: url("../Bilder/Hintergrund.png");
   filter: saturate(1.5);
+}
+
+/* Wenn wir ein <img> innerhalb der image-Box verwenden */
+.project-card__image img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
 }
 
 .project-card__body {
@@ -640,6 +856,7 @@ body.theme-light .form-row textarea {
   position: relative;
   padding-top: 4rem;
   padding-bottom: 4.5rem;
+  margin-bottom: 3rem;
 }
 
 .section--contact::before {

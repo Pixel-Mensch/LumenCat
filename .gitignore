@@ -1,3 +1,8 @@
+node_modules/
+Bilder/optimized/
+*.log
+lighthouse-report.html
+dist/
 # ==========================================================
 # LumenCat – .gitignore
 # Webdesign • Automationen • KI

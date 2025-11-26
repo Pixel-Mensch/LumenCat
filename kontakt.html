@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kontakt – Lumencat</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script>
+      (function () {
+        try {
+          const savedTheme = localStorage.getItem("lumencat-theme");
+          const theme = savedTheme === "light" ? "light" : "dark";
+          document.documentElement.classList.add("theme-" + theme);
+        } catch (e) {
+          /* ignore */
+        }
+      })();
+    </script>
+  </head>
+  <body class="theme-dark">
+    <header class="site-header">
+      <nav class="nav">
+        <a href="index.html" class="nav__brand">
+          <img
+            src="Bilder/lumencatLogo.png"
+            alt="Lumencat Logo"
+            class="nav__logo"
+            loading="lazy"
+          />
+          <span class="nav__brand-name">Lumencat</span>
+        </a>
+
+        <button
+          class="nav__toggle"
+          id="navToggle"
+          aria-label="Menü öffnen"
+          aria-expanded="false"
+          aria-controls="navLinks"
+        >
+          ☰
+        </button>
+
+        <div class="nav__links" id="navLinks">
+          <a href="index.html#leistungen">Leistungen</a>
+          <a href="index.html#projekte">Projekte</a>
+          <a href="index.html#automationen">Automationen &amp; KI</a>
+          <a href="kontakt.html">Kontakt</a>
+          <a href="shop.html">Shop</a>
+
+          <button
+            class="theme-toggle"
+            id="themeToggle"
+            type="button"
+            aria-label="Darstellung wechseln"
+          >
+            🌙
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section
+        id="kontakt"
+        class="section section--padded section--contact reveal"
+      >
+        <div class="contact-shell">
+          <header class="section__header">
+            <h2>Bereit, dein Projekt zu starten?</h2>
+            <p>
+              Schreib in ein paar Sätzen, was du vorhast – der Rest kommt
+              Schritt für Schritt.
+            </p>
+          </header>
+
+          <form class="contact-form">
+            <div class="form-row">
+              <label for="name">Name</label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                placeholder="Dein Name"
+              />
+            </div>
+            <div class="form-row">
+              <label for="email">E-Mail</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="deine@mail.de"
+              />
+            </div>
+            <div class="form-row">
+              <label for="nachricht">Projektbeschreibung</label>
+              <textarea
+                id="nachricht"
+                name="nachricht"
+                rows="5"
+                placeholder="Erzähl kurz, worum es geht – Website, Automationen, KI ..."
+              ></textarea>
+            </div>
+            <button class="btn btn--primary contact-form__button" type="submit">
+              Nachricht senden (Platzhalter)
+            </button>
+            <p class="contact-form__hint">
+              Das Formular ist aktuell ein Platzhalter. Später wird es an deine
+              echte Mail / Automation angebunden.
+            </p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <small>&copy; 2025 Lumencat – Webdesign, Automationen &amp; KI</small>
+      <nav class="footer-nav">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </nav>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

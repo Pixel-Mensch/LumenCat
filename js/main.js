@@ -39,14 +39,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Mobile-Menü
   if (navToggle && navLinks) {
+    // Ensure initial aria-expanded reflects current state
+    const isOpenOnLoad = navLinks.classList.contains("nav__links--open");
+    navToggle.setAttribute("aria-expanded", isOpenOnLoad ? "true" : "false");
+
     navToggle.addEventListener("click", () => {
-      navLinks.classList.toggle("nav__links--open");
+      const isOpen = navLinks.classList.toggle("nav__links--open");
+      navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
     });
 
     // Wenn ich auf einen Link im mobilen Menü klicke, schließe ich es wieder.
     navLinks.querySelectorAll("a").forEach((link) => {
       link.addEventListener("click", () => {
         navLinks.classList.remove("nav__links--open");
+        navToggle.setAttribute("aria-expanded", "false");
       });
     });
   }
@@ -76,10 +82,18 @@ document.addEventListener("DOMContentLoaded", () => {
   // Leichter Parallax-Effekt im Hero (sehr dezent)
   const hero = document.querySelector(".hero");
   if (hero) {
+    // Throttle with requestAnimationFrame for better performance
+    let ticking = false;
     window.addEventListener("scroll", () => {
-      const scrollY = window.scrollY || window.pageYOffset;
-      const offset = scrollY * 0.05; // Noch subtiler, um das Bild nicht zu verlieren
-      hero.style.backgroundPosition = `center calc(50% + ${offset}px)`;
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const scrollY = window.scrollY || window.pageYOffset;
+          const offset = scrollY * 0.05; // Sehr dezent
+          hero.style.backgroundPosition = `center calc(50% + ${offset}px)`;
+          ticking = false;
+        });
+        ticking = true;
+      }
     });
   }
 });

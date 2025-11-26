@@ -1,0 +1,16 @@
+{
+  "name": "lumencat_site",
+  "version": "1.0.0",
+  "description": "Static Lumencat prototype site - helper scripts for asset optimization",
+  "scripts": {
+    "img:convert": "node scripts/convert-images.js",
+    "build:css": "npx clean-css-cli -o css/styles.min.css css/styles.css",
+    "build:js": "npx terser js/main.js -o js/main.min.js --compress --mangle",
+    "build": "npm run img:convert && npm run build:css && npm run build:js"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "sharp": "^0.32.5"
+  }
+}
