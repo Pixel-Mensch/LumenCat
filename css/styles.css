@@ -643,6 +643,15 @@ body.theme-light .card {
   margin-bottom: 0.4rem;
 }
 
+/* Legal pages: group sections inside one card */
+.legal-card .legal-section + .legal-section {
+  margin-top: 1.1rem;
+}
+.legal-card h2 {
+  margin-top: 0.2rem;
+  margin-bottom: 0.4rem;
+}
+
 /* Projekte */
 
 .projects {
