@@ -16,6 +16,16 @@
     0 0 32px rgba(138, 43, 255, 0.4);
 }
 
+/* Light Mode – auch auf :root, damit der Head-Script-Fix greift */
+:root.theme-light {
+  --color-bg: #f7faff;
+  --color-bg-soft: #e5eaf3;
+  --color-surface: #ffffff;
+
+  --color-text: #161622;
+  --color-text-soft: #4a5060;
+}
+
 /* Light Mode – ich überschreibe nur die wichtigsten Sachen */
 html.theme-light {
   --color-bg: #f7faff;
@@ -814,6 +824,87 @@ body.theme-light .why-card {
 
 @media (min-width: 768px) {
   .why-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Problem-List & Solution Box */
+
+.problem-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.problem-list li {
+  padding: 0.8rem 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.problem-list li:last-child {
+  border-bottom: none;
+}
+
+.solution-box {
+  background: rgba(25, 247, 255, 0.08);
+  border-radius: 1.2rem;
+  padding: 1.8rem 1.5rem;
+  border: 1px solid rgba(25, 247, 255, 0.2);
+}
+
+.solution-box h3 {
+  margin-top: 0;
+  color: var(--color-accent-cyan);
+}
+
+/* Services Grid */
+
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.service-card {
+  background: rgba(3, 4, 14, 0.9);
+  border-radius: 1.4rem;
+  padding: 2rem 1.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+body.theme-light .service-card {
+  background: var(--color-surface);
+  border-color: rgba(0, 0, 0, 0.06);
+}
+
+.service-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+  font-size: 1.5rem;
+}
+
+.service-features {
+  list-style: none;
+  padding: 0;
+  margin: 1.2rem 0;
+}
+
+.service-features li {
+  padding: 0.4rem 0;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+.service-card .btn {
+  margin-top: 1rem;
+}
+
+@media (min-width: 768px) {
+  .services-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
