@@ -675,6 +675,13 @@ body.theme-light .project-card {
   height: 160px;
   background-size: cover;
   background-position: center;
+  display: block;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.project-card__image:hover {
+  opacity: 0.9;
 }
 
 .project-card__image--placeholder {
@@ -697,6 +704,18 @@ body.theme-light .project-card {
 .project-card__tag {
   font-size: 0.78rem;
   opacity: 0.8;
+  margin-bottom: 1rem;
+}
+
+.project-card__links {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.project-card__links .btn--small {
+  font-size: 0.85rem;
+  padding: 0.4rem 0.8rem;
 }
 /* Ablauf / Prozess */
 
