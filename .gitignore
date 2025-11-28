@@ -1,21 +1,35 @@
-node_modules/
-Bilder/optimized/
-*.log
-lighthouse-report.html
-dist/
 # ==========================================================
 # LumenCat – .gitignore
 # Webdesign • Automationen • KI
 # ==========================================================
 
-# --- Operating System ---
-.DS_Store
-Thumbs.db
+# --- Environment Variables (Sicherheit!) ---
+.env
+.env.local
+.env.development
+.env.production
+.env.*.local
 
-# --- VS Code ---
-.vscode/
-.history/
-*.code-workspace
+# --- Dependencies ---
+node_modules/
+bower_components/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# --- Build Outputs ---
+dist/
+build/
+out/
+*.min.css
+*.min.js
+.tmp/
+.temp/
+
+# --- Bilder (optimierte Versionen nicht versionieren) ---
+Bilder/optimized/
+Bilder/*.webp
+Bilder/*.avif
 
 # --- Logs ---
 logs/
@@ -24,30 +38,57 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
+lerna-debug.log*
 
-# --- Dependency folders (for später, falls du bundler nutzt) ---
-node_modules/
-bower_components/
+# --- IDE & Editor ---
+.vscode/
+.idea/
+.history/
+*.code-workspace
+*.swp
+*.swo
+*~
 
-# --- Build outputs ---
-dist/
-build/
-out/
-.tmp/
-.temp/
+# --- Operating System ---
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# --- Testing & Coverage ---
+coverage/
+.nyc_output/
+*.lcov
 
 # --- Cache ---
 .cache/
 .parcel-cache/
 .next/
 nuxt-dist/
+.nuxt/
 webpack-stats.json
 
-# --- Environment variables ---
-.env
-.env.local
-.env.development
-.env.production
+# --- Reports ---
+lighthouse-report.html
+lighthouse-report*.html
+
+# --- PHP ---
+vendor/
+composer.lock
+
+# --- Backup Files ---
+*.bak
+*.backup
+*.old
+*.orig
+
+# --- Temporary Files ---
+*.tmp
+*.temp
 .env.test
 
 # --- Lock files (falls du später Tools nutzt) ---

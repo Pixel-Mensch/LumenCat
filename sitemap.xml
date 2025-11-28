@@ -2,27 +2,38 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://lumencat.de/</loc>
-    <lastmod>2025-11-26</lastmod>
+    <lastmod>2025-11-28</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://lumencat.de/shop.html</loc>
+    <lastmod>2025-11-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://lumencat.de/kontakt.html</loc>
-    <lastmod>2025-11-26</lastmod>
+    <lastmod>2025-11-28</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lumencat.de/shop.html</loc>
-    <lastmod>2025-11-26</lastmod>
-    <priority>0.8</priority>
+    <loc>https://lumencat.de/blog.html</loc>
+    <lastmod>2025-11-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://lumencat.de/impressum.html</loc>
-    <lastmod>2025-11-26</lastmod>
-    <priority>0.6</priority>
+    <lastmod>2025-11-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://lumencat.de/datenschutz.html</loc>
-    <lastmod>2025-11-26</lastmod>
-    <priority>0.6</priority>
+    <lastmod>2025-11-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 </urlset>

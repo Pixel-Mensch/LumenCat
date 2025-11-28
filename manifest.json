@@ -1,0 +1,27 @@
+{
+  "name": "Lumencat",
+  "short_name": "Lumencat",
+  "description": "Webdesign, Automationen und KI-Assistenten für Selbstständige und kleine Unternehmen",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#19f7ff",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/Bilder/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/Bilder/LumenCatWithoutBackground.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "productivity", "utilities"],
+  "lang": "de-DE",
+  "dir": "ltr"
+}
