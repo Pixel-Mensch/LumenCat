@@ -46,10 +46,22 @@
       name="robots"
       content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
     />
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="apple-mobile-web-app-title" content="Lumencat" />
+    <link rel="apple-touch-icon" href="/Bilder/logo.svg" />
+
     <title>
       Lumencat – Webdesign, Automationen &amp; KI-Assistenten für Selbstständige
     </title>
-    <link rel="icon" type="image/png" href="Bilder/lumencatLogo.png" />
+    <link rel="icon" type="image/svg+xml" href="Bilder/logo.svg" />
     <link rel="stylesheet" href="css/styles.css" />
     <script>
       // Prevent Flash of Unstyled/Wrong Theme on load
@@ -71,7 +83,7 @@
         "name": "Lumencat",
         "description": "Webdesign, Automationen und KI-Assistenten für dein Business",
         "url": "https://lumencat.de",
-        "logo": "https://lumencat.de/Bilder/lumencatLogo.png",
+        "logo": "https://lumencat.de/Bilder/logo.svg",
         "image": "https://lumencat.de/Bilder/HeroMain.png",
         "email": "hello@lumencat.de",
         "telephone": "+49 1522 6580980",
@@ -101,8 +113,8 @@
       <nav class="nav">
         <a href="index.html" class="nav__brand">
           <img
-            src="Bilder/lumencatLogo.png"
-            alt="Lumencat Logo"
+            src="Bilder/logo.svg"
+            alt="LumenCat Logo"
             class="nav__logo"
             loading="lazy"
           />
@@ -495,6 +507,63 @@
         </div>
       </section>
 
+      <!-- Testimonials -->
+      <section id="testimonials" class="section section--padded reveal">
+        <header class="section__header">
+          <h2 class="reveal reveal-delay-1">Was Kunden sagen</h2>
+          <p class="reveal reveal-delay-2">
+            Echte Projekte, echte Ergebnisse – hier siehst du, wie Lumencat
+            anderen Unternehmen geholfen hat.
+          </p>
+        </header>
+        <div class="testimonials-grid">
+          <article class="testimonial-card reveal reveal-delay-1">
+            <div class="testimonial-card__rating">★★★★★</div>
+            <p class="testimonial-card__text">
+              "Die neue Website ist genau das, was wir brauchten: modern,
+              schnell und übersichtlich. Unsere Anfragen haben sich verdoppelt."
+            </p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar">SB</div>
+              <div class="testimonial-card__info">
+                <strong>Sarah Becker</strong>
+                <span>Inhaberin, Bistro Aurora</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial-card reveal reveal-delay-2">
+            <div class="testimonial-card__rating">★★★★★</div>
+            <p class="testimonial-card__text">
+              "Der n8n-Bot spart uns täglich Zeit bei Routineaufgaben. Alles
+              läuft automatisch – von Anfrage bis zur Bestätigung."
+            </p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar">TK</div>
+              <div class="testimonial-card__info">
+                <strong>Thomas Krause</strong>
+                <span>Geschäftsführer, KlimaTech Solutions</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial-card reveal reveal-delay-3">
+            <div class="testimonial-card__rating">★★★★★</div>
+            <p class="testimonial-card__text">
+              "Professionelle Beratung und schnelle Umsetzung. Die Website wirkt
+              hochwertig und hebt uns von der Konkurrenz ab."
+            </p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar">ML</div>
+              <div class="testimonial-card__info">
+                <strong>Maria Lopez</strong>
+                <span>Gründerin, Physio Vital</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
       <!-- Call to Action -->
       <section id="cta" class="section section--padded section--cta reveal">
         <div class="cta-shell">
@@ -526,8 +595,8 @@
           <div class="footer-col footer-col--brand">
             <a href="index.html" class="footer-brand">
               <img
-                src="Bilder/lumencatLogo.png"
-                alt="Lumencat Logo"
+                src="Bilder/logo.svg"
+                alt="LumenCat Logo"
                 class="footer-brand__logo"
                 loading="lazy"
               />
@@ -604,5 +673,24 @@
     </footer>
 
     <script src="js/main.js"></script>
+
+    <!-- PWA Service Worker Registration -->
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker
+            .register("/sw.js")
+            .then((reg) => console.log("[SW] Registered:", reg.scope))
+            .catch((err) => console.log("[SW] Registration failed:", err));
+        });
+      }
+    </script>
+
+    <!-- Plausible Analytics (DSGVO-konform) -->
+    <script
+      defer
+      data-domain="lumencat.de"
+      src="https://plausible.io/js/script.js"
+    ></script>
   </body>
 </html>

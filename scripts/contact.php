@@ -1,7 +1,34 @@
 <?php
-// Lumencat – Kontaktformular
+// Lumencat – Kontaktformular mit Environment Variables
 
 header('Content-Type: application/json; charset=utf-8');
+
+// Load environment variables from .env file
+function loadEnv($path) {
+    if (!file_exists($path)) {
+        return;
+    }
+    $lines = file($path, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+    foreach ($lines as $line) {
+        if (strpos(trim($line), '#') === 0) {
+            continue; // Skip comments
+        }
+        list($name, $value) = explode('=', $line, 2);
+        $name = trim($name);
+        $value = trim($value);
+        if (!array_key_exists($name, $_ENV)) {
+            $_ENV[$name] = $value;
+        }
+    }
+}
+
+// Load .env from parent directory (one level up from scripts/)
+loadEnv(__DIR__ . '/../.env');
+
+// Get configuration from environment variables with fallbacks
+$toEmail = $_ENV['CONTACT_TO_EMAIL'] ?? 'hello@lumencat.de';
+$fromEmail = $_ENV['CONTACT_FROM_EMAIL'] ?? 'no-reply@lumencat.de';
+$n8nWebhookUrl = $_ENV['N8N_WEBHOOK_URL'] ?? '';
 
 // Nur POST zulassen
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
@@ -47,7 +74,6 @@ if (!empty($errors)) {
     exit;
 }
 
-$to      = 'hello@lumencat.de'; // <- HIER deine Zieladresse
 $subject = 'Neue Anfrage über das Kontaktformular (lumencat.de)';
 
 $bodyLines = [
@@ -65,7 +91,6 @@ $bodyLines = [
 ];
 $body = implode("\n", $bodyLines);
 
-$fromEmail = 'no-reply@lumencat.de';
 $headers   = [
     'From: Lumencat Website <' . $fromEmail . '>',
     'Reply-To: ' . $name . ' <' . $email . '>',
@@ -75,7 +100,7 @@ $headers   = [
 $headersString = implode("\r\n", $headers);
 
 $mailSuccess = mail(
-    $to,
+    $toEmail,
     '=?UTF-8?B?' . base64_encode($subject) . '?=',
     $body,
     $headersString
@@ -90,10 +115,7 @@ if (!$mailSuccess) {
     exit;
 }
 
-// n8n Webhook - AKTUELL DEAKTIVIERT (funktioniert noch nicht)
-/*
-$n8nWebhookUrl = 'https://automation.lumencat.de/webhook/new-project-request'; // <- HIER deine n8n Webhook-URL
-
+// n8n Webhook (nur wenn URL gesetzt ist)
 if (!empty($n8nWebhookUrl)) {
     $payload = json_encode([
         'name'        => $name,
@@ -129,10 +151,8 @@ if (!empty($n8nWebhookUrl)) {
         error_log('Lumencat: cURL ist nicht verfügbar - n8n Webhook wurde NICHT gesendet');
     }
 }
-*/
 
 echo json_encode([
     'success' => true,
     'message' => 'Danke für deine Nachricht! Ich melde mich so schnell wie möglich.'
 ]);
-

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Lumencat Blog – Tipps zu Webdesign, Automationen und KI-Assistenten für Selbstständige und kleine Unternehmen."
+    />
+    <meta
+      name="keywords"
+      content="Webdesign, Automationen, n8n, KI, Blog, Tutorials, SEO, Digitalisierung"
+    />
+
+    <meta
+      property="og:title"
+      content="Lumencat Blog – Webdesign & Automation"
+    />
+    <meta
+      property="og:description"
+      content="Praktische Tipps und Insights zu modernem Webdesign, Automationen und KI-Integration."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://lumencat.de/blog.html" />
+
+    <title>Blog – Lumencat</title>
+    <link rel="icon" type="image/svg+xml" href="Bilder/logo.svg" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script>
+      (function () {
+        try {
+          const savedTheme = localStorage.getItem("lumencat-theme");
+          const theme = savedTheme === "light" ? "light" : "dark";
+          document.documentElement.className = "theme-" + theme;
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav">
+        <a href="index.html" class="nav__brand">
+          <img
+            src="Bilder/logo.svg"
+            alt="LumenCat Logo"
+            class="nav__logo"
+            loading="lazy"
+          />
+          <span class="nav__brand-name">Lumencat</span>
+        </a>
+
+        <button
+          class="nav__toggle"
+          id="navToggle"
+          aria-label="Menü öffnen"
+          aria-expanded="false"
+          aria-controls="navLinks"
+        >
+          ☰
+        </button>
+
+        <ul class="nav__links" id="navLinks">
+          <li><a href="index.html#leistungen">Leistungen</a></li>
+          <li><a href="index.html#projekte">Projekte</a></li>
+          <li><a href="shop.html">Pakete & Preise</a></li>
+          <li><a href="blog.html" class="active">Blog</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+
+        <button
+          class="theme-toggle"
+          id="themeToggle"
+          aria-label="Theme wechseln"
+        >
+          🌙
+        </button>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Hero -->
+      <section class="hero hero--small">
+        <div class="hero__overlay"></div>
+        <div class="hero__inner">
+          <div class="hero__content">
+            <h1 class="hero__title">Lumencat Blog</h1>
+            <p class="hero__subtitle">
+              Praktische Tipps zu Webdesign, Automationen und KI für dein
+              Business.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Blog Posts -->
+      <section class="section section--padded">
+        <div class="blog-grid">
+          <!-- Artikel 1 -->
+          <article class="blog-card reveal reveal-delay-1">
+            <div class="blog-card__image">
+              <img
+                src="Bilder/optimized/HeroMain-800.avif"
+                alt="Blog Post"
+                loading="lazy"
+              />
+            </div>
+            <div class="blog-card__content">
+              <span class="blog-card__category">Webdesign</span>
+              <h2 class="blog-card__title">
+                <a href="blog/warum-dark-mode-wichtig-ist.html"
+                  >Warum Dark Mode mehr ist als nur ein Trend</a
+                >
+              </h2>
+              <p class="blog-card__excerpt">
+                Dark Mode ist nicht nur visuell ansprechend – er spart Energie,
+                schont die Augen und verbessert die User Experience. Hier
+                erfährst du, wie du ihn richtig implementierst.
+              </p>
+              <div class="blog-card__meta">
+                <span>15. November 2025</span>
+                <span>•</span>
+                <span>5 Min. Lesezeit</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Artikel 2 -->
+          <article class="blog-card reveal reveal-delay-2">
+            <div class="blog-card__image">
+              <img
+                src="Bilder/optimized/Hintergrund-800.avif"
+                alt="Blog Post"
+                loading="lazy"
+              />
+            </div>
+            <div class="blog-card__content">
+              <span class="blog-card__category">Automation</span>
+              <h2 class="blog-card__title">
+                <a href="blog/n8n-einstieg.html"
+                  >n8n für Einsteiger: Dein erster Automation-Workflow</a
+                >
+              </h2>
+              <p class="blog-card__excerpt">
+                Mit n8n kannst du wiederkehrende Aufgaben automatisieren – ohne
+                Code. In diesem Tutorial zeige ich dir, wie du deinen ersten
+                Workflow baust.
+              </p>
+              <div class="blog-card__meta">
+                <span>8. November 2025</span>
+                <span>•</span>
+                <span>8 Min. Lesezeit</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Artikel 3 -->
+          <article class="blog-card reveal reveal-delay-3">
+            <div class="blog-card__image">
+              <img
+                src="Bilder/optimized/Kontaktliste-800.avif"
+                alt="Blog Post"
+                loading="lazy"
+              />
+            </div>
+            <div class="blog-card__content">
+              <span class="blog-card__category">KI</span>
+              <h2 class="blog-card__title">
+                <a href="blog/chatbot-auf-website-integrieren.html"
+                  >So integrierst du einen KI-Chatbot auf deiner Website</a
+                >
+              </h2>
+              <p class="blog-card__excerpt">
+                KI-Chatbots können Kundenanfragen beantworten, Leads
+                qualifizieren und Support automatisieren. Erfahre, wie du einen
+                Bot einfach implementierst.
+              </p>
+              <div class="blog-card__meta">
+                <span>1. November 2025</span>
+                <span>•</span>
+                <span>6 Min. Lesezeit</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Mehr Posts kommen bald -->
+        <div class="blog-cta">
+          <p>Mehr Artikel folgen in Kürze. Bleib dran! 🚀</p>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <div class="footer-grid">
+          <div class="footer-col footer-col--brand">
+            <a href="index.html" class="footer-brand">
+              <img
+                src="Bilder/logo.svg"
+                alt="LumenCat Logo"
+                class="footer-brand__logo"
+                loading="lazy"
+              />
+              <div class="footer-brand__text">
+                <span class="footer-brand__name">Lumencat</span>
+                <span class="footer-brand__tagline">
+                  Webdesign. Automationen. KI.
+                </span>
+              </div>
+            </a>
+            <p class="footer-brand__description">
+              Moderne Websites, n8n-Workflows und smarte Assistenten.
+            </p>
+          </div>
+
+          <div class="footer-col">
+            <h3 class="footer-heading">Navigation</h3>
+            <ul class="footer-links">
+              <li><a href="index.html#leistungen">Leistungen</a></li>
+              <li><a href="index.html#projekte">Projekte</a></li>
+              <li><a href="shop.html">Pakete & Preise</a></li>
+              <li><a href="blog.html">Blog</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3 class="footer-heading">Kontakt</h3>
+            <ul class="footer-links footer-links--contact">
+              <li>
+                <a href="mailto:hello@lumencat.de">hello@lumencat.de</a>
+              </li>
+              <li>
+                <a href="tel:+4915226580980">+49 1522 6580980</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="site-footer__bottom">
+          <p>&copy; 2025 Lumencat. Alle Rechte vorbehalten.</p>
+          <nav class="footer-meta">
+            <a href="impressum.html">Impressum</a>
+            <a href="datenschutz.html">Datenschutz</a>
+          </nav>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script
+      defer
+      data-domain="lumencat.de"
+      src="https://plausible.io/js/script.js"
+    ></script>
+  </body>
+</html>
