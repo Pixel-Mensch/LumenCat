@@ -19,25 +19,55 @@ function minifyCSS(css) {
   );
 }
 
-// Read CSS file
-const cssPath = path.join(__dirname, "..", "css", "styles.css");
-const minPath = path.join(__dirname, "..", "css", "styles.min.css");
+// Resolve CSS imports and inline them
+function resolveImports(cssContent, baseDir) {
+  return cssContent.replace(
+    /@import\s+["']([^"']+)["'];?/g,
+    (match, importPath) => {
+      const fullPath = path.join(baseDir, importPath);
 
-console.log("📦 Minifying CSS...");
+      if (!fs.existsSync(fullPath)) {
+        console.warn(`⚠️  Import not found: ${importPath}`);
+        return "";
+      }
 
-const css = fs.readFileSync(cssPath, "utf-8");
-const minified = minifyCSS(css);
+      const importedContent = fs.readFileSync(fullPath, "utf-8");
+      // Recursively resolve nested imports
+      return resolveImports(importedContent, path.dirname(fullPath));
+    }
+  );
+}
 
-// Write minified file
-fs.writeFileSync(minPath, minified, "utf-8");
+// Read main CSS file
+const cssDir = path.join(__dirname, "..", "css");
+const cssPath = path.join(cssDir, "styles.css");
+const minPath = path.join(cssDir, "styles.min.css");
 
-const originalSize = (css.length / 1024).toFixed(2);
-const minifiedSize = (minified.length / 1024).toFixed(2);
-const savings = (((css.length - minified.length) / css.length) * 100).toFixed(
-  1
-);
+console.log("📦 Minifying modular CSS...");
 
-console.log(`✅ CSS minifiziert: ${minPath}`);
-console.log(`📊 Original: ${originalSize} KB`);
-console.log(`📊 Minified: ${minifiedSize} KB`);
-console.log(`💾 Ersparnis: ${savings}%`);
+try {
+  // Read and resolve all imports
+  const css = fs.readFileSync(cssPath, "utf-8");
+  const resolvedCSS = resolveImports(css, cssDir);
+
+  // Minify the complete CSS
+  const minified = minifyCSS(resolvedCSS);
+
+  // Write minified file
+  fs.writeFileSync(minPath, minified, "utf-8");
+
+  const originalSize = (resolvedCSS.length / 1024).toFixed(2);
+  const minifiedSize = (minified.length / 1024).toFixed(2);
+  const savings = (
+    ((resolvedCSS.length - minified.length) / resolvedCSS.length) *
+    100
+  ).toFixed(1);
+
+  console.log(`✅ CSS minifiziert: ${minPath}`);
+  console.log(`📊 Original: ${originalSize} KB`);
+  console.log(`📊 Minified: ${minifiedSize} KB`);
+  console.log(`💾 Ersparnis: ${savings}%`);
+} catch (error) {
+  console.error("❌ Fehler beim Minifizieren:", error.message);
+  process.exit(1);
+}
