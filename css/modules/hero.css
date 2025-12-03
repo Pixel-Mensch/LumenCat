@@ -1,0 +1,189 @@
+/* Lumencat – Hero Section Styles */
+
+.hero {
+  position: relative;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4.5rem 1.5rem 3rem;
+  background-image: url("../../Bilder/HeroMain.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+      circle at top,
+      rgba(20, 248, 255, 0.16),
+      transparent 60%
+    ),
+    radial-gradient(circle at bottom, rgba(138, 43, 255, 0.4), transparent 65%),
+    rgba(0, 0, 0, 0.7);
+}
+
+body.theme-light .hero__overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(247, 250, 255, 0.12),
+    rgba(247, 250, 255, 0.28)
+  );
+}
+
+/* Hero background image via <picture> */
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  display: block;
+}
+
+.hero__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero__inner {
+  position: relative;
+  max-width: 1040px;
+  width: 100%;
+  z-index: 1;
+}
+
+.hero__content {
+  max-width: 540px;
+}
+
+.hero__kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.75rem;
+  color: var(--color-accent-cyan);
+  margin: 0 0 0.75rem;
+}
+
+.hero__title {
+  font-size: clamp(2.1rem, 4vw, 3.1rem);
+  line-height: 1.1;
+  margin: 0 0 1rem;
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+}
+
+.hero__subtitle {
+  margin: 0 0 1.5rem;
+  color: var(--color-text-soft);
+  max-width: 36rem;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.hero__note {
+  font-size: 0.8rem;
+  color: var(--color-text-soft);
+}
+
+/* Small Hero Variant */
+.hero--small {
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero--small .hero__title {
+  font-size: 2.5rem;
+}
+
+.hero--small .hero__subtitle {
+  font-size: 1.1rem;
+  max-width: 600px;
+}
+
+/* Shop Hero */
+.shop-hero {
+  text-align: center;
+}
+
+.shop-hero__inner {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.shop-hero__kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.75rem;
+  color: var(--color-accent-cyan);
+  margin-bottom: 0.75rem;
+}
+
+.shop-hero__title {
+  font-size: clamp(1.9rem, 3vw, 2.6rem);
+  margin: 0 0 1rem;
+}
+
+.shop-hero__lead {
+  margin: 0 auto 1.75rem;
+  max-width: 640px;
+  color: var(--color-text-soft);
+}
+
+.shop-hero__actions {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.9rem;
+}
+
+.shop-hero__note {
+  font-size: 0.8rem;
+  color: var(--color-text-soft);
+}
+
+/* Responsive */
+@media (min-width: 720px) {
+  .hero {
+    min-height: 80vh;
+  }
+}
+
+@media (min-width: 1200px) {
+  .hero__inner {
+    max-width: 1400px;
+  }
+
+  .hero__content {
+    max-width: 720px;
+  }
+
+  .hero__title {
+    font-size: 3.5rem;
+  }
+
+  .hero__subtitle {
+    font-size: 1.25rem;
+    line-height: 1.7;
+  }
+}
+
+@media (min-width: 1600px) {
+  .hero {
+    min-height: 85vh;
+    padding: 5rem 3rem 3.5rem;
+  }
+
+  .hero__inner {
+    max-width: 1600px;
+  }
+}

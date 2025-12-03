@@ -1,0 +1,75 @@
+/* Lumencat – Form Styles */
+
+.contact-form {
+  max-width: 560px;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.form-row--hidden {
+  display: none;
+}
+
+.form-row label {
+  font-size: 0.85rem;
+  margin-bottom: 0.25rem;
+  color: var(--color-text-soft);
+}
+
+.form-row input,
+.form-row textarea,
+.form-row select {
+  border-radius: 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(5, 6, 16, 0.96);
+  color: var(--color-text);
+  padding: 0.6rem 0.75rem;
+  font: inherit;
+  transition: border-color var(--transition-base),
+    box-shadow var(--transition-base);
+}
+
+body.theme-light .form-row input,
+body.theme-light .form-row textarea,
+body.theme-light .form-row select {
+  background: var(--color-surface);
+  border-color: rgba(0, 0, 0, 0.14);
+}
+
+.form-row input:focus,
+.form-row textarea:focus,
+.form-row select:focus {
+  outline: none;
+  border-color: var(--color-accent-cyan);
+  box-shadow: 0 0 0 1px rgba(25, 247, 255, 0.3);
+}
+
+.contact-form__hint {
+  font-size: 0.8rem;
+  color: var(--color-text-soft);
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+.contact-form__button {
+  width: 100%;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+/* Contact Section Specific Overrides */
+.section--contact .form-row input,
+.section--contact .form-row textarea,
+.section--contact .form-row select {
+  background: rgba(0, 0, 0, 0.85);
+}
+
+body.theme-light .section--contact .form-row input,
+body.theme-light .section--contact .form-row textarea,
+body.theme-light .section--contact .form-row select {
+  background: rgba(255, 255, 255, 0.96);
+}

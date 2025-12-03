@@ -1,0 +1,217 @@
+/* Lumencat – Card Components */
+
+.card {
+  background: rgba(3, 4, 14, 0.9);
+  border-radius: 1.2rem;
+  padding: 1.5rem 1.4rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 18px rgba(0, 0, 0, 0.8);
+}
+
+body.theme-light .card {
+  background: var(--color-surface);
+  border-color: rgba(0, 0, 0, 0.06);
+}
+
+.card h3 {
+  margin-top: 0;
+  margin-bottom: 0.4rem;
+}
+
+/* Desktop Optimization */
+@media (min-width: 1200px) {
+  .card {
+    padding: 2.5rem 2rem;
+  }
+
+  .card h3 {
+    font-size: 1.5rem;
+  }
+
+  .card p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+}
+
+/* Legal Card (nested sections) */
+.legal-card .legal-section + .legal-section {
+  margin-top: 1.1rem;
+}
+
+.legal-card h2 {
+  margin-top: 0.2rem;
+  margin-bottom: 0.4rem;
+}
+
+/* Project Cards */
+.project-card {
+  background: rgba(5, 6, 18, 0.95);
+  border-radius: 1.5rem;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+body.theme-light .project-card {
+  background: var(--color-surface);
+}
+
+.project-card__image {
+  height: 160px;
+  background-size: cover;
+  background-position: center;
+  display: block;
+  text-decoration: none;
+  transition: opacity var(--transition-slow);
+}
+
+.project-card__image:hover {
+  opacity: 0.9;
+}
+
+.project-card__image--placeholder {
+  background-image: url("../../Bilder/Hintergrund.png");
+  filter: saturate(1.5);
+}
+
+.project-card__image img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+}
+
+.project-card__body {
+  padding: 1.2rem 1.3rem 1rem;
+}
+
+.project-card__tag {
+  font-size: 0.78rem;
+  opacity: 0.8;
+  margin-bottom: 1rem;
+}
+
+.project-card__links {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+/* Process Step Cards */
+.process-step {
+  position: relative;
+  background: rgba(3, 4, 14, 0.92);
+  border-radius: 1.4rem;
+  padding: 1.5rem 1.4rem 1.4rem 1.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+body.theme-light .process-step {
+  background: var(--color-surface);
+  border-color: rgba(10, 10, 30, 0.12);
+}
+
+.process-step__badge {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  width: 26px;
+  height: 26px;
+  border-radius: var(--radius-full);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 600;
+  background: linear-gradient(
+    135deg,
+    var(--color-accent-cyan),
+    var(--color-accent-purple)
+  );
+  color: #050509;
+  box-shadow: var(--shadow-neon);
+}
+
+.process-step h3 {
+  margin-top: 0;
+  margin-bottom: 0.4rem;
+  padding-left: 1.9rem;
+}
+
+.process-step p {
+  margin: 0;
+  padding-left: 1.9rem;
+  color: var(--color-text-soft);
+}
+
+/* Why Cards */
+.why-card {
+  background: rgba(3, 4, 14, 0.9);
+  border-radius: 1.4rem;
+  padding: 1.6rem 1.4rem;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 0 22px rgba(0, 0, 0, 0.75);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+body.theme-light .why-card {
+  background: var(--color-surface);
+  border-color: rgba(0, 0, 0, 0.06);
+}
+
+.why-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.4rem;
+}
+
+.why-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 28px rgba(25, 247, 255, 0.32);
+}
+
+/* Service Cards */
+.service-card {
+  background: rgba(3, 4, 14, 0.9);
+  border-radius: 1.4rem;
+  padding: 2rem 1.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+body.theme-light .service-card {
+  background: var(--color-surface);
+  border-color: rgba(0, 0, 0, 0.06);
+}
+
+.service-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+  font-size: 1.5rem;
+}
+
+.service-features {
+  list-style: none;
+  padding: 0;
+  margin: 1.2rem 0;
+}
+
+.service-features li {
+  padding: 0.4rem 0;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+.service-card .btn {
+  margin-top: 1rem;
+}
+
+/* Reveal Effect on Cards */
+.card.reveal,
+.project-card.reveal {
+  transform: translateY(22px);
+}
+
+.card.reveal.reveal--visible,
+.project-card.reveal.reveal--visible {
+  transform: translateY(0);
+  box-shadow: 0 0 18px rgba(0, 0, 0, 0.8);
+}

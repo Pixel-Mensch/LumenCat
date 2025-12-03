@@ -1,0 +1,59 @@
+/* Lumencat – CSS Custom Properties & Theme Variables */
+
+:root {
+  /* Colors – Dark Theme (Default) */
+  --color-bg: #000000;
+  --color-bg-soft: #090914;
+  --color-surface: #111322;
+
+  --color-text: #eaf2ff;
+  --color-text-soft: #a5b0c7;
+
+  --color-accent-cyan: #19f7ff;
+  --color-accent-purple: #8a2bff;
+
+  /* Effects */
+  --shadow-neon: 0 0 18px rgba(25, 247, 255, 0.35),
+    0 0 32px rgba(138, 43, 255, 0.4);
+
+  /* Spacing */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+
+  /* Border Radius */
+  --radius-sm: 0.5rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.5rem;
+  --radius-full: 999px;
+
+  /* Transitions */
+  --transition-fast: 0.12s ease;
+  --transition-base: 0.16s ease;
+  --transition-slow: 0.3s ease;
+  --transition-smooth: 520ms cubic-bezier(0.22, 0.8, 0.22, 1);
+}
+
+/* Light Mode Theme Variables */
+:root.theme-light {
+  --color-bg: #f7faff;
+  --color-bg-soft: #e5eaf3;
+  --color-surface: #ffffff;
+
+  --color-text: #161622;
+  --color-text-soft: #4a5060;
+}
+
+/* Fallback für html.theme-light (Kompatibilität mit bestehendem Code) */
+html.theme-light {
+  --color-bg: #f7faff;
+  --color-bg-soft: #e5eaf3;
+  --color-surface: #ffffff;
+
+  --color-text: #161622;
+  --color-text-soft: #4a5060;
+}

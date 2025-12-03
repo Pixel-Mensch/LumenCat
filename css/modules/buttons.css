@@ -1,0 +1,70 @@
+/* Lumencat – Button Styles */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--radius-full);
+  font-size: 0.9rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform var(--transition-fast),
+    box-shadow var(--transition-base), background var(--transition-base),
+    border-color var(--transition-base);
+  font-weight: 500;
+}
+
+/* Primary Button */
+.btn--primary {
+  background: linear-gradient(
+    135deg,
+    var(--color-accent-purple),
+    var(--color-accent-cyan)
+  );
+  color: #050509;
+  box-shadow: var(--shadow-neon);
+  font-weight: 600;
+}
+
+.btn--primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0 24px rgba(25, 247, 255, 0.6);
+}
+
+/* Ghost Button */
+.btn--ghost {
+  border-color: rgba(255, 255, 255, 0.3);
+  color: var(--color-text);
+  background: rgba(0, 0, 0, 0.35);
+}
+
+body.theme-light .btn--ghost {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.btn--ghost:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-1px);
+}
+
+/* Small Button Variant */
+.btn--small {
+  font-size: 0.85rem;
+  padding: 0.4rem 0.8rem;
+}
+
+/* CTA Button (larger) */
+.btn--cta {
+  padding: 0.8rem 1.4rem;
+  font-size: 1rem;
+  border-radius: var(--radius-lg);
+}
+
+/* Full Width Button */
+.btn--full {
+  width: 100%;
+  justify-content: center;
+}
