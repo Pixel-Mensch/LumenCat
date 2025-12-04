@@ -1,6 +1,6 @@
 {
   "name": "lumencat_site",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Static Lumencat prototype site - helper scripts for asset optimization",
   "scripts": {
     "img:convert": "node scripts/convert-images.js",
