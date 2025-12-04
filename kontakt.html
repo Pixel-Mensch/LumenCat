@@ -31,7 +31,7 @@
       name="twitter:description"
       content="Starte dein Projekt – Websites, Automationen & KI. Kurz schreiben, loslegen."
     />
-    <link rel="stylesheet" href="css/styles.min.css" />
+    <link rel="stylesheet" href="css/styles.min.css?v=1.0.1" />
     <script>
       (function () {
         try {
@@ -107,6 +107,9 @@
             method="POST"
             novalidate
           >
+            <!-- CSRF Protection Token -->
+            <input type="hidden" id="csrf_token" name="csrf_token" value="" />
+
             <!-- ich nutze dieses Feld als Spam-Honeypot: echte Nutzer sehen es nicht -->
             <div class="form-row form-row--hidden">
               <label for="website">Bitte dieses Feld nicht ausfüllen</label>
@@ -204,8 +207,9 @@
               </div>
             </a>
             <p class="footer-brand__description">
-              Moderne Websites, n8n-Workflows und smarte Assistenten. Klarer
-              Code, ehrliche Beratung, wenig Blabla.
+              Moderne Websites, n8n Workflows und KI Assistenten für
+              Selbstständige und kleine Unternehmen. Klarer Code, ehrliche
+              Beratung, wenig Blabla.
             </p>
           </div>
 
@@ -219,7 +223,6 @@
                 <a href="index.html#automationen">Automationen &amp; KI</a>
               </li>
               <li><a href="shop.html">Pakete &amp; Preise</a></li>
-              <li><a href="kontakt.html">Kontakt</a></li>
             </ul>
           </div>
 
@@ -269,7 +272,20 @@
       </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script src="js/main.js?v=1.0.1"></script>
+    <script>
+      // CSRF Token laden beim Seitenaufruf
+      (function () {
+        fetch("scripts/csrf-token.php")
+          .then((response) => response.json())
+          .then((data) => {
+            if (data.success && data.csrf_token) {
+              document.getElementById("csrf_token").value = data.csrf_token;
+            }
+          })
+          .catch((err) => console.error("CSRF token load failed:", err));
+      })();
+    </script>
     <script
       defer
       data-domain="lumencat.de"
