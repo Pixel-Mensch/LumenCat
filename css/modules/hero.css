@@ -26,11 +26,13 @@
 }
 
 body.theme-light .hero__overlay {
-  background: linear-gradient(
-    to bottom,
-    rgba(247, 250, 255, 0.12),
-    rgba(247, 250, 255, 0.28)
-  );
+  background: radial-gradient(
+      circle at top,
+      rgba(138, 43, 255, 0.15),
+      transparent 50%
+    ),
+    radial-gradient(circle at bottom, rgba(25, 247, 255, 0.12), transparent 60%),
+    rgba(0, 0, 0, 0.45);
 }
 
 /* Hero background image via <picture> */
@@ -67,6 +69,11 @@ body.theme-light .hero__overlay {
   margin: 0 0 0.75rem;
 }
 
+body.theme-light .hero__kicker {
+  color: var(--color-accent-purple);
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8);
+}
+
 .hero__title {
   font-size: clamp(2.1rem, 4vw, 3.1rem);
   line-height: 1.1;
@@ -74,10 +81,20 @@ body.theme-light .hero__overlay {
   text-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
 }
 
+body.theme-light .hero__title {
+  color: var(--color-text);
+  text-shadow: 0 2px 4px rgba(255, 255, 255, 0.9), 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
 .hero__subtitle {
   margin: 0 0 1.5rem;
   color: var(--color-text-soft);
   max-width: 36rem;
+}
+
+body.theme-light .hero__subtitle {
+  color: var(--color-text-soft);
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
 }
 
 .hero__actions {
@@ -90,6 +107,11 @@ body.theme-light .hero__overlay {
 .hero__note {
   font-size: 0.8rem;
   color: var(--color-text-soft);
+}
+
+body.theme-light .hero__note {
+  color: var(--color-text-soft);
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6);
 }
 
 /* Small Hero Variant */
