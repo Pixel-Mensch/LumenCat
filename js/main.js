@@ -54,7 +54,12 @@ document.addEventListener("DOMContentLoaded", () => {
       const isCurrentlyLight = body.classList.contains("theme-light");
       const nextTheme = isCurrentlyLight ? "dark" : "light";
       applyTheme(nextTheme);
-      window.localStorage.setItem("lumencat-theme", nextTheme);
+      try {
+        window.localStorage.setItem("lumencat-theme", nextTheme);
+      } catch (e) {
+        // Fehler ignorieren (z.B. Private Mode, voller Speicher)
+        console.warn("Theme konnte nicht gespeichert werden:", e);
+      }
     });
   }
 
@@ -119,18 +124,22 @@ document.addEventListener("DOMContentLoaded", () => {
   // -----------------------------
   const hero = document.querySelector(".hero");
   if (hero && !prefersReducedMotion) {
-    let ticking = false;
-    window.addEventListener("scroll", () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          const scrollY = window.scrollY || window.pageYOffset;
-          const offset = scrollY * 0.05;
-          hero.style.backgroundPosition = `center calc(50% + ${offset}px)`;
-          ticking = false;
-        });
-        ticking = true;
-      }
-    });
+    const heroBg = hero.querySelector(".hero__bg img");
+    if (heroBg) {
+      let ticking = false;
+      window.addEventListener("scroll", () => {
+        if (!ticking) {
+          window.requestAnimationFrame(() => {
+            const scrollY = window.scrollY || window.pageYOffset;
+            // Parallax: Starker Effekt (0.7 = 70% der Scroll-Geschwindigkeit)
+            const offset = scrollY * 0.7;
+            heroBg.style.transform = `translateY(${offset}px)`;
+            ticking = false;
+          });
+          ticking = true;
+        }
+      });
+    }
   }
 
   // --- Kontaktformular-Handling ---
@@ -138,10 +147,53 @@ document.addEventListener("DOMContentLoaded", () => {
   const contactHint = document.getElementById("contactHint");
 
   if (contactForm && contactHint) {
+    // CSRF-Token beim Laden der Seite holen
+    const loadCsrfToken = async () => {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 5000); // 5s Timeout
+
+      try {
+        const response = await fetch("scripts/csrf-token.php", {
+          signal: controller.signal,
+        });
+        clearTimeout(timeoutId);
+        const data = await response.json();
+
+        if (data.success && data.csrf_token) {
+          const csrfInput = document.getElementById("csrf_token");
+          if (csrfInput) {
+            csrfInput.value = data.csrf_token;
+          }
+        } else {
+          console.error("CSRF token konnte nicht geladen werden");
+        }
+      } catch (error) {
+        if (error.name === "AbortError") {
+          console.error("CSRF token load timed out");
+        } else {
+          console.error("CSRF token load failed:", error);
+        }
+      }
+    };
+
+    // Token initial laden
+    loadCsrfToken();
+
     contactForm.addEventListener("submit", async (event) => {
       // Ich verhindere den normalen Formular-Submit,
       // damit ich alles schön per fetch machen kann.
       event.preventDefault();
+
+      // Client-seitige Validierung
+      const emailInput = document.getElementById("email");
+      const email = emailInput ? emailInput.value : "";
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (email && !emailRegex.test(email)) {
+        contactHint.textContent = "Bitte gib eine gültige E-Mail-Adresse ein.";
+        contactHint.style.color = "#ff9494";
+        return;
+      }
 
       contactHint.textContent = "Ich sende deine Nachricht...";
       contactHint.style.color = ""; // Standardfarbe
@@ -162,6 +214,8 @@ document.addEventListener("DOMContentLoaded", () => {
           contactHint.style.color = "#19f7ff";
           // Formular leeren
           contactForm.reset();
+          // Neues CSRF-Token holen (One-Time-Use) - warten bis geladen
+          await loadCsrfToken();
         } else {
           contactHint.textContent =
             data.message ||

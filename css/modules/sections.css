@@ -82,6 +82,54 @@ body.theme-light .section__header p {
   text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6);
 }
 
+/* Pricing Teaser Card */
+.pricing-teaser-card {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem;
+  border-radius: 24px;
+  background: rgba(4, 10, 25, 0.9);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 20px rgba(25, 247, 255, 0.15);
+}
+
+body.theme-light .pricing-teaser-card {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(138, 43, 255, 0.15);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08), 0 0 16px rgba(138, 43, 255, 0.1);
+}
+
+.pricing-teaser-card h2 {
+  margin: 0 0 1rem;
+  font-size: 1.8rem;
+  color: var(--color-accent-cyan);
+}
+
+body.theme-light .pricing-teaser-card h2 {
+  color: var(--color-accent-purple);
+}
+
+.pricing-teaser-card p {
+  margin: 0 0 2rem;
+  color: var(--color-text-soft);
+  line-height: 1.7;
+}
+
+.pricing-teaser-card .btn {
+  display: inline-block;
+}
+
+@media (min-width: 768px) {
+  .pricing-teaser-card {
+    padding: 3rem 3.5rem;
+  }
+
+  .pricing-teaser-card h2 {
+    font-size: 2rem;
+  }
+}
+
 /* CTA Section */
 .section--cta {
   position: relative;

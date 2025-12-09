@@ -1,5 +1,24 @@
 /* Lumencat – Utility Classes */
 
+/* Skip Link für Accessibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--color-accent-cyan);
+  color: #000;
+  padding: 0.75rem 1.25rem;
+  text-decoration: none;
+  font-weight: 600;
+  z-index: 100;
+  border-radius: 0 0 var(--radius-md) 0;
+  box-shadow: var(--shadow-neon);
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
 /* Spacing Utilities */
 .mt-0 {
   margin-top: 0;

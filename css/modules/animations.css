@@ -42,88 +42,87 @@
   transform: translateY(12px);
 }
 
-/* CTA Effects */
-.section--cta.reveal--visible .cta-shell::before {
-  content: "";
-  position: absolute;
-  left: 0%;
-  right: 5%;
-  top: 0;
-  height: 2px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    var(--color-accent-cyan),
-    var(--color-accent-purple),
-    transparent
-  );
-  box-shadow: 0 0 12px rgba(25, 247, 255, 0.6);
-  opacity: 0;
-  pointer-events: none;
-  border-radius: var(--radius-full);
-  animation: ctaScan 4s linear infinite;
-}
-
-@keyframes ctaScan {
-  0% {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  12% {
-    opacity: 1;
-  }
-  88% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-}
-
-/* Pulsing CTA Button */
-.section--cta .btn--primary {
-  animation: ctaPulse 4s ease-in-out infinite;
-}
-
-.section--cta .btn--primary:hover {
-  animation-play-state: paused;
-  transform: translateY(-1px);
-}
-
-@keyframes ctaPulse {
-  0%,
-  60%,
-  100% {
-    transform: scale(1);
-    box-shadow: var(--shadow-neon);
-  }
-  30% {
-    transform: scale(1.03);
-    box-shadow: 0 0 22px rgba(25, 247, 255, 0.75),
-      0 0 40px rgba(138, 43, 255, 0.85);
-  }
-}
-
-/* Responsive Adjustments */
-@media (max-width: 600px) {
-  .section--cta.reveal--visible::after {
-    right: 4%;
-  }
-
+/* Animations nur bei keiner Motion-Präferenz */
+@media (prefers-reduced-motion: no-preference) {
+  /* CTA Effects */
   .section--cta.reveal--visible .cta-shell::before {
-    left: -30%;
-    width: 60%;
+    content: "";
+    position: absolute;
+    left: 0%;
+    right: 5%;
+    top: 0;
+    height: 2px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      var(--color-accent-cyan),
+      var(--color-accent-purple),
+      transparent
+    );
+    box-shadow: 0 0 12px rgba(25, 247, 255, 0.6);
+    opacity: 0;
+    pointer-events: none;
+    border-radius: var(--radius-full);
+    animation: ctaScan 4s linear infinite;
+  }
+
+  @keyframes ctaScan {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    12% {
+      opacity: 1;
+    }
+    88% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+  }
+
+  /* Pulsing CTA Button */
+  .section--cta .btn--primary {
+    animation: ctaPulse 4s ease-in-out infinite;
+  }
+
+  .section--cta .btn--primary:hover {
+    animation-play-state: paused;
+    transform: translateY(-1px);
+  }
+
+  @keyframes ctaPulse {
+    0%,
+    60%,
+    100% {
+      transform: scale(1);
+      box-shadow: var(--shadow-neon);
+    }
+    30% {
+      transform: scale(1.03);
+      box-shadow: 0 0 22px rgba(25, 247, 255, 0.75),
+        0 0 40px rgba(138, 43, 255, 0.85);
+    }
   }
 }
 
-/* Reduced Motion Support */
+/* Fallback für reduced motion */
 @media (prefers-reduced-motion: reduce) {
+  .section--cta.reveal--visible .cta-shell::before {
+    animation: none;
+    opacity: 0.3;
+  }
+
+  .section--cta .btn--primary {
+    animation: none;
+  }
+
   .reveal,
   .reveal-fade,
   .card,
-  .project-card,
-  .section--cta .btn--primary {
+  .project-card {
     animation: none;
     transition: none;
   }

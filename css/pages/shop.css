@@ -1,5 +1,38 @@
 /* Lumencat – Shop Page Styles */
 
+/* Shop Hero Glass Box */
+.shop-hero__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 3rem 3.5rem;
+  border-radius: 24px;
+  background: rgba(4, 10, 25, 0.78);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  text-align: center;
+}
+
+body.theme-light .shop-hero__inner {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+/* Shop Hero Text Shadows */
+.shop-hero__title,
+.shop-hero__lead {
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.65);
+}
+
+body.theme-light .shop-hero__title,
+body.theme-light .shop-hero__lead {
+  text-shadow: 0 2px 8px rgba(255, 255, 255, 0.9);
+}
+
 /* Pricing Cards */
 .pricing-grid {
   display: grid;
@@ -189,25 +222,50 @@ body.theme-light .bot-card {
   border-color: rgba(25, 247, 255, 0.6);
 }
 
+/* Hosting Section */
+.hosting-inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hosting-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.hosting-header h2 {
+  margin-bottom: 0.5rem;
+}
+
+.hosting-header p {
+  color: var(--color-text-soft);
+}
+
 /* Hosting Card */
 .hosting-card {
   background: rgba(3, 4, 14, 0.92);
   border-radius: 1.4rem;
+  text-align: center;
   padding: 1.6rem 1.5rem;
   border: 1px solid rgba(255, 255, 255, 0.06);
-  max-width: 640px;
 }
 
 body.theme-light .hosting-card {
   background: var(--color-surface);
 }
 
+.hosting-card__title {
+  margin-bottom: 0.5rem;
+}
+
 .hosting-card__price {
-  margin: 0.2rem 0 0.6rem;
+  font-size: 1.5rem;
+  margin: 0.5rem 0 1rem;
   font-weight: 600;
 }
 
 .hosting-card__list {
+  text-align: left;
   margin: 0;
   padding-left: 1.1rem;
   color: var(--color-text-soft);
@@ -215,9 +273,13 @@ body.theme-light .hosting-card {
 }
 
 .hosting-card__hint {
-  margin-top: 0.8rem;
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: rgba(25, 247, 255, 0.05);
+  border-radius: 0.5rem;
   font-size: 0.85rem;
   color: var(--color-text-soft);
+  text-align: left;
 }
 
 /* Service Grid (always included) */

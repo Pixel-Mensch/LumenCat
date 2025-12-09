@@ -1,14 +1,16 @@
 // Lumencat Service Worker - PWA Support
-const CACHE_NAME = "lumencat-v1";
+const CACHE_NAME = "lumencat-v1.0.3";
 const urlsToCache = [
   "/",
   "/index.html",
   "/shop.html",
   "/kontakt.html",
-  "/blog.html",
-  "/css/styles.css",
-  "/js/main.js",
-  "/Bilder/lumencatLogo.png",
+  "/insights.html",
+  "/impressum.html",
+  "/datenschutz.html",
+  "/css/styles.min.css",
+  "/js/main.min.js",
+  "/Bilder/logo.svg",
   "/Bilder/optimized/HeroMain-800.avif",
   "/Bilder/optimized/HeroMain-480.avif",
 ];
@@ -43,6 +45,49 @@ self.addEventListener("activate", (event) => {
 
 // Fetch event - serve from cache, fallback to network
 self.addEventListener("fetch", (event) => {
+  const url = new URL(event.request.url);
+
+  // Development mode: Network-first strategy for localhost
+  const isDevelopment =
+    event.request.url.includes("localhost") ||
+    event.request.url.includes("127.0.0.1");
+
+  if (isDevelopment) {
+    // Network-first: Always fetch fresh content in development
+    event.respondWith(
+      fetch(event.request).catch(() => {
+        return caches.match(event.request);
+      })
+    );
+    return;
+  }
+
+  // Network-first für versionierte Assets (styles.min.css?v=X, main.min.js?v=X)
+  if (
+    url.pathname.includes("styles.min.css") ||
+    url.pathname.includes("main.min.js")
+  ) {
+    event.respondWith(
+      fetch(event.request)
+        .then((response) => {
+          if (response && response.ok) {
+            // Cache nur erfolgreiche Responses
+            const responseToCache = response.clone();
+            caches.open(CACHE_NAME).then((cache) => {
+              cache.put(event.request, responseToCache);
+            });
+          }
+          return response;
+        })
+        .catch(() => {
+          // Fallback zu gecachter Version
+          return caches.match(event.request);
+        })
+    );
+    return;
+  }
+
+  // Production mode: Cache-first strategy für andere Assets
   event.respondWith(
     caches.match(event.request).then((response) => {
       // Cache hit - return cached response
