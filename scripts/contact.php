@@ -1,8 +1,35 @@
-<?php
+﻿<?php
 // Lumencat – Kontaktformular mit Environment Variables & CSRF Protection
 
 session_start();
 header('Content-Type: application/json; charset=utf-8');
+
+// Rate Limiting: Max 3 Anfragen pro Minute
+$now = time();
+$rateLimitWindow = 60; // 60 Sekunden
+$maxRequests = 3;      // Max 3 Anfragen pro Minute
+
+if (!isset($_SESSION['request_count'])) {
+    $_SESSION['request_count'] = 0;
+    $_SESSION['request_window_start'] = $now;
+}
+
+if ($now - $_SESSION['request_window_start'] > $rateLimitWindow) {
+    // Neues Fenster
+    $_SESSION['request_count'] = 0;
+    $_SESSION['request_window_start'] = $now;
+}
+
+$_SESSION['request_count']++;
+
+if ($_SESSION['request_count'] > $maxRequests) {
+    http_response_code(429);
+    echo json_encode([
+        'success' => false,
+        'message' => 'Zu viele Anfragen. Bitte versuche es in einer Minute erneut.'
+    ]);
+    exit;
+}
 
 // Load environment variables from .env file
 function loadEnv($path) {
@@ -43,6 +70,8 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 // CSRF-Protection: Token validieren
 $csrfToken = $_POST['csrf_token'] ?? '';
 if (empty($_SESSION['csrf_token']) || $csrfToken !== $_SESSION['csrf_token']) {
+    // Token erneuern auch bei Fehler (Replay-Attack verhindern)
+    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
     echo json_encode([
         'success' => false,
         'message' => 'Sicherheitsüberprüfung fehlgeschlagen. Bitte lade die Seite neu und versuche es erneut.'
@@ -76,6 +105,12 @@ if ($name === '') {
 if ($email === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
     $errors[] = 'Bitte gib eine gültige E-Mail-Adresse an.';
 }
+
+// Header-Injection verhindern: Prüfe auf Zeilenumbrüche
+if (preg_match("/[\r\n]/", $name) || preg_match("/[\r\n]/", $email)) {
+    $errors[] = 'Ungültige Zeichen in Name oder E-Mail erkannt.';
+}
+
 if ($message === '') {
     $errors[] = 'Bitte schreib mir kurz, worum es geht.';
 }
@@ -87,6 +122,10 @@ if (!empty($errors)) {
     ]);
     exit;
 }
+
+// Bereinigung für E-Mail-Header (zusätzliche Sicherheit)
+$cleanName = preg_replace('/[^a-zA-Z0-9äöüÄÖÜß\s\-]/', '', $name);
+$cleanEmail = $email; // Bereits validiert mit FILTER_VALIDATE_EMAIL
 
 $subject = 'Neue Anfrage über das Kontaktformular (lumencat.de)';
 
@@ -107,7 +146,7 @@ $body = implode("\n", $bodyLines);
 
 $headers   = [
     'From: Lumencat Website <' . $fromEmail . '>',
-    'Reply-To: ' . $name . ' <' . $email . '>',
+    'Reply-To: ' . ($cleanName !== '' ? $cleanName : 'Kontaktformular') . ' <' . $cleanEmail . '>',
     'MIME-Version: 1.0',
     'Content-Type: text/plain; charset=utf-8',
 ];
@@ -146,23 +185,20 @@ if (!empty($n8nWebhookUrl)) {
         $ch = curl_init($n8nWebhookUrl);
         curl_setopt_array($ch, [
             CURLOPT_POST           => true,
-            CURLOPT_RETURNTRANSFER => true, // Geändert: Wir wollen Status prüfen
-            CURLOPT_TIMEOUT        => 3,    // Erhöht: 3 Sekunden für stabilere Verbindung
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_TIMEOUT        => 5,    // Timeout erhöht auf 5 Sekunden
             CURLOPT_HTTPHEADER     => ['Content-Type: application/json'],
             CURLOPT_POSTFIELDS     => $payload,
+            CURLOPT_SSL_VERIFYPEER => true, // SSL-Verifikation aktiviert
+            CURLOPT_SSL_VERIFYHOST => 2,    // Hostname-Check
         ]);
         
-        curl_exec($ch);
+        $response = curl_exec($ch);
         $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
         $curlError = curl_error($ch);
         curl_close($ch);
 
-        // Logging für Debugging (landet in PHP error_log)
-        if ($httpCode !== 200 && $httpCode !== 201) {
-            error_log("Lumencat n8n Webhook fehlgeschlagen: HTTP $httpCode - Error: $curlError");
-        }
-    } else {
-        error_log('Lumencat: cURL ist nicht verfügbar - n8n Webhook wurde NICHT gesendet');
+        // Keine detaillierten Logs in Produktion, um Endpunkte/Fehler nicht zu leaken
     }
 }
 

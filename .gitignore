@@ -1,37 +1,38 @@
-# ==========================================================
-# LumenCat – .gitignore
-# Webdesign • Automationen • KI
-# ==========================================================
+# ========================
+# LumenCat gitignore
+# ========================
 
-# --- Environment Variables (Sicherheit!) ---
+# Env
 .env
-.env.local
-.env.development
-.env.production
 .env.*.local
 
-# --- Dependencies ---
+# Dependencies
 node_modules/
-bower_components/
-package-lock.json
-yarn.lock
-pnpm-lock.yaml
 
-# --- Build Outputs ---
+# Build/Output
 dist/
 build/
 out/
-*.min.css
-*.min.js
 .tmp/
 .temp/
+.cache/
+.parcel-cache/
+.next/
+.nuxt/
+nuxt-dist/
+webpack-stats.json
+css/styles.min.css
+js/main.min.js
+*.map
 
-# --- Bilder (optimierte Versionen nicht versionieren) ---
+# Generated assets
 Bilder/optimized/
-Bilder/*.webp
-Bilder/*.avif
+Bilder/**/*.webp
+Bilder/**/*.avif
+lighthouse-report*.html
+sitemap.xml
 
-# --- Logs ---
+# Logs
 logs/
 *.log
 npm-debug.log*
@@ -40,7 +41,15 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-# --- IDE & Editor ---
+# Tests
+coverage/
+.nyc_output/
+*.lcov
+
+# PHP/Composer
+vendor/
+
+# Editor/OS
 .vscode/
 .idea/
 .history/
@@ -48,67 +57,19 @@ lerna-debug.log*
 *.swp
 *.swo
 *~
-
-# --- Operating System ---
 .DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
 Thumbs.db
+ehthumbs.db
 desktop.ini
 
-# --- Testing & Coverage ---
-coverage/
-.nyc_output/
-*.lcov
-
-# --- Cache ---
-.cache/
-.parcel-cache/
-.next/
-nuxt-dist/
-.nuxt/
-webpack-stats.json
-
-# --- Reports ---
-lighthouse-report.html
-lighthouse-report*.html
-
-# --- PHP ---
-vendor/
-composer.lock
-
-# --- Backup Files ---
+# Backups/Temp
 *.bak
 *.backup
 *.old
 *.orig
-
-# --- Temporary Files ---
 *.tmp
 *.temp
-.env.test
-
-# --- Lock files (falls du später Tools nutzt) ---
-package-lock.json
-yarn.lock
-pnpm-lock.yaml
-
-# --- OS Trash ---
-.Trash/
-$RECYCLE.BIN/
-
-# --- Misc ---
 *.pid
-*.seed
-*.log
-*.sqlite
-*.bak
-*.swp
-*.tmp
 
-# --- Local preview files ---
-*.local
-*.preview
+# Python cache
+__pycache__/

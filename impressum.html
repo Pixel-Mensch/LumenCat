@@ -2,13 +2,46 @@
 <html lang="de">
   <head>
     <meta charset="UTF-8" />
-    <title>Impressum – Lumencat</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Impressum – Lumencat</title>
+    <link rel="icon" type="image/x-icon" href="/Bilder/favicon.ico" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/Bilder/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/Bilder/favicon-16x16.png"
+    />
+    <link rel="icon" type="image/svg+xml" href="Bilder/logo.svg" />
     <meta
       name="description"
       content="Impressum von Lumencat – Webdesign, Automationen & KI."
     />
+    <meta
+      name="robots"
+      content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+    />
+    <link rel="canonical" href="https://lumencat.de/impressum.html" />
+    <meta property="og:title" content="Impressum – Lumencat" />
+    <meta
+      property="og:description"
+      content="Impressum von Lumencat – Webdesign, Automationen & KI."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://lumencat.de/impressum.html" />
+    <meta
+      property="og:image"
+      content="https://lumencat.de/Bilder/android-chrome-512x512.png"
+    />
+    <meta property="og:image:alt" content="Lumencat Logo" />
     <link rel="stylesheet" href="css/styles.min.css?v=1.0.1" />
+    <link rel="preconnect" href="https://plausible.io" crossorigin />
+    <link rel="dns-prefetch" href="https://plausible.io" />
     <script>
       // Prevent Flash of Unstyled/Wrong Theme on load
       (function () {
@@ -23,15 +56,12 @@
     </script>
   </head>
   <body>
-    <header class="site-header">
-      <nav class="nav">
+    <a href="#main" class="skip-link">Zum Hauptinhalt springen</a>
+
+    <header class="site-header" role="banner">
+      <nav class="nav" role="navigation" aria-label="Hauptnavigation">
         <a href="index.html" class="nav__brand">
-          <img
-            src="Bilder/logo.svg"
-            alt="LumenCat Logo"
-            class="nav__logo"
-            loading="lazy"
-          />
+          <img src="Bilder/logo.svg" alt="Lumencat Logo" class="nav__logo" />
           <span class="nav__brand-name">Lumencat</span>
         </a>
 
@@ -45,26 +75,28 @@
           ☰
         </button>
 
-        <div class="nav__links" id="navLinks">
-          <a href="index.html#leistungen">Leistungen</a>
-          <a href="index.html#projekte">Projekte</a>
-          <a href="index.html#automationen">Automationen &amp; KI</a>
-          <a href="kontakt.html">Kontakt</a>
-          <a href="shop.html">Shop</a>
-
-          <button
-            class="theme-toggle"
-            id="themeToggle"
-            type="button"
-            aria-label="Darstellung wechseln"
-          >
-            🌙
-          </button>
-        </div>
+        <ul class="nav__links" id="navLinks">
+          <li><a href="index.html#leistungen">Leistungen</a></li>
+          <li><a href="index.html#projekte">Projekte</a></li>
+          <li><a href="index.html#automationen">Automationen &amp; KI</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li>
+            <button
+              class="theme-toggle"
+              id="themeToggle"
+              type="button"
+              aria-label="Darstellung wechseln"
+              aria-pressed="false"
+            >
+              🌙
+            </button>
+          </li>
+        </ul>
       </nav>
     </header>
 
-    <main>
+    <main id="main" role="main">
       <section class="section section--padded reveal">
         <header class="section__header">
           <h1>Impressum</h1>
@@ -173,8 +205,8 @@
             <a href="index.html" class="footer-brand">
               <img
                 src="Bilder/logo.svg"
-                alt="LumenCat Logo"
-                class="footer-brand__logo"
+                alt="Lumencat Logo"
+                class="footer__logo"
                 loading="lazy"
               />
               <div class="footer-brand__text">
@@ -255,7 +287,7 @@
       </div>
     </footer>
 
-    <script src="js/main.js?v=1.0.1"></script>
+    <script src="js/main.min.js?v=1.0.2"></script>
     <script
       defer
       data-domain="lumencat.de"

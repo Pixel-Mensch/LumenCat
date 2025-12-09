@@ -34,6 +34,11 @@
   box-shadow: 0 0 24px rgba(25, 247, 255, 0.6);
 }
 
+.btn--primary:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
+}
+
 /* Ghost Button */
 .btn--ghost {
   border-color: rgba(255, 255, 255, 0.3);

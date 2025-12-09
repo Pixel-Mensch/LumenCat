@@ -1,9 +1,23 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="de">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kontakt – Lumencat</title>
+    <link rel="icon" type="image/x-icon" href="/Bilder/favicon.ico" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/Bilder/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/Bilder/favicon-16x16.png"
+    />
+    <link rel="icon" type="image/svg+xml" href="Bilder/logo.svg" />
     <meta
       name="description"
       content="Kontakt zu Lumencat: Starte dein Projekt für moderne Websites, Automationen und KI-Assistenten. Schnell, persönlich, transparent."
@@ -22,7 +36,7 @@
     <meta property="og:url" content="https://lumencat.de/kontakt.html" />
     <meta
       property="og:image"
-      content="https://lumencat.de/Bilder/lumencatLogo.png"
+      content="https://lumencat.de/Bilder/android-chrome-512x512.png"
     />
     <meta property="og:image:alt" content="Lumencat Logo" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -30,6 +44,10 @@
     <meta
       name="twitter:description"
       content="Starte dein Projekt – Websites, Automationen & KI. Kurz schreiben, loslegen."
+    />
+    <meta
+      name="twitter:image"
+      content="https://lumencat.de/Bilder/android-chrome-512x512.png"
     />
     <link rel="stylesheet" href="css/styles.min.css?v=1.0.1" />
     <script>
@@ -45,15 +63,12 @@
     </script>
   </head>
   <body>
-    <header class="site-header">
-      <nav class="nav">
+    <a href="#main" class="skip-link">Zum Hauptinhalt springen</a>
+
+    <header class="site-header" role="banner">
+      <nav class="nav" role="navigation" aria-label="Hauptnavigation">
         <a href="index.html" class="nav__brand">
-          <img
-            src="Bilder/logo.svg"
-            alt="LumenCat Logo"
-            class="nav__logo"
-            loading="lazy"
-          />
+          <img src="Bilder/logo.svg" alt="Lumencat Logo" class="nav__logo" />
           <span class="nav__brand-name">Lumencat</span>
         </a>
 
@@ -67,26 +82,28 @@
           ☰
         </button>
 
-        <div class="nav__links" id="navLinks">
-          <a href="index.html#leistungen">Leistungen</a>
-          <a href="index.html#projekte">Projekte</a>
-          <a href="index.html#automationen">Automationen &amp; KI</a>
-          <a href="kontakt.html">Kontakt</a>
-          <a href="shop.html">Shop</a>
-
-          <button
-            class="theme-toggle"
-            id="themeToggle"
-            type="button"
-            aria-label="Darstellung wechseln"
-          >
-            🌙
-          </button>
-        </div>
+        <ul class="nav__links" id="navLinks">
+          <li><a href="index.html#leistungen">Leistungen</a></li>
+          <li><a href="index.html#projekte">Projekte</a></li>
+          <li><a href="index.html#automationen">Automationen &amp; KI</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li>
+            <button
+              class="theme-toggle"
+              id="themeToggle"
+              type="button"
+              aria-label="Darstellung wechseln"
+              aria-pressed="false"
+            >
+              🌙
+            </button>
+          </li>
+        </ul>
       </nav>
     </header>
 
-    <main>
+    <main id="main" role="main">
       <section
         id="kontakt"
         class="section section--padded section--contact reveal"
@@ -107,10 +124,8 @@
             method="POST"
             novalidate
           >
-            <!-- CSRF Protection Token -->
             <input type="hidden" id="csrf_token" name="csrf_token" value="" />
 
-            <!-- ich nutze dieses Feld als Spam-Honeypot: echte Nutzer sehen es nicht -->
             <div class="form-row form-row--hidden">
               <label for="website">Bitte dieses Feld nicht ausfüllen</label>
               <input
@@ -128,6 +143,7 @@
                 id="name"
                 name="name"
                 required
+                autocomplete="name"
                 placeholder="Wie darf ich dich ansprechen?"
               />
             </div>
@@ -139,6 +155,7 @@
                 id="email"
                 name="email"
                 required
+                autocomplete="email"
                 placeholder="Wohin soll ich antworten?"
               />
             </div>
@@ -149,6 +166,7 @@
                 type="tel"
                 id="phone"
                 name="phone"
+                autocomplete="tel"
                 placeholder="Für Rückfragen (optional)"
               />
             </div>
@@ -174,7 +192,13 @@
               ></textarea>
             </div>
 
-            <p class="contact-form__hint" id="contactHint">
+            <p
+              class="contact-form__hint"
+              id="contactHint"
+              role="status"
+              aria-live="polite"
+              aria-atomic="true"
+            >
               Felder mit * sind Pflicht. Deine Daten werden nur zur Bearbeitung
               der Anfrage verwendet.
             </p>
@@ -187,15 +211,14 @@
       </section>
     </main>
 
-    <footer class="site-footer">
+    <footer class="site-footer" role="contentinfo">
       <div class="site-footer__inner">
         <div class="footer-grid">
-          <!-- Brand -->
           <div class="footer-col footer-col--brand">
             <a href="index.html" class="footer-brand">
               <img
                 src="Bilder/logo.svg"
-                alt="LumenCat Logo"
+                alt="Lumencat Logo"
                 class="footer-brand__logo"
                 loading="lazy"
               />
@@ -213,7 +236,6 @@
             </p>
           </div>
 
-          <!-- Navigation -->
           <div class="footer-col">
             <h3 class="footer-heading">Navigation</h3>
             <ul class="footer-links">
@@ -226,7 +248,6 @@
             </ul>
           </div>
 
-          <!-- Leistungen -->
           <div class="footer-col">
             <h3 class="footer-heading">Leistungen</h3>
             <ul class="footer-links">
@@ -238,7 +259,6 @@
             </ul>
           </div>
 
-          <!-- Kontakt -->
           <div class="footer-col">
             <h3 class="footer-heading">Kontakt</h3>
             <ul class="footer-links footer-links--contact">
@@ -272,20 +292,7 @@
       </div>
     </footer>
 
-    <script src="js/main.js?v=1.0.1"></script>
-    <script>
-      // CSRF Token laden beim Seitenaufruf
-      (function () {
-        fetch("scripts/csrf-token.php")
-          .then((response) => response.json())
-          .then((data) => {
-            if (data.success && data.csrf_token) {
-              document.getElementById("csrf_token").value = data.csrf_token;
-            }
-          })
-          .catch((err) => console.error("CSRF token load failed:", err));
-      })();
-    </script>
+    <script src="js/main.min.js?v=1.0.2"></script>
     <script
       defer
       data-domain="lumencat.de"
