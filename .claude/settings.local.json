@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find /c/Users/marck/Desktop/Pixelmensch_Ordnerstruktur/02_WEBSEITEN/Live-Prototypen/lumencat_site -maxdepth 3 -not -path */node_modules/* -not -path */.git/* -type f)",
+      "Bash(grep -E '\\\\.\\(html|css|js|php|json|md|svg|xml|txt\\)$')",
+      "Bash(for f:*)",
+      "Bash(do)",
+      "Bash(sed -i 's|href=\"\"/Bilder/|href=\"\"Bilder/|g; s|href=\"\"/manifest.json\"\"|href=\"\"manifest.json\"\"|g; s|src=\"\"/Bilder/|src=\"\"Bilder/|g; s|href=\"\"/css/|href=\"\"css/|g; s|src=\"\"/js/|src=\"\"js/|g; s|\\\\.register\\(\"\"/sw\\\\.js\"\"\\)|.register\\(\"\"sw.js\"\"\\)|g' \"$f\")",
+      "Bash(done)"
+    ]
+  }
+}
