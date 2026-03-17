@@ -1,13 +1,9 @@
 // Lumencat Service Worker - PWA Support
-const CACHE_NAME = "lumencat-v1.0.3";
+const CACHE_NAME = "lumencat-v1.0.6";
+
 const urlsToCache = [
   "/",
   "/index.html",
-  "/shop.html",
-  "/kontakt.html",
-  "/insights.html",
-  "/impressum.html",
-  "/datenschutz.html",
   "/css/styles.min.css",
   "/js/main.min.js",
   "/Bilder/logo.svg",
@@ -15,7 +11,6 @@ const urlsToCache = [
   "/Bilder/optimized/HeroMain-480.avif",
 ];
 
-// Install event - cache static assets
 self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
@@ -26,7 +21,6 @@ self.addEventListener("install", (event) => {
   self.skipWaiting();
 });
 
-// Activate event - clean old caches
 self.addEventListener("activate", (event) => {
   event.waitUntil(
     caches.keys().then((cacheNames) => {
@@ -36,6 +30,7 @@ self.addEventListener("activate", (event) => {
             console.log("[SW] Deleting old cache:", cacheName);
             return caches.delete(cacheName);
           }
+          return Promise.resolve();
         })
       );
     })
@@ -43,17 +38,38 @@ self.addEventListener("activate", (event) => {
   self.clients.claim();
 });
 
-// Fetch event - serve from cache, fallback to network
 self.addEventListener("fetch", (event) => {
   const url = new URL(event.request.url);
 
-  // Development mode: Network-first strategy for localhost
+  if (event.request.method !== "GET" || url.pathname.startsWith("/scripts/")) {
+    event.respondWith(fetch(event.request));
+    return;
+  }
+
   const isDevelopment =
     event.request.url.includes("localhost") ||
     event.request.url.includes("127.0.0.1");
 
+  // 1) Seitenaufrufe: immer zuerst Netzwerk, Cache nur als Fallback
+  if (event.request.mode === "navigate") {
+    event.respondWith(
+      fetch(event.request)
+        .then((response) => {
+          const responseToCache = response.clone();
+          caches.open(CACHE_NAME).then((cache) => {
+            cache.put(event.request, responseToCache);
+          });
+          return response;
+        })
+        .catch(() => {
+          return caches.match(event.request) || caches.match("/index.html");
+        })
+    );
+    return;
+  }
+
+  // 2) Development: immer Netzwerk zuerst
   if (isDevelopment) {
-    // Network-first: Always fetch fresh content in development
     event.respondWith(
       fetch(event.request).catch(() => {
         return caches.match(event.request);
@@ -62,7 +78,7 @@ self.addEventListener("fetch", (event) => {
     return;
   }
 
-  // Network-first für versionierte Assets (styles.min.css?v=X, main.min.js?v=X)
+  // 3) CSS und JS: Netzwerk zuerst, Cache als Fallback
   if (
     url.pathname.includes("styles.min.css") ||
     url.pathname.includes("main.min.js")
@@ -71,7 +87,6 @@ self.addEventListener("fetch", (event) => {
       fetch(event.request)
         .then((response) => {
           if (response && response.ok) {
-            // Cache nur erfolgreiche Responses
             const responseToCache = response.clone();
             caches.open(CACHE_NAME).then((cache) => {
               cache.put(event.request, responseToCache);
@@ -80,31 +95,26 @@ self.addEventListener("fetch", (event) => {
           return response;
         })
         .catch(() => {
-          // Fallback zu gecachter Version
           return caches.match(event.request);
         })
     );
     return;
   }
 
-  // Production mode: Cache-first strategy für andere Assets
+  // 4) Rest: Cache zuerst, dann Netzwerk
   event.respondWith(
     caches.match(event.request).then((response) => {
-      // Cache hit - return cached response
       if (response) {
         return response;
       }
 
-      // Clone request for network fetch
       const fetchRequest = event.request.clone();
 
       return fetch(fetchRequest).then((response) => {
-        // Check if valid response
         if (!response || response.status !== 200 || response.type !== "basic") {
           return response;
         }
 
-        // Clone response for caching
         const responseToCache = response.clone();
 
         caches.open(CACHE_NAME).then((cache) => {
