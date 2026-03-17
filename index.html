@@ -52,7 +52,7 @@
     />
 
     <!-- PWA Manifest -->
-    <link rel="manifest" href="/manifest.json" />
+    <link rel="manifest" href="manifest.json" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta
@@ -60,23 +60,23 @@
       content="black-translucent"
     />
     <meta name="apple-mobile-web-app-title" content="Lumencat" />
-    <link rel="apple-touch-icon" href="/Bilder/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" href="Bilder/apple-touch-icon.png" />
 
     <title>
       Lumencat – Webdesign, Automationen &amp; KI-Assistenten für Selbstständige
     </title>
-    <link rel="icon" type="image/x-icon" href="/Bilder/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="Bilder/favicon.ico" />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="/Bilder/favicon-32x32.png"
+      href="Bilder/favicon-32x32.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="/Bilder/favicon-16x16.png"
+      href="Bilder/favicon-16x16.png"
     />
     <link rel="icon" type="image/svg+xml" href="Bilder/logo.svg" />
     <link rel="stylesheet" href="css/styles.min.css?v=1.0.1" />
@@ -827,7 +827,7 @@
       if ("serviceWorker" in navigator) {
         window.addEventListener("load", () => {
           navigator.serviceWorker
-            .register("/sw.js")
+            .register("sw.js")
             .then((reg) => console.log("[SW] Registered:", reg.scope))
             .catch((err) => console.log("[SW] Registration failed:", err));
         });
