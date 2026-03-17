@@ -8,8 +8,8 @@
 const fs = require("fs");
 const path = require("path");
 
-const PNG_FILE = "Bilder/LumenCatWithoutBackground.png";
-const SVG_FILE = "Bilder/logo.svg";
+const PNG_FILE = "assets/images/LumenCatWithoutBackground.png";
+const SVG_FILE = "assets/images/logo.svg";
 
 console.log("\n" + "=".repeat(60));
 console.log("🎨 LumenCat Logo Converter");
@@ -62,13 +62,13 @@ console.log("   • Upload PNG → Download optimized SVG\n");
 
 console.log("📝 After Conversion:");
 console.log("   1. Download/save the new SVG");
-console.log("   2. Replace Bilder/logo.svg with the new file");
+console.log("   2. Replace assets/images/logo.svg with the new file");
 console.log("   3. Test in browser: Open http://localhost:8000");
 console.log("   4. Check all pages: index, shop, kontakt, blog\n");
 
 console.log("💡 Optimization:");
 console.log("   • Use SVGO to compress: npm install -g svgo");
-console.log("   • Run: svgo Bilder/logo.svg\n");
+console.log("   • Run: svgo assets/images/logo.svg\n");
 
 console.log("🚀 Your logo is already integrated in:");
 const htmlFiles = [

@@ -11,7 +11,7 @@ const path = require("path");
 async function generateFavicons() {
   const inputPath = path.join(
     __dirname,
-    "../Bilder/LumenCatWithoutBackground.png"
+    "../assets/images/LumenCatWithoutBackground.png"
   );
   const outputDir = path.join(__dirname, "../Bilder");
 
