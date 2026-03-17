@@ -42,10 +42,50 @@
 
     body { font-family: 'Space Grotesk', sans-serif; }
 
-    .post-hero {
-      padding: 9rem 2.5rem 4rem;
-      max-width: 760px;
-      margin: 0 auto;
+    /* Article Card */
+    .article-card {
+      max-width: 820px;
+      margin: 2rem auto 4rem;
+      background: rgba(6, 8, 15, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(0, 229, 255, 0.15);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    /* Cover Image */
+    .cover-wrap {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      background: linear-gradient(135deg, #0d2e1a 0%, #0d1a2e 50%, #0d2e2e 100%);
+      overflow: hidden;
+    }
+
+    .cover-wrap img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .cover-vignette {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 120px;
+      background: linear-gradient(to bottom, transparent, rgba(6, 8, 15, 0.85));
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Article Body */
+    .article-body {
+      padding: 2.5rem 3rem 3rem;
     }
 
     .article-badge {
@@ -61,7 +101,7 @@
       margin-bottom: 1.5rem;
     }
 
-    .post-hero h1 {
+    h1 {
       font-family: 'Syne', sans-serif;
       font-size: clamp(2rem, 5vw, 3rem);
       font-weight: 800;
@@ -78,41 +118,7 @@
       align-items: center;
     }
 
-    .cover {
-      width: 100%;
-      max-width: 760px;
-      margin: 2rem auto;
-      padding: 0 2.5rem;
-      display: block;
-    }
-
-    .cover-img {
-      width: 100%;
-      height: 340px;
-      background: linear-gradient(135deg, #0d2e1a 0%, #0d1a2e 50%, #0d2e2e 100%);
-      border-radius: 12px;
-      border: 1px solid var(--art-border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 4rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .cover-img::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at 40% 50%, rgba(0,230,118,0.12) 0%, transparent 60%),
-                  radial-gradient(ellipse at 70% 40%, rgba(0,229,255,0.12) 0%, transparent 60%);
-    }
-
-    article {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 1rem 2.5rem 6rem;
-    }
+    article { padding: 2rem 0 1rem; }
 
     article h2 {
       font-family: 'Syne', sans-serif;
@@ -197,6 +203,16 @@
       font-family: 'Courier New', monospace;
       font-size: 0.9em;
     }
+
+    @media (max-width: 640px) {
+      .article-card {
+        margin: 1.5rem 1rem 2rem;
+        border-radius: 12px;
+      }
+      .article-body {
+        padding: 1.5rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -240,95 +256,103 @@
   </header>
 
   <main id="main">
-    <div class="post-hero">
-      <a href="../insights.html" class="back">← Zurück zum Blog</a>
-      <div class="article-badge">SEO</div>
-      <h1>Lokales SEO: So wirst du in deiner Stadt gefunden – ohne Agenturbudget</h1>
-      <div class="hero-meta">
-        <span>📅 Januar 2025</span>
-        <span>⏱ 7 Min. Lesezeit</span>
+    <div class="article-card">
+      <div class="cover-wrap">
+        <img
+          src="../assets/blog/cover-seo.jpg"
+          alt="Lokales SEO für kleine Unternehmen"
+          loading="eager"
+          onerror="this.style.display='none'"
+        />
+        <div class="cover-vignette"></div>
+      </div>
+
+      <div class="article-body">
+        <a href="../insights.html" class="back">← Zurück zum Blog</a>
+        <div class="article-badge">SEO</div>
+        <h1>Lokales SEO: So wirst du in deiner Stadt gefunden – ohne Agenturbudget</h1>
+        <div class="hero-meta">
+          <span>📅 Januar 2025</span>
+          <span>⏱ 7 Min. Lesezeit</span>
+        </div>
+
+        <article>
+          <p>
+            SEO hat einen schlechten Ruf — zu technisch, zu teuer, dauert zu lang. Und ja, wenn du mit einer großen SEO-Agentur arbeitest, die dir monatlich 2.000 € in Rechnung stellt und dir Dashboards zeigt, die du nicht verstehst, dann fühlt sich das so an. Aber lokales SEO für einen kleinen Betrieb funktioniert nach anderen Regeln. Und die Grundlagen kann jeder umsetzen — heute, kostenlos.
+          </p>
+
+          <h2>Was „lokales SEO" überhaupt bedeutet</h2>
+          <p>
+            Wenn jemand googelt <code>Friseur Dortmund</code> oder <code>Steuerberater in meiner Nähe</code>, sucht er nicht nach dem besten Friseur der Welt — er sucht nach dem nächsten, dem glaubwürdigsten in seiner Stadt. Lokales SEO ist genau dafür zuständig: dafür sorgen, dass Google weiß, wer du bist, wo du bist und was du anbietest — und dass du genau dann auftauchst, wenn jemand in deiner Nähe danach sucht.
+          </p>
+
+          <div class="highlight-box">
+            <p>Laut Google beginnen <strong>76 % der lokalen Suchanfragen</strong> vom Smartphone — und 28 % davon führen noch am selben Tag zu einem Besuch vor Ort. Wer lokal nicht sichtbar ist, verliert diese Menschen an die Konkurrenz.</p>
+          </div>
+
+          <h2>Schritt 1: Google Business Profile – kostenlos, aber unverzichtbar</h2>
+          <p>
+            Das ist das Wichtigste, was du tun kannst — und es kostet nichts. Ein vollständiges, gepflegtes Google Business Profile (früher Google My Business) ist der Turbo für lokale Sichtbarkeit.
+          </p>
+
+          <ul class="checklist">
+            <li>Name, Adresse, Telefon exakt wie auf deiner Website eintragen</li>
+            <li>Öffnungszeiten vollständig und aktuell pflegen</li>
+            <li>Kategorie präzise wählen (nicht zu allgemein, nicht zu spezifisch)</li>
+            <li>Echte Fotos hochladen — Innenraum, Team, Produkte</li>
+            <li>Auf jede Bewertung antworten, auch auf negative</li>
+            <li>Google Posts nutzen (werden oft ignoriert, machen aber einen Unterschied)</li>
+          </ul>
+
+          <h3>Bewertungen sind kein Bonus — sie sind Ranking-Faktor</h3>
+          <p>
+            Je mehr aktuelle, positive Bewertungen du hast, desto weiter oben erscheinst du in der lokalen Suche. Das ist keine Theorie, das ist messbar. Bitte deine zufriedenen Kunden aktiv darum — eine kurze WhatsApp mit dem direkten Link reicht oft schon.
+          </p>
+
+          <h2>Schritt 2: Deine Website muss lokale Signale senden</h2>
+          <p>
+            Google muss auf den ersten Blick verstehen, wo du tätig bist und was du machst. Das klingt simpel — aber viele Websites machen es Google unnötig schwer.
+          </p>
+
+          <h3>Was konkret auf deine Website gehört</h3>
+          <ul>
+            <li>Vollständige Adresse im Footer (auf jeder Seite)</li>
+            <li>Stadtname im Seitentitel und in der Meta-Description</li>
+            <li>Stadtname natürlich in den Texten einbauen — nicht krampfhaft, aber bewusst</li>
+            <li>Separate Seite für jede Dienstleistung (nicht alles auf einer Seite stapeln)</li>
+            <li>Strukturierte Daten (Schema.org LocalBusiness) — kurz: ein Stück Code, das Google direkt sagt, wer und wo du bist</li>
+          </ul>
+
+          <h3>NAP-Konsistenz</h3>
+          <p>
+            NAP steht für Name, Address, Phone. Diese drei Dinge müssen auf deiner Website, in Google Business, in Branchenverzeichnissen und überall sonst <strong>identisch</strong> sein — bis auf den letzten Beistrich. Unterschiede verwirren Google und kosten dich Ranking-Punkte.
+          </p>
+
+          <hr class="divider" />
+
+          <h2>Schritt 3: Branchenverzeichnisse — die unterschätzte Abkürzung</h2>
+          <p>
+            Yelp, Gelbe Seiten, Das Örtliche, Bing Places, Apple Maps — viele dieser Einträge kannst du kostenlos anlegen und sie stärken dein lokales Ranking, weil sie Google signalisieren: Dieses Unternehmen existiert wirklich, mehrere Quellen bestätigen die Adresse.
+          </p>
+          <p>
+            Du musst nicht überall präsent sein — aber die 5–10 relevantesten Verzeichnisse für deine Branche sollten einen Eintrag haben, der mit deiner Website-Adresse übereinstimmt.
+          </p>
+
+          <h2>Was bringt das wirklich — und wann?</h2>
+          <p>
+            SEO ist kein Schalter, den man umlegt. Es ist eher ein Investkonto — die Arbeit, die du heute machst, zahlt sich in 3–6 Monaten aus. Dafür bleibt sie dann aber auch. Im Gegensatz zu bezahlter Werbung, die aufhört zu funktionieren, sobald du aufhörst zu zahlen.
+          </p>
+
+          <div class="highlight-box">
+            <p>Meine Empfehlung: Fang mit Google Business an — heute. Das ist der schnellste Hebel mit dem direktesten Effekt. Alles andere kommt danach.</p>
+          </div>
+
+          <p>
+            Wenn du Unterstützung bei der technischen Umsetzung brauchst — bei Schema.org, Page Speed oder der Website-Struktur — melde dich. Das ist genau die Arbeit, die ich für lokale Unternehmen mache.
+          </p>
+        </article>
       </div>
     </div>
-
-    <div class="cover">
-      <div class="cover-img">🔍</div>
-    </div>
-
-    <article>
-      <p>
-        SEO hat einen schlechten Ruf — zu technisch, zu teuer, dauert zu lang. Und ja, wenn du mit einer großen SEO-Agentur arbeitest, die dir monatlich 2.000 € in Rechnung stellt und dir Dashboards zeigt, die du nicht verstehst, dann fühlt sich das so an. Aber lokales SEO für einen kleinen Betrieb funktioniert nach anderen Regeln. Und die Grundlagen kann jeder umsetzen — heute, kostenlos.
-      </p>
-
-      <h2>Was „lokales SEO" überhaupt bedeutet</h2>
-      <p>
-        Wenn jemand googelt <code>Friseur Dortmund</code> oder <code>Steuerberater in meiner Nähe</code>, sucht er nicht nach dem besten Friseur der Welt — er sucht nach dem nächsten, dem glaubwürdigsten in seiner Stadt. Lokales SEO ist genau dafür zuständig: dafür sorgen, dass Google weiß, wer du bist, wo du bist und was du anbietest — und dass du genau dann auftauchst, wenn jemand in deiner Nähe danach sucht.
-      </p>
-
-      <div class="highlight-box">
-        <p>Laut Google beginnen <strong>76 % der lokalen Suchanfragen</strong> vom Smartphone — und 28 % davon führen noch am selben Tag zu einem Besuch vor Ort. Wer lokal nicht sichtbar ist, verliert diese Menschen an die Konkurrenz.</p>
-      </div>
-
-      <h2>Schritt 1: Google Business Profile – kostenlos, aber unverzichtbar</h2>
-      <p>
-        Das ist das Wichtigste, was du tun kannst — und es kostet nichts. Ein vollständiges, gepflegtes Google Business Profile (früher Google My Business) ist der Turbo für lokale Sichtbarkeit.
-      </p>
-
-      <ul class="checklist">
-        <li>Name, Adresse, Telefon exakt wie auf deiner Website eintragen</li>
-        <li>Öffnungszeiten vollständig und aktuell pflegen</li>
-        <li>Kategorie präzise wählen (nicht zu allgemein, nicht zu spezifisch)</li>
-        <li>Echte Fotos hochladen — Innenraum, Team, Produkte</li>
-        <li>Auf jede Bewertung antworten, auch auf negative</li>
-        <li>Google Posts nutzen (werden oft ignoriert, machen aber einen Unterschied)</li>
-      </ul>
-
-      <h3>Bewertungen sind kein Bonus — sie sind Ranking-Faktor</h3>
-      <p>
-        Je mehr aktuelle, positive Bewertungen du hast, desto weiter oben erscheinst du in der lokalen Suche. Das ist keine Theorie, das ist messbar. Bitte deine zufriedenen Kunden aktiv darum — eine kurze WhatsApp mit dem direkten Link reicht oft schon.
-      </p>
-
-      <h2>Schritt 2: Deine Website muss lokale Signale senden</h2>
-      <p>
-        Google muss auf den ersten Blick verstehen, wo du tätig bist und was du machst. Das klingt simpel — aber viele Websites machen es Google unnötig schwer.
-      </p>
-
-      <h3>Was konkret auf deine Website gehört</h3>
-      <ul>
-        <li>Vollständige Adresse im Footer (auf jeder Seite)</li>
-        <li>Stadtname im Seitentitel und in der Meta-Description</li>
-        <li>Stadtname natürlich in den Texten einbauen — nicht krampfhaft, aber bewusst</li>
-        <li>Separate Seite für jede Dienstleistung (nicht alles auf einer Seite stapeln)</li>
-        <li>Strukturierte Daten (Schema.org LocalBusiness) — kurz: ein Stück Code, das Google direkt sagt, wer und wo du bist</li>
-      </ul>
-
-      <h3>NAP-Konsistenz</h3>
-      <p>
-        NAP steht für Name, Address, Phone. Diese drei Dinge müssen auf deiner Website, in Google Business, in Branchenverzeichnissen und überall sonst <strong>identisch</strong> sein — bis auf den letzten Beistrich. Unterschiede verwirren Google und kosten dich Ranking-Punkte.
-      </p>
-
-      <hr class="divider" />
-
-      <h2>Schritt 3: Branchenverzeichnisse — die unterschätzte Abkürzung</h2>
-      <p>
-        Yelp, Gelbe Seiten, Das Örtliche, Bing Places, Apple Maps — viele dieser Einträge kannst du kostenlos anlegen und sie stärken dein lokales Ranking, weil sie Google signalisieren: Dieses Unternehmen existiert wirklich, mehrere Quellen bestätigen die Adresse.
-      </p>
-      <p>
-        Du musst nicht überall präsent sein — aber die 5–10 relevantesten Verzeichnisse für deine Branche sollten einen Eintrag haben, der mit deiner Website-Adresse übereinstimmt.
-      </p>
-
-      <h2>Was bringt das wirklich — und wann?</h2>
-      <p>
-        SEO ist kein Schalter, den man umlegt. Es ist eher ein Investkonto — die Arbeit, die du heute machst, zahlt sich in 3–6 Monaten aus. Dafür bleibt sie dann aber auch. Im Gegensatz zu bezahlter Werbung, die aufhört zu funktionieren, sobald du aufhörst zu zahlen.
-      </p>
-
-      <div class="highlight-box">
-        <p>Meine Empfehlung: Fang mit Google Business an — heute. Das ist der schnellste Hebel mit dem direktesten Effekt. Alles andere kommt danach.</p>
-      </div>
-
-      <p>
-        Wenn du Unterstützung bei der technischen Umsetzung brauchst — bei Schema.org, Page Speed oder der Website-Struktur — melde dich. Das ist genau die Arbeit, die ich für lokale Unternehmen mache.
-      </p>
-    </article>
   </main>
 
   <footer class="site-footer" role="contentinfo">

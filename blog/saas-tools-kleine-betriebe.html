@@ -44,10 +44,50 @@
 
     body { font-family: 'Space Grotesk', sans-serif; }
 
-    .post-hero {
-      padding: 9rem 2.5rem 4rem;
-      max-width: 760px;
-      margin: 0 auto;
+    /* Article Card */
+    .article-card {
+      max-width: 820px;
+      margin: 2rem auto 4rem;
+      background: rgba(6, 8, 15, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(0, 229, 255, 0.15);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    /* Cover Image */
+    .cover-wrap {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      background: linear-gradient(135deg, #2e1a0d 0%, #1a0d2e 50%, #0d1a2e 100%);
+      overflow: hidden;
+    }
+
+    .cover-wrap img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .cover-vignette {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 120px;
+      background: linear-gradient(to bottom, transparent, rgba(6, 8, 15, 0.85));
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Article Body */
+    .article-body {
+      padding: 2.5rem 3rem 3rem;
     }
 
     .article-badge {
@@ -63,7 +103,7 @@
       margin-bottom: 1.5rem;
     }
 
-    .post-hero h1 {
+    h1 {
       font-family: 'Syne', sans-serif;
       font-size: clamp(2rem, 5vw, 3rem);
       font-weight: 800;
@@ -80,41 +120,7 @@
       align-items: center;
     }
 
-    .cover {
-      width: 100%;
-      max-width: 760px;
-      margin: 2rem auto;
-      padding: 0 2.5rem;
-      display: block;
-    }
-
-    .cover-img {
-      width: 100%;
-      height: 340px;
-      background: linear-gradient(135deg, #2e1a0d 0%, #1a0d2e 50%, #0d1a2e 100%);
-      border-radius: 12px;
-      border: 1px solid var(--art-border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 4rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .cover-img::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at 35% 50%, rgba(255,145,0,0.12) 0%, transparent 60%),
-                  radial-gradient(ellipse at 70% 40%, rgba(224,64,251,0.12) 0%, transparent 60%);
-    }
-
-    article {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 1rem 2.5rem 6rem;
-    }
+    article { padding: 2rem 0 1rem; }
 
     article h2 {
       font-family: 'Syne', sans-serif;
@@ -210,6 +216,19 @@
     .back:hover { gap: 0.75rem; }
 
     strong { color: #fff; }
+
+    @media (max-width: 640px) {
+      .article-card {
+        margin: 1.5rem 1rem 2rem;
+        border-radius: 12px;
+      }
+      .article-body {
+        padding: 1.5rem;
+      }
+      .tool-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
@@ -253,119 +272,127 @@
   </header>
 
   <main id="main">
-    <div class="post-hero">
-      <a href="../insights.html" class="back">← Zurück zum Blog</a>
-      <div class="article-badge">SaaS &amp; Tools</div>
-      <h1>Welche SaaS-Tools sich für kleine Betriebe wirklich lohnen – und welche nicht</h1>
-      <div class="hero-meta">
-        <span>📅 Dezember 2024</span>
-        <span>⏱ 6 Min. Lesezeit</span>
+    <div class="article-card">
+      <div class="cover-wrap">
+        <img
+          src="../assets/blog/cover-saas-tools.jpg"
+          alt="SaaS-Tools für kleine Betriebe"
+          loading="eager"
+          onerror="this.style.display='none'"
+        />
+        <div class="cover-vignette"></div>
+      </div>
+
+      <div class="article-body">
+        <a href="../insights.html" class="back">← Zurück zum Blog</a>
+        <div class="article-badge">SaaS &amp; Tools</div>
+        <h1>Welche SaaS-Tools sich für kleine Betriebe wirklich lohnen – und welche nicht</h1>
+        <div class="hero-meta">
+          <span>📅 Dezember 2024</span>
+          <span>⏱ 6 Min. Lesezeit</span>
+        </div>
+
+        <article>
+          <p>
+            Es gibt gerade ungefähr 30.000 SaaS-Produkte auf dem Markt. Keine Übertreibung — das ist Realität, und der Markt wächst weiter. Für kleine Unternehmen bedeutet das: Der Druck, das „richtige" Tool zu nutzen, ist enorm. Gleichzeitig ist das Budget begrenzt und die Zeit noch knapper.
+          </p>
+          <p>
+            Ich habe in den letzten Jahren viele Tools ausprobiert — für mich selbst und für Kunden. Hier ist meine ehrliche Einschätzung, ohne Affiliate-Links und ohne Gefälligkeiten.
+          </p>
+
+          <h2>Die ehrliche Wahrheit vorab</h2>
+          <p>
+            Die meisten kleinen Betriebe brauchen weniger Tools, nicht mehr. Das größte Problem ist nicht, das falsche Tool zu haben — es ist, zu viele zu haben, die alle ein bisschen genutzt werden und am Ende nichts ordentlich abbilden. <strong>Weniger, aber konsequent genutzt, schlägt immer mehr, aber halbherzig.</strong>
+          </p>
+
+          <div class="highlight-box">
+            <p>Die Faustregel: Ein Tool lohnt sich, wenn es dir entweder <strong>Zeit spart</strong>, <strong>Fehler verhindert</strong> oder <strong>Umsatz ermöglicht</strong>, den du sonst nicht hättest. Alles andere ist nice-to-have.</p>
+          </div>
+
+          <h2>Kategorie 1: Kommunikation &amp; Projektmanagement</h2>
+          <p>
+            Hier entscheidet sich, ob ein kleines Team koordiniert oder im Chaos versinkt. Die gute Nachricht: Die besten Tools in dieser Kategorie sind gratis oder sehr günstig.
+          </p>
+
+          <div class="tool-grid">
+            <div class="tool-card">
+              <div class="tool-tag tag-gratis">Gratis</div>
+              <div class="tool-name">Notion</div>
+              <p class="tool-desc">Wiki, Projektplan, Kundendatenbank, Notizen — alles in einem. Lernkurve vorhanden, aber lohnt sich.</p>
+            </div>
+            <div class="tool-card">
+              <div class="tool-tag tag-gratis">Gratis</div>
+              <div class="tool-name">Trello</div>
+              <p class="tool-desc">Simpler Kanban-Board. Für unkompliziertes Aufgaben-Tracking perfekt — ohne Overhead.</p>
+            </div>
+            <div class="tool-card">
+              <div class="tool-tag tag-günstig">Ab 7 €/Mo</div>
+              <div class="tool-name">Slack</div>
+              <p class="tool-desc">Für Teams ab 3 Personen klar besser als WhatsApp-Gruppen. Channels halten Themen sauber getrennt.</p>
+            </div>
+            <div class="tool-card">
+              <div class="tool-tag tag-gratis">Gratis</div>
+              <div class="tool-name">Google Workspace Lite</div>
+              <p class="tool-desc">Docs, Sheets, Drive kostenlos. Für viele kleine Betriebe reicht das vollständig.</p>
+            </div>
+          </div>
+
+          <h2>Kategorie 2: Kundengewinnung &amp; CRM</h2>
+          <p>
+            Hier investieren viele zu früh in zu teure Tools. Ein CRM-System macht erst dann Sinn, wenn du tatsächlich mehr Leads hast, als du im Kopf behalten kannst.
+          </p>
+
+          <h3>Wann du noch kein CRM brauchst</h3>
+          <p>
+            Wenn du weniger als 20–30 aktive Kontakte gleichzeitig managst, reicht oft eine gepflegte Tabelle. Ernsthaft. HubSpot, Pipedrive und Co. sind mächtige Tools — aber sie brauchen Pflege und Einarbeitung. Wer das nicht konsequent macht, hat am Ende eine leere Datenbank, die monatlich Geld kostet.
+          </p>
+
+          <h3>Wann du anfangen solltest</h3>
+          <p>
+            Wenn du merkst, dass du Leads vergisst, Nachfass-Mails zu spät schickst oder nicht weißt, wo ein Kontakt im Prozess steht — dann ist der Zeitpunkt. HubSpot CRM bietet einen soliden Free-Tier. Für den Anfang reicht der vollständig.
+          </p>
+
+          <h2>Kategorie 3: Buchhaltung &amp; Verwaltung</h2>
+          <p>
+            Das ist die Kategorie, die am meisten Zeit spart und die am häufigsten vernachlässigt wird. Wer Rechnungen noch manuell in Word schreibt, verliert jede Woche Stunden.
+          </p>
+
+          <div class="tool-grid">
+            <div class="tool-card">
+              <div class="tool-tag tag-günstig">Ab 9 €/Mo</div>
+              <div class="tool-name">Lexoffice</div>
+              <p class="tool-desc">Rechnungen, Angebote, DATEV-Export. Der Standard für deutsche Einzelunternehmer und KMUs.</p>
+            </div>
+            <div class="tool-card">
+              <div class="tool-tag tag-günstig">Ab 10 €/Mo</div>
+              <div class="tool-name">Sevdesk</div>
+              <p class="tool-desc">Alternative zu Lexoffice mit etwas modernerer Oberfläche. Beide machen einen guten Job.</p>
+            </div>
+          </div>
+
+          <hr class="divider" />
+
+          <h2>Was du getrost ignorieren kannst</h2>
+          <p>
+            Vieles im SaaS-Markt ist gut vermarktet, aber für kleine Betriebe schlicht zu groß, zu komplex oder zu teuer. Meine kurze Liste der überschätzten Tools für kleine Betriebe:
+          </p>
+          <ul>
+            <li><strong>Salesforce</strong> — für Konzerne gebaut, für Einzelunternehmer ein Alptraum</li>
+            <li><strong>Jira</strong> — genial für Entwicklungsteams, overkill für alles andere</li>
+            <li><strong>Marketing-Automation-Suiten</strong> — ohne stabilen Lead-Flow verschwendest du nur Zeit beim Setup</li>
+            <li><strong>Jedes Tool mit 50+ Features</strong>, das du dir beim Onboarding nicht komplett anguckst</li>
+          </ul>
+
+          <h2>Fazit: Stack klein halten, konsequent nutzen</h2>
+          <p>
+            Mein Empfehlung für einen gesunden Tool-Stack für einen kleinen Betrieb: Maximal 5–6 Tools, die du täglich nutzt und vollständig verstehst. Lieber ein Tool ersetzen, das nicht passt, als ein neues oben drauf zu stapeln.
+          </p>
+          <p>
+            Und wenn du selbst überlegst, ein eigenes SaaS-Tool zu bauen — auch dafür gibt es den richtigen Zeitpunkt und die falsche Reihenfolge. Darüber schreibe ich bald mehr.
+          </p>
+        </article>
       </div>
     </div>
-
-    <div class="cover">
-      <div class="cover-img">⚙️</div>
-    </div>
-
-    <article>
-      <p>
-        Es gibt gerade ungefähr 30.000 SaaS-Produkte auf dem Markt. Keine Übertreibung — das ist Realität, und der Markt wächst weiter. Für kleine Unternehmen bedeutet das: Der Druck, das „richtige" Tool zu nutzen, ist enorm. Gleichzeitig ist das Budget begrenzt und die Zeit noch knapper.
-      </p>
-      <p>
-        Ich habe in den letzten Jahren viele Tools ausprobiert — für mich selbst und für Kunden. Hier ist meine ehrliche Einschätzung, ohne Affiliate-Links und ohne Gefälligkeiten.
-      </p>
-
-      <h2>Die ehrliche Wahrheit vorab</h2>
-      <p>
-        Die meisten kleinen Betriebe brauchen weniger Tools, nicht mehr. Das größte Problem ist nicht, das falsche Tool zu haben — es ist, zu viele zu haben, die alle ein bisschen genutzt werden und am Ende nichts ordentlich abbilden. <strong>Weniger, aber konsequent genutzt, schlägt immer mehr, aber halbherzig.</strong>
-      </p>
-
-      <div class="highlight-box">
-        <p>Die Faustregel: Ein Tool lohnt sich, wenn es dir entweder <strong>Zeit spart</strong>, <strong>Fehler verhindert</strong> oder <strong>Umsatz ermöglicht</strong>, den du sonst nicht hättest. Alles andere ist nice-to-have.</p>
-      </div>
-
-      <h2>Kategorie 1: Kommunikation &amp; Projektmanagement</h2>
-      <p>
-        Hier entscheidet sich, ob ein kleines Team koordiniert oder im Chaos versinkt. Die gute Nachricht: Die besten Tools in dieser Kategorie sind gratis oder sehr günstig.
-      </p>
-
-      <div class="tool-grid">
-        <div class="tool-card">
-          <div class="tool-tag tag-gratis">Gratis</div>
-          <div class="tool-name">Notion</div>
-          <p class="tool-desc">Wiki, Projektplan, Kundendatenbank, Notizen — alles in einem. Lernkurve vorhanden, aber lohnt sich.</p>
-        </div>
-        <div class="tool-card">
-          <div class="tool-tag tag-gratis">Gratis</div>
-          <div class="tool-name">Trello</div>
-          <p class="tool-desc">Simpler Kanban-Board. Für unkompliziertes Aufgaben-Tracking perfekt — ohne Overhead.</p>
-        </div>
-        <div class="tool-card">
-          <div class="tool-tag tag-günstig">Ab 7 €/Mo</div>
-          <div class="tool-name">Slack</div>
-          <p class="tool-desc">Für Teams ab 3 Personen klar besser als WhatsApp-Gruppen. Channels halten Themen sauber getrennt.</p>
-        </div>
-        <div class="tool-card">
-          <div class="tool-tag tag-gratis">Gratis</div>
-          <div class="tool-name">Google Workspace Lite</div>
-          <p class="tool-desc">Docs, Sheets, Drive kostenlos. Für viele kleine Betriebe reicht das vollständig.</p>
-        </div>
-      </div>
-
-      <h2>Kategorie 2: Kundengewinnung &amp; CRM</h2>
-      <p>
-        Hier investieren viele zu früh in zu teure Tools. Ein CRM-System macht erst dann Sinn, wenn du tatsächlich mehr Leads hast, als du im Kopf behalten kannst.
-      </p>
-
-      <h3>Wann du noch kein CRM brauchst</h3>
-      <p>
-        Wenn du weniger als 20–30 aktive Kontakte gleichzeitig managst, reicht oft eine gepflegte Tabelle. Ernsthaft. HubSpot, Pipedrive und Co. sind mächtige Tools — aber sie brauchen Pflege und Einarbeitung. Wer das nicht konsequent macht, hat am Ende eine leere Datenbank, die monatlich Geld kostet.
-      </p>
-
-      <h3>Wann du anfangen solltest</h3>
-      <p>
-        Wenn du merkst, dass du Leads vergisst, Nachfass-Mails zu spät schickst oder nicht weißt, wo ein Kontakt im Prozess steht — dann ist der Zeitpunkt. HubSpot CRM bietet einen soliden Free-Tier. Für den Anfang reicht der vollständig.
-      </p>
-
-      <h2>Kategorie 3: Buchhaltung &amp; Verwaltung</h2>
-      <p>
-        Das ist die Kategorie, die am meisten Zeit spart und die am häufigsten vernachlässigt wird. Wer Rechnungen noch manuell in Word schreibt, verliert jede Woche Stunden.
-      </p>
-
-      <div class="tool-grid">
-        <div class="tool-card">
-          <div class="tool-tag tag-günstig">Ab 9 €/Mo</div>
-          <div class="tool-name">Lexoffice</div>
-          <p class="tool-desc">Rechnungen, Angebote, DATEV-Export. Der Standard für deutsche Einzelunternehmer und KMUs.</p>
-        </div>
-        <div class="tool-card">
-          <div class="tool-tag tag-günstig">Ab 10 €/Mo</div>
-          <div class="tool-name">Sevdesk</div>
-          <p class="tool-desc">Alternative zu Lexoffice mit etwas modernerer Oberfläche. Beide machen einen guten Job.</p>
-        </div>
-      </div>
-
-      <hr class="divider" />
-
-      <h2>Was du getrost ignorieren kannst</h2>
-      <p>
-        Vieles im SaaS-Markt ist gut vermarktet, aber für kleine Betriebe schlicht zu groß, zu komplex oder zu teuer. Meine kurze Liste der überschätzten Tools für kleine Betriebe:
-      </p>
-      <ul>
-        <li><strong>Salesforce</strong> — für Konzerne gebaut, für Einzelunternehmer ein Alptraum</li>
-        <li><strong>Jira</strong> — genial für Entwicklungsteams, overkill für alles andere</li>
-        <li><strong>Marketing-Automation-Suiten</strong> — ohne stabilen Lead-Flow verschwendest du nur Zeit beim Setup</li>
-        <li><strong>Jedes Tool mit 50+ Features</strong>, das du dir beim Onboarding nicht komplett anguckst</li>
-      </ul>
-
-      <h2>Fazit: Stack klein halten, konsequent nutzen</h2>
-      <p>
-        Mein Empfehlung für einen gesunden Tool-Stack für einen kleinen Betrieb: Maximal 5–6 Tools, die du täglich nutzt und vollständig verstehst. Lieber ein Tool ersetzen, das nicht passt, als ein neues oben drauf zu stapeln.
-      </p>
-      <p>
-        Und wenn du selbst überlegst, ein eigenes SaaS-Tool zu bauen — auch dafür gibt es den richtigen Zeitpunkt und die falsche Reihenfolge. Darüber schreibe ich bald mehr.
-      </p>
-    </article>
   </main>
 
   <footer class="site-footer" role="contentinfo">

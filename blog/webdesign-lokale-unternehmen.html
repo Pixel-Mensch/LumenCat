@@ -42,10 +42,50 @@
 
     body { font-family: 'Space Grotesk', sans-serif; }
 
-    .post-hero {
-      padding: 9rem 2.5rem 4rem;
-      max-width: 760px;
-      margin: 0 auto;
+    /* Article Card */
+    .article-card {
+      max-width: 820px;
+      margin: 2rem auto 4rem;
+      background: rgba(6, 8, 15, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(0, 229, 255, 0.15);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    /* Cover Image */
+    .cover-wrap {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      background: linear-gradient(135deg, #0d1a2e 0%, #1a0d2e 50%, #0d2e1a 100%);
+      overflow: hidden;
+    }
+
+    .cover-wrap img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .cover-vignette {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 120px;
+      background: linear-gradient(to bottom, transparent, rgba(6, 8, 15, 0.85));
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Article Body */
+    .article-body {
+      padding: 2.5rem 3rem 3rem;
     }
 
     .article-badge {
@@ -61,7 +101,7 @@
       margin-bottom: 1.5rem;
     }
 
-    .post-hero h1 {
+    h1 {
       font-family: 'Syne', sans-serif;
       font-size: clamp(2rem, 5vw, 3rem);
       font-weight: 800;
@@ -78,41 +118,7 @@
       align-items: center;
     }
 
-    .cover {
-      width: 100%;
-      max-width: 760px;
-      margin: 2rem auto;
-      padding: 0 2.5rem;
-      display: block;
-    }
-
-    .cover-img {
-      width: 100%;
-      height: 340px;
-      background: linear-gradient(135deg, #0d1a2e 0%, #1a0d2e 50%, #0d2e1a 100%);
-      border-radius: 12px;
-      border: 1px solid var(--art-border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 4rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .cover-img::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at 30% 50%, rgba(0,229,255,0.15) 0%, transparent 60%),
-                  radial-gradient(ellipse at 70% 50%, rgba(224,64,251,0.12) 0%, transparent 60%);
-    }
-
-    article {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 1rem 2.5rem 6rem;
-    }
+    article { padding: 2rem 0 1rem; }
 
     article h2 {
       font-family: 'Syne', sans-serif;
@@ -161,6 +167,16 @@
     .back:hover { gap: 0.75rem; }
 
     strong { color: #fff; }
+
+    @media (max-width: 640px) {
+      .article-card {
+        margin: 1.5rem 1rem 2rem;
+        border-radius: 12px;
+      }
+      .article-body {
+        padding: 1.5rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -204,84 +220,92 @@
   </header>
 
   <main id="main">
-    <div class="post-hero">
-      <a href="../insights.html" class="back">← Zurück zum Blog</a>
-      <div class="article-badge">Webdesign</div>
-      <h1>Warum lokale Unternehmen eine professionelle Website brauchen</h1>
-      <div class="hero-meta">
-        <span>📅 März 2025</span>
-        <span>⏱ 5 Min. Lesezeit</span>
-      </div>
-    </div>
-
-    <div class="cover">
-      <div class="cover-img">🏙️</div>
-    </div>
-
-    <article>
-      <p>
-        Es gibt einen Satz, den ich immer wieder höre, wenn ich mit lokalen Unternehmern spreche: <em>„Ich hab ja schon eine Website."</em> Und meistens stimmt das sogar. Aber dann schau ich sie mir an — und es ist eine WordPress-Seite von 2017 mit einem Stockfoto als Header, einer Schriftart, die niemand je bewusst ausgewählt hat, und einem Kontaktformular das wahrscheinlich seit Jahren keine E-Mail mehr verschickt hat.
-      </p>
-      <p>
-        Das ist kein Sonderfall. Das ist die Realität für einen Großteil der kleinen und mittleren Betriebe in Deutschland. Und es kostet sie Kunden — auch wenn sie das nicht sehen.
-      </p>
-
-      <h2>Der erste Eindruck entscheidet — auch wenn du dabei schläfst</h2>
-      <p>
-        Wenn jemand heute einen Handwerker, Friseur oder Steuerberater sucht, googelt er erst. Er landet auf deiner Website. Nicht auf deiner Instagram-Seite, nicht auf deinem Flyer — auf deiner Website. Und in den ersten drei Sekunden entscheidet er, ob er bleibt oder zurückgeht und zum nächsten klickt.
-      </p>
-
-      <div class="highlight-box">
-        <p>Studien zeigen: <strong>75 % der Nutzer beurteilen die Glaubwürdigkeit eines Unternehmens anhand seines Webdesigns.</strong> Nicht anhand des Angebots. Nicht anhand der Preise. Sondern anhand des Designs.</p>
+    <div class="article-card">
+      <div class="cover-wrap">
+        <img
+          src="../assets/blog/cover-webdesign.jpg"
+          alt="Professionelle Website für lokale Unternehmen"
+          loading="eager"
+          onerror="this.style.display='none'"
+        />
+        <div class="cover-vignette"></div>
       </div>
 
-      <p>
-        Das klingt oberflächlich — ist es aber nicht. Wer eine schlechte Website hat, signalisiert unbewusst: mangelnde Sorgfalt, veraltete Arbeitsweise, fehlende Professionalität. Ob das stimmt oder nicht, spielt keine Rolle. Der Besucher ist dann schon weg.
-      </p>
+      <div class="article-body">
+        <a href="../insights.html" class="back">← Zurück zum Blog</a>
+        <div class="article-badge">Webdesign</div>
+        <h1>Warum lokale Unternehmen eine professionelle Website brauchen</h1>
+        <div class="hero-meta">
+          <span>📅 März 2025</span>
+          <span>⏱ 5 Min. Lesezeit</span>
+        </div>
 
-      <h2>Was eine professionelle Website für lokale Betriebe leisten muss</h2>
-      <p>
-        Es geht nicht darum, die teuerste Agentur zu beauftragen oder einen animierten Intro-Splash auf die Seite zu bauen. Es geht um die Grundlagen — und die werden erstaunlich oft ignoriert.
-      </p>
+        <article>
+          <p>
+            Es gibt einen Satz, den ich immer wieder höre, wenn ich mit lokalen Unternehmern spreche: <em>„Ich hab ja schon eine Website."</em> Und meistens stimmt das sogar. Aber dann schau ich sie mir an — und es ist eine WordPress-Seite von 2017 mit einem Stockfoto als Header, einer Schriftart, die niemand je bewusst ausgewählt hat, und einem Kontaktformular das wahrscheinlich seit Jahren keine E-Mail mehr verschickt hat.
+          </p>
+          <p>
+            Das ist kein Sonderfall. Das ist die Realität für einen Großteil der kleinen und mittleren Betriebe in Deutschland. Und es kostet sie Kunden — auch wenn sie das nicht sehen.
+          </p>
 
-      <h3>1. Mobile First — ohne Kompromisse</h3>
-      <p>
-        Über 60 % des Web-Traffics kommt heute vom Smartphone. Wenn deine Website auf dem Handy hakelt, zu klein oder falsch formatiert ist, verlierst du mehr als die Hälfte deiner potenziellen Kunden sofort. Das ist keine Option mehr, das ist Standard.
-      </p>
+          <h2>Der erste Eindruck entscheidet — auch wenn du dabei schläfst</h2>
+          <p>
+            Wenn jemand heute einen Handwerker, Friseur oder Steuerberater sucht, googelt er erst. Er landet auf deiner Website. Nicht auf deiner Instagram-Seite, nicht auf deinem Flyer — auf deiner Website. Und in den ersten drei Sekunden entscheidet er, ob er bleibt oder zurückgeht und zum nächsten klickt.
+          </p>
 
-      <h3>2. Ladezeit unter 3 Sekunden</h3>
-      <p>
-        Jede Sekunde Ladezeit kostet Conversion-Rate. Google straft langsame Seiten im Ranking ab. Und Nutzer haben schlicht keine Geduld mehr. Unkomprimierte Bilder, schlechtes Hosting, zu viele Plugins — das sind die häufigsten Täter.
-      </p>
+          <div class="highlight-box">
+            <p>Studien zeigen: <strong>75 % der Nutzer beurteilen die Glaubwürdigkeit eines Unternehmens anhand seines Webdesigns.</strong> Nicht anhand des Angebots. Nicht anhand der Preise. Sondern anhand des Designs.</p>
+          </div>
 
-      <h3>3. Klare Struktur und Handlungsaufforderungen</h3>
-      <p>
-        Was soll der Besucher tun? Anrufen? Ein Formular ausfüllen? Einen Termin buchen? Wenn das nicht klar ist — wenn die Telefonnummer versteckt ist oder der Button fehlt — passiert gar nichts. Die meisten Seiten verlieren Kunden nicht wegen schlechtem Design, sondern wegen fehlender Klarheit.
-      </p>
+          <p>
+            Das klingt oberflächlich — ist es aber nicht. Wer eine schlechte Website hat, signalisiert unbewusst: mangelnde Sorgfalt, veraltete Arbeitsweise, fehlende Professionalität. Ob das stimmt oder nicht, spielt keine Rolle. Der Besucher ist dann schon weg.
+          </p>
 
-      <h3>4. Lokale SEO-Grundlagen</h3>
-      <p>
-        Dein Name, deine Adresse, deine Telefonnummer — konsistent auf der Website und in Google My Business. Lokale Keywords in den Texten. Keine exotische Technik, aber entscheidend dafür, ob du in deiner Stadt überhaupt gefunden wirst.
-      </p>
+          <h2>Was eine professionelle Website für lokale Betriebe leisten muss</h2>
+          <p>
+            Es geht nicht darum, die teuerste Agentur zu beauftragen oder einen animierten Intro-Splash auf die Seite zu bauen. Es geht um die Grundlagen — und die werden erstaunlich oft ignoriert.
+          </p>
 
-      <hr class="divider" />
+          <h3>1. Mobile First — ohne Kompromisse</h3>
+          <p>
+            Über 60 % des Web-Traffics kommt heute vom Smartphone. Wenn deine Website auf dem Handy hakelt, zu klein oder falsch formatiert ist, verlierst du mehr als die Hälfte deiner potenziellen Kunden sofort. Das ist keine Option mehr, das ist Standard.
+          </p>
 
-      <h2>Was kostet es wirklich, eine schlechte Website zu haben?</h2>
-      <p>
-        Stell dir vor, du hast monatlich 200 Website-Besucher. Davon würden bei einer guten Website 5 % Kontakt aufnehmen — also 10 potenzielle Kunden. Bei einer schlechten Website liegt diese Rate erfahrungsgemäß eher bei 1–2 %. Das sind 2–4 Anfragen statt 10.
-      </p>
-      <p>
-        Wenn ein Kunde dir im Schnitt 500 € Umsatz bringt, verlierst du jeden Monat 3.000 bis 4.000 €. Nicht durch Pech — durch eine veraltete Website. Die Frage ist nie: „Kann ich mir eine gute Website leisten?" Die richtige Frage ist: „Kann ich es mir leisten, keine zu haben?"
-      </p>
+          <h3>2. Ladezeit unter 3 Sekunden</h3>
+          <p>
+            Jede Sekunde Ladezeit kostet Conversion-Rate. Google straft langsame Seiten im Ranking ab. Und Nutzer haben schlicht keine Geduld mehr. Unkomprimierte Bilder, schlechtes Hosting, zu viele Plugins — das sind die häufigsten Täter.
+          </p>
 
-      <h2>Fazit</h2>
-      <p>
-        Eine Website ist kein Statussymbol und keine Pflichterfüllung. Sie ist dein umsatzstärkster Mitarbeiter — einer, der 24/7 arbeitet, nie krank ist und kein Gehalt will. Aber nur, wenn du ihn richtig ausstattest.
-      </p>
-      <p>
-        Wenn du wissen willst, wo deine Website aktuell steht und was konkret fehlt, schreib mir einfach. Ich schau's mir an — ohne Verkaufsgespräch.
-      </p>
-    </article>
+          <h3>3. Klare Struktur und Handlungsaufforderungen</h3>
+          <p>
+            Was soll der Besucher tun? Anrufen? Ein Formular ausfüllen? Einen Termin buchen? Wenn das nicht klar ist — wenn die Telefonnummer versteckt ist oder der Button fehlt — passiert gar nichts. Die meisten Seiten verlieren Kunden nicht wegen schlechtem Design, sondern wegen fehlender Klarheit.
+          </p>
+
+          <h3>4. Lokale SEO-Grundlagen</h3>
+          <p>
+            Dein Name, deine Adresse, deine Telefonnummer — konsistent auf der Website und in Google My Business. Lokale Keywords in den Texten. Keine exotische Technik, aber entscheidend dafür, ob du in deiner Stadt überhaupt gefunden wirst.
+          </p>
+
+          <hr class="divider" />
+
+          <h2>Was kostet es wirklich, eine schlechte Website zu haben?</h2>
+          <p>
+            Stell dir vor, du hast monatlich 200 Website-Besucher. Davon würden bei einer guten Website 5 % Kontakt aufnehmen — also 10 potenzielle Kunden. Bei einer schlechten Website liegt diese Rate erfahrungsgemäß eher bei 1–2 %. Das sind 2–4 Anfragen statt 10.
+          </p>
+          <p>
+            Wenn ein Kunde dir im Schnitt 500 € Umsatz bringt, verlierst du jeden Monat 3.000 bis 4.000 €. Nicht durch Pech — durch eine veraltete Website. Die Frage ist nie: „Kann ich mir eine gute Website leisten?" Die richtige Frage ist: „Kann ich es mir leisten, keine zu haben?"
+          </p>
+
+          <h2>Fazit</h2>
+          <p>
+            Eine Website ist kein Statussymbol und keine Pflichterfüllung. Sie ist dein umsatzstärkster Mitarbeiter — einer, der 24/7 arbeitet, nie krank ist und kein Gehalt will. Aber nur, wenn du ihn richtig ausstattest.
+          </p>
+          <p>
+            Wenn du wissen willst, wo deine Website aktuell steht und was konkret fehlt, schreib mir einfach. Ich schau's mir an — ohne Verkaufsgespräch.
+          </p>
+        </article>
+      </div>
+    </div>
   </main>
 
   <footer class="site-footer" role="contentinfo">

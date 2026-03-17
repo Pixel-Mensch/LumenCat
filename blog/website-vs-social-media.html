@@ -42,10 +42,50 @@
 
     body { font-family: 'Space Grotesk', sans-serif; }
 
-    .post-hero {
-      padding: 9rem 2.5rem 4rem;
-      max-width: 760px;
-      margin: 0 auto;
+    /* Article Card */
+    .article-card {
+      max-width: 820px;
+      margin: 2rem auto 4rem;
+      background: rgba(6, 8, 15, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(0, 229, 255, 0.15);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    /* Cover Image */
+    .cover-wrap {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      background: linear-gradient(135deg, #1a0d2e 0%, #0d1120 50%, #2e0d1a 100%);
+      overflow: hidden;
+    }
+
+    .cover-wrap img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .cover-vignette {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 120px;
+      background: linear-gradient(to bottom, transparent, rgba(6, 8, 15, 0.85));
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Article Body */
+    .article-body {
+      padding: 2.5rem 3rem 3rem;
     }
 
     .article-badge {
@@ -61,7 +101,7 @@
       margin-bottom: 1.5rem;
     }
 
-    .post-hero h1 {
+    h1 {
       font-family: 'Syne', sans-serif;
       font-size: clamp(2rem, 5vw, 3rem);
       font-weight: 800;
@@ -78,41 +118,7 @@
       align-items: center;
     }
 
-    .cover {
-      width: 100%;
-      max-width: 760px;
-      margin: 2rem auto;
-      padding: 0 2.5rem;
-      display: block;
-    }
-
-    .cover-img {
-      width: 100%;
-      height: 340px;
-      background: linear-gradient(135deg, #1a0d2e 0%, #0d1120 50%, #2e0d1a 100%);
-      border-radius: 12px;
-      border: 1px solid var(--art-border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 4rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .cover-img::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at 30% 50%, rgba(224,64,251,0.15) 0%, transparent 60%),
-                  radial-gradient(ellipse at 70% 50%, rgba(0,229,255,0.10) 0%, transparent 60%);
-    }
-
-    article {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 1rem 2.5rem 6rem;
-    }
+    article { padding: 2rem 0 1rem; }
 
     article h2 {
       font-family: 'Syne', sans-serif;
@@ -187,6 +193,19 @@
     .back:hover { gap: 0.75rem; }
 
     strong { color: #fff; }
+
+    @media (max-width: 640px) {
+      .article-card {
+        margin: 1.5rem 1rem 2rem;
+        border-radius: 12px;
+      }
+      .article-body {
+        padding: 1.5rem;
+      }
+      .compare {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
@@ -230,93 +249,101 @@
   </header>
 
   <main id="main">
-    <div class="post-hero">
-      <a href="../insights.html" class="back">← Zurück zum Blog</a>
-      <div class="article-badge">Strategie</div>
-      <h1>Eigene Website vs. Social Media – Warum beides zählt, aber eines davon gehört dir</h1>
-      <div class="hero-meta">
-        <span>📅 Februar 2025</span>
-        <span>⏱ 6 Min. Lesezeit</span>
+    <div class="article-card">
+      <div class="cover-wrap">
+        <img
+          src="../assets/blog/cover-social-media.jpg"
+          alt="Website vs. Social Media – Strategievergleich"
+          loading="eager"
+          onerror="this.style.display='none'"
+        />
+        <div class="cover-vignette"></div>
+      </div>
+
+      <div class="article-body">
+        <a href="../insights.html" class="back">← Zurück zum Blog</a>
+        <div class="article-badge">Strategie</div>
+        <h1>Eigene Website vs. Social Media – Warum beides zählt, aber eines davon gehört dir</h1>
+        <div class="hero-meta">
+          <span>📅 Februar 2025</span>
+          <span>⏱ 6 Min. Lesezeit</span>
+        </div>
+
+        <article>
+          <p>
+            „Ich brauche keine Website, ich hab Instagram." Diesen Satz habe ich in den letzten Jahren öfter gehört als ich zählen kann. Meistens kommt er von Betrieben, die wirklich gut darin sind, Inhalte zu erstellen — und die deshalb glauben, das reicht. Spoiler: Es reicht nicht. Und der Grund ist simpler, als du denkst.
+          </p>
+
+          <h2>Das Grundproblem: Du baust auf fremdem Boden</h2>
+          <p>
+            Stell dir vor, du eröffnest ein Ladengeschäft — aber mietest nicht nur die Räume, sondern gibst dem Vermieter auch die komplette Kontrolle über deine Öffnungszeiten, dein Schaufenster und die Frage, ob überhaupt jemand an deinem Laden vorbeiläuft. Klingt absurd? Genau das machst du, wenn Instagram deine einzige Onlinepräsenz ist.
+          </p>
+
+          <div class="highlight-box">
+            <p><strong>Instagram, TikTok, Facebook</strong> — all das sind Plattformen mit eigenen Regeln, eigenen Algorithmen und eigenen Geschäftsinteressen. Dein Account kann morgen gesperrt, deine Reichweite halbiert oder das ganze Netzwerk regulatorisch eingeschränkt werden. Und du hast null Einfluss darauf.</p>
+          </div>
+
+          <p>
+            Das ist kein theoretisches Risiko. Es ist passiert — immer wieder. Accounts mit zehntausenden Followern wurden über Nacht gesperrt. Algorithmen wurden geändert und organische Reichweite kollabierte. TikTok wurde in manchen Ländern zeitweise gesperrt. Wer dort alles aufgebaut hatte, stand vor dem Nichts.
+          </p>
+
+          <h2>Was du mit einer eigenen Website hast</h2>
+
+          <div class="compare">
+            <div class="compare-col website">
+              <h4>🌐 Eigene Website</h4>
+              <ul>
+                <li>Du besitzt den Content</li>
+                <li>Kein Algorithmus entscheidet über deine Sichtbarkeit</li>
+                <li>Google findet dich dauerhaft</li>
+                <li>Kein Konkurrent kann neben deinem Profil werben</li>
+                <li>Vollständige Kontrolle über Design &amp; Branding</li>
+                <li>Direkter Zugriff auf Kundendaten (DSGVO-konform)</li>
+              </ul>
+            </div>
+            <div class="compare-col social">
+              <h4>📱 Social Media</h4>
+              <ul>
+                <li>Content gehört der Plattform</li>
+                <li>Reichweite abhängig vom Algorithmus</li>
+                <li>Flüchtig — Posts verschwinden im Feed</li>
+                <li>Werbung von Konkurrenten möglich</li>
+                <li>Design durch Plattform vorgegeben</li>
+                <li>Keine eigene Kundenliste</li>
+              </ul>
+            </div>
+          </div>
+
+          <h2>Aber Social Media ist doch auch wichtig?</h2>
+          <p>
+            Ja — absolut. Nur eben für etwas anderes. Social Media ist ideal für Reichweite, Aufmerksamkeit, Community-Building und den ersten Kontakt. Eine Website ist das, wo Vertrauen entsteht und Kaufentscheidungen fallen.
+          </p>
+          <p>
+            Die Formel, die funktioniert, ist einfach: <strong>Social Media bringt die Leute — deine Website macht aus ihnen Kunden.</strong> Wer nur Social Media hat, bringt Leute nirgendwo hin. Wer nur eine Website hat, weiß möglicherweise nicht wie er neue Leute erreicht. Beides zusammen ist das Spiel.
+          </p>
+
+          <h3>Social Media als Trafficquelle nutzen</h3>
+          <p>
+            Jeder deiner Posts sollte im Hinterkopf haben: Wo lande ich die Leute, die sich interessieren? Ein Link in der Bio reicht nicht. Zeig konkrete Gründe, warum es sich lohnt, auf deine Website zu klicken. Exklusive Inhalte, ein Kontaktformular, eine Leistungsübersicht — irgendetwas, das auf der Plattform selbst nicht zu finden ist.
+          </p>
+
+          <h3>Website als Vertrauensanker</h3>
+          <p>
+            Wenn jemand zum ersten Mal von dir hört — über Instagram, Empfehlung oder Google — wird er fast immer deine Website besuchen, bevor er Kontakt aufnimmt. Das ist der Moment, in dem er entscheidet: Will ich mit dieser Person/diesem Unternehmen arbeiten? Eine gute Website beantwortet diese Frage mit Ja.
+          </p>
+
+          <hr class="divider" />
+
+          <h2>Was das konkret bedeutet</h2>
+          <p>
+            Du brauchst nicht zu wählen. Du brauchst beides — aber du musst verstehen, was welches kann. Social Media ist Werbung. Deine Website ist dein Geschäft. Investiere entsprechend.
+          </p>
+          <p>
+            Wenn du heute nur auf Social Media aktiv bist: Fang klein an. Eine simple, klare Website mit deinen Leistungen, Kontaktmöglichkeit und einem guten ersten Eindruck ist besser als keine. Der perfekte Zeitpunkt war gestern — der nächstbeste ist jetzt.
+          </p>
+        </article>
       </div>
     </div>
-
-    <div class="cover">
-      <div class="cover-img">📱</div>
-    </div>
-
-    <article>
-      <p>
-        „Ich brauche keine Website, ich hab Instagram." Diesen Satz habe ich in den letzten Jahren öfter gehört als ich zählen kann. Meistens kommt er von Betrieben, die wirklich gut darin sind, Inhalte zu erstellen — und die deshalb glauben, das reicht. Spoiler: Es reicht nicht. Und der Grund ist simpler, als du denkst.
-      </p>
-
-      <h2>Das Grundproblem: Du baust auf fremdem Boden</h2>
-      <p>
-        Stell dir vor, du eröffnest ein Ladengeschäft — aber mietest nicht nur die Räume, sondern gibst dem Vermieter auch die komplette Kontrolle über deine Öffnungszeiten, dein Schaufenster und die Frage, ob überhaupt jemand an deinem Laden vorbeiläuft. Klingt absurd? Genau das machst du, wenn Instagram deine einzige Onlinepräsenz ist.
-      </p>
-
-      <div class="highlight-box">
-        <p><strong>Instagram, TikTok, Facebook</strong> — all das sind Plattformen mit eigenen Regeln, eigenen Algorithmen und eigenen Geschäftsinteressen. Dein Account kann morgen gesperrt, deine Reichweite halbiert oder das ganze Netzwerk regulatorisch eingeschränkt werden. Und du hast null Einfluss darauf.</p>
-      </div>
-
-      <p>
-        Das ist kein theoretisches Risiko. Es ist passiert — immer wieder. Accounts mit zehntausenden Followern wurden über Nacht gesperrt. Algorithmen wurden geändert und organische Reichweite kollabierte. TikTok wurde in manchen Ländern zeitweise gesperrt. Wer dort alles aufgebaut hatte, stand vor dem Nichts.
-      </p>
-
-      <h2>Was du mit einer eigenen Website hast</h2>
-
-      <div class="compare">
-        <div class="compare-col website">
-          <h4>🌐 Eigene Website</h4>
-          <ul>
-            <li>Du besitzt den Content</li>
-            <li>Kein Algorithmus entscheidet über deine Sichtbarkeit</li>
-            <li>Google findet dich dauerhaft</li>
-            <li>Kein Konkurrent kann neben deinem Profil werben</li>
-            <li>Vollständige Kontrolle über Design &amp; Branding</li>
-            <li>Direkter Zugriff auf Kundendaten (DSGVO-konform)</li>
-          </ul>
-        </div>
-        <div class="compare-col social">
-          <h4>📱 Social Media</h4>
-          <ul>
-            <li>Content gehört der Plattform</li>
-            <li>Reichweite abhängig vom Algorithmus</li>
-            <li>Flüchtig — Posts verschwinden im Feed</li>
-            <li>Werbung von Konkurrenten möglich</li>
-            <li>Design durch Plattform vorgegeben</li>
-            <li>Keine eigene Kundenliste</li>
-          </ul>
-        </div>
-      </div>
-
-      <h2>Aber Social Media ist doch auch wichtig?</h2>
-      <p>
-        Ja — absolut. Nur eben für etwas anderes. Social Media ist ideal für Reichweite, Aufmerksamkeit, Community-Building und den ersten Kontakt. Eine Website ist das, wo Vertrauen entsteht und Kaufentscheidungen fallen.
-      </p>
-      <p>
-        Die Formel, die funktioniert, ist einfach: <strong>Social Media bringt die Leute — deine Website macht aus ihnen Kunden.</strong> Wer nur Social Media hat, bringt Leute nirgendwo hin. Wer nur eine Website hat, weiß möglicherweise nicht wie er neue Leute erreicht. Beides zusammen ist das Spiel.
-      </p>
-
-      <h3>Social Media als Trafficquelle nutzen</h3>
-      <p>
-        Jeder deiner Posts sollte im Hinterkopf haben: Wo lande ich die Leute, die sich interessieren? Ein Link in der Bio reicht nicht. Zeig konkrete Gründe, warum es sich lohnt, auf deine Website zu klicken. Exklusive Inhalte, ein Kontaktformular, eine Leistungsübersicht — irgendetwas, das auf der Plattform selbst nicht zu finden ist.
-      </p>
-
-      <h3>Website als Vertrauensanker</h3>
-      <p>
-        Wenn jemand zum ersten Mal von dir hört — über Instagram, Empfehlung oder Google — wird er fast immer deine Website besuchen, bevor er Kontakt aufnimmt. Das ist der Moment, in dem er entscheidet: Will ich mit dieser Person/diesem Unternehmen arbeiten? Eine gute Website beantwortet diese Frage mit Ja.
-      </p>
-
-      <hr class="divider" />
-
-      <h2>Was das konkret bedeutet</h2>
-      <p>
-        Du brauchst nicht zu wählen. Du brauchst beides — aber du musst verstehen, was welches kann. Social Media ist Werbung. Deine Website ist dein Geschäft. Investiere entsprechend.
-      </p>
-      <p>
-        Wenn du heute nur auf Social Media aktiv bist: Fang klein an. Eine simple, klare Website mit deinen Leistungen, Kontaktmöglichkeit und einem guten ersten Eindruck ist besser als keine. Der perfekte Zeitpunkt war gestern — der nächstbeste ist jetzt.
-      </p>
-    </article>
   </main>
 
   <footer class="site-footer" role="contentinfo">
