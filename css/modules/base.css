@@ -23,6 +23,15 @@ body.theme-light {
   background-image: url("../Bilder/Hintergrund_Hell.png");
 }
 
+/* Mobile: Explizit kein Zoom-Effekt */
+@media (max-width: 768px) {
+  body {
+    background-attachment: scroll;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
 /* Fixed Background nur auf Desktop für bessere Performance */
 @media (min-width: 1024px) {
   body {

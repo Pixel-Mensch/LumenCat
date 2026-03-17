@@ -364,20 +364,22 @@ body.theme-light .grid-3 li {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .process-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-
-  .process-step {
-    height: 100%;
-  }
-
   .why-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .services-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  /* Process-Grid erst ab 900px nebeneinander */
+  .process-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .process-step {
+    flex: 1;
+    height: 100%;
   }
 
   .section--contact .section__header {

@@ -2,7 +2,20 @@
 // Lumencat – Kontaktformular mit Environment Variables & CSRF Protection
 
 session_start();
+
 header('Content-Type: application/json; charset=utf-8');
+
+$posted = $_POST['csrf_token'] ?? '';
+$session = $_SESSION['csrf_token'] ?? '';
+
+if (!$posted || !$session || !hash_equals($session, $posted)) {
+  http_response_code(400);
+  echo json_encode([
+    'success' => false,
+    'message' => 'csrf'
+  ]);
+  exit;
+}
 
 // Rate Limiting: Max 3 Anfragen pro Minute
 $now = time();
@@ -66,21 +79,6 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     ]);
     exit;
 }
-
-// CSRF-Protection: Token validieren
-$csrfToken = $_POST['csrf_token'] ?? '';
-if (empty($_SESSION['csrf_token']) || $csrfToken !== $_SESSION['csrf_token']) {
-    // Token erneuern auch bei Fehler (Replay-Attack verhindern)
-    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
-    echo json_encode([
-        'success' => false,
-        'message' => 'Sicherheitsüberprüfung fehlgeschlagen. Bitte lade die Seite neu und versuche es erneut.'
-    ]);
-    exit;
-}
-
-// Token nach erfolgreicher Validierung erneuern (One-Time-Use)
-$_SESSION['csrf_token'] = bin2hex(random_bytes(32));
 
 // Honeypot
 if (!empty($_POST['website'] ?? '')) {

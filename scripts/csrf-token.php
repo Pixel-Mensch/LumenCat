@@ -1,16 +1,15 @@
 <?php
-// Lumencat – CSRF Token Generator
-// Returns a JSON response with a new CSRF token
-
 session_start();
-header('Content-Type: application/json; charset=utf-8');
 
-// Generate secure CSRF token
 if (empty($_SESSION['csrf_token'])) {
-    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+  $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
 }
 
+header('Content-Type: application/json; charset=utf-8');
+header('Cache-Control: no-store, no-cache, must-revalidate, max-age=0, private');
+header('Pragma: no-cache');
+
 echo json_encode([
-    'success' => true,
-    'csrf_token' => $_SESSION['csrf_token']
+  'success' => true,
+  'csrf_token' => $_SESSION['csrf_token']
 ]);
