@@ -16,6 +16,13 @@
     border-color var(--transition-slow);
 }
 
+.blog-card__link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  height: 100%;
+}
+
 body.theme-light .blog-card {
   background: var(--color-surface);
   border-color: rgba(0, 0, 0, 0.08);
