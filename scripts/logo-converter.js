@@ -73,7 +73,7 @@ console.log("   • Run: svgo assets/images/logo.svg\n");
 console.log("🚀 Your logo is already integrated in:");
 const htmlFiles = [
   "index.html",
-  "shop.html",
+  "services.html",
   "kontakt.html",
   "blog.html",
   "impressum.html",

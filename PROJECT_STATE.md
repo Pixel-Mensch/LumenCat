@@ -41,7 +41,7 @@ Was fehlt:
 
 ---
 
-### `shop.html` – Pakete & Preise
+### `services.html` – Pakete & Preise
 **Status: Live / Inhaltlich aktuell**
 
 Was funktioniert:

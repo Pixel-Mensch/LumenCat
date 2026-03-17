@@ -13,7 +13,7 @@ Version: `1.0.1` | Stack: Vanilla HTML/CSS/JS + PHP | Hosting: Hetzner
 |---|---|---|
 | `index.html` | Hauptseite – Hero, Services, Portfolio, Kontaktformular | Live |
 | `kontakt.html` | Dedizierte Kontaktseite | Live |
-| `shop.html` | Pakete & Preise | Live |
+| `services.html` | Services (Pakete & Preise) | Live |
 | `insights.html` | Blog / Insights-Übersicht | In Arbeit |
 | `impressum.html` | Pflichtangaben | Live |
 | `datenschutz.html` | DSGVO-Datenschutzerklärung | Live |

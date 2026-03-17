@@ -42,10 +42,10 @@
       ]
     },
     {
-      "name": "Pakete & Preise",
-      "short_name": "Shop",
+      "name": "Services",
+      "short_name": "Services",
       "description": "Alle Angebote ansehen",
-      "url": "/shop.html",
+      "url": "/services.html",
       "icons": [
         {
           "src": "/assets/images/android-chrome-192x192.png",

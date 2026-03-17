@@ -6,8 +6,8 @@ const domain = "https://lumencat.de";
 const htmlFiles = [
   { url: "/", file: "index.html", priority: "1.0", changefreq: "monthly" },
   {
-    url: "/shop.html",
-    file: "shop.html",
+    url: "/services.html",
+    file: "services.html",
     priority: "0.9",
     changefreq: "monthly",
   },
