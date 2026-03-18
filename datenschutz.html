@@ -1,9 +1,13 @@
 <!DOCTYPE html>
-<html lang="de">
+<html
+  lang="en"
+  data-i18n-title="page.title.privacy"
+  data-i18n-desc="page.desc.privacy"
+>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Datenschutzerklärung – Lumencat</title>
+    <title>Privacy Policy – Lumencat</title>
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico" />
     <link
       rel="icon"
@@ -20,17 +24,17 @@
     <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg" />
     <meta
       name="description"
-      content="Datenschutzerklärung für die Website von Lumencat – Webdesign, Automationen & KI."
+      content="Privacy policy for the Lumencat website – Web Design, Automations &amp; AI."
     />
     <meta
       name="robots"
       content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
     />
     <link rel="canonical" href="https://lumencat.de/datenschutz.html" />
-    <meta property="og:title" content="Datenschutzerklärung – Lumencat" />
+    <meta property="og:title" content="Privacy Policy – Lumencat" />
     <meta
       property="og:description"
-      content="Datenschutzerklärung für die Website von Lumencat – Webdesign, Automationen & KI."
+      content="Privacy policy for the Lumencat website – Web Design, Automations &amp; AI."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://lumencat.de/datenschutz.html" />
@@ -43,7 +47,6 @@
     <link rel="preconnect" href="https://plausible.io" crossorigin />
     <link rel="dns-prefetch" href="https://plausible.io" />
     <script>
-      // Prevent Flash of Unstyled/Wrong Theme on load
       (function () {
         try {
           const savedTheme = localStorage.getItem("lumencat-theme");
@@ -56,10 +59,17 @@
     </script>
   </head>
   <body>
-    <a href="#main" class="skip-link">Zum Hauptinhalt springen</a>
+    <a href="#main" class="skip-link" data-i18n="skip_link"
+      >Skip to main content</a
+    >
 
     <header class="site-header" role="banner">
-      <nav class="nav" role="navigation" aria-label="Hauptnavigation">
+      <nav
+        class="nav"
+        role="navigation"
+        aria-label="Main navigation"
+        data-i18n-aria="nav.aria_label"
+      >
         <a href="index.html" class="nav__brand">
           <img src="assets/images/logo.svg" alt="Lumencat Logo" class="nav__logo" />
           <span class="nav__brand-name">Lumencat</span>
@@ -68,29 +78,49 @@
         <button
           class="nav__toggle"
           id="navToggle"
-          aria-label="Menü öffnen"
+          aria-label="Open menu"
           aria-expanded="false"
           aria-controls="navLinks"
+          data-i18n-aria="nav.toggle_aria"
         >
           ☰
         </button>
 
         <ul class="nav__links" id="navLinks">
-          <li><a href="index.html#leistungen">Leistungen</a></li>
-          <li><a href="index.html#projekte">Projekte</a></li>
+          <li>
+            <a href="index.html#leistungen" data-i18n="nav.features"
+              >Features</a
+            >
+          </li>
+          <li>
+            <a href="index.html#projekte" data-i18n="nav.projects">Projects</a>
+          </li>
           <li><a href="services.html">Services</a></li>
           <li><a href="index.html#tools">Tools</a></li>
           <li><a href="insights.html">Blog</a></li>
-          <li><a href="kontakt.html">Kontakt</a></li>
+          <li>
+            <a href="kontakt.html" data-i18n="nav.contact">Contact</a>
+          </li>
           <li>
             <button
               class="theme-toggle"
               id="themeToggle"
               type="button"
-              aria-label="Darstellung wechseln"
+              aria-label="Toggle theme"
               aria-pressed="false"
             >
               🌙
+            </button>
+          </li>
+          <li>
+            <button
+              class="theme-toggle"
+              id="langToggle"
+              type="button"
+              aria-label="Switch to German"
+              aria-pressed="false"
+            >
+              DE
             </button>
           </li>
         </ul>
@@ -100,17 +130,18 @@
     <main id="main" role="main">
       <section class="section section--padded reveal">
         <header class="section__header">
-          <h1>Datenschutzerklärung</h1>
-          <p>
-            Mit den folgenden Informationen informiere ich dich über die
-            Verarbeitung personenbezogener Daten bei Nutzung dieser Website.
+          <h1 data-i18n="privacy.heading">Privacy Policy</h1>
+          <p data-i18n="privacy.subtitle">
+            The following information explains how we process personal data when
+            you use this website.
           </p>
         </header>
 
         <div class="card reveal legal-card">
           <h2>1. Verantwortlicher</h2>
           <p>
-            Verantwortlich im Sinne der Datenschutz-Grundverordnung (DSGVO) ist:
+            Verantwortlich im Sinne der Datenschutz-Grundverordnung (DSGVO)
+            ist:
           </p>
           <p>
             <strong>Marc André Kommer (Lumencat)</strong><br />
@@ -224,8 +255,8 @@
             <li>Widerspruch gegen bestimmte Verarbeitungen (Art. 21 DSGVO)</li>
           </ul>
           <p>
-            Hierzu sowie zu weiteren Fragen zum Thema Datenschutz kannst du dich
-            jederzeit an mich wenden:
+            Hierzu sowie zu weiteren Fragen zum Thema Datenschutz kannst du
+            dich jederzeit an mich wenden:
             <a href="mailto:pixelmensch@mail.de">pixelmensch@mail.de</a>
           </p>
 
@@ -245,11 +276,9 @@
       </section>
     </main>
 
-    <!-- Footer wie auf den anderen Seiten -->
-    <footer class="site-footer">
+    <footer class="site-footer" role="contentinfo">
       <div class="site-footer__inner">
         <div class="footer-grid">
-          <!-- Brand -->
           <div class="footer-col footer-col--brand">
             <a href="index.html" class="footer-brand">
               <img
@@ -260,48 +289,78 @@
               />
               <div class="footer-brand__text">
                 <span class="footer-brand__name">Lumencat</span>
-                <span class="footer-brand__tagline">
-                  Webdesign. SaaS-Tools. Digitale Lösungen.
+                <span
+                  class="footer-brand__tagline"
+                  data-i18n="footer.tagline"
+                >
+                  Web Design. SaaS Tools. Digital Solutions.
                 </span>
               </div>
             </a>
-            <p class="footer-brand__description">
-              Fertige Tools und moderne Websites für Selbstständige und lokale
-              Unternehmen. Klarer Code, ehrliche Beratung, wenig Blabla.
+            <p class="footer-brand__description" data-i18n="footer.description">
+              Ready-made tools and modern websites for freelancers and local
+              businesses. Clean code, honest advice, no fluff.
             </p>
           </div>
 
-          <!-- Navigation -->
           <div class="footer-col">
-            <h3 class="footer-heading">Navigation</h3>
+            <h3 class="footer-heading" data-i18n="footer.nav_heading">
+              Navigation
+            </h3>
             <ul class="footer-links">
-              <li><a href="index.html#leistungen">Leistungen</a></li>
-              <li><a href="index.html#projekte">Projekte</a></li>
+              <li>
+                <a href="index.html#leistungen" data-i18n="footer.features"
+                  >Features</a
+                >
+              </li>
+              <li>
+                <a href="index.html#projekte" data-i18n="footer.projects"
+                  >Projects</a
+                >
+              </li>
               <li><a href="services.html">Services</a></li>
               <li><a href="index.html#tools">Tools</a></li>
               <li><a href="insights.html">Blog</a></li>
-              <li><a href="kontakt.html">Kontakt</a></li>
-            </ul>
-          </div>
-
-          <!-- Leistungen -->
-          <div class="footer-col">
-            <h3 class="footer-heading">Leistungen</h3>
-            <ul class="footer-links">
               <li>
-                <a href="services.html#webseiten"
-                  >Landingpages &amp; Business-Websites</a
+                <a href="kontakt.html" data-i18n="footer.contact_nav"
+                  >Contact</a
                 >
               </li>
-              <li><a href="services.html">SaaS-Tools &amp; digitale Lösungen</a></li>
-              <li><a href="services.html#wartung">Website-Wartung</a></li>
-              <li><a href="services.html#hosting">Hosting-Setup (Hetzner)</a></li>
             </ul>
           </div>
 
-          <!-- Kontakt -->
           <div class="footer-col">
-            <h3 class="footer-heading">Kontakt</h3>
+            <h3 class="footer-heading" data-i18n="footer.services_heading">
+              Services
+            </h3>
+            <ul class="footer-links">
+              <li>
+                <a href="services.html#webseiten" data-i18n="footer.service_1"
+                  >Landingpages &amp; Business Websites</a
+                >
+              </li>
+              <li>
+                <a href="services.html" data-i18n="footer.service_2"
+                  >SaaS Tools &amp; Digital Solutions</a
+                >
+              </li>
+              <li>
+                <a href="services.html#wartung" data-i18n="footer.service_3"
+                  >Website Maintenance</a
+                >
+              </li>
+              <li>
+                <a href="services.html#hosting" data-i18n="footer.service_4"
+                  >Hosting Setup (Hetzner)</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3 class="footer-heading" data-i18n="footer.contact_heading">
+              Contact
+            </h3>
             <ul class="footer-links footer-links--contact">
               <li>
                 <a href="mailto:hello@lumencat.de">hello@lumencat.de</a>
@@ -310,29 +369,37 @@
                 <a href="tel:+4915226580980">+49 1522 6580980</a>
               </li>
               <li>
-                Kontaktformular:<br /><a href="kontakt.html"
-                  >Kontaktseite öffnen</a
+                <span data-i18n="footer.contact_form_label"
+                  >Contact form:</span
+                ><br /><a
+                  href="kontakt.html"
+                  data-i18n="footer.contact_page_link"
+                  >Open contact page</a
                 >
               </li>
             </ul>
-            <p class="footer-note">
-              Projekte nach Absprache von Montag bis Freitag.
+            <p class="footer-note" data-i18n="footer.availability">
+              Projects by arrangement Monday to Friday.
             </p>
           </div>
         </div>
 
         <div class="footer-bottom">
           <small class="footer-copy">
-            &copy; 2025 Lumencat. Alle Rechte vorbehalten.
+            &copy; 2025 Lumencat.
+            <span data-i18n="footer.rights">All rights reserved.</span>
           </small>
           <nav class="footer-nav">
-            <a href="impressum.html">Impressum</a>
-            <a href="datenschutz.html">Datenschutz</a>
+            <a href="impressum.html" data-i18n="footer.legal_notice"
+              >Legal Notice</a
+            >
+            <a href="datenschutz.html" data-i18n="footer.privacy">Privacy</a>
           </nav>
         </div>
       </div>
     </footer>
 
+    <script src="js/i18n.js"></script>
     <script src="js/main.js"></script>
     <script
       defer

@@ -1,25 +1,23 @@
-<!DOCTYPE html>
-<html lang="de">
+<!doctype html>
+<html lang="en" data-i18n-title="page.title.home" data-i18n-desc="page.desc.home">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Lumencat entwickelt fertige SaaS-Tools und professionelle Websites für lokale Unternehmen. Direkt einsetzbar, schnell deployed, ehrliche Beratung."
+      content="Lumencat develops ready-to-use SaaS tools and professional websites for local businesses. Deploy instantly, get results, honest advice."
     />
-
     <meta
       name="keywords"
       content="Webdesign, SaaS-Tools, Digitale Lösungen, Website-Erstellung, Freelancer, Selbstständige, kleine Unternehmen, Landingpage, Entrümpler-Software, Digitalisierung"
     />
-
     <meta
       property="og:title"
-      content="Lumencat – Webdesign &amp; SaaS-Tools für lokale Unternehmen"
+      content="Lumencat – Web Design &amp; SaaS Tools for Local Businesses"
     />
     <meta
       property="og:description"
-      content="Fertige Tools und professionelle Websites, die dein Business sichtbarer machen – direkt einsetzbar, ohne Agenturblabla."
+      content="Ready-to-use tools and professional websites that make your business more visible – deploy instantly, no agency fluff."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://lumencat.de" />
@@ -29,29 +27,25 @@
     />
     <meta property="og:image:alt" content="Lumencat Logo" />
     <meta property="og:site_name" content="Lumencat" />
-
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
-      content="Lumencat – Webdesign &amp; SaaS-Tools für lokale Unternehmen"
+      content="Lumencat – Web Design &amp; SaaS Tools for Local Businesses"
     />
     <meta
       name="twitter:description"
-      content="Lumencat entwickelt fertige Tools und Websites für Selbstständige und kleine Unternehmen. Direkt einsetzbar, keine langen Projektphasen."
+      content="Lumencat builds ready-to-use tools and websites for freelancers and local businesses. Deploy instantly, no long project phases."
     />
     <meta
       name="twitter:image"
       content="https://lumencat.de/assets/images/android-chrome-512x512.png"
     />
-
     <meta name="theme-color" content="#000000" />
     <link rel="canonical" href="https://lumencat.de/" />
     <meta
       name="robots"
       content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
     />
-
-    <!-- PWA Manifest -->
     <link rel="manifest" href="manifest.json" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -61,10 +55,7 @@
     />
     <meta name="apple-mobile-web-app-title" content="Lumencat" />
     <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png" />
-
-    <title>
-      Lumencat – Webdesign &amp; SaaS-Tools für lokale Unternehmen
-    </title>
+    <title>Lumencat – Web Design &amp; SaaS Tools for Local Businesses</title>
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico" />
     <link
       rel="icon"
@@ -83,24 +74,20 @@
     <link rel="preconnect" href="https://plausible.io" crossorigin />
     <link rel="dns-prefetch" href="https://plausible.io" />
     <script>
-      // Prevent Flash of Unstyled/Wrong Theme on load
       (function () {
         try {
           const savedTheme = localStorage.getItem("lumencat-theme");
           const theme = savedTheme === "light" ? "light" : "dark";
           document.documentElement.className = "theme-" + theme;
-        } catch (e) {
-          /* ignore (e.g. disabled storage) */
-        }
+        } catch (e) {}
       })();
     </script>
-    <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
         "name": "Lumencat",
-        "description": "Webdesign und fertige SaaS-Tools für lokale Unternehmen und Selbstständige",
+        "description": "Web design and ready-to-use SaaS tools for local businesses and freelancers",
         "url": "https://lumencat.de",
         "logo": "https://lumencat.de/assets/images/logo.svg",
         "image": "https://lumencat.de/assets/images/HeroMain.png",
@@ -116,52 +103,68 @@
         },
         "areaServed": "DE",
         "priceRange": "$$",
-        "knowsAbout": [
-          "Web Design",
-          "SaaS Tools",
-          "Digital Solutions",
-          "Business Software"
-        ],
+        "knowsAbout": ["Web Design", "SaaS Tools", "Digital Solutions", "Business Software"],
         "serviceType": ["Web Design", "SaaS Tools", "Website Maintenance"]
       }
     </script>
   </head>
   <body>
-    <a href="#main" class="skip-link">Zum Hauptinhalt springen</a>
+    <a href="#main" class="skip-link" data-i18n="skip_link">Skip to main content</a>
 
     <header class="site-header" role="banner">
-      <nav class="nav" role="navigation" aria-label="Hauptnavigation">
+      <nav
+        class="nav"
+        role="navigation"
+        aria-label="Main navigation"
+        data-i18n-aria="nav.aria_label"
+      >
         <a href="index.html" class="nav__brand">
-          <img src="assets/images/logo.svg" alt="Lumencat Logo" class="nav__logo" />
+          <img
+            src="assets/images/logo.svg"
+            alt="Lumencat Logo"
+            class="nav__logo"
+          />
           <span class="nav__brand-name">Lumencat</span>
         </a>
 
         <button
           class="nav__toggle"
           id="navToggle"
-          aria-label="Menü öffnen"
+          aria-label="Open menu"
           aria-expanded="false"
           aria-controls="navLinks"
+          data-i18n-aria="nav.toggle_aria"
         >
           ☰
         </button>
 
         <ul class="nav__links" id="navLinks">
-          <li><a href="#leistungen">Leistungen</a></li>
-          <li><a href="#projekte">Projekte</a></li>
+          <li><a href="#leistungen" data-i18n="nav.features">Features</a></li>
+          <li><a href="#projekte" data-i18n="nav.projects">Projects</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="#tools">Tools</a></li>
           <li><a href="insights.html">Blog</a></li>
-          <li><a href="kontakt.html">Kontakt</a></li>
+          <li><a href="kontakt.html" data-i18n="nav.contact">Contact</a></li>
           <li>
             <button
               class="theme-toggle"
               id="themeToggle"
               type="button"
-              aria-label="Darstellung wechseln"
+              aria-label="Switch to dark mode"
               aria-pressed="false"
             >
               🌙
+            </button>
+          </li>
+          <li>
+            <button
+              class="theme-toggle"
+              id="langToggle"
+              type="button"
+              aria-label="Switch to German"
+              aria-pressed="false"
+            >
+              DE
             </button>
           </li>
         </ul>
@@ -195,152 +198,203 @@
         <div class="hero__overlay"></div>
         <div class="hero__inner">
           <div class="hero__content">
-            <p class="hero__kicker">Webdesign • SaaS-Tools • Digitale Lösungen</p>
-            <h1 class="hero__title">
-              High-Tech Websites, die im Dunkeln leuchten.
+            <p class="hero__kicker" data-i18n="hero.kicker">
+              Web Design • SaaS Tools • Digital Solutions
+            </p>
+            <h1 class="hero__title" data-i18n="hero.title">
+              High-Tech Websites That Shine in the Dark.
             </h1>
-            <p class="hero__subtitle">
-              Lumencat entwickelt fertige Tools für lokale Unternehmen und baut
-              Websites, die professionell wirken und neue Kunden bringen.
+            <p class="hero__subtitle" data-i18n="hero.subtitle">
+              Lumencat builds ready-to-use tools for local businesses and
+              creates websites that look professional and win new customers.
             </p>
             <div class="hero__actions">
-              <a href="kontakt.html" class="btn btn--primary"
-                >Projekt starten</a
+              <a
+                href="kontakt.html"
+                class="btn btn--primary"
+                data-i18n="hero.cta_primary"
+                >Start a project</a
               >
-              <a href="#projekte" class="btn btn--ghost">Beispiele ansehen</a>
+              <a
+                href="#projekte"
+                class="btn btn--ghost"
+                data-i18n="hero.cta_ghost"
+                >See examples</a
+              >
             </div>
-            <p class="hero__note">
-              Für Selbstständige, lokale Unternehmen und moderne Marken.
+            <p class="hero__note" data-i18n="hero.note">
+              For freelancers, local businesses and modern brands.
             </p>
           </div>
         </div>
       </section>
 
-      <!-- Leistungen -->
+      <!-- Features -->
       <section id="leistungen" class="section section--padded reveal">
         <header class="section__header">
-          <h2 class="reveal reveal-delay-1">
-            Was Lumencat für Unternehmen entwickelt
+          <h2 class="reveal reveal-delay-1" data-i18n="features.heading">
+            What Lumencat builds for businesses
           </h2>
-          <p class="reveal reveal-delay-2">
-            Drei Leistungsbereiche, eine klare Ausrichtung: fertige Tools,
-            individuelle Websites und verlässliche Betreuung. Kein Baukasten,
-            kein Agenturblabla.
+          <p class="reveal reveal-delay-2" data-i18n="features.subheading">
+            Three service areas, one clear focus: ready-made tools, custom
+            websites and reliable support. No builders, no agency speak.
           </p>
         </header>
 
         <div class="grid-3">
           <article class="card reveal reveal-delay-1">
-            <h3>Fertige SaaS-Tools</h3>
-            <p>
-              Sofort einsetzbare digitale Werkzeuge für lokale Unternehmen.
-              Du kaufst, wir deployen, du nutzt. Keine langen Projektphasen,
-              keine Einarbeitung. Aktuell verfügbar: Angebotsrechner für
-              Entrümpelungsbetriebe.
+            <h3 data-i18n="features.saas.title">Ready-to-use SaaS Tools</h3>
+            <p data-i18n="features.saas.text">
+              Immediately deployable digital tools for local businesses. You
+              buy, we deploy, you use. No long project phases, no onboarding.
+              Currently available: quote calculator for clearance companies.
             </p>
-            <a href="#tools" class="btn btn--ghost" style="margin-top: 1rem; display: inline-block;">Tools ansehen</a>
+            <a
+              href="#tools"
+              class="btn btn--ghost"
+              style="margin-top: 1rem; display: inline-block"
+              data-i18n="features.saas.cta"
+              >View tools</a
+            >
           </article>
 
           <article class="card reveal reveal-delay-2">
-            <h3>Websites &amp; Markenauftritt</h3>
-            <p>
-              Professionelle Websites, die mobil schnell laden und Vertrauen
-              aufbauen. Individuell entwickelt, klar strukturiert und auf
-              seriösen Auftritt ausgelegt – damit neue Kunden dich finden und
-              direkt Kontakt aufnehmen.
+            <h3 data-i18n="features.websites.title">
+              Websites &amp; Brand Presence
+            </h3>
+            <p data-i18n="features.websites.text">
+              Professional websites that load fast on mobile and build trust.
+              Custom-built, clearly structured and designed for a polished
+              appearance – so new customers find you and contact you right away.
             </p>
           </article>
 
           <article class="card reveal reveal-delay-3">
-            <h3>Wartung &amp; Betreuung</h3>
-            <p>
-              Deine Website bleibt nicht nur online – sie bleibt aktuell.
-              Monatliche Checks, kleine Textänderungen und Statusmeldungen
-              sorgen dafür, dass du dich auf dein Kerngeschäft konzentrieren
-              kannst.
+            <h3 data-i18n="features.maintenance.title">
+              Maintenance &amp; Support
+            </h3>
+            <p data-i18n="features.maintenance.text">
+              Your website doesn't just go online – it stays current. Monthly
+              checks, small text updates and status reports let you focus on
+              your core business.
             </p>
           </article>
         </div>
       </section>
 
-      <!-- Pakete & Preise im Überblick -->
+      <!-- Packages & Pricing -->
       <section id="pakete" class="section section--padded reveal">
         <div class="pricing-teaser-card reveal reveal-delay-1">
-          <h2>Pakete und Preise im Überblick</h2>
-          <p>
-            Du möchtest wissen, womit du ungefähr rechnen kannst? Statt
-            versteckter Kosten gibt es bei Lumencat klare Pakete für Websites,
-            Wartung und Tools. Alle aktuellen Angebote mit Richtpreisen
-            findest du auf der Seite „Pakete &amp; Preise".
+          <h2 data-i18n="pakete.heading">Packages &amp; Pricing Overview</h2>
+          <p data-i18n="pakete.text">
+            Want to know what to expect? Instead of hidden costs, Lumencat
+            offers clear packages for websites, maintenance and tools. All
+            current offers with indicative prices are on the Packages &amp;
+            Pricing page.
           </p>
-          <a href="services.html" class="btn btn--primary">
-            Pakete &amp; Preise ansehen
+          <a href="services.html" class="btn btn--primary" data-i18n="pakete.cta">
+            View packages &amp; pricing
           </a>
         </div>
       </section>
 
-      <!-- Wartung & Betreuung -->
+      <!-- Maintenance -->
       <section id="wartung" class="section section--padded reveal">
         <header class="section__header">
-          <h2 class="reveal reveal-delay-1">Wartung &amp; Betreuung</h2>
-          <p class="reveal reveal-delay-2">
-            Damit deine Website nicht nur online geht – sondern online bleibt.
+          <h2 class="reveal reveal-delay-1" data-i18n="wartung.heading">
+            Maintenance &amp; Support
+          </h2>
+          <p class="reveal reveal-delay-2" data-i18n="wartung.subheading">
+            So your website doesn't just go live – it stays live.
           </p>
         </header>
 
         <div class="grid-2">
           <article class="card reveal reveal-delay-1">
-            <h3>Website-Wartung</h3>
-            <p style="color: var(--color-text-soft); margin-bottom: 1rem">
-              Für laufende Lumencat-Projekte.
+            <h3 data-i18n="wartung.basic.title">Website Maintenance</h3>
+            <p
+              style="color: var(--color-text-soft); margin-bottom: 1rem"
+              data-i18n="wartung.basic.subtitle"
+            >
+              For active Lumencat projects.
             </p>
             <ul class="list">
-              <li>Monatlicher Check deiner Website</li>
-              <li>Kleine Textänderungen (z. B. Öffnungszeiten, Preise)</li>
-              <li>Backup oder Export nach Absprache</li>
-              <li>Sichtprüfung auf Erreichbarkeit und Funktionen</li>
-              <li>Kurze Statusnotiz „OK" oder „Änderung nötig"</li>
+              <li data-i18n="wartung.basic.li1">Monthly check of your website</li>
+              <li data-i18n="wartung.basic.li2">
+                Small text updates (e.g. opening hours, prices)
+              </li>
+              <li data-i18n="wartung.basic.li3">Backup or export on request</li>
+              <li data-i18n="wartung.basic.li4">
+                Visual check of availability and features
+              </li>
+              <li data-i18n="wartung.basic.li5">
+                Short status note "OK" or "Action needed"
+              </li>
             </ul>
-            <p style="margin-top: 1rem; color: var(--color-text-soft)">
-              Die genauen Konditionen findest du in den Paketen &amp; Preisen.
+            <p
+              style="margin-top: 1rem; color: var(--color-text-soft)"
+              data-i18n="wartung.basic.note"
+            >
+              Exact conditions are listed in the packages &amp; pricing.
             </p>
-            <a href="services.html" class="btn btn--ghost" style="margin-top: 1rem"
-              >Zu den Paketen</a
+            <a
+              href="services.html"
+              class="btn btn--ghost"
+              style="margin-top: 1rem"
+              data-i18n="wartung.basic.cta"
+              >View packages</a
             >
           </article>
 
           <article class="card reveal reveal-delay-2">
-            <h3>Erweiterte Wartung</h3>
-            <p style="color: var(--color-text-soft); margin-bottom: 1rem">
-              Für Websites mit mehr Technik und integrierten Tools.
+            <h3 data-i18n="wartung.extended.title">Extended Maintenance</h3>
+            <p
+              style="color: var(--color-text-soft); margin-bottom: 1rem"
+              data-i18n="wartung.extended.subtitle"
+            >
+              For websites with more technology and integrated tools.
             </p>
             <ul class="list">
-              <li>Alles aus der Website-Wartung</li>
-              <li>Regelmäßige Updates von Systemen und Plugins</li>
-              <li>Prüfung der Mailzustellung und Kontaktformulare</li>
-              <li>Optional: einfache SEO- oder Content-Checks</li>
+              <li data-i18n="wartung.extended.li1">
+                Everything from Website Maintenance
+              </li>
+              <li data-i18n="wartung.extended.li2">
+                Regular updates for systems and plugins
+              </li>
+              <li data-i18n="wartung.extended.li3">
+                Mail delivery and contact form checks
+              </li>
+              <li data-i18n="wartung.extended.li4">
+                Optional: simple SEO or content checks
+              </li>
             </ul>
-            <p style="margin-top: 1rem; color: var(--color-text-soft)">
-              Details und Preise stehen in den Paketen &amp; Preisen.
+            <p
+              style="margin-top: 1rem; color: var(--color-text-soft)"
+              data-i18n="wartung.extended.note"
+            >
+              Details and prices are in the packages &amp; pricing.
             </p>
             <a
               href="services.html"
               class="btn btn--primary"
               style="margin-top: 1rem"
-              >Zu den Paketen</a
+              data-i18n="wartung.extended.cta"
+              >View packages</a
             >
           </article>
         </div>
       </section>
 
-      <!-- Projekte -->
+      <!-- Projects -->
       <section id="projekte" class="section section--padded reveal">
         <header class="section__header">
-          <h2 class="reveal reveal-delay-1">Projekte &amp; Referenzen</h2>
-          <p class="reveal reveal-delay-2">
-            Beispiele und Demos, die zeigen, wie Lumencat arbeitet. Die Projekte
-            decken verschiedene Branchen ab und geben dir ein Gefühl dafür, wie
-            deine eigene Website oder Lösung aussehen kann.
+          <h2 class="reveal reveal-delay-1" data-i18n="projects.heading">
+            Projects &amp; References
+          </h2>
+          <p class="reveal reveal-delay-2" data-i18n="projects.subheading">
+            Examples and demos that show how Lumencat works. Projects span
+            various industries to give you a feel for what your website or
+            solution could look like.
           </p>
         </header>
         <div class="projects">
@@ -372,20 +426,24 @@
                 />
                 <img
                   src="assets/images/Lueftungsbau.PNG"
-                  alt="Lüftungsbau Meier – Vorschaubild"
+                  alt="Lüftungsbau Meier – Preview"
                   loading="lazy"
                 />
               </picture>
             </a>
             <div class="project-card__body">
               <h3>Lüftungsbau Meier</h3>
-              <p>
-                Seriöse Website für ein Handwerksunternehmen. Klare Struktur,
-                verständliche Leistungen und ein direkter Weg zur
-                Kontaktaufnahme. Ziel ist es, Vertrauen aufzubauen und Anfragen
-                so einfach wie möglich zu machen.
+              <p data-i18n="projects.lueftungsbau.text">
+                Professional website for a trade business. Clear structure,
+                understandable services and a direct path to contact. The goal:
+                build trust and make inquiries as easy as possible.
               </p>
-              <p class="project-card__tag">B2B • Mehrseitige Firmenwebsite</p>
+              <p
+                class="project-card__tag"
+                data-i18n="projects.lueftungsbau.tag"
+              >
+                B2B • Multi-page Company Website
+              </p>
             </div>
           </article>
 
@@ -417,21 +475,20 @@
                 />
                 <img
                   src="assets/images/bistro-aurora.png"
-                  alt="Bistro Aurora – Vorschaubild"
+                  alt="Bistro Aurora – Preview"
                   loading="lazy"
                 />
               </picture>
             </a>
             <div class="project-card__body">
               <h3>Bistro Aurora</h3>
-              <p>
-                Atmosphärische Website für ein Bistro mit starken Bildern und
-                klarer Navigation. Gäste finden Öffnungszeiten, Speisekarte und
-                Kontakt auf einen Blick und können sich schon vor dem Besuch ein
-                Gefühl für den Ort holen.
+              <p data-i18n="projects.bistro.text">
+                Atmospheric website for a bistro with strong imagery and clear
+                navigation. Guests find opening hours, the menu and contact at
+                a glance and can get a feel for the place before visiting.
               </p>
-              <p class="project-card__tag">
-                Gastronomie • Storytelling Website
+              <p class="project-card__tag" data-i18n="projects.bistro.tag">
+                Hospitality • Storytelling Website
               </p>
             </div>
           </article>
@@ -464,176 +521,246 @@
                 />
                 <img
                   src="assets/images/physio-vital.png"
-                  alt="Physio Vital – Vorschaubild"
+                  alt="Physio Vital – Preview"
                   loading="lazy"
                 />
               </picture>
             </a>
             <div class="project-card__body">
               <h3>Physio Vital</h3>
-              <p>
-                Website für eine Physiotherapie Praxis mit Fokus auf Vertrauen
-                und Übersicht. Leistungen werden klar erklärt, das Team
-                vorgestellt und Patienten finden schnell alle Infos zu
-                Öffnungszeiten und Kontakt. Ideal für Menschen, die sich vor dem
-                ersten Termin ein Bild von der Praxis machen wollen.
+              <p data-i18n="projects.physio.text">
+                Website for a physiotherapy practice with a focus on trust and
+                clarity. Services are clearly explained, the team is introduced,
+                and patients quickly find all the info on opening hours and
+                contact. Ideal for people who want to get a sense of the
+                practice before their first appointment.
               </p>
-              <p class="project-card__tag">Gesundheit • Praxiswebsite</p>
+              <p class="project-card__tag" data-i18n="projects.physio.tag">
+                Healthcare • Practice Website
+              </p>
             </div>
           </article>
         </div>
       </section>
 
-      <!-- Warum Lumencat -->
+      <!-- Why Lumencat -->
       <section id="warum" class="section section--padded reveal">
         <header class="section__header">
-          <h2 class="reveal reveal-delay-1">Warum Lumencat?</h2>
-          <p class="reveal reveal-delay-2">
-            Lumencat steht für klare, moderne Websites und pragmatische Technik.
-            Kein Hype, sondern Lösungen, die funktionieren, verständlich erklärt
-            sind und deinen Alltag leichter machen.
+          <h2 class="reveal reveal-delay-1" data-i18n="why.heading">
+            Why Lumencat?
+          </h2>
+          <p class="reveal reveal-delay-2" data-i18n="why.subheading">
+            Lumencat stands for clear, modern websites and pragmatic technology.
+            No hype – just solutions that work, explained clearly and that make
+            your day easier.
           </p>
         </header>
         <div class="why-grid">
           <article class="why-card reveal reveal-delay-1">
-            <h3>Fokus auf deinen Alltag</h3>
-            <p>
-              Im Zentrum steht nicht die Technik, sondern dein Tagesgeschäft.
-              Website und Tools werden so geplant, dass sie zu deiner Branche,
-              deinem Team und deinen Abläufen passen. Ziel ist, dass du weniger
-              erklären, nachfassen und sortieren musst.
+            <h3 data-i18n="why.focus.title">Focus on your day-to-day</h3>
+            <p data-i18n="why.focus.text">
+              The technology is not the centre of attention – your daily
+              operations are. Websites and tools are planned to fit your
+              industry, your team and your workflows. The goal: you explain,
+              follow up and organise less.
             </p>
           </article>
           <article class="why-card reveal reveal-delay-2">
-            <h3>Saubere Technik, verständlich erklärt</h3>
-            <p>
-              Lumencat nutzt moderne Webstandards und fertige Lösungen, wenn
-              sie für dein Unternehmen Sinn ergeben. Viele Bausteine basieren
-              auf bewährten Mustern, werden aber gezielt kombiniert und
-              angepasst. Du bekommst ein System, das dokumentiert ist,
-              nachvollziehbar bleibt und später erweitert werden kann.
+            <h3 data-i18n="why.tech.title">Clean technology, clearly explained</h3>
+            <p data-i18n="why.tech.text">
+              Lumencat uses modern web standards and ready-made solutions where
+              they make sense for your business. Many components are based on
+              proven patterns, combined and adapted for you. You get a system
+              that is documented, traceable and extensible.
             </p>
           </article>
           <article class="why-card reveal reveal-delay-3">
-            <h3>Individuell statt Baukasten</h3>
-            <p>
-              Es gibt keine Einheitslösung für alle. Jede Website und jedes
-              Tool wird individuell geplant. Struktur, Inhalte und Funktionen
-              orientieren sich an deinem Unternehmen und deinen Kundinnen und
-              Kunden. So entsteht ein Auftritt, der zu dir passt und langfristig
-              mitwachsen kann.
+            <h3 data-i18n="why.custom.title">Custom, not off-the-shelf</h3>
+            <p data-i18n="why.custom.text">
+              There is no one-size-fits-all solution. Every website and tool is
+              planned individually. Structure, content and features are oriented
+              around your business and your customers. The result is a presence
+              that fits you and can grow with you.
             </p>
           </article>
         </div>
       </section>
 
-      <!-- Ablauf -->
-      <section
-        id="ablauf"
-        class="section section--padded section--accent reveal"
-      >
+      <!-- Process -->
+      <section id="ablauf" class="section section--padded section--accent reveal">
         <header class="section__header">
-          <h2 class="reveal reveal-delay-1">
-            So läuft ein Projekt mit Lumencat ab
+          <h2 class="reveal reveal-delay-1" data-i18n="process.heading">
+            How a project with Lumencat works
           </h2>
-          <p class="reveal reveal-delay-2">
-            Von der ersten Nachricht bis zur fertigen Website bleibt der Ablauf
-            klar, transparent und entspannt für dich. Du weißt immer, was der
-            nächste Schritt ist und worum ich mich kümmere.
+          <p class="reveal reveal-delay-2" data-i18n="process.subheading">
+            From the first message to the finished website, the process stays
+            clear, transparent and relaxed for you. You always know the next
+            step and what I'm taking care of.
           </p>
         </header>
         <div class="process-grid">
           <article class="process-step reveal reveal-delay-1">
             <span class="process-step__badge">1</span>
-            <h3>Kickoff und Analyse</h3>
-            <p>
-              Wir sprechen über dein Unternehmen, deine Ziele und deine aktuelle
-              Situation. Danach fasse ich zusammen, was du wirklich brauchst und
-              welche Ergebnisse dir am meisten helfen. Auf dieser Basis bekommst
-              du eine klare Empfehlung und auf Wunsch ein passendes Angebot.
+            <h3 data-i18n="process.step1.title">Kickoff and analysis</h3>
+            <p data-i18n="process.step1.text">
+              We talk about your business, your goals and your current
+              situation. Afterwards I summarise what you really need and which
+              results will help you most. On this basis you get a clear
+              recommendation and, on request, a matching quote.
             </p>
           </article>
           <article class="process-step reveal reveal-delay-2">
             <span class="process-step__badge">2</span>
-            <h3>Konzept und Struktur</h3>
-            <p>
-              Wir legen die Struktur deiner Website fest, planen die Inhalte und
-              klären, welche Funktionen du wirklich brauchst. Navigation,
-              Seitenaufbau und erste Textideen entstehen in dieser Phase. Du
-              siehst früh, wie sich alles anfühlt und kannst ohne Fachbegriffe
-              mitreden.
+            <h3 data-i18n="process.step2.title">Concept and structure</h3>
+            <p data-i18n="process.step2.text">
+              We define the structure of your website, plan the content and
+              clarify which features you really need. Navigation, page layout
+              and first copy ideas are developed in this phase. You see early on
+              how everything feels and can give feedback without needing
+              technical terms.
             </p>
           </article>
           <article class="process-step reveal reveal-delay-3">
             <span class="process-step__badge">3</span>
-            <h3>Umsetzung und Einrichtung</h3>
-            <p>
-              Ich setze das Design in sauberen Code um, richte dein
-              Kontaktformular ein und deploye bei Bedarf fertige Tools für dein
-              Unternehmen. Du bekommst Zwischenstände zu sehen und kannst
-              Feedback geben, bevor alles final wird.
+            <h3 data-i18n="process.step3.title">Implementation and setup</h3>
+            <p data-i18n="process.step3.text">
+              I translate the design into clean code, set up your contact form
+              and deploy ready-made tools for your business as needed. You get
+              to see intermediate states and give feedback before everything is
+              finalised.
             </p>
           </article>
           <article class="process-step reveal reveal-delay-4">
             <span class="process-step__badge">4</span>
-            <h3>Start und Begleitung</h3>
-            <p>
-              Wir testen Funktionen, Formular Versand und Darstellung auf Handy
-              und Desktop. Danach geht deine Website an den Start. Auf Wunsch
-              übernehme ich Betreuung und kleine Anpassungen, damit alles
-              aktuell, sicher und erreichbar bleibt. Du bekommst eine kurze
-              Übersicht, wie du Inhalte selbst anpassen kannst.
+            <h3 data-i18n="process.step4.title">Launch and ongoing support</h3>
+            <p data-i18n="process.step4.text">
+              We test features, form submission and display on mobile and
+              desktop. Then your website goes live. On request, I handle ongoing
+              care and small adjustments to keep everything current, secure and
+              reachable. You get a short overview of how to adjust content
+              yourself.
             </p>
           </article>
         </div>
       </section>
 
-      <!-- SaaS-Tools -->
-      <section
-        id="tools"
-        class="section section--padded section--accent reveal"
-      >
+      <!-- SaaS Tools -->
+      <section id="tools" class="section section--padded section--accent reveal">
         <header class="section__header">
-          <h2 class="reveal reveal-delay-1">Fertige Tools für dein Unternehmen</h2>
-          <p class="reveal reveal-delay-2">
-            Direkt einsetzbar. Keine langen Projektphasen. Du kaufst, wir
-            deployen, du nutzt.
+          <h2 class="reveal reveal-delay-1" data-i18n="tools.heading">
+            Ready-made tools for your business
+          </h2>
+          <p class="reveal reveal-delay-2" data-i18n="tools.subheading">
+            Immediately deployable. No long project phases. You buy, we deploy,
+            you use.
           </p>
         </header>
 
         <div class="grid-2">
           <article class="card reveal reveal-delay-1">
-            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
-              <h3 style="margin: 0;">Entrümpler-Kalkulator</h3>
-              <span style="background: rgba(25,247,255,0.15); color: var(--color-accent-cyan); font-size: 0.75rem; font-weight: 600; padding: 0.25rem 0.75rem; border-radius: var(--radius-full); border: 1px solid rgba(25,247,255,0.3); white-space: nowrap;">Verfügbar</span>
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                margin-bottom: 1rem;
+              "
+            >
+              <h3 style="margin: 0" data-i18n="tools.entruempler.title">
+                Clearance Calculator
+              </h3>
+              <span
+                style="
+                  background: rgba(25, 247, 255, 0.15);
+                  color: var(--color-accent-cyan);
+                  font-size: 0.75rem;
+                  font-weight: 600;
+                  padding: 0.25rem 0.75rem;
+                  border-radius: var(--radius-full);
+                  border: 1px solid rgba(25, 247, 255, 0.3);
+                  white-space: nowrap;
+                "
+                data-i18n="tools.entruempler.status"
+                >Available</span
+              >
             </div>
-            <p>
-              Interessenten bekommen auf Smartphone oder Desktop eine
-              Kostenschätzung für ihr Entrümpelungsprojekt. Du bekommst
-              strukturierte Anfragen statt unklarer Anrufe.
+            <p data-i18n="tools.entruempler.text">
+              Prospects get a cost estimate for their clearance project on
+              smartphone or desktop. You receive structured enquiries instead of
+              vague calls.
             </p>
             <ul class="list">
-              <li>Mobiler Preisrechner</li>
-              <li>Admin-Dashboard</li>
-              <li>PDF-Zusammenfassung</li>
-              <li>Editierbare Preislogik</li>
-              <li>Lead-Übersicht</li>
+              <li data-i18n="tools.entruempler.li1">Mobile price calculator</li>
+              <li data-i18n="tools.entruempler.li2">Admin dashboard</li>
+              <li data-i18n="tools.entruempler.li3">PDF summary</li>
+              <li data-i18n="tools.entruempler.li4">Editable pricing logic</li>
+              <li data-i18n="tools.entruempler.li5">Lead overview</li>
             </ul>
-            <p style="margin-top: 1rem; color: var(--color-text-soft); font-size: 0.875rem;">Sofort einsetzbar · Einzelinstanz</p>
-            <a href="#" class="btn btn--primary" style="margin-top: 1rem; display: inline-block;">Tool ansehen</a>
+            <p
+              style="
+                margin-top: 1rem;
+                color: var(--color-text-soft);
+                font-size: 0.875rem;
+              "
+              data-i18n="tools.entruempler.note"
+            >
+              Ready to deploy · Single instance
+            </p>
+            <a
+              href="#"
+              class="btn btn--primary"
+              style="margin-top: 1rem; display: inline-block"
+              data-i18n="tools.entruempler.cta"
+              >View tool</a
+            >
           </article>
 
           <article class="card reveal reveal-delay-2">
-            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
-              <h3 style="margin: 0;">Leads-Generator</h3>
-              <span style="background: rgba(165,176,199,0.12); color: var(--color-text-soft); font-size: 0.75rem; font-weight: 600; padding: 0.25rem 0.75rem; border-radius: var(--radius-full); border: 1px solid rgba(165,176,199,0.25); white-space: nowrap;">Coming Soon</span>
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                margin-bottom: 1rem;
+              "
+            >
+              <h3 style="margin: 0" data-i18n="tools.leads.title">
+                Leads Generator
+              </h3>
+              <span
+                style="
+                  background: rgba(165, 176, 199, 0.12);
+                  color: var(--color-text-soft);
+                  font-size: 0.75rem;
+                  font-weight: 600;
+                  padding: 0.25rem 0.75rem;
+                  border-radius: var(--radius-full);
+                  border: 1px solid rgba(165, 176, 199, 0.25);
+                  white-space: nowrap;
+                "
+                >Coming Soon</span
+              >
             </div>
-            <p>
-              Automatisierte Lead-Erfassung für lokale Dienstleister. Mehr
-              Anfragen, weniger manuelle Arbeit.
+            <p data-i18n="tools.leads.text">
+              Automated lead capture for local service providers. More
+              enquiries, less manual work.
             </p>
-            <p style="margin-top: 1rem; color: var(--color-text-soft);">Features: Kommt bald.</p>
-            <p style="margin-top: 1rem; color: var(--color-text-soft); font-size: 0.875rem;">In Entwicklung</p>
+            <p
+              style="margin-top: 1rem; color: var(--color-text-soft)"
+              data-i18n="tools.leads.features"
+            >
+              Features: Coming soon.
+            </p>
+            <p
+              style="
+                margin-top: 1rem;
+                color: var(--color-text-soft);
+                font-size: 0.875rem;
+              "
+              data-i18n="tools.leads.note"
+            >
+              In development
+            </p>
           </article>
         </div>
       </section>
@@ -641,54 +768,71 @@
       <!-- Testimonials -->
       <section id="testimonials" class="section section--padded reveal">
         <header class="section__header">
-          <h2 class="reveal reveal-delay-1">Was Kunden sagen</h2>
-          <p class="reveal reveal-delay-2">
-            Echte Projekte, echte Ergebnisse – hier siehst du, wie Lumencat
-            anderen Unternehmen geholfen hat.
+          <h2 class="reveal reveal-delay-1" data-i18n="testimonials.heading">
+            What customers say
+          </h2>
+          <p class="reveal reveal-delay-2" data-i18n="testimonials.subheading">
+            Real projects, real results – see how Lumencat has helped other
+            businesses.
           </p>
         </header>
         <div class="testimonials-grid">
           <article class="testimonial-card reveal reveal-delay-1">
             <div class="testimonial-card__rating">★★★★★</div>
-            <p class="testimonial-card__text">
-              "Die neue Website ist genau das, was wir brauchten: modern,
-              schnell und übersichtlich. Unsere Anfragen haben sich verdoppelt."
+            <p
+              class="testimonial-card__text"
+              data-i18n="testimonials.sarah.text"
+            >
+              "The new website was exactly what we needed: modern, fast and
+              clear. Our enquiries have doubled."
             </p>
             <div class="testimonial-card__author">
               <div class="testimonial-card__avatar">SB</div>
               <div class="testimonial-card__info">
                 <strong>Sarah Becker</strong>
-                <span>Inhaberin, Bistro Aurora</span>
+                <span data-i18n="testimonials.sarah.role"
+                  >Owner, Bistro Aurora</span
+                >
               </div>
             </div>
           </article>
 
           <article class="testimonial-card reveal reveal-delay-2">
             <div class="testimonial-card__rating">★★★★★</div>
-            <p class="testimonial-card__text">
-              "Das Tool spart uns täglich Zeit. Anfragen kommen strukturiert
-              rein – wir müssen kaum noch nachfragen."
+            <p
+              class="testimonial-card__text"
+              data-i18n="testimonials.thomas.text"
+            >
+              "The tool saves us time every day. Enquiries come in structured –
+              we barely need to follow up."
             </p>
             <div class="testimonial-card__author">
               <div class="testimonial-card__avatar">TK</div>
               <div class="testimonial-card__info">
                 <strong>Thomas Krause</strong>
-                <span>Geschäftsführer, KlimaTech Solutions</span>
+                <span data-i18n="testimonials.thomas.role"
+                  >CEO, KlimaTech Solutions</span
+                >
               </div>
             </div>
           </article>
 
           <article class="testimonial-card reveal reveal-delay-3">
             <div class="testimonial-card__rating">★★★★★</div>
-            <p class="testimonial-card__text">
-              "Professionelle Beratung und schnelle Umsetzung. Die Website wirkt
-              hochwertig und hebt uns von der Konkurrenz ab."
+            <p
+              class="testimonial-card__text"
+              data-i18n="testimonials.maria.text"
+            >
+              "Professional advice and fast execution. The website looks premium
+              and sets us apart from the competition."
             </p>
             <div class="testimonial-card__author">
               <div class="testimonial-card__avatar">ML</div>
               <div class="testimonial-card__info">
                 <strong>Maria Lopez</strong>
-                <span>Gründerin, Physio Vital</span>
+                <span data-i18n="testimonials.maria.role"
+                  >Founder, Physio Vital</span
+                >
               </div>
             </div>
           </article>
@@ -698,32 +842,38 @@
       <!-- Call to Action -->
       <section id="cta" class="section section--padded section--cta reveal">
         <div class="cta-shell">
-          <h2 class="cta-title reveal reveal-delay-1">
-            Bereit für den nächsten Schritt?
+          <h2
+            class="cta-title reveal reveal-delay-1"
+            data-i18n="cta.heading"
+          >
+            Ready for the next step?
           </h2>
-          <p class="cta-subtitle reveal reveal-delay-2">
-            Lumencat entwickelt Websites und Systeme, die dir Zeit sparen,
-            Anfragen sortieren und deinen Alltag übersichtlicher machen. Wenn du
-            Klarheit statt Fachchinesisch möchtest, lass uns unverbindlich über
-            dein Projekt sprechen.
+          <p class="cta-subtitle reveal reveal-delay-2" data-i18n="cta.text">
+            Lumencat builds websites and systems that save you time, sort
+            enquiries and make your day more organised. If you want clarity over
+            jargon, let's talk about your project without any obligation.
           </p>
           <div class="cta-actions reveal reveal-delay-3">
-            <a href="kontakt.html" class="btn btn--primary btn--cta"
-              >Projekt starten</a
+            <a
+              href="kontakt.html"
+              class="btn btn--primary btn--cta"
+              data-i18n="cta.primary"
+              >Start a project</a
             >
-            <a href="#leistungen" class="btn btn--ghost btn--cta"
-              >Leistungen ansehen</a
+            <a
+              href="#leistungen"
+              class="btn btn--ghost btn--cta"
+              data-i18n="cta.ghost"
+              >View services</a
             >
           </div>
         </div>
       </section>
     </main>
-    <!-- Footer -->
 
     <footer class="site-footer" role="contentinfo">
       <div class="site-footer__inner">
         <div class="footer-grid">
-          <!-- Brand -->
           <div class="footer-col footer-col--brand">
             <a href="index.html" class="footer-brand">
               <img
@@ -734,43 +884,70 @@
               />
               <div class="footer-brand__text">
                 <span class="footer-brand__name">Lumencat</span>
-                <span class="footer-brand__tagline">
-                  Webdesign. SaaS-Tools. Digitale Lösungen.
+                <span
+                  class="footer-brand__tagline"
+                  data-i18n="footer.tagline"
+                >
+                  Web Design. SaaS Tools. Digital Solutions.
                 </span>
               </div>
             </a>
-            <p class="footer-brand__description">
-              Fertige Tools und moderne Websites für Selbstständige und lokale
-              Unternehmen. Klarer Code, ehrliche Beratung, wenig Blabla.
+            <p
+              class="footer-brand__description"
+              data-i18n="footer.description"
+            >
+              Ready-to-use tools and modern websites for freelancers and local
+              businesses. Clean code, honest advice, no fluff.
             </p>
           </div>
 
-          <!-- Navigation -->
           <div class="footer-col">
-            <h3 class="footer-heading">Navigation</h3>
+            <h3 class="footer-heading" data-i18n="footer.nav_heading">
+              Navigation
+            </h3>
             <ul class="footer-links">
-              <li><a href="index.html#leistungen">Leistungen</a></li>
-              <li><a href="index.html#projekte">Projekte</a></li>
+              <li>
+                <a href="index.html#leistungen" data-i18n="footer.features"
+                  >Features</a
+                >
+              </li>
+              <li>
+                <a href="index.html#projekte" data-i18n="footer.projects"
+                  >Projects</a
+                >
+              </li>
               <li><a href="services.html">Services</a></li>
               <li><a href="index.html#tools">Tools</a></li>
               <li><a href="insights.html">Blog</a></li>
             </ul>
           </div>
 
-          <!-- Leistungen -->
           <div class="footer-col">
-            <h3 class="footer-heading">Leistungen</h3>
+            <h3
+              class="footer-heading"
+              data-i18n="footer.services_heading"
+            >
+              Services
+            </h3>
             <ul class="footer-links">
-              <li>Landingpages &amp; Business-Websites</li>
-              <li>SaaS-Tools &amp; digitale Lösungen</li>
-              <li>Website-Wartung</li>
-              <li>Hosting-Setup (Hetzner)</li>
+              <li data-i18n="footer.service_1">
+                Landing Pages &amp; Business Websites
+              </li>
+              <li data-i18n="footer.service_2">
+                SaaS Tools &amp; digital solutions
+              </li>
+              <li data-i18n="footer.service_3">Website maintenance</li>
+              <li data-i18n="footer.service_4">Hosting setup (Hetzner)</li>
             </ul>
           </div>
 
-          <!-- Kontakt -->
           <div class="footer-col">
-            <h3 class="footer-heading">Kontakt</h3>
+            <h3
+              class="footer-heading"
+              data-i18n="footer.contact_heading"
+            >
+              Contact
+            </h3>
             <ul class="footer-links footer-links--contact">
               <li>
                 <a href="mailto:hello@lumencat.de">hello@lumencat.de</a>
@@ -779,32 +956,41 @@
                 <a href="tel:+4915226580980">+49 1522 6580980</a>
               </li>
               <li>
-                Kontaktformular:<br /><a href="kontakt.html"
-                  >Kontaktseite öffnen</a
+                <span data-i18n="footer.contact_form_label"
+                  >Contact form:</span
+                ><br /><a
+                  href="kontakt.html"
+                  data-i18n="footer.contact_page_link"
+                  >Open contact page</a
                 >
               </li>
             </ul>
-            <p class="footer-note">
-              Projekte nach Absprache von Montag bis Freitag.
+            <p class="footer-note" data-i18n="footer.availability">
+              Projects by arrangement, Mon–Fri.
             </p>
           </div>
         </div>
 
         <div class="footer-bottom">
           <small class="footer-copy">
-            &copy; 2025 Lumencat. Alle Rechte vorbehalten.
+            &copy; 2025 Lumencat.
+            <span data-i18n="footer.rights">All rights reserved.</span>
           </small>
           <nav class="footer-nav">
-            <a href="impressum.html">Impressum</a>
-            <a href="datenschutz.html">Datenschutz</a>
+            <a href="impressum.html" data-i18n="footer.legal_notice"
+              >Legal Notice</a
+            >
+            <a href="datenschutz.html" data-i18n="footer.privacy"
+              >Privacy Policy</a
+            >
           </nav>
         </div>
       </div>
     </footer>
 
+    <script src="js/i18n.js"></script>
     <script src="js/main.js"></script>
 
-    <!-- PWA Service Worker Registration -->
     <script>
       if ("serviceWorker" in navigator) {
         window.addEventListener("load", () => {
@@ -816,7 +1002,6 @@
       }
     </script>
 
-    <!-- Plausible Analytics (DSGVO-konform) -->
     <script
       defer
       data-domain="lumencat.de"
