@@ -13,7 +13,7 @@ Version: `1.0.1` | Stack: Vanilla HTML/CSS/JS + PHP | Hosting: Hetzner
 |---|---|---|
 | `index.html` | Hauptseite – Hero, Services, Portfolio, Kontaktformular | Live |
 | `kontakt.html` | Dedizierte Kontaktseite | Live |
-| `shop.html` | Pakete & Preise | Live |
+| `services.html` | Services (Pakete & Preise) | Live |
 | `insights.html` | Blog / Insights-Übersicht | In Arbeit |
 | `impressum.html` | Pflichtangaben | Live |
 | `datenschutz.html` | DSGVO-Datenschutzerklärung | Live |
@@ -74,27 +74,29 @@ css/
 | `scripts/logo-converter.js` | `npm run logo:info` | Logo-Info/Analyse |
 | `scripts/png-to-svg.py` | `python scripts/png-to-svg.py` | PNG→SVG Konvertierung (Python) |
 
-### Assets (`Bilder/`)
+### Assets (`assets/`)
 
 ```
-Bilder/
-├── logo.svg                    Haupt-Logo (SVG, skalierbar)
-├── lumencatLogo.png            PNG-Fallback für PWA-Manifest
-├── Hintergrund.png             Dark-Theme Background
-├── Hintergrund_Hell.png        Light-Theme Background
-├── favicon.ico / .png (16/32)
-├── apple-touch-icon.png
-├── android-chrome-192x192.png / 512x512.png
-├── optimized/                  Auto-generiert (in .gitignore)
-│   ├── HeroMain-480.avif
-│   ├── HeroMain-800.avif
-│   └── ...
-├── blog/                       Blog-Post-Bilder
-├── projekte/                   Portfolio-Projekt-Dateien (lokale Subseiten)
-│   ├── lueftungsbau-meier/
-│   ├── bistro-aurora/
-│   └── physiovital/
-└── en/                         Assets für englische Version (geplant)
+assets/
+├── images/
+│   ├── logo.svg                    Haupt-Logo (SVG, skalierbar)
+│   ├── lumencatLogo.png            PNG-Fallback für PWA-Manifest
+│   ├── Hintergrund.png             Dark-Theme Background
+│   ├── Hintergrund_Hell.png        Light-Theme Background
+│   ├── favicon.ico / .png (16/32)
+│   ├── apple-touch-icon.png
+│   ├── android-chrome-192x192.png / 512x512.png
+│   ├── optimized/                  Auto-generiert (in .gitignore)
+│   │   ├── HeroMain-480.avif
+│   │   ├── HeroMain-800.avif
+│   │   └── ...
+│   ├── blog/                       Blog-Post-Bilder
+│   ├── projekte/                   Portfolio-Projekt-Dateien (lokale Subseiten)
+│   │   ├── lueftungsbau-meier/
+│   │   ├── bistro-aurora/
+│   │   └── physiovital/
+│   └── en/                         Assets für englische Version (geplant)
+└── icons/                          Platzhalter für zukünftige Icon-Assets (.gitkeep)
 ```
 
 ### Konfiguration

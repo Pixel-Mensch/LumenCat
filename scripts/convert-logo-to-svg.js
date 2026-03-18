@@ -11,9 +11,9 @@ const path = require("path");
 async function convertLogoToSVG() {
   const inputPath = path.join(
     __dirname,
-    "../Bilder/LumenCatWithoutBackground.png"
+    "../assets/images/LumenCatWithoutBackground.png"
   );
-  const outputPath = path.join(__dirname, "../Bilder/logo.svg");
+  const outputPath = path.join(__dirname, "../assets/images/logo.svg");
 
   try {
     console.log("🔄 Converting PNG to SVG...");

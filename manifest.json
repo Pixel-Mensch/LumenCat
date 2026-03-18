@@ -9,19 +9,19 @@
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "/Bilder/logo.svg",
+      "src": "/assets/images/logo.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any maskable"
     },
     {
-      "src": "/Bilder/android-chrome-192x192.png",
+      "src": "/assets/images/android-chrome-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/Bilder/android-chrome-512x512.png",
+      "src": "/assets/images/android-chrome-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
@@ -35,20 +35,20 @@
       "url": "/kontakt.html",
       "icons": [
         {
-          "src": "/Bilder/android-chrome-192x192.png",
+          "src": "/assets/images/android-chrome-192x192.png",
           "sizes": "192x192",
           "type": "image/png"
         }
       ]
     },
     {
-      "name": "Pakete & Preise",
-      "short_name": "Shop",
+      "name": "Services",
+      "short_name": "Services",
       "description": "Alle Angebote ansehen",
-      "url": "/shop.html",
+      "url": "/services.html",
       "icons": [
         {
-          "src": "/Bilder/android-chrome-192x192.png",
+          "src": "/assets/images/android-chrome-192x192.png",
           "sizes": "192x192",
           "type": "image/png"
         }

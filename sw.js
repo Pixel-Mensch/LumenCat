@@ -1,14 +1,14 @@
 // Lumencat Service Worker - PWA Support
-const CACHE_NAME = "lumencat-v1.0.6";
+const CACHE_NAME = "lumencat-v1.0.8";
 
 const urlsToCache = [
   "/",
   "/index.html",
   "/css/styles.min.css",
   "/js/main.min.js",
-  "/Bilder/logo.svg",
-  "/Bilder/optimized/HeroMain-800.avif",
-  "/Bilder/optimized/HeroMain-480.avif",
+  "/assets/images/logo.svg",
+  "/assets/images/optimized/HeroMain-800.avif",
+  "/assets/images/optimized/HeroMain-480.avif",
 ];
 
 self.addEventListener("install", (event) => {

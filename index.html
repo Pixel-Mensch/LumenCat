@@ -25,7 +25,7 @@
     <meta property="og:url" content="https://lumencat.de" />
     <meta
       property="og:image"
-      content="https://lumencat.de/Bilder/android-chrome-512x512.png"
+      content="https://lumencat.de/assets/images/android-chrome-512x512.png"
     />
     <meta property="og:image:alt" content="Lumencat Logo" />
     <meta property="og:site_name" content="Lumencat" />
@@ -41,7 +41,7 @@
     />
     <meta
       name="twitter:image"
-      content="https://lumencat.de/Bilder/android-chrome-512x512.png"
+      content="https://lumencat.de/assets/images/android-chrome-512x512.png"
     />
 
     <meta name="theme-color" content="#000000" />
@@ -60,25 +60,25 @@
       content="black-translucent"
     />
     <meta name="apple-mobile-web-app-title" content="Lumencat" />
-    <link rel="apple-touch-icon" href="Bilder/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png" />
 
     <title>
       Lumencat – Webdesign &amp; SaaS-Tools für lokale Unternehmen
     </title>
-    <link rel="icon" type="image/x-icon" href="Bilder/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico" />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="Bilder/favicon-32x32.png"
+      href="assets/images/favicon-32x32.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="Bilder/favicon-16x16.png"
+      href="assets/images/favicon-16x16.png"
     />
-    <link rel="icon" type="image/svg+xml" href="Bilder/logo.svg" />
+    <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg" />
     <link rel="stylesheet" href="css/styles.min.css?v=1.0.1" />
     <link rel="preconnect" href="https://plausible.io" crossorigin />
     <link rel="dns-prefetch" href="https://plausible.io" />
@@ -102,8 +102,8 @@
         "name": "Lumencat",
         "description": "Webdesign und fertige SaaS-Tools für lokale Unternehmen und Selbstständige",
         "url": "https://lumencat.de",
-        "logo": "https://lumencat.de/Bilder/logo.svg",
-        "image": "https://lumencat.de/Bilder/HeroMain.png",
+        "logo": "https://lumencat.de/assets/images/logo.svg",
+        "image": "https://lumencat.de/assets/images/HeroMain.png",
         "email": "hello@lumencat.de",
         "telephone": "+49 1522 6580980",
         "sameAs": [],
@@ -132,7 +132,7 @@
     <header class="site-header" role="banner">
       <nav class="nav" role="navigation" aria-label="Hauptnavigation">
         <a href="index.html" class="nav__brand">
-          <img src="Bilder/logo.svg" alt="Lumencat Logo" class="nav__logo" />
+          <img src="assets/images/logo.svg" alt="Lumencat Logo" class="nav__logo" />
           <span class="nav__brand-name">Lumencat</span>
         </a>
 
@@ -149,9 +149,10 @@
         <ul class="nav__links" id="navLinks">
           <li><a href="#leistungen">Leistungen</a></li>
           <li><a href="#projekte">Projekte</a></li>
+          <li><a href="services.html">Services</a></li>
           <li><a href="#tools">Tools</a></li>
+          <li><a href="insights.html">Blog</a></li>
           <li><a href="kontakt.html">Kontakt</a></li>
-          <li><a href="shop.html">Pakete &amp; Preise</a></li>
           <li>
             <button
               class="theme-toggle"
@@ -174,22 +175,22 @@
           <source
             type="image/avif"
             srcset="
-              Bilder/optimized/HeroMain-480.avif   480w,
-              Bilder/optimized/HeroMain-800.avif   800w,
-              Bilder/optimized/HeroMain-1200.avif 1200w
+              assets/images/optimized/HeroMain-480.avif   480w,
+              assets/images/optimized/HeroMain-800.avif   800w,
+              assets/images/optimized/HeroMain-1200.avif 1200w
             "
             sizes="100vw"
           />
           <source
             type="image/webp"
             srcset="
-              Bilder/optimized/HeroMain-480.webp   480w,
-              Bilder/optimized/HeroMain-800.webp   800w,
-              Bilder/optimized/HeroMain-1200.webp 1200w
+              assets/images/optimized/HeroMain-480.webp   480w,
+              assets/images/optimized/HeroMain-800.webp   800w,
+              assets/images/optimized/HeroMain-1200.webp 1200w
             "
             sizes="100vw"
           />
-          <img src="Bilder/HeroMain.png" alt="" loading="eager" />
+          <img src="assets/images/HeroMain.png" alt="" loading="eager" />
         </picture>
         <div class="hero__overlay"></div>
         <div class="hero__inner">
@@ -272,7 +273,7 @@
             Wartung und Tools. Alle aktuellen Angebote mit Richtpreisen
             findest du auf der Seite „Pakete &amp; Preise".
           </p>
-          <a href="shop.html" class="btn btn--primary">
+          <a href="services.html" class="btn btn--primary">
             Pakete &amp; Preise ansehen
           </a>
         </div>
@@ -303,7 +304,7 @@
             <p style="margin-top: 1rem; color: var(--color-text-soft)">
               Die genauen Konditionen findest du in den Paketen &amp; Preisen.
             </p>
-            <a href="shop.html" class="btn btn--ghost" style="margin-top: 1rem"
+            <a href="services.html" class="btn btn--ghost" style="margin-top: 1rem"
               >Zu den Paketen</a
             >
           </article>
@@ -323,7 +324,7 @@
               Details und Preise stehen in den Paketen &amp; Preisen.
             </p>
             <a
-              href="shop.html"
+              href="services.html"
               class="btn btn--primary"
               style="margin-top: 1rem"
               >Zu den Paketen</a
@@ -354,23 +355,23 @@
                 <source
                   type="image/avif"
                   srcset="
-                    Bilder/optimized/Lueftungsbau.PNG-480.avif   480w,
-                    Bilder/optimized/Lueftungsbau.PNG-800.avif   800w,
-                    Bilder/optimized/Lueftungsbau.PNG-1200.avif 1200w
+                    assets/images/optimized/Lueftungsbau.PNG-480.avif   480w,
+                    assets/images/optimized/Lueftungsbau.PNG-800.avif   800w,
+                    assets/images/optimized/Lueftungsbau.PNG-1200.avif 1200w
                   "
                   sizes="(max-width:720px) 100vw, 33vw"
                 />
                 <source
                   type="image/webp"
                   srcset="
-                    Bilder/optimized/Lueftungsbau.PNG-480.webp   480w,
-                    Bilder/optimized/Lueftungsbau.PNG-800.webp   800w,
-                    Bilder/optimized/Lueftungsbau.PNG-1200.webp 1200w
+                    assets/images/optimized/Lueftungsbau.PNG-480.webp   480w,
+                    assets/images/optimized/Lueftungsbau.PNG-800.webp   800w,
+                    assets/images/optimized/Lueftungsbau.PNG-1200.webp 1200w
                   "
                   sizes="(max-width:720px) 100vw, 33vw"
                 />
                 <img
-                  src="Bilder/Lueftungsbau.PNG"
+                  src="assets/images/Lueftungsbau.PNG"
                   alt="Lüftungsbau Meier – Vorschaubild"
                   loading="lazy"
                 />
@@ -399,23 +400,23 @@
                 <source
                   type="image/avif"
                   srcset="
-                    Bilder/optimized/bistro-aurora-480.avif   480w,
-                    Bilder/optimized/bistro-aurora-800.avif   800w,
-                    Bilder/optimized/bistro-aurora-1200.avif 1200w
+                    assets/images/optimized/bistro-aurora-480.avif   480w,
+                    assets/images/optimized/bistro-aurora-800.avif   800w,
+                    assets/images/optimized/bistro-aurora-1200.avif 1200w
                   "
                   sizes="(max-width:720px) 100vw, 33vw"
                 />
                 <source
                   type="image/webp"
                   srcset="
-                    Bilder/optimized/bistro-aurora-480.webp   480w,
-                    Bilder/optimized/bistro-aurora-800.webp   800w,
-                    Bilder/optimized/bistro-aurora-1200.webp 1200w
+                    assets/images/optimized/bistro-aurora-480.webp   480w,
+                    assets/images/optimized/bistro-aurora-800.webp   800w,
+                    assets/images/optimized/bistro-aurora-1200.webp 1200w
                   "
                   sizes="(max-width:720px) 100vw, 33vw"
                 />
                 <img
-                  src="Bilder/bistro-aurora.png"
+                  src="assets/images/bistro-aurora.png"
                   alt="Bistro Aurora – Vorschaubild"
                   loading="lazy"
                 />
@@ -446,23 +447,23 @@
                 <source
                   type="image/avif"
                   srcset="
-                    Bilder/optimized/physio-vital-480.avif   480w,
-                    Bilder/optimized/physio-vital-800.avif   800w,
-                    Bilder/optimized/physio-vital-1200.avif 1200w
+                    assets/images/optimized/physio-vital-480.avif   480w,
+                    assets/images/optimized/physio-vital-800.avif   800w,
+                    assets/images/optimized/physio-vital-1200.avif 1200w
                   "
                   sizes="(max-width:720px) 100vw, 33vw"
                 />
                 <source
                   type="image/webp"
                   srcset="
-                    Bilder/optimized/physio-vital-480.webp   480w,
-                    Bilder/optimized/physio-vital-800.webp   800w,
-                    Bilder/optimized/physio-vital-1200.webp 1200w
+                    assets/images/optimized/physio-vital-480.webp   480w,
+                    assets/images/optimized/physio-vital-800.webp   800w,
+                    assets/images/optimized/physio-vital-1200.webp 1200w
                   "
                   sizes="(max-width:720px) 100vw, 33vw"
                 />
                 <img
-                  src="Bilder/physio-vital.png"
+                  src="assets/images/physio-vital.png"
                   alt="Physio Vital – Vorschaubild"
                   loading="lazy"
                 />
@@ -726,7 +727,7 @@
           <div class="footer-col footer-col--brand">
             <a href="index.html" class="footer-brand">
               <img
-                src="Bilder/logo.svg"
+                src="assets/images/logo.svg"
                 alt="LumenCat Logo"
                 class="footer-brand__logo"
                 loading="lazy"
@@ -750,10 +751,9 @@
             <ul class="footer-links">
               <li><a href="index.html#leistungen">Leistungen</a></li>
               <li><a href="index.html#projekte">Projekte</a></li>
-              <li>
-                <a href="index.html#tools">Tools</a>
-              </li>
-              <li><a href="shop.html">Pakete &amp; Preise</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="index.html#tools">Tools</a></li>
+              <li><a href="insights.html">Blog</a></li>
             </ul>
           </div>
 

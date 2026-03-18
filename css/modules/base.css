@@ -10,7 +10,7 @@ body {
   margin: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
-  background-image: url("../Bilder/Hintergrund.png");
+  background-image: url("../assets/images/Hintergrund.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -20,7 +20,7 @@ body {
 }
 
 body.theme-light {
-  background-image: url("../Bilder/Hintergrund_Hell.png");
+  background-image: url("../assets/images/Hintergrund_Hell.png");
 }
 
 /* Mobile: Explizit kein Zoom-Effekt */

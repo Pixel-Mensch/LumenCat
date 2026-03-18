@@ -35,7 +35,7 @@ Diese Dateien sind geschäftskritisch. Vor jeder Änderung explizit bestätigen 
 
 Diese Dateien können ohne gesonderte Rückfrage bearbeitet werden:
 
-- `index.html`, `kontakt.html`, `shop.html`, `impressum.html`, `datenschutz.html`, `insights.html` – Content-Änderungen
+- `index.html`, `kontakt.html`, `services.html`, `impressum.html`, `datenschutz.html`, `insights.html` – Content-Änderungen
 - `css/modules/*.css` (außer `variables.css`) – Styling-Anpassungen
 - `css/pages/*.css` – Seiten-spezifische Styles
 - `js/main.js` – Feature-Erweiterungen (kein Breaking Change)

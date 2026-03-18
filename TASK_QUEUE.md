@@ -8,7 +8,7 @@ Format: `[ ] Aufgabe · Priorität · Datei(en)`
 
 <!-- Priorisierte Aufgaben die als nächstes angegangen werden -->
 
-- [ ] Footer-Description in allen HTML-Seiten vereinheitlichen · Mittel · `index.html`, `kontakt.html`, `shop.html`, `impressum.html`, `datenschutz.html`, `insights.html`
+- [ ] Footer-Description in allen HTML-Seiten vereinheitlichen · Mittel · `index.html`, `kontakt.html`, `services.html`, `impressum.html`, `datenschutz.html`, `insights.html`
 - [ ] "n8n Workflows" → "n8n-Workflows" global ersetzen · Niedrig · alle HTML
 - [ ] CSP-Header in `.htaccess` konfigurieren (nach Hetzner-Deployment) · Mittel · `.htaccess`
 - [ ] Blog/Insights-Seite mit erstem Content befüllen · Hoch · `insights.html`, `css/pages/blog.css`

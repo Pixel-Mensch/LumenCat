@@ -5,6 +5,8 @@
 # Env
 .env
 .env.*.local
+*.env
+config.local.*
 
 # Dependencies
 node_modules/
@@ -26,9 +28,9 @@ js/main.min.js
 *.map
 
 # Generated assets
-Bilder/optimized/
-Bilder/**/*.webp
-Bilder/**/*.avif
+assets/images/optimized/
+assets/images/**/*.webp
+assets/images/**/*.avif
 lighthouse-report*.html
 sitemap.xml
 
