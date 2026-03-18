@@ -73,3 +73,25 @@ body.theme-light .btn--ghost {
   width: 100%;
   justify-content: center;
 }
+.lang-toggle {
+  display: inline-flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.lang-btn {
+  padding: 0.4rem 0.7rem;
+  border: 1px solid currentColor;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 0.5rem;
+}
+
+.lang-btn[aria-pressed="true"] {
+  font-weight: 700;
+  opacity: 1;
+}
+
+.lang-btn[aria-pressed="false"] {
+  opacity: 0.7;
+}

@@ -1,24 +1,25 @@
 <!DOCTYPE html>
-<html lang="de">
+<html
+  lang="en"
+  data-i18n-title="page.title.blog"
+  data-i18n-desc="page.desc.blog"
+>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Lumencat Blog – Einblicke aus der Praxis zu Webdesign, SaaS-Tools und digitaler Umsetzung für lokale Unternehmen."
+      content="Lumencat Blog – Practical insights on web design, SaaS tools and digital implementation for local businesses."
     />
     <meta
       name="keywords"
-      content="Webdesign, SaaS-Tools, Blog, Insights, Digitalisierung, lokale Unternehmen"
+      content="Web Design, SaaS Tools, Blog, Insights, Digitisation, local businesses"
     />
 
-    <meta
-      property="og:title"
-      content="Lumencat Blog – Einblicke aus der Praxis"
-    />
+    <meta property="og:title" content="Lumencat Blog – Practical Insights" />
     <meta
       property="og:description"
-      content="Gelegentliche Einblicke zu Webdesign und SaaS-Tools für Selbstständige und lokale Unternehmen."
+      content="Occasional insights on web design and SaaS tools for freelancers and local businesses."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://lumencat.de/insights.html" />
@@ -53,10 +54,17 @@
     </script>
   </head>
   <body>
-    <a href="#main" class="skip-link">Zum Hauptinhalt springen</a>
+    <a href="#main" class="skip-link" data-i18n="skip_link"
+      >Skip to main content</a
+    >
 
     <header class="site-header" role="banner">
-      <nav class="nav" role="navigation" aria-label="Hauptnavigation">
+      <nav
+        class="nav"
+        role="navigation"
+        aria-label="Main navigation"
+        data-i18n-aria="nav.aria_label"
+      >
         <a href="index.html" class="nav__brand">
           <img src="assets/images/logo.svg" alt="Lumencat Logo" class="nav__logo" />
           <span class="nav__brand-name">Lumencat</span>
@@ -65,29 +73,49 @@
         <button
           class="nav__toggle"
           id="navToggle"
-          aria-label="Menü öffnen"
+          aria-label="Open menu"
           aria-expanded="false"
           aria-controls="navLinks"
+          data-i18n-aria="nav.toggle_aria"
         >
           ☰
         </button>
 
         <ul class="nav__links" id="navLinks">
-          <li><a href="index.html#leistungen">Leistungen</a></li>
-          <li><a href="index.html#projekte">Projekte</a></li>
+          <li>
+            <a href="index.html#leistungen" data-i18n="nav.features"
+              >Features</a
+            >
+          </li>
+          <li>
+            <a href="index.html#projekte" data-i18n="nav.projects">Projects</a>
+          </li>
           <li><a href="services.html">Services</a></li>
           <li><a href="index.html#tools">Tools</a></li>
           <li><a href="insights.html" class="active">Blog</a></li>
-          <li><a href="kontakt.html">Kontakt</a></li>
+          <li>
+            <a href="kontakt.html" data-i18n="nav.contact">Contact</a>
+          </li>
           <li>
             <button
               class="theme-toggle"
               id="themeToggle"
               type="button"
-              aria-label="Theme wechseln"
+              aria-label="Toggle theme"
               aria-pressed="false"
             >
               🌙
+            </button>
+          </li>
+          <li>
+            <button
+              class="theme-toggle"
+              id="langToggle"
+              type="button"
+              aria-label="Switch to German"
+              aria-pressed="false"
+            >
+              DE
             </button>
           </li>
         </ul>
@@ -100,10 +128,10 @@
         <div class="hero__overlay"></div>
         <div class="hero__inner">
           <div class="hero__content">
-            <h1 class="hero__title">Blog</h1>
-            <p class="hero__subtitle">
-              Gelegentliche Einblicke aus meiner Arbeit mit Webdesign
-              und digitalen Lösungen für lokale Unternehmen.
+            <h1 class="hero__title" data-i18n="blog.heading">Blog</h1>
+            <p class="hero__subtitle" data-i18n="blog.subtitle">
+              Occasional insights from my work with web design and digital
+              solutions for local businesses.
             </p>
           </div>
         </div>
@@ -112,132 +140,156 @@
       <!-- Blog Posts -->
       <section class="section section--padded">
         <div class="blog-grid">
-          <!-- Artikel 1 -->
+          <!-- Article 1 -->
           <article class="blog-card reveal reveal-delay-1">
-            <a href="blog/webdesign-lokale-unternehmen.html" class="blog-card__link" aria-label="Artikel lesen: Warum lokale Unternehmen eine professionelle Website brauchen">
+            <a
+              href="blog/webdesign-lokale-unternehmen.html"
+              class="blog-card__link"
+              aria-label="Read article: Why local businesses need a professional website"
+            >
               <div class="blog-card__image">
                 <img
                   src="assets/images/optimized/HeroMain-800.avif"
-                  alt="Professionelle Website für lokale Unternehmen"
+                  alt="Professional website for local businesses"
                   loading="lazy"
                 />
               </div>
               <div class="blog-card__content">
-                <span class="blog-card__category">Webdesign</span>
-                <h2 class="blog-card__title">
-                  Warum lokale Unternehmen eine professionelle Website brauchen
+                <span class="blog-card__category" data-i18n="blog.card1.category"
+                  >Web Design</span
+                >
+                <h2 class="blog-card__title" data-i18n="blog.card1.title">
+                  Why local businesses need a professional website
                 </h2>
-                <p class="blog-card__excerpt">
-                  Eine eigene Website ist mehr als ein digitales Aushängeschild –
-                  sie ist der Grundstein für Vertrauen, Sichtbarkeit und
-                  nachhaltiges Wachstum.
+                <p class="blog-card__excerpt" data-i18n="blog.card1.excerpt">
+                  A website of your own is more than a digital showcase – it is
+                  the foundation for trust, visibility and sustainable growth.
                 </p>
                 <div class="blog-card__meta">
-                  <span>März 2025</span>
+                  <span data-i18n="blog.card1.date">March 2025</span>
                   <span>•</span>
-                  <span>5 Min. Lesezeit</span>
+                  <span data-i18n="blog.card1.read">5 min read</span>
                 </div>
               </div>
             </a>
           </article>
 
-          <!-- Artikel 2 -->
+          <!-- Article 2 -->
           <article class="blog-card reveal reveal-delay-2">
-            <a href="blog/website-vs-social-media.html" class="blog-card__link" aria-label="Artikel lesen: Eigene Website vs. Social Media">
+            <a
+              href="blog/website-vs-social-media.html"
+              class="blog-card__link"
+              aria-label="Read article: Your own website vs. social media"
+            >
               <div class="blog-card__image">
                 <img
                   src="assets/images/optimized/HeroMain-800.avif"
-                  alt="Website vs. Social Media Vergleich"
+                  alt="Website vs. Social Media comparison"
                   loading="lazy"
                 />
               </div>
               <div class="blog-card__content">
-                <span class="blog-card__category">Strategie</span>
-                <h2 class="blog-card__title">
-                  Eigene Website vs. Social Media – Warum beides zählt, aber eines davon gehört dir
+                <span class="blog-card__category" data-i18n="blog.card2.category"
+                  >Strategy</span
+                >
+                <h2 class="blog-card__title" data-i18n="blog.card2.title">
+                  Your own website vs. social media – Why both matter, but one
+                  belongs to you
                 </h2>
-                <p class="blog-card__excerpt">
-                  Instagram kann dich sperren. Deine Website nicht. Warum du
-                  beide Kanäle brauchst – und welcher der wichtigere ist.
+                <p class="blog-card__excerpt" data-i18n="blog.card2.excerpt">
+                  Instagram can ban you. Your website cannot. Why you need both
+                  channels – and which one is more important.
                 </p>
                 <div class="blog-card__meta">
-                  <span>Februar 2025</span>
+                  <span data-i18n="blog.card2.date">February 2025</span>
                   <span>•</span>
-                  <span>6 Min. Lesezeit</span>
+                  <span data-i18n="blog.card2.read">6 min read</span>
                 </div>
               </div>
             </a>
           </article>
 
-          <!-- Artikel 3 -->
+          <!-- Article 3 -->
           <article class="blog-card reveal reveal-delay-3">
-            <a href="blog/seo-sichtbarkeit.html" class="blog-card__link" aria-label="Artikel lesen: Lokales SEO ohne Agenturbudget">
+            <a
+              href="blog/seo-sichtbarkeit.html"
+              class="blog-card__link"
+              aria-label="Read article: Local SEO without an agency budget"
+            >
               <div class="blog-card__image">
                 <img
                   src="assets/images/optimized/HeroMain-800.avif"
-                  alt="Lokales SEO für kleine Unternehmen"
+                  alt="Local SEO for small businesses"
                   loading="lazy"
                 />
               </div>
               <div class="blog-card__content">
-                <span class="blog-card__category">SEO</span>
-                <h2 class="blog-card__title">
-                  Lokales SEO: So wirst du in deiner Stadt gefunden – ohne Agenturbudget
+                <span class="blog-card__category" data-i18n="blog.card3.category"
+                  >SEO</span
+                >
+                <h2 class="blog-card__title" data-i18n="blog.card3.title">
+                  Local SEO: How to get found in your city – without an agency
+                  budget
                 </h2>
-                <p class="blog-card__excerpt">
-                  Gefunden werden, ohne tausende Euro für Agenturen auszugeben.
-                  Die wichtigsten SEO-Hebel für lokale Unternehmen erklärt.
+                <p class="blog-card__excerpt" data-i18n="blog.card3.excerpt">
+                  Get found without spending thousands on agencies. The key SEO
+                  levers for local businesses explained.
                 </p>
                 <div class="blog-card__meta">
-                  <span>Januar 2025</span>
+                  <span data-i18n="blog.card3.date">January 2025</span>
                   <span>•</span>
-                  <span>7 Min. Lesezeit</span>
+                  <span data-i18n="blog.card3.read">7 min read</span>
                 </div>
               </div>
             </a>
           </article>
 
-          <!-- Artikel 4 -->
+          <!-- Article 4 -->
           <article class="blog-card reveal reveal-delay-1">
-            <a href="blog/saas-tools-kleine-betriebe.html" class="blog-card__link" aria-label="Artikel lesen: SaaS-Tools für kleine Betriebe">
+            <a
+              href="blog/saas-tools-kleine-betriebe.html"
+              class="blog-card__link"
+              aria-label="Read article: SaaS tools for small businesses"
+            >
               <div class="blog-card__image">
                 <img
                   src="assets/images/optimized/HeroMain-800.avif"
-                  alt="SaaS-Tools für kleine Betriebe"
+                  alt="SaaS tools for small businesses"
                   loading="lazy"
                 />
               </div>
               <div class="blog-card__content">
-                <span class="blog-card__category">SaaS &amp; Tools</span>
-                <h2 class="blog-card__title">
-                  Welche SaaS-Tools sich für kleine Betriebe wirklich lohnen – und welche nicht
+                <span class="blog-card__category" data-i18n="blog.card4.category"
+                  >SaaS &amp; Tools</span
+                >
+                <h2 class="blog-card__title" data-i18n="blog.card4.title">
+                  Which SaaS tools are really worth it for small businesses –
+                  and which are not
                 </h2>
-                <p class="blog-card__excerpt">
-                  Nicht jedes Tool braucht jeder. Eine ehrliche Übersicht der
-                  SaaS-Tools, die kleinen Betrieben tatsächlich Zeit und Geld sparen.
+                <p class="blog-card__excerpt" data-i18n="blog.card4.excerpt">
+                  Not everyone needs every tool. An honest overview of SaaS
+                  tools that actually save small businesses time and money.
                 </p>
                 <div class="blog-card__meta">
-                  <span>Dezember 2024</span>
+                  <span data-i18n="blog.card4.date">December 2024</span>
                   <span>•</span>
-                  <span>6 Min. Lesezeit</span>
+                  <span data-i18n="blog.card4.read">6 min read</span>
                 </div>
               </div>
             </a>
           </article>
-
         </div>
 
-        <!-- Mehr Updates kommen gelegentlich -->
         <div class="blog-cta">
-          <p>
-            Neue Einblicke folgen, sobald es etwas Spannendes zu teilen gibt. 💡
+          <p data-i18n="blog.more">
+            New insights to follow as soon as there's something exciting to
+            share. 💡
           </p>
         </div>
       </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="site-footer">
+    <footer class="site-footer" role="contentinfo">
       <div class="site-footer__inner">
         <div class="footer-grid">
           <div class="footer-col footer-col--brand">
@@ -250,22 +302,35 @@
               />
               <div class="footer-brand__text">
                 <span class="footer-brand__name">Lumencat</span>
-                <span class="footer-brand__tagline">
-                  Webdesign. SaaS-Tools. Digitale Lösungen.
+                <span
+                  class="footer-brand__tagline"
+                  data-i18n="footer.tagline"
+                >
+                  Web Design. SaaS Tools. Digital Solutions.
                 </span>
               </div>
             </a>
-            <p class="footer-brand__description">
-              Fertige Tools und moderne Websites für Selbstständige und lokale
-              Unternehmen. Klarer Code, ehrliche Beratung, wenig Blabla.
+            <p class="footer-brand__description" data-i18n="footer.description">
+              Ready-made tools and modern websites for freelancers and local
+              businesses. Clean code, honest advice, no fluff.
             </p>
           </div>
 
           <div class="footer-col">
-            <h3 class="footer-heading">Navigation</h3>
+            <h3 class="footer-heading" data-i18n="footer.nav_heading">
+              Navigation
+            </h3>
             <ul class="footer-links">
-              <li><a href="index.html#leistungen">Leistungen</a></li>
-              <li><a href="index.html#projekte">Projekte</a></li>
+              <li>
+                <a href="index.html#leistungen" data-i18n="footer.features"
+                  >Features</a
+                >
+              </li>
+              <li>
+                <a href="index.html#projekte" data-i18n="footer.projects"
+                  >Projects</a
+                >
+              </li>
               <li><a href="services.html">Services</a></li>
               <li><a href="index.html#tools">Tools</a></li>
               <li><a href="insights.html">Blog</a></li>
@@ -273,17 +338,25 @@
           </div>
 
           <div class="footer-col">
-            <h3 class="footer-heading">Leistungen</h3>
+            <h3 class="footer-heading" data-i18n="footer.services_heading">
+              Services
+            </h3>
             <ul class="footer-links">
-              <li>Landingpages &amp; Business-Websites</li>
-              <li>SaaS-Tools &amp; digitale Lösungen</li>
-              <li>Website-Wartung</li>
-              <li>Hosting-Setup (Hetzner)</li>
+              <li data-i18n="footer.service_1">
+                Landingpages &amp; Business Websites
+              </li>
+              <li data-i18n="footer.service_2">
+                SaaS Tools &amp; Digital Solutions
+              </li>
+              <li data-i18n="footer.service_3">Website Maintenance</li>
+              <li data-i18n="footer.service_4">Hosting Setup (Hetzner)</li>
             </ul>
           </div>
 
           <div class="footer-col">
-            <h3 class="footer-heading">Kontakt</h3>
+            <h3 class="footer-heading" data-i18n="footer.contact_heading">
+              Contact
+            </h3>
             <ul class="footer-links footer-links--contact">
               <li>
                 <a href="mailto:hello@lumencat.de">hello@lumencat.de</a>
@@ -296,15 +369,21 @@
         </div>
 
         <div class="site-footer__bottom">
-          <p>&copy; 2025 Lumencat. Alle Rechte vorbehalten.</p>
+          <p>
+            &copy; 2025 Lumencat.
+            <span data-i18n="footer.rights">All rights reserved.</span>
+          </p>
           <nav class="footer-meta">
-            <a href="impressum.html">Impressum</a>
-            <a href="datenschutz.html">Datenschutz</a>
+            <a href="impressum.html" data-i18n="footer.legal_notice"
+              >Legal Notice</a
+            >
+            <a href="datenschutz.html" data-i18n="footer.privacy">Privacy</a>
           </nav>
         </div>
       </div>
     </footer>
 
+    <script src="js/i18n.js"></script>
     <script src="js/main.js"></script>
     <script
       defer

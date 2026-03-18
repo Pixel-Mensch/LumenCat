@@ -1,9 +1,13 @@
 <!DOCTYPE html>
-<html lang="de">
+<html
+  lang="en"
+  data-i18n-title="page.title.impressum"
+  data-i18n-desc="page.desc.impressum"
+>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Impressum – Lumencat</title>
+    <title>Legal Notice – Lumencat</title>
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico" />
     <link
       rel="icon"
@@ -20,17 +24,17 @@
     <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg" />
     <meta
       name="description"
-      content="Impressum von Lumencat – Webdesign, Automationen & KI."
+      content="Legal notice for Lumencat – Web Design, Automations &amp; AI."
     />
     <meta
       name="robots"
       content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
     />
     <link rel="canonical" href="https://lumencat.de/impressum.html" />
-    <meta property="og:title" content="Impressum – Lumencat" />
+    <meta property="og:title" content="Legal Notice – Lumencat" />
     <meta
       property="og:description"
-      content="Impressum von Lumencat – Webdesign, Automationen & KI."
+      content="Legal notice for Lumencat – Web Design, Automations &amp; AI."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://lumencat.de/impressum.html" />
@@ -43,7 +47,6 @@
     <link rel="preconnect" href="https://plausible.io" crossorigin />
     <link rel="dns-prefetch" href="https://plausible.io" />
     <script>
-      // Prevent Flash of Unstyled/Wrong Theme on load
       (function () {
         try {
           const savedTheme = localStorage.getItem("lumencat-theme");
@@ -56,10 +59,17 @@
     </script>
   </head>
   <body>
-    <a href="#main" class="skip-link">Zum Hauptinhalt springen</a>
+    <a href="#main" class="skip-link" data-i18n="skip_link"
+      >Skip to main content</a
+    >
 
     <header class="site-header" role="banner">
-      <nav class="nav" role="navigation" aria-label="Hauptnavigation">
+      <nav
+        class="nav"
+        role="navigation"
+        aria-label="Main navigation"
+        data-i18n-aria="nav.aria_label"
+      >
         <a href="index.html" class="nav__brand">
           <img src="assets/images/logo.svg" alt="Lumencat Logo" class="nav__logo" />
           <span class="nav__brand-name">Lumencat</span>
@@ -68,29 +78,49 @@
         <button
           class="nav__toggle"
           id="navToggle"
-          aria-label="Menü öffnen"
+          aria-label="Open menu"
           aria-expanded="false"
           aria-controls="navLinks"
+          data-i18n-aria="nav.toggle_aria"
         >
           ☰
         </button>
 
         <ul class="nav__links" id="navLinks">
-          <li><a href="index.html#leistungen">Leistungen</a></li>
-          <li><a href="index.html#projekte">Projekte</a></li>
+          <li>
+            <a href="index.html#leistungen" data-i18n="nav.features"
+              >Features</a
+            >
+          </li>
+          <li>
+            <a href="index.html#projekte" data-i18n="nav.projects">Projects</a>
+          </li>
           <li><a href="services.html">Services</a></li>
           <li><a href="index.html#tools">Tools</a></li>
           <li><a href="insights.html">Blog</a></li>
-          <li><a href="kontakt.html">Kontakt</a></li>
+          <li>
+            <a href="kontakt.html" data-i18n="nav.contact">Contact</a>
+          </li>
           <li>
             <button
               class="theme-toggle"
               id="themeToggle"
               type="button"
-              aria-label="Darstellung wechseln"
+              aria-label="Toggle theme"
               aria-pressed="false"
             >
               🌙
+            </button>
+          </li>
+          <li>
+            <button
+              class="theme-toggle"
+              id="langToggle"
+              type="button"
+              aria-label="Switch to German"
+              aria-pressed="false"
+            >
+              DE
             </button>
           </li>
         </ul>
@@ -100,13 +130,17 @@
     <main id="main" role="main">
       <section class="section section--padded reveal">
         <header class="section__header">
-          <h1>Impressum</h1>
-          <p>Angaben gemäß § 5 TMG.</p>
+          <h1 data-i18n="impressum.heading">Legal Notice</h1>
+          <p data-i18n="impressum.subtitle">
+            Information pursuant to § 5 TMG.
+          </p>
         </header>
 
         <div class="card reveal legal-card">
           <div class="legal-section">
-            <h2>Verantwortlicher Anbieter dieser Website</h2>
+            <h2 data-i18n="impressum.responsible.heading">
+              Responsible Provider of this Website
+            </h2>
             <p>
               <strong>Marc André Kommer (Lumencat)</strong><br />
               Webdesign, Automationen &amp; KI<br />
@@ -117,7 +151,7 @@
           </div>
 
           <div class="legal-section">
-            <h2>Kontakt</h2>
+            <h2 data-i18n="impressum.contact.heading">Contact</h2>
             <p>
               E-Mail:
               <a href="mailto:hello@lumencat.de">hello@lumencat.de</a><br />
@@ -127,15 +161,17 @@
           </div>
 
           <div class="legal-section">
-            <h2>Umsatzsteuer</h2>
-            <p>
+            <h2 data-i18n="impressum.tax.heading">VAT</h2>
+            <p data-i18n="impressum.tax.text">
               Kleinunternehmer gemäß § 19 UStG. Es wird keine Umsatzsteuer
               ausgewiesen.
             </p>
           </div>
 
           <div class="legal-section">
-            <h2>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
+            <h2 data-i18n="impressum.editorial.heading">
+              Responsible for content pursuant to § 55 Para. 2 RStV
+            </h2>
             <p>
               Marc André Kommer<br />
               Haydnstr. 25<br />
@@ -145,8 +181,10 @@
           </div>
 
           <div class="legal-section">
-            <h2>Haftung für Inhalte</h2>
-            <p>
+            <h2 data-i18n="impressum.liability_content.heading">
+              Liability for Content
+            </h2>
+            <p data-i18n="impressum.liability_content.p1">
               Als Diensteanbieter bin ich gemäß § 7 Abs. 1 TMG für eigene
               Inhalte auf diesen Seiten nach den allgemeinen Gesetzen
               verantwortlich. Nach §§ 8 bis 10 TMG bin ich jedoch nicht
@@ -154,7 +192,7 @@
               zu überwachen oder nach Umständen zu forschen, die auf eine
               rechtswidrige Tätigkeit hinweisen.
             </p>
-            <p>
+            <p data-i18n="impressum.liability_content.p2">
               Verpflichtungen zur Entfernung oder Sperrung der Nutzung von
               Informationen nach den allgemeinen Gesetzen bleiben hiervon
               unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem
@@ -165,8 +203,10 @@
           </div>
 
           <div class="legal-section">
-            <h2>Haftung für Links</h2>
-            <p>
+            <h2 data-i18n="impressum.liability_links.heading">
+              Liability for Links
+            </h2>
+            <p data-i18n="impressum.liability_links.text">
               Mein Angebot enthält Links zu externen Websites Dritter, auf deren
               Inhalte ich keinen Einfluss habe. Deshalb kann ich für diese
               fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der
@@ -177,15 +217,15 @@
           </div>
 
           <div class="legal-section">
-            <h2>Urheberrecht</h2>
-            <p>
+            <h2 data-i18n="impressum.copyright.heading">Copyright</h2>
+            <p data-i18n="impressum.copyright.p1">
               Die durch mich erstellten Inhalte und Werke auf diesen Seiten
               unterliegen dem deutschen Urheberrecht. Die Vervielfältigung,
               Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der
               Grenzen des Urheberrechts bedürfen meiner schriftlichen
               Zustimmung.
             </p>
-            <p>
+            <p data-i18n="impressum.copyright.p2">
               Soweit die Inhalte auf dieser Seite nicht von mir erstellt wurden,
               werden die Urheberrechte Dritter beachtet. Solltest du trotzdem
               auf eine Urheberrechtsverletzung aufmerksam werden, bitte ich um
@@ -197,11 +237,9 @@
       </section>
     </main>
 
-    <!-- Footer wie auf den anderen Seiten -->
-    <footer class="site-footer">
+    <footer class="site-footer" role="contentinfo">
       <div class="site-footer__inner">
         <div class="footer-grid">
-          <!-- Brand -->
           <div class="footer-col footer-col--brand">
             <a href="index.html" class="footer-brand">
               <img
@@ -212,48 +250,78 @@
               />
               <div class="footer-brand__text">
                 <span class="footer-brand__name">Lumencat</span>
-                <span class="footer-brand__tagline">
-                  Webdesign. SaaS-Tools. Digitale Lösungen.
+                <span
+                  class="footer-brand__tagline"
+                  data-i18n="footer.tagline"
+                >
+                  Web Design. SaaS Tools. Digital Solutions.
                 </span>
               </div>
             </a>
-            <p class="footer-brand__description">
-              Fertige Tools und moderne Websites für Selbstständige und lokale
-              Unternehmen. Klarer Code, ehrliche Beratung, wenig Blabla.
+            <p class="footer-brand__description" data-i18n="footer.description">
+              Ready-made tools and modern websites for freelancers and local
+              businesses. Clean code, honest advice, no fluff.
             </p>
           </div>
 
-          <!-- Navigation -->
           <div class="footer-col">
-            <h3 class="footer-heading">Navigation</h3>
+            <h3 class="footer-heading" data-i18n="footer.nav_heading">
+              Navigation
+            </h3>
             <ul class="footer-links">
-              <li><a href="index.html#leistungen">Leistungen</a></li>
-              <li><a href="index.html#projekte">Projekte</a></li>
+              <li>
+                <a href="index.html#leistungen" data-i18n="footer.features"
+                  >Features</a
+                >
+              </li>
+              <li>
+                <a href="index.html#projekte" data-i18n="footer.projects"
+                  >Projects</a
+                >
+              </li>
               <li><a href="services.html">Services</a></li>
               <li><a href="index.html#tools">Tools</a></li>
               <li><a href="insights.html">Blog</a></li>
-              <li><a href="kontakt.html">Kontakt</a></li>
-            </ul>
-          </div>
-
-          <!-- Leistungen -->
-          <div class="footer-col">
-            <h3 class="footer-heading">Leistungen</h3>
-            <ul class="footer-links">
               <li>
-                <a href="services.html#webseiten"
-                  >Landingpages &amp; Business-Websites</a
+                <a href="kontakt.html" data-i18n="footer.contact_nav"
+                  >Contact</a
                 >
               </li>
-              <li><a href="services.html">SaaS-Tools &amp; digitale Lösungen</a></li>
-              <li><a href="services.html#wartung">Website-Wartung</a></li>
-              <li><a href="services.html#hosting">Hosting-Setup (Hetzner)</a></li>
             </ul>
           </div>
 
-          <!-- Kontakt -->
           <div class="footer-col">
-            <h3 class="footer-heading">Kontakt</h3>
+            <h3 class="footer-heading" data-i18n="footer.services_heading">
+              Services
+            </h3>
+            <ul class="footer-links">
+              <li>
+                <a href="services.html#webseiten" data-i18n="footer.service_1"
+                  >Landingpages &amp; Business Websites</a
+                >
+              </li>
+              <li>
+                <a href="services.html" data-i18n="footer.service_2"
+                  >SaaS Tools &amp; Digital Solutions</a
+                >
+              </li>
+              <li>
+                <a href="services.html#wartung" data-i18n="footer.service_3"
+                  >Website Maintenance</a
+                >
+              </li>
+              <li>
+                <a href="services.html#hosting" data-i18n="footer.service_4"
+                  >Hosting Setup (Hetzner)</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3 class="footer-heading" data-i18n="footer.contact_heading">
+              Contact
+            </h3>
             <ul class="footer-links footer-links--contact">
               <li>
                 <a href="mailto:hello@lumencat.de">hello@lumencat.de</a>
@@ -262,29 +330,37 @@
                 <a href="tel:+4915226580980">+49 1522 6580980</a>
               </li>
               <li>
-                Kontaktformular:<br /><a href="kontakt.html"
-                  >Kontaktseite öffnen</a
+                <span data-i18n="footer.contact_form_label"
+                  >Contact form:</span
+                ><br /><a
+                  href="kontakt.html"
+                  data-i18n="footer.contact_page_link"
+                  >Open contact page</a
                 >
               </li>
             </ul>
-            <p class="footer-note">
-              Projekte nach Absprache von Montag bis Freitag.
+            <p class="footer-note" data-i18n="footer.availability">
+              Projects by arrangement Monday to Friday.
             </p>
           </div>
         </div>
 
         <div class="footer-bottom">
           <small class="footer-copy">
-            &copy; 2025 Lumencat. Alle Rechte vorbehalten.
+            &copy; 2025 Lumencat.
+            <span data-i18n="footer.rights">All rights reserved.</span>
           </small>
           <nav class="footer-nav">
-            <a href="impressum.html">Impressum</a>
-            <a href="datenschutz.html">Datenschutz</a>
+            <a href="impressum.html" data-i18n="footer.legal_notice"
+              >Legal Notice</a
+            >
+            <a href="datenschutz.html" data-i18n="footer.privacy">Privacy</a>
           </nav>
         </div>
       </div>
     </footer>
 
+    <script src="js/i18n.js"></script>
     <script src="js/main.js"></script>
     <script
       defer

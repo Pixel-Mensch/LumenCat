@@ -1,8 +1,12 @@
 <!DOCTYPE html>
-<html lang="de">
+<html
+  lang="en"
+  data-i18n-title="page.title.services"
+  data-i18n-desc="page.desc.services"
+>
   <head>
     <meta charset="UTF-8" />
-    <title>Lumencat – Pakete &amp; Preise</title>
+    <title>Lumencat – Packages &amp; Prices</title>
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico" />
     <link
       rel="icon"
@@ -20,7 +24,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Pakete & Preise für Websites, SaaS-Tools und Wartung. Fair, transparent und modular – starte klein und erweitere später."
+      content="Packages & Prices for websites, SaaS tools and maintenance. Fair, transparent and modular – start small and expand later."
     />
     <meta
       name="robots"
@@ -407,10 +411,15 @@
     </style>
   </head>
   <body>
-    <a href="#main" class="skip-link">Zum Hauptinhalt springen</a>
+    <a href="#main" class="skip-link" data-i18n="skip_link">Skip to main content</a>
 
     <header class="site-header" role="banner">
-      <nav class="nav" role="navigation" aria-label="Hauptnavigation">
+      <nav
+        class="nav"
+        role="navigation"
+        aria-label="Main navigation"
+        data-i18n-aria="nav.aria_label"
+      >
         <a href="index.html" class="nav__brand">
           <img src="assets/images/logo.svg" alt="Lumencat Logo" class="nav__logo" />
           <span class="nav__brand-name">Lumencat</span>
@@ -419,29 +428,47 @@
         <button
           class="nav__toggle"
           id="navToggle"
-          aria-label="Menü öffnen"
+          aria-label="Open menu"
           aria-expanded="false"
           aria-controls="navLinks"
+          data-i18n-aria="nav.toggle_aria"
         >
           ☰
         </button>
 
         <ul class="nav__links" id="navLinks">
-          <li><a href="index.html#leistungen">Leistungen</a></li>
-          <li><a href="index.html#projekte">Projekte</a></li>
+          <li>
+            <a href="index.html#leistungen" data-i18n="nav.features">Features</a>
+          </li>
+          <li>
+            <a href="index.html#projekte" data-i18n="nav.projects">Projects</a>
+          </li>
           <li><a href="services.html" class="active">Services</a></li>
           <li><a href="index.html#tools">Tools</a></li>
           <li><a href="insights.html">Blog</a></li>
-          <li><a href="kontakt.html">Kontakt</a></li>
+          <li>
+            <a href="kontakt.html" data-i18n="nav.contact">Contact</a>
+          </li>
           <li>
             <button
               class="theme-toggle"
               id="themeToggle"
               type="button"
-              aria-label="Darstellung wechseln"
+              aria-label="Toggle theme"
               aria-pressed="false"
             >
               🌙
+            </button>
+          </li>
+          <li>
+            <button
+              class="theme-toggle"
+              id="langToggle"
+              type="button"
+              aria-label="Switch to German"
+              aria-pressed="false"
+            >
+              DE
             </button>
           </li>
         </ul>
@@ -449,175 +476,254 @@
     </header>
 
     <main id="main" role="main">
-      <!-- Hero: Pakete & Preise -->
+      <!-- Hero: Packages & Prices -->
       <section id="shop-hero" class="section section--padded shop-hero reveal">
         <div class="shop-hero__inner">
-          <p class="shop-hero__kicker">Pakete &amp; Preise</p>
-          <h1 class="shop-hero__title">Klare Pakete. Faire Preise.</h1>
-          <p class="shop-hero__lead">
-            Alle Preise sind ehrliche Richtwerte. Der genaue Betrag hängt von
-            Umfang und Wunschfunktionen ab. Du bekommst vor Beginn ein klares
-            Angebot.
+          <p class="shop-hero__kicker" data-i18n="services.hero.kicker">
+            Packages &amp; Prices
+          </p>
+          <h1 class="shop-hero__title" data-i18n="services.hero.title">
+            Clear Packages. Fair Prices.
+          </h1>
+          <p class="shop-hero__lead" data-i18n="services.hero.lead">
+            All prices are honest estimates. The exact amount depends on scope
+            and desired features. You'll receive a clear quote before we start.
           </p>
 
           <div class="shop-hero__actions">
-            <a href="#webseiten-pakete" class="btn btn--primary"
-              >Webseiten-Pakete ansehen</a
+            <a
+              href="#webseiten-pakete"
+              class="btn btn--primary"
+              data-i18n="services.hero.cta_primary"
+              >View website packages</a
             >
-            <a href="index.html#tools" class="btn btn--ghost"
-              >SaaS-Tools ansehen</a
+            <a
+              href="index.html#tools"
+              class="btn btn--ghost"
+              data-i18n="services.hero.cta_ghost"
+              >View SaaS tools</a
             >
           </div>
         </div>
       </section>
 
-      <!-- Webseiten-Pakete -->
+      <!-- Website Packages -->
       <section id="webseiten-pakete" class="section section--padded reveal">
         <header class="section__header">
-          <h2 class="reveal reveal-delay-1">Webseiten-Pakete</h2>
-          <p class="reveal reveal-delay-2">
-            Websites und Systeme, die im Hintergrund für dich arbeiten.
+          <h2 class="reveal reveal-delay-1" data-i18n="services.web.heading">
+            Website Packages
+          </h2>
+          <p class="reveal reveal-delay-2" data-i18n="services.web.subheading">
+            Websites and systems that work for you in the background.
           </p>
         </header>
 
         <div class="grid-3">
           <!-- Landingpage / One-Pager -->
           <article class="card reveal reveal-delay-1">
-            <h3>Landingpage / One-Pager</h3>
+            <h3 data-i18n="services.lp.title">Landingpage / One-Pager</h3>
             <p
               class="paket-preis"
               style="font-size: 1.5rem; font-weight: 600; margin: 0.5rem 0"
             >
-              ab 450&nbsp;€
+              from&nbsp;€450
             </p>
-            <p style="color: var(--color-text-soft); margin-bottom: 1rem">
-              Für Selbstständige, die professionell auftreten wollen.
+            <p
+              style="color: var(--color-text-soft); margin-bottom: 1rem"
+              data-i18n="services.lp.subtitle"
+            >
+              For freelancers who want a professional online presence.
             </p>
             <ul class="list">
-              <li>Eine Seite mit allen wichtigen Infos</li>
-              <li>Mobile-first, performant &amp; suchmaschinenfreundlich</li>
-              <li>Kontaktformular inkl. Mail-Weiterleitung</li>
-              <li>Grundlegende SEO-Basics (Titel, Meta, Struktur)</li>
-              <li>Technische Einrichtung auf deinem Hosting</li>
+              <li data-i18n="services.lp.li1">
+                One page with all the essential information
+              </li>
+              <li data-i18n="services.lp.li2">
+                Mobile-first, performant &amp; search-engine friendly
+              </li>
+              <li data-i18n="services.lp.li3">
+                Contact form incl. email forwarding
+              </li>
+              <li data-i18n="services.lp.li4">
+                Basic SEO essentials (title, meta, structure)
+              </li>
+              <li data-i18n="services.lp.li5">
+                Technical setup on your hosting
+              </li>
             </ul>
             <a
               href="kontakt.html"
               class="btn btn--primary"
               style="margin-top: 1rem"
-              >Projekt anfragen</a
+              data-i18n="services.lp.cta"
+              >Request project</a
             >
-            <a href="#preisrechner" class="card-cta-secondary"
-              >Preis berechnen →</a
+            <a
+              href="#preisrechner"
+              class="card-cta-secondary"
+              data-i18n="services.lp.calc"
+              >Calculate price →</a
             >
           </article>
 
           <!-- Business-Website -->
           <article class="card reveal reveal-delay-2">
-            <h3>Business-Website</h3>
+            <h3 data-i18n="services.biz.title">Business-Website</h3>
             <p
               style="
                 color: var(--color-text-soft);
                 margin-bottom: 0.25rem;
                 font-size: 0.9rem;
               "
+              data-i18n="services.biz.pages"
             >
-              3 bis 6 Seiten
+              3 to 6 pages
             </p>
             <p
               class="paket-preis"
               style="font-size: 1.5rem; font-weight: 600; margin: 0.5rem 0"
             >
-              ab 850&nbsp;€
+              from&nbsp;€850
             </p>
-            <p style="color: var(--color-text-soft); margin-bottom: 1rem">
-              Für Unternehmen mit mehr Inhalt &amp; Struktur.
+            <p
+              style="color: var(--color-text-soft); margin-bottom: 1rem"
+              data-i18n="services.biz.subtitle"
+            >
+              For businesses with more content &amp; structure.
             </p>
             <ul class="list">
-              <li>
-                Bis zu 6 Seiten (z. B. Start, Leistungen, Über uns, Referenzen,
-                Blog, Kontakt)
+              <li data-i18n="services.biz.li1">
+                Up to 6 pages (e.g. Home, Services, About, References, Blog,
+                Contact)
               </li>
-              <li>Individuelles Design nach Marke / Branding</li>
-              <li>
-                Kontaktformular mit strukturierter Weiterleitung (z. B. per Mail)
+              <li data-i18n="services.biz.li2">
+                Individual design to match your brand / branding
               </li>
-              <li>Erweiterte SEO-Basics &amp; sinnvolle Struktur</li>
+              <li data-i18n="services.biz.li3">
+                Contact form with structured forwarding (e.g. by email)
+              </li>
+              <li data-i18n="services.biz.li4">
+                Extended SEO basics &amp; meaningful structure
+              </li>
             </ul>
             <a
               href="kontakt.html"
               class="btn btn--ghost"
               style="margin-top: 1rem"
-              >Kennlern-Call vereinbaren</a
+              data-i18n="services.biz.cta"
+              >Schedule intro call</a
             >
-            <a href="#preisrechner" class="card-cta-secondary"
-              >Preis berechnen →</a
+            <a
+              href="#preisrechner"
+              class="card-cta-secondary"
+              data-i18n="services.biz.calc"
+              >Calculate price →</a
             >
           </article>
 
           <!-- Premium-Website -->
           <article class="card reveal reveal-delay-3">
-            <h3>Premium-Website</h3>
+            <h3 data-i18n="services.premium.title">Premium-Website</h3>
             <p
               style="
                 color: var(--color-text-soft);
                 margin-bottom: 0.25rem;
                 font-size: 0.9rem;
               "
+              data-i18n="services.premium.pages"
             >
-              6+ Seiten, komplexe Struktur
+              6+ pages, complex structure
             </p>
             <p style="margin: 0.75rem 0">
-              <span style="background: rgba(165,176,199,0.12); color: var(--color-text-soft); font-size: 0.8rem; font-weight: 600; padding: 0.3rem 0.85rem; border-radius: var(--radius-full); border: 1px solid rgba(165,176,199,0.25);">Auf Anfrage</span>
+              <span
+                style="background: rgba(165,176,199,0.12); color: var(--color-text-soft); font-size: 0.8rem; font-weight: 600; padding: 0.3rem 0.85rem; border-radius: var(--radius-full); border: 1px solid rgba(165,176,199,0.25);"
+                data-i18n="services.premium.badge"
+                >On request</span
+              >
             </p>
-            <p style="color: var(--color-text-soft); margin-bottom: 1rem">
-              Website mit erweiterten Features und klarer Struktur.
+            <p
+              style="color: var(--color-text-soft); margin-bottom: 1rem"
+              data-i18n="services.premium.subtitle"
+            >
+              Website with extended features and clear structure.
             </p>
             <ul class="list">
-              <li>Maßgeschneiderte Seitenstruktur &amp; UX</li>
-              <li>Individuelles Design mit Fokus auf Markenidentität</li>
-              <li>Erweiterte Funktionen nach Bedarf</li>
-              <li>Optional erweiterbar um Tools und Integrationen</li>
-              <li>Kurze technische Doku der Website und Funktionen</li>
-              <li>Vorbereitung für Wartungsvertrag &amp; Erweiterungen</li>
+              <li data-i18n="services.premium.li1">
+                Custom page structure &amp; UX
+              </li>
+              <li data-i18n="services.premium.li2">
+                Individual design focused on brand identity
+              </li>
+              <li data-i18n="services.premium.li3">
+                Extended functions as needed
+              </li>
+              <li data-i18n="services.premium.li4">
+                Optionally expandable with tools and integrations
+              </li>
+              <li data-i18n="services.premium.li5">
+                Brief technical documentation of the website and features
+              </li>
+              <li data-i18n="services.premium.li6">
+                Preparation for maintenance contract &amp; extensions
+              </li>
             </ul>
             <a
               href="kontakt.html"
               class="btn btn--primary"
               style="margin-top: 1rem"
-              >Unverbindliches Angebot</a
+              data-i18n="services.premium.cta"
+              >Non-binding quote</a
             >
-            <a href="#preisrechner" class="card-cta-secondary"
-              >Preis berechnen →</a
+            <a
+              href="#preisrechner"
+              class="card-cta-secondary"
+              data-i18n="services.premium.calc"
+              >Calculate price →</a
             >
           </article>
 
           <!-- Redesign / Relaunch -->
           <article class="card reveal reveal-delay-1">
-            <h3>Redesign / Relaunch</h3>
+            <h3 data-i18n="services.redesign.title">Redesign / Relaunch</h3>
             <p
               class="paket-preis"
               style="font-size: 1.5rem; font-weight: 600; margin: 0.5rem 0"
             >
-              ab 200&nbsp;€
+              from&nbsp;€200
             </p>
-            <p style="color: var(--color-text-soft); margin-bottom: 1rem">
-              Bestehende Website auffrischen oder neu aufsetzen.
+            <p
+              style="color: var(--color-text-soft); margin-bottom: 1rem"
+              data-i18n="services.redesign.subtitle"
+            >
+              Refresh or rebuild an existing website.
             </p>
             <ul class="list">
-              <li>Analyse der bestehenden Website</li>
-              <li>Modernes Design mit verbesserter Nutzerführung</li>
-              <li>Performance-Optimierung</li>
-              <li>SEO-Basics auffrischen</li>
-              <li>Übernahme vorhandener Inhalte</li>
+              <li data-i18n="services.redesign.li1">
+                Analysis of the existing website
+              </li>
+              <li data-i18n="services.redesign.li2">
+                Modern design with improved user flow
+              </li>
+              <li data-i18n="services.redesign.li3">
+                Performance optimisation
+              </li>
+              <li data-i18n="services.redesign.li4">Refresh SEO basics</li>
+              <li data-i18n="services.redesign.li5">
+                Transfer of existing content
+              </li>
             </ul>
             <a
               href="kontakt.html"
               class="btn btn--ghost"
               style="margin-top: 1rem"
-              >Redesign anfragen</a
+              data-i18n="services.redesign.cta"
+              >Request redesign</a
             >
-            <a href="#preisrechner" class="card-cta-secondary"
-              >Preis berechnen →</a
+            <a
+              href="#preisrechner"
+              class="card-cta-secondary"
+              data-i18n="services.redesign.calc"
+              >Calculate price →</a
             >
           </article>
         </div>
@@ -631,211 +737,294 @@
             border-radius: 1rem;
           "
         >
-          <p style="margin: 0; color: var(--color-text-soft)">
-            Alle Preise sind Richtwerte. Du erhältst immer ein individuelles
-            Angebot, passend zu deinem Projekt und deinem Budget.
+          <p
+            style="margin: 0; color: var(--color-text-soft)"
+            data-i18n="services.prices_note"
+          >
+            All prices are estimates. You always receive an individual quote
+            tailored to your project and budget.
           </p>
         </div>
       </section>
 
-      <!-- Services im Überblick -->
+      <!-- Services Overview -->
       <section id="services-overview" class="section section--padded reveal">
         <header class="section__header">
-          <h2 class="reveal reveal-delay-1">Services im Überblick</h2>
-          <p class="reveal reveal-delay-2">
-            Konkrete, klar definierte Leistungen, die du direkt buchen kannst.
+          <h2
+            class="reveal reveal-delay-1"
+            data-i18n="services.overview.heading"
+          >
+            Services Overview
+          </h2>
+          <p
+            class="reveal reveal-delay-2"
+            data-i18n="services.overview.subheading"
+          >
+            Concrete, clearly defined services you can book directly.
           </p>
         </header>
 
         <div class="grid-2">
-          <!-- Website-Check -->
+          <!-- Website Check -->
           <article class="card reveal reveal-delay-1">
-            <h3>Website-Check &amp; Performance-Audit</h3>
+            <h3 data-i18n="services.check.title">
+              Website Check &amp; Performance Audit
+            </h3>
             <p
               class="paket-preis"
               style="font-size: 1.5rem; font-weight: 600; margin: 0.5rem 0"
             >
-              149&nbsp;€
+              €149
             </p>
-            <p style="color: var(--color-text-soft); margin-bottom: 1rem">
-              Technischer und inhaltlicher Check deiner bestehenden Website.
+            <p
+              style="color: var(--color-text-soft); margin-bottom: 1rem"
+              data-i18n="services.check.subtitle"
+            >
+              Technical and content check of your existing website.
             </p>
             <ul class="list">
-              <li>Analyse von Ladezeit, Struktur &amp; UX</li>
-              <li>Kurz-SEO-Check (Titel, Überschriften, Inhalt)</li>
-              <li>PDF-Report mit konkreten Handlungsempfehlungen</li>
-              <li>Optional: 30&nbsp;Min. Call zur Durchsprache</li>
+              <li data-i18n="services.check.li1">
+                Analysis of load time, structure &amp; UX
+              </li>
+              <li data-i18n="services.check.li2">
+                Quick SEO check (titles, headings, content)
+              </li>
+              <li data-i18n="services.check.li3">
+                PDF report with concrete recommendations
+              </li>
+              <li data-i18n="services.check.li4">
+                Optional: 30&nbsp;min call to discuss
+              </li>
             </ul>
             <a
               href="kontakt.html"
               class="btn btn--primary"
               style="margin-top: 1rem"
-              >Website-Check anfragen</a
+              data-i18n="services.check.cta"
+              >Request website check</a
             >
-            <a href="#preisrechner" class="card-cta-secondary"
-              >Preis berechnen →</a
+            <a
+              href="#preisrechner"
+              class="card-cta-secondary"
+              data-i18n="services.check.calc"
+              >Calculate price →</a
             >
           </article>
 
-          <!-- Beratung -->
+          <!-- Consulting -->
           <article class="card reveal reveal-delay-2">
-            <h3>Beratung &amp; Struktur</h3>
+            <h3 data-i18n="services.consulting.title">
+              Consulting &amp; Structure
+            </h3>
             <p
               class="paket-preis"
               style="font-size: 1.5rem; font-weight: 600; margin: 0.5rem 0"
             >
-              80&nbsp;€&thinsp;/&thinsp;h
+              €80&thinsp;/&thinsp;h
             </p>
-            <p style="color: var(--color-text-soft); margin-bottom: 1rem">
-              Für alles, was sich nicht in ein Paket pressen lässt.
+            <p
+              style="color: var(--color-text-soft); margin-bottom: 1rem"
+              data-i18n="services.consulting.subtitle"
+            >
+              For everything that doesn't fit into a package.
             </p>
-            <p>
-              Wir schauen gemeinsam auf deine aktuelle Lage, Tools, Abläufe und
-              Ziele – ich helfe dir, eine sinnvolle Reihenfolge und Struktur
-              zu finden.
+            <p data-i18n="services.consulting.text">
+              We look together at your current situation, tools, workflows and
+              goals – I help you find a sensible order and structure.
             </p>
             <a
               href="kontakt.html"
               class="btn btn--ghost"
               style="margin-top: 1rem"
-              >Beratungstermin anfragen</a
+              data-i18n="services.consulting.cta"
+              >Request consulting appointment</a
             >
-            <a href="#preisrechner" class="card-cta-secondary"
-              >Preis berechnen →</a
+            <a
+              href="#preisrechner"
+              class="card-cta-secondary"
+              data-i18n="services.consulting.calc"
+              >Calculate price →</a
             >
           </article>
         </div>
       </section>
 
-      <!-- Zusatzleistungen für deine Website -->
+      <!-- Add-on Services -->
       <section id="extras-web" class="section section--padded reveal">
         <header class="section__header">
-          <h2 class="reveal reveal-delay-1">
-            Zusatzleistungen für deine Website
+          <h2
+            class="reveal reveal-delay-1"
+            data-i18n="services.extras.heading"
+          >
+            Add-on Services for Your Website
           </h2>
-          <p class="reveal reveal-delay-2">
-            Nicht jede Website braucht alles – diese Bausteine kannst du bei
-            Bedarf ergänzen.
+          <p
+            class="reveal reveal-delay-2"
+            data-i18n="services.extras.subheading"
+          >
+            Not every website needs everything – add these modules as needed.
           </p>
         </header>
 
         <div class="grid-3">
           <article class="card reveal reveal-delay-1">
-            <h3>Performance-Optimierung</h3>
+            <h3 data-i18n="services.perf.title">Performance Optimisation</h3>
             <p
               class="paket-preis"
               style="font-size: 1.25rem; font-weight: 600; margin: 0.5rem 0"
             >
-              150 – 350 €
+              €150 – 350
             </p>
-            <p style="color: var(--color-text-soft)">
-              Ladezeiten verbessern, Bilder optimieren, CSS/JS aufräumen. Ideal
-              für bestehende Seiten, die träge wirken.
+            <p style="color: var(--color-text-soft)" data-i18n="services.perf.text">
+              Improve load times, optimise images, clean up CSS/JS. Ideal for
+              existing pages that feel sluggish.
             </p>
           </article>
 
           <article class="card reveal reveal-delay-2">
-            <h3>SEO-Basisoptimierung</h3>
+            <h3 data-i18n="services.seo.title">SEO Basic Optimisation</h3>
             <p
               class="paket-preis"
               style="font-size: 1.25rem; font-weight: 600; margin: 0.5rem 0"
             >
-              80 – 150 €
+              €80 – 150
             </p>
-            <p style="color: var(--color-text-soft)">
-              Saubere Keyword-Struktur, Titles, Descriptions, ALT-Texte –
-              Grundlage für bessere Auffindbarkeit.
+            <p style="color: var(--color-text-soft)" data-i18n="services.seo.text">
+              Clean keyword structure, titles, descriptions, ALT texts – the
+              foundation for better visibility.
             </p>
           </article>
 
           <article class="card reveal reveal-delay-3">
-            <h3>Texterstellung</h3>
+            <h3 data-i18n="services.textcreation.title">Copywriting</h3>
             <p
               class="paket-preis"
               style="font-size: 1.25rem; font-weight: 600; margin: 0.5rem 0"
             >
-              ab 120 €
+              from €120
             </p>
-            <p style="color: var(--color-text-soft)">
-              Du bringst Rohtexte, Stichpunkte oder alte Inhalte mit – ich mache
-              daraus klare, verständliche Texte mit rotem Faden und Fokus auf
-              deine Wunschkund*innen.
+            <p
+              style="color: var(--color-text-soft)"
+              data-i18n="services.textcreation.text"
+            >
+              You bring rough texts, bullet points or old content – I turn them
+              into clear, readable copy with a clear thread and focus on your
+              target clients.
             </p>
           </article>
-
         </div>
       </section>
 
-      <!-- Wartung & laufende Betreuung -->
+      <!-- Maintenance & Ongoing Support -->
       <section
         id="wartung"
         class="section section--padded section--accent reveal"
       >
         <header class="section__header">
-          <h2 class="reveal reveal-delay-1">
-            Wartung &amp; laufende Betreuung
+          <h2
+            class="reveal reveal-delay-1"
+            data-i18n="services.wartung.heading"
+          >
+            Maintenance &amp; Ongoing Support
           </h2>
-          <p class="reveal reveal-delay-2">
-            Deine Website soll nicht nur online gehen – sie soll online bleiben
-            und zuverlässig laufen.
+          <p
+            class="reveal reveal-delay-2"
+            data-i18n="services.wartung.subheading"
+          >
+            Your website shouldn't just go live – it should stay live and run
+            reliably.
           </p>
         </header>
 
         <div class="grid-2">
           <article class="card reveal reveal-delay-1">
-            <h3>Website-Wartung</h3>
+            <h3 data-i18n="services.maint.title">Website Maintenance</h3>
             <p
               class="paket-preis"
               style="font-size: 1.5rem; font-weight: 600; margin: 0.5rem 0"
+              data-i18n="services.maint.price"
             >
-              25&nbsp;€ pro Monat
+              €25 per month
             </p>
-            <p style="color: var(--color-text-soft); margin-bottom: 1rem">
-              Für laufende Lumencat-Projekte.
+            <p
+              style="color: var(--color-text-soft); margin-bottom: 1rem"
+              data-i18n="services.maint.subtitle"
+            >
+              For ongoing Lumencat projects.
             </p>
             <ul class="list">
-              <li>Monatlicher Check deiner Website</li>
-              <li>Kleine Textänderungen (z. B. Öffnungszeiten, Preise)</li>
-              <li>Backup oder Export nach Absprache</li>
-              <li>Sichtprüfung auf Erreichbarkeit &amp; Funktionen</li>
-              <li>Kurze Statusnotiz „OK" oder „Änderung nötig"</li>
+              <li data-i18n="services.maint.li1">
+                Monthly check of your website
+              </li>
+              <li data-i18n="services.maint.li2">
+                Minor text changes (e.g. opening hours, prices)
+              </li>
+              <li data-i18n="services.maint.li3">
+                Backup or export by arrangement
+              </li>
+              <li data-i18n="services.maint.li4">
+                Visual check for availability &amp; functionality
+              </li>
+              <li data-i18n="services.maint.li5">
+                Brief status note "OK" or "change needed"
+              </li>
             </ul>
             <a
               href="kontakt.html"
               class="btn btn--ghost"
               style="margin-top: 1rem"
-              >Wartung anfragen</a
+              data-i18n="services.maint.cta"
+              >Request maintenance</a
             >
-            <a href="#preisrechner" class="card-cta-secondary"
-              >Preis berechnen →</a
+            <a
+              href="#preisrechner"
+              class="card-cta-secondary"
+              data-i18n="services.maint.calc"
+              >Calculate price →</a
             >
           </article>
 
           <article class="card reveal reveal-delay-2">
-            <h3>Erweiterte Wartung</h3>
+            <h3 data-i18n="services.ext.title">Extended Maintenance</h3>
             <p
               class="paket-preis"
               style="font-size: 1.5rem; font-weight: 600; margin: 0.5rem 0"
+              data-i18n="services.ext.price"
             >
-              ab 49&nbsp;€ pro Monat
+              from €49 per month
             </p>
-            <p style="color: var(--color-text-soft); margin-bottom: 1rem">
-              Für Websites mit mehr Technik und integrierten Tools.
+            <p
+              style="color: var(--color-text-soft); margin-bottom: 1rem"
+              data-i18n="services.ext.subtitle"
+            >
+              For websites with more technology and integrated tools.
             </p>
             <ul class="list">
-              <li>Alles aus der Website-Wartung</li>
-              <li>Regelmäßige Updates von Systemen und Plugins</li>
-              <li>Prüfung der Mailzustellung und Kontaktformulare</li>
-              <li>Optional: einfache SEO- oder Content-Checks</li>
+              <li data-i18n="services.ext.li1">
+                Everything from website maintenance
+              </li>
+              <li data-i18n="services.ext.li2">
+                Regular system and plugin updates
+              </li>
+              <li data-i18n="services.ext.li3">
+                Check email delivery and contact forms
+              </li>
+              <li data-i18n="services.ext.li4">
+                Optional: basic SEO or content checks
+              </li>
             </ul>
             <a
               href="kontakt.html"
               class="btn btn--primary"
               style="margin-top: 1rem"
-              >Individuelles Wartungspaket</a
+              data-i18n="services.ext.cta"
+              >Individual maintenance package</a
             >
-            <a href="#preisrechner" class="card-cta-secondary"
-              >Preis berechnen →</a
+            <a
+              href="#preisrechner"
+              class="card-cta-secondary"
+              data-i18n="services.ext.calc"
+              >Calculate price →</a
             >
           </article>
         </div>
@@ -845,199 +1034,278 @@
       <section id="hosting" class="section section--padded reveal">
         <div class="hosting-inner">
           <header class="hosting-header reveal reveal-delay-1">
-            <h2>Hosting &amp; Domain (Hetzner)</h2>
-            <p>
-              Du möchtest dich nicht um Server, SSL und Domain kümmern?
-              Übernehme ich für dich.
+            <h2 data-i18n="services.hosting.heading">
+              Hosting &amp; Domain (Hetzner)
+            </h2>
+            <p data-i18n="services.hosting.subheading">
+              Don't want to deal with server, SSL and domain? I'll handle it for
+              you.
             </p>
           </header>
 
           <div class="hosting-card reveal reveal-delay-3">
-            <h3 class="hosting-card__title">
-              Hosting-Einrichtung &amp; Domain-Setup
+            <h3 class="hosting-card__title" data-i18n="services.hosting.title">
+              Hosting Setup &amp; Domain Setup
             </h3>
-            <p class="hosting-card__price">ab 90&nbsp;€ einmalig</p>
+            <p class="hosting-card__price">from €90 one-time</p>
             <ul class="hosting-card__list">
-              <li>Domain verbinden</li>
-              <li>SSL-Zertifikat aktivieren</li>
-              <li>E-Mail-Adresse(n) einrichten (falls gewünscht)</li>
-              <li>Ordnerstruktur anlegen</li>
-              <li>Projekt auf den Server hochladen</li>
+              <li data-i18n="services.hosting.li1">Connect domain</li>
+              <li data-i18n="services.hosting.li2">Activate SSL certificate</li>
+              <li data-i18n="services.hosting.li3">
+                Set up email address(es) (if desired)
+              </li>
+              <li data-i18n="services.hosting.li4">Create folder structure</li>
+              <li data-i18n="services.hosting.li5">
+                Upload project to server
+              </li>
             </ul>
-            <p class="hosting-card__hint">
-              <strong>Hinweis:</strong> Die laufenden Hosting-Kosten zahlst du
-              direkt beim Anbieter. Ich verdiene daran nichts, sondern empfehle
-              dir nur, was technisch und finanziell zu dir passt.
+            <p
+              class="hosting-card__hint"
+              data-i18n-html="services.hosting.hint"
+            >
+              <strong>Note:</strong> You pay the ongoing hosting costs directly
+              to the provider. I don't earn anything from it, I only recommend
+              what suits you technically and financially.
             </p>
           </div>
         </div>
       </section>
 
-      <!-- Weitere Services -->
+      <!-- Additional Services -->
       <section id="zusatz" class="section section--padded reveal">
         <header class="section__header">
-          <h2 class="reveal reveal-delay-1">Weitere Services</h2>
-          <p class="reveal reveal-delay-2">
-            Kleine Bausteine, die dein Gesamtpaket abrunden – vor allem für
-            lokale Sichtbarkeit.
+          <h2
+            class="reveal reveal-delay-1"
+            data-i18n="services.additional.heading"
+          >
+            Additional Services
+          </h2>
+          <p
+            class="reveal reveal-delay-2"
+            data-i18n="services.additional.subheading"
+          >
+            Small modules that round out your overall package – especially for
+            local visibility.
           </p>
         </header>
 
         <div class="grid-3">
           <article class="card reveal reveal-delay-1">
-            <h3>Google Business Profil</h3>
+            <h3 data-i18n="services.gbp.title">Google Business Profile</h3>
             <p
               class="paket-preis"
               style="font-size: 1.25rem; font-weight: 600; margin: 0.5rem 0"
             >
-              40 – 100 €
+              €40 – 100
             </p>
-            <p style="color: var(--color-text-soft)">
-              Einrichtung oder Optimierung deines Google-Profils für bessere
-              lokale Auffindbarkeit.
+            <p style="color: var(--color-text-soft)" data-i18n="services.gbp.text">
+              Setup or optimisation of your Google profile for better local
+              visibility.
             </p>
           </article>
 
           <article class="card reveal reveal-delay-2">
-            <h3>Google Maps Integration</h3>
+            <h3 data-i18n="services.gmaps.title">Google Maps Integration</h3>
             <p
               class="paket-preis"
               style="font-size: 1.25rem; font-weight: 600; margin: 0.5rem 0"
             >
-              20 – 40 €
+              €20 – 40
             </p>
-            <p style="color: var(--color-text-soft)">
-              Einbindung einer Karte auf deiner Website, inkl. Verlinkung zu
-              deinem Standort.
+            <p style="color: var(--color-text-soft)" data-i18n="services.gmaps.text">
+              Embedding a map on your website, incl. link to your location.
             </p>
           </article>
 
           <article class="card reveal reveal-delay-3">
-            <h3>KI-Bilder (Hero, Team, Räume)</h3>
+            <h3 data-i18n="services.ai.title">
+              AI Images (Hero, Team, Spaces)
+            </h3>
             <p
               class="paket-preis"
               style="font-size: 1.25rem; font-weight: 600; margin: 0.5rem 0"
+              data-i18n="services.ai.price"
             >
-              20 – 60 € pro Paket
+              €20 – 60 per package
             </p>
-            <p style="color: var(--color-text-soft)">
-              Auf deinen Stil angepasste KI-Bilder, damit deine Website auch
-              visuell zusammenpasst.
+            <p style="color: var(--color-text-soft)" data-i18n="services.ai.text">
+              AI-generated images adapted to your style, so your website also
+              fits together visually.
             </p>
           </article>
         </div>
       </section>
 
-      <!-- Service immer inklusive -->
+      <!-- Always included -->
       <section
         id="service"
         class="section section--padded section--accent reveal"
       >
         <header class="section__header">
-          <h2 class="reveal reveal-delay-1">
-            Immer inklusive: Einführung &amp; Übergabe
+          <h2
+            class="reveal reveal-delay-1"
+            data-i18n="services.included.heading"
+          >
+            Always included: Onboarding &amp; Handover
           </h2>
-          <p class="reveal reveal-delay-2">
-            Egal welches Paket du buchst – du bekommst eine saubere Übergabe und
-            weißt, wie du mit deiner Website umgehen kannst.
+          <p
+            class="reveal reveal-delay-2"
+            data-i18n="services.included.subheading"
+          >
+            Whatever package you book – you get a clean handover and know how to
+            manage your website.
           </p>
         </header>
 
         <div class="grid-3">
           <article class="card reveal reveal-delay-1">
-            <h3>Was du bekommst</h3>
+            <h3 data-i18n="services.included.what.title">What you get</h3>
             <ul class="list">
-              <li>Erklärung der Projektstruktur</li>
-              <li>Wie du Texte &amp; Bilder selbst austauschst</li>
-              <li>Hinweise, was du selbst tun kannst</li>
-              <li>Was du lieber mir überlassen solltest</li>
+              <li data-i18n="services.included.what.li1">
+                Explanation of the project structure
+              </li>
+              <li data-i18n="services.included.what.li2">
+                How to update texts &amp; images yourself
+              </li>
+              <li data-i18n="services.included.what.li3">
+                Tips on what you can do yourself
+              </li>
+              <li data-i18n="services.included.what.li4">
+                What you should leave to me
+              </li>
             </ul>
           </article>
 
           <article class="card reveal reveal-delay-2">
-            <h3>Daten &amp; Transparenz</h3>
+            <h3 data-i18n="services.included.data.title">
+              Data &amp; Transparency
+            </h3>
             <ul class="list">
-              <li>Vollständige Datenübergabe</li>
-              <li>Bild- und Dateiliste</li>
-              <li>Hinweise zu Backups &amp; Sicherheit</li>
-              <li>Keine versteckten Abos</li>
+              <li data-i18n="services.included.data.li1">
+                Complete data handover
+              </li>
+              <li data-i18n="services.included.data.li2">
+                Image and file list
+              </li>
+              <li data-i18n="services.included.data.li3">
+                Notes on backups &amp; security
+              </li>
+              <li data-i18n="services.included.data.li4">
+                No hidden subscriptions
+              </li>
             </ul>
           </article>
 
           <article class="card reveal reveal-delay-3">
-            <h3>Preis</h3>
+            <h3 data-i18n="services.included.price.title">Price</h3>
             <p
               class="paket-preis"
               style="font-size: 2rem; font-weight: 600; margin: 1rem 0"
             >
-              0 €
+              €0
             </p>
-            <p style="color: var(--color-text-soft)">
-              Die Einführung ist immer Teil des Projekts. Kein Aufpreis, keine
-              extra Position.
+            <p
+              style="color: var(--color-text-soft)"
+              data-i18n="services.included.price.note"
+            >
+              Onboarding is always part of the project. No surcharge, no extra
+              item.
             </p>
           </article>
         </div>
       </section>
 
-      <!-- Preisrechner -->
+      <!-- Price Calculator -->
       <section id="preisrechner" class="section section--padded reveal">
-        <div class="card reveal reveal-delay-1" style="max-width: 600px; margin: 0 auto;">
-          <h2 style="text-align: center; margin-bottom: 0.5rem;">Was kostet dein Projekt?</h2>
-          <p style="text-align: center; color: var(--color-text-soft); margin-bottom: 1.75rem;">
-            Beantworte 3 kurze Fragen und sieh sofort eine realistische
-            Preisspanne – ohne Registrierung, ohne Haken.
+        <div
+          class="card reveal reveal-delay-1"
+          style="max-width: 600px; margin: 0 auto"
+        >
+          <h2
+            style="text-align: center; margin-bottom: 0.5rem"
+            data-i18n="services.calc.heading"
+          >
+            What does your project cost?
+          </h2>
+          <p
+            style="
+              text-align: center;
+              color: var(--color-text-soft);
+              margin-bottom: 1.75rem;
+            "
+            data-i18n="services.calc.subheading"
+          >
+            Answer 3 short questions and instantly see a realistic price range –
+            no registration, no catch.
           </p>
           <div id="calcApp"></div>
         </div>
       </section>
 
-      <!-- Transparenz -->
+      <!-- Transparency -->
       <section id="transparenz" class="section section--padded reveal">
         <div class="pricing-teaser-card reveal reveal-delay-1">
-          <h2>Noch kein großes Portfolio — aber einen klaren Anspruch</h2>
-          <p>
-            Lumencat ist ein junges Projekt. Die gezeigten Referenzen sind
-            Demo-Arbeiten, die zeigen wie ich arbeite — nicht abgeschlossene
-            Kundenprojekte. Das bedeutet für dich: Du bekommst volle
-            Aufmerksamkeit, faire Preise und einen direkten Draht zum
-            Entwickler. Kein Agentur-Overhead, kein Weiterdelegieren.
+          <h2 data-i18n="services.transparency.heading">
+            No large portfolio yet — but a clear standard
+          </h2>
+          <p data-i18n="services.transparency.text">
+            Lumencat is a young project. The references shown are demo work that
+            shows how I work — not completed client projects. What this means for
+            you: You get full attention, fair prices and a direct line to the
+            developer. No agency overhead, no re-delegation.
           </p>
-          <a href="kontakt.html" class="btn btn--primary">
-            Projekt besprechen
+          <a
+            href="kontakt.html"
+            class="btn btn--primary"
+            data-i18n="services.transparency.cta"
+          >
+            Discuss project
           </a>
         </div>
       </section>
 
-      <!-- Abschluss-CTA -->
+      <!-- CTA -->
       <section
         id="cta-shop"
         class="section section--padded section--cta reveal"
       >
         <div class="cta-shell">
-          <h2 class="cta-title reveal reveal-delay-1">
-            Nicht sicher, welches Paket zu dir passt?
+          <h2
+            class="cta-title reveal reveal-delay-1"
+            data-i18n="services.cta.heading"
+          >
+            Not sure which package suits you?
           </h2>
-          <p class="cta-subtitle reveal reveal-delay-2">
-            Schreib kurz, wo du stehst und was du dir wünschst. Ich melde mich
-            mit einer Empfehlung und einem klaren Vorschlag.
+          <p
+            class="cta-subtitle reveal reveal-delay-2"
+            data-i18n="services.cta.text"
+          >
+            Write briefly where you stand and what you'd like. I'll get back to
+            you with a recommendation and a clear proposal.
           </p>
           <div class="cta-actions reveal reveal-delay-3">
-            <a href="kontakt.html" class="btn btn--primary btn--cta">
-              Jetzt Kontakt aufnehmen
+            <a
+              href="kontakt.html"
+              class="btn btn--primary btn--cta"
+              data-i18n="services.cta.primary"
+            >
+              Get in touch now
             </a>
-            <a href="index.html" class="btn btn--ghost btn--cta">
-              Zur Startseite
+            <a
+              href="index.html"
+              class="btn btn--ghost btn--cta"
+              data-i18n="services.cta.ghost"
+            >
+              To the homepage
             </a>
           </div>
         </div>
       </section>
     </main>
 
-    <footer class="site-footer">
+    <footer class="site-footer" role="contentinfo">
       <div class="site-footer__inner">
         <div class="footer-grid">
-          <!-- Brand -->
           <div class="footer-col footer-col--brand">
             <a href="index.html" class="footer-brand">
               <img
@@ -1048,44 +1316,64 @@
               />
               <div class="footer-brand__text">
                 <span class="footer-brand__name">Lumencat</span>
-                <span class="footer-brand__tagline">
-                  Webdesign. SaaS-Tools. Digitale Lösungen.
+                <span
+                  class="footer-brand__tagline"
+                  data-i18n="footer.tagline"
+                >
+                  Web Design. SaaS Tools. Digital Solutions.
                 </span>
               </div>
             </a>
-            <p class="footer-brand__description">
-              Fertige Tools und moderne Websites für Selbstständige und lokale
-              Unternehmen. Klarer Code, ehrliche Beratung, wenig Blabla.
+            <p
+              class="footer-brand__description"
+              data-i18n="footer.description"
+            >
+              Ready-made tools and modern websites for freelancers and local
+              businesses. Clean code, honest advice, no fluff.
             </p>
           </div>
 
-          <!-- Navigation -->
           <div class="footer-col">
-            <h3 class="footer-heading">Navigation</h3>
+            <h3 class="footer-heading" data-i18n="footer.nav_heading">
+              Navigation
+            </h3>
             <ul class="footer-links">
-              <li><a href="index.html#leistungen">Leistungen</a></li>
-              <li><a href="index.html#projekte">Projekte</a></li>
+              <li>
+                <a href="index.html#leistungen" data-i18n="footer.features"
+                  >Features</a
+                >
+              </li>
+              <li>
+                <a href="index.html#projekte" data-i18n="footer.projects"
+                  >Projects</a
+                >
+              </li>
               <li><a href="services.html">Services</a></li>
               <li><a href="index.html#tools">Tools</a></li>
               <li><a href="insights.html">Blog</a></li>
-              <li><a href="kontakt.html">Kontakt</a></li>
             </ul>
           </div>
 
-          <!-- Services -->
           <div class="footer-col">
-            <h3 class="footer-heading">Services</h3>
+            <h3 class="footer-heading" data-i18n="footer.services_heading">
+              Services
+            </h3>
             <ul class="footer-links">
-              <li>Landingpages &amp; Business-Websites</li>
-              <li>SaaS-Tools &amp; digitale Lösungen</li>
-              <li>Website-Wartung</li>
-              <li>Hosting-Setup (Hetzner)</li>
+              <li data-i18n="footer.service_1">
+                Landingpages &amp; Business Websites
+              </li>
+              <li data-i18n="footer.service_2">
+                SaaS Tools &amp; Digital Solutions
+              </li>
+              <li data-i18n="footer.service_3">Website Maintenance</li>
+              <li data-i18n="footer.service_4">Hosting Setup (Hetzner)</li>
             </ul>
           </div>
 
-          <!-- Kontakt -->
           <div class="footer-col">
-            <h3 class="footer-heading">Kontakt</h3>
+            <h3 class="footer-heading" data-i18n="footer.contact_heading">
+              Contact
+            </h3>
             <ul class="footer-links footer-links--contact">
               <li>
                 <a href="mailto:hello@lumencat.de">hello@lumencat.de</a>
@@ -1094,29 +1382,37 @@
                 <a href="tel:+4915226580980">+49 1522 6580980</a>
               </li>
               <li>
-                Kontaktformular:<br /><a href="kontakt.html"
-                  >Kontaktseite öffnen</a
+                <span data-i18n="footer.contact_form_label"
+                  >Contact form:</span
+                ><br /><a
+                  href="kontakt.html"
+                  data-i18n="footer.contact_page_link"
+                  >Open contact page</a
                 >
               </li>
             </ul>
-            <p class="footer-note">
-              Projekte nach Absprache von Montag bis Freitag.
+            <p class="footer-note" data-i18n="footer.availability">
+              Projects by arrangement Monday to Friday.
             </p>
           </div>
         </div>
 
         <div class="footer-bottom">
           <small class="footer-copy">
-            &copy; 2025 Lumencat. Alle Rechte vorbehalten.
+            &copy; 2025 Lumencat.
+            <span data-i18n="footer.rights">All rights reserved.</span>
           </small>
           <nav class="footer-nav">
-            <a href="impressum.html">Impressum</a>
-            <a href="datenschutz.html">Datenschutz</a>
+            <a href="impressum.html" data-i18n="footer.legal_notice"
+              >Legal Notice</a
+            >
+            <a href="datenschutz.html" data-i18n="footer.privacy">Privacy</a>
           </nav>
         </div>
       </div>
     </footer>
 
+    <script src="js/i18n.js"></script>
     <script src="js/main.js"></script>
 
     <script>
@@ -1139,96 +1435,133 @@
         wartungErweitert: 49,
       };
 
-      const PROJEKTTYPEN = [
-        {
-          id: "landingPage",
-          label: "Landing Page / One-Pager",
-          desc: "Eine starke Seite mit klarem Fokus",
-          priceDisplay: "ab 450 €",
-        },
-        {
-          id: "businessWebsite",
-          label: "Business-Website (3–6 Seiten)",
-          desc: "Professioneller Auftritt, mehrere Seiten",
-          priceDisplay: "ab 850 €",
-        },
-        {
-          id: "redesign",
-          label: "Redesign / Relaunch",
-          desc: "Bestehende Website modernisieren",
-          priceDisplay: "ab 200 €",
-        },
-        {
-          id: "premium",
-          label: "Premium-Website",
-          desc: "Individuell, komplex, einzigartig",
-          priceDisplay: "Auf Anfrage",
-        },
-      ];
+      /* i18n helper for calculator – falls back to EN string if window.I18N unavailable */
+      function calcT(deKey, en) {
+        return window.I18N && window.I18N.currentLang === "de"
+          ? window.I18N.t(deKey)
+          : en;
+      }
 
-      const EXTRAS = [
-        {
-          id: "performanceOptimierung",
-          label: "Performance-Optimierung",
-          priceDisplay: "150–350 €",
-          calcValue: PREISE.performanceOptimierung.calc,
-        },
-        {
-          id: "seoBasis",
-          label: "SEO-Basisoptimierung",
-          priceDisplay: "80–150 €",
-          calcValue: PREISE.seoBasis.calc,
-        },
-        {
-          id: "texterstellung",
-          label: "Texterstellung",
-          priceDisplay: "120 €",
-          calcValue: PREISE.texterstellung,
-        },
-        {
-          id: "hostingSetup",
-          label: "Hosting-Einrichtung & Domain-Setup",
-          priceDisplay: "90 €",
-          calcValue: PREISE.hostingSetup,
-        },
-        {
-          id: "googleBusiness",
-          label: "Google Business Profil",
-          priceDisplay: "40–100 €",
-          calcValue: PREISE.googleBusiness.calc,
-        },
-        {
-          id: "googleMaps",
-          label: "Google Maps Integration",
-          priceDisplay: "20–40 €",
-          calcValue: PREISE.googleMaps.calc,
-        },
-        {
-          id: "kiBilder",
-          label: "KI-Bilder (Hero, Team, Räume)",
-          priceDisplay: "20–60 €",
-          calcValue: PREISE.kiBilder.calc,
-        },
-      ];
+      function getProjectTypes() {
+        var isDE = window.I18N && window.I18N.currentLang === "de";
+        return [
+          {
+            id: "landingPage",
+            label: "Landing Page / One-Pager",
+            desc: isDE
+              ? "Eine starke Seite mit klarem Fokus"
+              : "A single powerful page with clear focus",
+            priceDisplay: isDE ? "ab 450\u00a0\u20ac" : "from \u20ac450",
+          },
+          {
+            id: "businessWebsite",
+            label: isDE
+              ? "Business-Website (3\u20136 Seiten)"
+              : "Business-Website (3\u20136 pages)",
+            desc: isDE
+              ? "Professioneller Auftritt, mehrere Seiten"
+              : "Professional multi-page presence",
+            priceDisplay: isDE ? "ab 850\u00a0\u20ac" : "from \u20ac850",
+          },
+          {
+            id: "redesign",
+            label: "Redesign / Relaunch",
+            desc: isDE
+              ? "Bestehende Website modernisieren"
+              : "Modernise an existing website",
+            priceDisplay: isDE ? "ab 200\u00a0\u20ac" : "from \u20ac200",
+          },
+          {
+            id: "premium",
+            label: "Premium-Website",
+            desc: isDE
+              ? "Individuell, komplex, einzigartig"
+              : "Individual, complex, unique",
+            priceDisplay: calcT("calc.premium.price", "On request"),
+          },
+        ];
+      }
 
-      const WARTUNG_OPTIONS = [
-        { id: "none", label: "Kein Wartungsvertrag", desc: "", monthly: 0 },
-        {
-          id: "basis",
-          label: "Website-Wartung",
-          desc: "Monatlicher Check, kleine Textanpassungen",
-          monthly: PREISE.wartungBasis,
-        },
-        {
-          id: "erweitert",
-          label: "Erweiterte Wartung",
-          desc: "Inkl. Updates, Formularcheck, SEO-Checks",
-          monthly: PREISE.wartungErweitert,
-        },
-      ];
+      function getExtras() {
+        return [
+          {
+            id: "performanceOptimierung",
+            label: calcT("services.perf.title", "Performance Optimisation"),
+            priceDisplay: "\u20ac150\u2013350",
+            calcValue: PREISE.performanceOptimierung.calc,
+          },
+          {
+            id: "seoBasis",
+            label: calcT("services.seo.title", "SEO Basic Optimisation"),
+            priceDisplay: "\u20ac80\u2013150",
+            calcValue: PREISE.seoBasis.calc,
+          },
+          {
+            id: "texterstellung",
+            label: calcT("services.textcreation.title", "Copywriting"),
+            priceDisplay: "\u20ac120",
+            calcValue: PREISE.texterstellung,
+          },
+          {
+            id: "hostingSetup",
+            label: calcT("services.hosting.title", "Hosting Setup & Domain Setup"),
+            priceDisplay: "\u20ac90",
+            calcValue: PREISE.hostingSetup,
+          },
+          {
+            id: "googleBusiness",
+            label: calcT("services.gbp.title", "Google Business Profile"),
+            priceDisplay: "\u20ac40\u2013100",
+            calcValue: PREISE.googleBusiness.calc,
+          },
+          {
+            id: "googleMaps",
+            label: calcT("services.gmaps.title", "Google Maps Integration"),
+            priceDisplay: "\u20ac20\u201340",
+            calcValue: PREISE.googleMaps.calc,
+          },
+          {
+            id: "kiBilder",
+            label: calcT("services.ai.title", "AI Images (Hero, Team, Spaces)"),
+            priceDisplay: "\u20ac20\u201360",
+            calcValue: PREISE.kiBilder.calc,
+          },
+        ];
+      }
+
+      function getWartungOptions() {
+        return [
+          {
+            id: "none",
+            label: calcT("calc.wartung.none_label", "No maintenance plan"),
+            desc: "",
+            monthly: 0,
+          },
+          {
+            id: "basis",
+            label: calcT("calc.wartung.basis_label", "Website Maintenance"),
+            desc: calcT(
+              "calc.wartung.basis_desc",
+              "Monthly check, minor text updates"
+            ),
+            monthly: PREISE.wartungBasis,
+          },
+          {
+            id: "erweitert",
+            label: calcT("calc.wartung.ext_label", "Extended Maintenance"),
+            desc: calcT(
+              "calc.wartung.ext_desc",
+              "Incl. updates, form check, SEO checks"
+            ),
+            monthly: PREISE.wartungErweitert,
+          },
+        ];
+      }
 
       function fmt(n) {
-        return new Intl.NumberFormat("de-DE", {
+        var locale =
+          window.I18N && window.I18N.currentLang === "de" ? "de-DE" : "en-US";
+        return new Intl.NumberFormat(locale, {
           style: "currency",
           currency: "EUR",
           minimumFractionDigits: 0,
@@ -1257,8 +1590,9 @@
       }
 
       function calcExtrasTotal() {
+        var extras = getExtras();
         return calcState.extras.reduce(function (sum, id) {
-          var e = EXTRAS.find(function (x) { return x.id === id; });
+          var e = extras.find(function (x) { return x.id === id; });
           return sum + (e ? e.calcValue : 0);
         }, 0);
       }
@@ -1266,7 +1600,8 @@
       function calcOneTime() { return calcBasis() + calcExtrasTotal(); }
 
       function calcMonthly() {
-        var w = WARTUNG_OPTIONS.find(function (x) { return x.id === calcState.wartung; });
+        var opts = getWartungOptions();
+        var w = opts.find(function (x) { return x.id === calcState.wartung; });
         return w ? w.monthly : 0;
       }
 
@@ -1280,87 +1615,161 @@
         );
       }
 
-      /* ── Schritt 1: Projekttyp ── */
+      /* ── Step 1: Project type ── */
       function buildStep0() {
-        var cards = PROJEKTTYPEN.map(function (p) {
+        var types = getProjectTypes();
+        var cards = types.map(function (p) {
           return (
-            '<button class="calc-card' + (calcState.projekttyp === p.id ? " is-selected" : "") +
-            '" data-calc-action="select-typ" data-id="' + p.id + '" type="button">' +
+            '<button class="calc-card' +
+            (calcState.projekttyp === p.id ? " is-selected" : "") +
+            '" data-calc-action="select-typ" data-id="' +
+            p.id +
+            '" type="button">' +
             '<div class="calc-card__label">' +
-            '<div class="calc-card__name">' + p.label + "</div>" +
-            '<div class="calc-card__desc">' + p.desc + "</div>" +
+            '<div class="calc-card__name">' +
+            p.label +
             "</div>" +
-            '<div class="calc-card__price">' + p.priceDisplay + "</div>" +
+            '<div class="calc-card__desc">' +
+            p.desc +
+            "</div>" +
+            "</div>" +
+            '<div class="calc-card__price">' +
+            p.priceDisplay +
+            "</div>" +
             "</button>"
           );
         }).join("");
 
         return (
           progressHTML() +
-          '<p class="calc-step-meta">Schritt 1 von 4</p>' +
-          '<p class="calc-headline">Welche Art von Website brauchst du?</p>' +
-          '<div class="calc-cards">' + cards + "</div>" +
+          '<p class="calc-step-meta">' +
+          calcT("calc.step1.meta", "Step 1 of 4") +
+          "</p>" +
+          '<p class="calc-headline">' +
+          calcT("calc.step1.headline", "What type of website do you need?") +
+          "</p>" +
+          '<div class="calc-cards">' +
+          cards +
+          "</div>" +
           '<div class="calc-actions">' +
           '<button class="btn btn--primary" data-calc-action="next" type="button"' +
-          (calcState.projekttyp ? "" : " disabled") + ">Weiter →</button>" +
+          (calcState.projekttyp ? "" : " disabled") +
+          ">" +
+          calcT("calc.step1.next", "Next \u2192") +
+          "</button>" +
           "</div>"
         );
       }
 
-      /* ── Schritt 2: Zusatzleistungen ── */
+      /* ── Step 2: Add-ons ── */
       function buildStep1() {
-        var tiles = EXTRAS.map(function (e) {
+        var extras = getExtras();
+        var tiles = extras.map(function (e) {
           return (
-            '<button class="calc-tile' + (calcState.extras.indexOf(e.id) !== -1 ? " is-selected" : "") +
-            '" data-calc-action="toggle-extra" data-id="' + e.id + '" type="button">' +
-            '<div class="calc-tile__name">' + e.label + "</div>" +
-            '<div class="calc-tile__price">' + e.priceDisplay + "</div>" +
-            "</button>"
-          );
-        }).join("");
-
-        return (
-          progressHTML() +
-          '<p class="calc-step-meta">Schritt 2 von 4</p>' +
-          '<p class="calc-headline">Welche Zusatzleistungen benötigst du?</p>' +
-          '<div class="calc-running"><span>Basis</span><span class="calc-running__val">' + fmt(calcBasis()) + "</span></div>" +
-          '<div class="calc-grid">' + tiles + "</div>" +
-          '<div class="calc-actions">' +
-          '<button class="btn btn--ghost" data-calc-action="back" type="button">← Zurück</button>' +
-          '<button class="btn btn--primary" data-calc-action="next" type="button">Weiter →</button>' +
-          "</div>"
-        );
-      }
-
-      /* ── Schritt 3: Wartung ── */
-      function buildStep2() {
-        var cards = WARTUNG_OPTIONS.map(function (w) {
-          return (
-            '<button class="calc-card' + (calcState.wartung === w.id ? " is-selected" : "") +
-            '" data-calc-action="select-wartung" data-id="' + w.id + '" type="button">' +
-            '<div class="calc-card__label">' +
-            '<div class="calc-card__name">' + w.label + "</div>" +
-            (w.desc ? '<div class="calc-card__desc">' + w.desc + "</div>" : "") +
+            '<button class="calc-tile' +
+            (calcState.extras.indexOf(e.id) !== -1 ? " is-selected" : "") +
+            '" data-calc-action="toggle-extra" data-id="' +
+            e.id +
+            '" type="button">' +
+            '<div class="calc-tile__name">' +
+            e.label +
             "</div>" +
-            '<div class="calc-card__price">' + (w.monthly === 0 ? "–" : fmt(w.monthly) + "/Monat") + "</div>" +
+            '<div class="calc-tile__price">' +
+            e.priceDisplay +
+            "</div>" +
             "</button>"
           );
         }).join("");
 
         return (
           progressHTML() +
-          '<p class="calc-step-meta">Schritt 3 von 4</p>' +
-          '<p class="calc-headline">Möchtest du einen Wartungsvertrag?</p>' +
-          '<div class="calc-running"><span>Bisher</span><span class="calc-running__val">' + fmt(calcOneTime()) + "</span></div>" +
-          '<div class="calc-cards">' + cards + "</div>" +
+          '<p class="calc-step-meta">' +
+          calcT("calc.step2.meta", "Step 2 of 4") +
+          "</p>" +
+          '<p class="calc-headline">' +
+          calcT(
+            "calc.step2.headline",
+            "Which add-on services do you need?"
+          ) +
+          "</p>" +
+          '<div class="calc-running"><span>' +
+          calcT("calc.step2.basis", "Base") +
+          '</span><span class="calc-running__val">' +
+          fmt(calcBasis()) +
+          "</span></div>" +
+          '<div class="calc-grid">' +
+          tiles +
+          "</div>" +
           '<div class="calc-actions">' +
-          '<button class="btn btn--ghost" data-calc-action="back" type="button">← Zurück</button>' +
-          '<button class="btn btn--primary" data-calc-action="next" type="button">Preis anzeigen →</button>' +
+          '<button class="btn btn--ghost" data-calc-action="back" type="button">' +
+          calcT("calc.step2.back", "\u2190 Back") +
+          "</button>" +
+          '<button class="btn btn--primary" data-calc-action="next" type="button">' +
+          calcT("calc.step2.next", "Next \u2192") +
+          "</button>" +
           "</div>"
         );
       }
 
-      /* ── Schritt 4: Ergebnis ── */
+      /* ── Step 3: Maintenance ── */
+      function buildStep2() {
+        var wartungOpts = getWartungOptions();
+        var cards = wartungOpts.map(function (w) {
+          return (
+            '<button class="calc-card' +
+            (calcState.wartung === w.id ? " is-selected" : "") +
+            '" data-calc-action="select-wartung" data-id="' +
+            w.id +
+            '" type="button">' +
+            '<div class="calc-card__label">' +
+            '<div class="calc-card__name">' +
+            w.label +
+            "</div>" +
+            (w.desc
+              ? '<div class="calc-card__desc">' + w.desc + "</div>"
+              : "") +
+            "</div>" +
+            '<div class="calc-card__price">' +
+            (w.monthly === 0
+              ? "\u2013"
+              : fmt(w.monthly) +
+                calcT("calc.step4.monthly_label", "/month")) +
+            "</div>" +
+            "</button>"
+          );
+        }).join("");
+
+        return (
+          progressHTML() +
+          '<p class="calc-step-meta">' +
+          calcT("calc.step3.meta", "Step 3 of 4") +
+          "</p>" +
+          '<p class="calc-headline">' +
+          calcT(
+            "calc.step3.headline",
+            "Would you like a maintenance plan?"
+          ) +
+          "</p>" +
+          '<div class="calc-running"><span>' +
+          calcT("calc.step3.so_far", "So far") +
+          '</span><span class="calc-running__val">' +
+          fmt(calcOneTime()) +
+          "</span></div>" +
+          '<div class="calc-cards">' +
+          cards +
+          "</div>" +
+          '<div class="calc-actions">' +
+          '<button class="btn btn--ghost" data-calc-action="back" type="button">' +
+          calcT("calc.step3.back", "\u2190 Back") +
+          "</button>" +
+          '<button class="btn btn--primary" data-calc-action="next" type="button">' +
+          calcT("calc.step3.next", "Show price \u2192") +
+          "</button>" +
+          "</div>"
+        );
+      }
+
+      /* ── Step 4: Result ── */
       function buildStep3() {
         if (calcState.projekttyp === "premium") return buildPremiumResult();
 
@@ -1369,69 +1778,134 @@
         var minP = Math.round(oneTime * 0.9);
         var maxP = Math.round(oneTime * 1.15);
 
-        var projekt = PROJEKTTYPEN.find(function (p) { return p.id === calcState.projekttyp; });
+        var types = getProjectTypes();
+        var extras = getExtras();
+        var wartungOpts = getWartungOptions();
+        var projekt = types.find(function (p) {
+          return p.id === calcState.projekttyp;
+        });
         var selectedExtras = calcState.extras
-          .map(function (id) { return EXTRAS.find(function (e) { return e.id === id; }); })
+          .map(function (id) {
+            return extras.find(function (e) {
+              return e.id === id;
+            });
+          })
           .filter(Boolean);
-        var selectedWartung = WARTUNG_OPTIONS.find(function (w) { return w.id === calcState.wartung; });
+        var selectedWartung = wartungOpts.find(function (w) {
+          return w.id === calcState.wartung;
+        });
 
         var breakdownRows =
           '<div class="calc-breakdown__row">' +
-          '<span class="calc-breakdown__row-label">' + (projekt ? projekt.label : "") + "</span>" +
-          '<span class="calc-breakdown__row-amt">' + fmt(PREISE[calcState.projekttyp]) + "</span></div>";
+          '<span class="calc-breakdown__row-label">' +
+          (projekt ? projekt.label : "") +
+          "</span>" +
+          '<span class="calc-breakdown__row-amt">' +
+          fmt(PREISE[calcState.projekttyp]) +
+          "</span></div>";
 
         selectedExtras.forEach(function (e) {
           breakdownRows +=
             '<div class="calc-breakdown__row">' +
-            '<span class="calc-breakdown__row-label">' + e.label + "</span>" +
-            '<span class="calc-breakdown__row-amt">' + fmt(e.calcValue) + "</span></div>";
+            '<span class="calc-breakdown__row-label">' +
+            e.label +
+            "</span>" +
+            '<span class="calc-breakdown__row-amt">' +
+            fmt(e.calcValue) +
+            "</span></div>";
         });
 
         breakdownRows +=
-          '<div class="calc-breakdown__total"><span>Kalkulationsbasis</span>' +
-          '<span class="calc-breakdown__total-amt">' + fmt(oneTime) + "</span></div>";
+          '<div class="calc-breakdown__total"><span>' +
+          calcT("calc.step4.basis_total", "Calculation basis") +
+          "</span>" +
+          '<span class="calc-breakdown__total-amt">' +
+          fmt(oneTime) +
+          "</span></div>";
 
-        /* Summary für Lead-Formular */
-        var extrasText = selectedExtras.length > 0
-          ? "\nZusatzleistungen: " + selectedExtras.map(function (e) { return e.label; }).join(", ")
-          : "";
-        var wartungText = monthly > 0
-          ? "\nWartung: " + selectedWartung.label + " (" + fmt(monthly) + "/Monat)"
-          : "";
+        /* Summary for lead form */
+        var extrasText =
+          selectedExtras.length > 0
+            ? calcT("calc.summary.extras_prefix", "\nAdd-ons: ") +
+              selectedExtras
+                .map(function (e) {
+                  return e.label;
+                })
+                .join(", ")
+            : "";
+        var wartungText =
+          monthly > 0
+            ? calcT("calc.summary.wartung_prefix", "\nMaintenance: ") +
+              selectedWartung.label +
+              " (" +
+              fmt(monthly) +
+              calcT("calc.step4.monthly_label", "/month") +
+              ")"
+            : "";
         var msgSummary =
-          "Preisrechner-Anfrage:\n" +
-          "Projekttyp: " + (projekt ? projekt.label : "") + "\n" +
-          "Kalkulationsbasis: " + fmt(oneTime) +
-          extrasText + wartungText;
+          calcT("calc.summary.prefix", "Price calculator enquiry:\n") +
+          calcT("calc.summary.type", "Project type: ") +
+          (projekt ? projekt.label : "") +
+          "\n" +
+          calcT("calc.summary.basis", "Calculation basis: ") +
+          fmt(oneTime) +
+          extrasText +
+          wartungText;
 
         return (
           progressHTML() +
-          '<p class="calc-step-meta">Schritt 4 von 4 – Ergebnis</p>' +
-          '<p class="calc-headline">Deine Preisspanne</p>' +
+          '<p class="calc-step-meta">' +
+          calcT("calc.step4.meta", "Step 4 of 4 \u2013 Result") +
+          "</p>" +
+          '<p class="calc-headline">' +
+          calcT("calc.step4.headline", "Your price range") +
+          "</p>" +
           '<div class="calc-result-box">' +
-          '<div class="calc-result-box__label">Einmalige Projektkosten (netto zzgl. MwSt.)</div>' +
+          '<div class="calc-result-box__label">' +
+          calcT(
+            "calc.step4.price_label",
+            "One-time project costs (net plus VAT)"
+          ) +
+          "</div>" +
           '<div class="calc-result-box__price">' +
-          '<span class="calc-result-box__big">' + fmt(minP) + "</span>" +
-          '<span class="calc-result-box__sep">–</span>' +
-          '<span class="calc-result-box__big">' + fmt(maxP) + "</span>" +
+          '<span class="calc-result-box__big">' +
+          fmt(minP) +
+          "</span>" +
+          '<span class="calc-result-box__sep">\u2013</span>' +
+          '<span class="calc-result-box__big">' +
+          fmt(maxP) +
+          "</span>" +
           "</div>" +
           (monthly > 0
-            ? '<div class="calc-result-box__monthly">+ <strong>' + fmt(monthly) + "/Monat</strong> — " + selectedWartung.label + "</div>"
+            ? '<div class="calc-result-box__monthly">+ <strong>' +
+              fmt(monthly) +
+              calcT("calc.step4.monthly_label", "/month") +
+              "</strong> \u2014 " +
+              selectedWartung.label +
+              "</div>"
             : "") +
           "</div>" +
           '<div class="calc-breakdown">' +
-          '<div class="calc-breakdown__title">Aufschlüsselung</div>' +
-          breakdownRows + "</div>" +
+          '<div class="calc-breakdown__title">' +
+          calcT("calc.step4.breakdown_title", "Breakdown") +
+          "</div>" +
+          breakdownRows +
+          "</div>" +
           '<div class="calc-inklusive">' +
-          "<strong>Einführung &amp; Übergabe immer inklusive</strong> – 0 € Aufpreis. " +
-          "Du lernst alles, was du zur Pflege deiner Website wissen musst." +
+          calcT(
+            "calc.step4.included",
+            "<strong>Onboarding &amp; handover always included</strong> \u2013 \u20ac0 surcharge. You\u2019ll learn everything you need to know to maintain your website."
+          ) +
           "</div>" +
           '<p class="calc-disclaimer">' +
-          "Die Preisspanne (–10 % bis +15 %) berücksichtigt Abstimmungsaufwand, individuelle Komplexität " +
-          "und Revisionen. Alle Preise netto zzgl. MwSt. Der verbindliche Endpreis wird nach dem " +
-          "kostenlosen Erstgespräch festgelegt." +
+          calcT(
+            "calc.step4.disclaimer",
+            "The price range (\u221210\u00a0% to +15\u00a0%) accounts for coordination effort, individual complexity and revisions. All prices net plus VAT. The final binding price is set after the free initial consultation."
+          ) +
           "</p>" +
-          '<button class="btn btn--ghost" data-calc-action="reset" type="button" style="width:100%;margin-bottom:0;">Neu berechnen</button>' +
+          '<button class="btn btn--ghost" data-calc-action="reset" type="button" style="width:100%;margin-bottom:0;">' +
+          calcT("calc.step4.reset", "Recalculate") +
+          "</button>" +
           buildLeadForm(msgSummary, projekt)
         );
       }
@@ -1439,54 +1913,105 @@
       function buildPremiumResult() {
         return (
           progressHTML() +
-          '<p class="calc-step-meta">Premium-Website</p>' +
-          '<p class="calc-headline">Dein Projekt</p>' +
-          '<div class="calc-anfrage-box">' +
-          '<div class="calc-anfrage-box__tag">Preis</div>' +
-          '<div class="calc-anfrage-box__price">Auf Anfrage</div>' +
-          '<p class="calc-anfrage-box__desc">' +
-          "Premium-Websites werden individuell geplant und kalkuliert. " +
-          "Schreib mir kurz, was du dir vorstellst – ich melde mich mit " +
-          "einer klaren Einschätzung und einem konkreten Angebot." +
+          '<p class="calc-step-meta">' +
+          calcT("calc.premium.meta", "Premium Website") +
           "</p>" +
-          '<a href="kontakt.html" class="btn btn--primary">Jetzt Kontakt aufnehmen</a>' +
+          '<p class="calc-headline">' +
+          calcT("calc.premium.headline", "Your project") +
+          "</p>" +
+          '<div class="calc-anfrage-box">' +
+          '<div class="calc-anfrage-box__tag">' +
+          calcT("calc.premium.price_tag", "Price") +
           "</div>" +
-          '<button class="btn btn--ghost" data-calc-action="reset" type="button" style="width:100%">Neu berechnen</button>'
+          '<div class="calc-anfrage-box__price">' +
+          calcT("calc.premium.price", "On request") +
+          "</div>" +
+          '<p class="calc-anfrage-box__desc">' +
+          calcT(
+            "calc.premium.desc",
+            "Premium websites are planned and costed individually. Write briefly about what you have in mind \u2013 I\u2019ll get back to you with a clear assessment and a concrete quote."
+          ) +
+          "</p>" +
+          '<a href="kontakt.html" class="btn btn--primary">' +
+          calcT("calc.premium.cta", "Get in touch now") +
+          "</a>" +
+          "</div>" +
+          '<button class="btn btn--ghost" data-calc-action="reset" type="button" style="width:100%">' +
+          calcT("calc.premium.reset", "Recalculate") +
+          "</button>"
         );
       }
 
       function buildLeadForm(msgSummary, projekt) {
         return (
           '<div class="calc-lead">' +
-          '<p class="calc-lead__title">Direkt anfragen</p>' +
+          '<p class="calc-lead__title">' +
+          calcT("calc.lead.title", "Enquire directly") +
+          "</p>" +
           '<p class="calc-lead__desc">' +
-          "Optional: Schick mir deine Kalkulation direkt – ich melde mich mit " +
-          "einem konkreten Angebot und wir klären gemeinsam alle Details." +
+          calcT(
+            "calc.lead.desc",
+            "Optional: Send me your calculation directly \u2013 I\u2019ll get back to you with a concrete quote and we\u2019ll clarify all the details together."
+          ) +
           "</p>" +
           '<form id="calcLeadForm" action="scripts/contact.php" method="POST" novalidate>' +
           '<input type="hidden" id="calcCsrfToken" name="csrf_token" value="" />' +
-          '<input type="hidden" name="message" id="calcMessage" value="' + escAttr(msgSummary) + '" />' +
-          '<input type="hidden" name="projectType" value="' + escAttr("Preisrechner: " + (projekt ? projekt.label : "")) + '" />' +
+          '<input type="hidden" name="message" id="calcMessage" value="' +
+          escAttr(msgSummary) +
+          '" />' +
+          '<input type="hidden" name="projectType" value="' +
+          escAttr(
+            calcT("calc.form.name_fallback", "Price calculator enquiry") +
+              ": " +
+              (projekt ? projekt.label : "")
+          ) +
+          '" />' +
           '<div class="form-row form-row--hidden">' +
-          '<label for="calcHoneypot">Bitte dieses Feld nicht ausfüllen</label>' +
+          '<label for="calcHoneypot">' +
+          calcT("calc.lead.honeypot", "Please do not fill in this field") +
+          "</label>" +
           '<input type="text" id="calcHoneypot" name="website" autocomplete="off" />' +
           "</div>" +
           '<div class="form-row">' +
-          '<label for="calcName">Name (optional)</label>' +
-          '<input type="text" id="calcName" name="name" autocomplete="name" placeholder="Wie darf ich dich ansprechen?" />' +
+          '<label for="calcName">' +
+          calcT("calc.lead.name_label", "Name (optional)") +
+          "</label>" +
+          '<input type="text" id="calcName" name="name" autocomplete="name" placeholder="' +
+          escAttr(calcT("calc.lead.name_placeholder", "What should I call you?")) +
+          '" />' +
           "</div>" +
           '<div class="form-row">' +
-          '<label for="calcEmail">E-Mail *</label>' +
-          '<input type="email" id="calcEmail" name="email" required autocomplete="email" placeholder="Wohin soll ich antworten?" />' +
+          '<label for="calcEmail">' +
+          calcT("calc.lead.email_label", "E-Mail *") +
+          "</label>" +
+          '<input type="email" id="calcEmail" name="email" required autocomplete="email" placeholder="' +
+          escAttr(
+            calcT("calc.lead.email_placeholder", "Where should I reply to?")
+          ) +
+          '" />' +
           "</div>" +
           '<div class="form-row">' +
-          '<label for="calcExtraMsg">Zusätzliche Nachricht (optional)</label>' +
-          '<textarea id="calcExtraMsg" rows="3" placeholder="z.B. besondere Anforderungen, gewünschter Starttermin..."></textarea>' +
+          '<label for="calcExtraMsg">' +
+          calcT("calc.lead.extra_label", "Additional message (optional)") +
+          "</label>" +
+          '<textarea id="calcExtraMsg" rows="3" placeholder="' +
+          escAttr(
+            calcT(
+              "calc.lead.extra_placeholder",
+              "e.g. special requirements, desired start date\u2026"
+            )
+          ) +
+          '"></textarea>' +
           "</div>" +
           '<p class="contact-form__hint" id="calcFormHint" role="status" aria-live="polite" aria-atomic="true">' +
-          "Nur E-Mail ist Pflicht. Deine Daten werden nur zur Bearbeitung der Anfrage verwendet." +
+          calcT(
+            "calc.lead.hint",
+            "Only email is required. Your data will only be used to process your enquiry."
+          ) +
           "</p>" +
-          '<button type="submit" class="btn btn--primary contact-form__button">Anfrage senden</button>' +
+          '<button type="submit" class="btn btn--primary contact-form__button">' +
+          calcT("calc.lead.submit", "Send enquiry") +
+          "</button>" +
           "</form></div>"
         );
       }
@@ -1545,32 +2070,64 @@
             var hint = document.getElementById("calcFormHint");
             var emailInput = document.getElementById("calcEmail");
             if (!emailInput || !emailInput.value.trim()) {
-              hint.textContent = "Bitte gib deine E-Mail-Adresse an.";
+              hint.textContent = calcT(
+                "calc.lead.error_email",
+                "Please enter your email address."
+              );
               return;
             }
             var formData = new FormData(form);
             var nameVal = (formData.get("name") || "").trim();
-            formData.set("name", nameVal || "Preisrechner-Anfrage");
+            formData.set(
+              "name",
+              nameVal ||
+                calcT("calc.form.name_fallback", "Price calculator enquiry")
+            );
             var extraMsg = document.getElementById("calcExtraMsg");
             if (extraMsg && extraMsg.value.trim()) {
               var currentMsg = formData.get("message") || "";
-              formData.set("message", currentMsg + "\n\nZusätzliche Nachricht:\n" + extraMsg.value.trim());
+              formData.set(
+                "message",
+                currentMsg +
+                  calcT(
+                    "calc.extra_msg_prefix",
+                    "\n\nAdditional message:\n"
+                  ) +
+                  extraMsg.value.trim()
+              );
             }
-            hint.textContent = "Ich sende deine Anfrage...";
+            hint.textContent = calcT(
+              "calc.lead.sending",
+              "Sending your enquiry\u2026"
+            );
             fetch(form.action, { method: "POST", body: formData })
-              .then(function (resp) { return resp.json(); })
+              .then(function (resp) {
+                return resp.json();
+              })
               .then(function (data) {
                 if (data.success) {
                   var lead = document.querySelector(".calc-lead");
                   if (lead) {
-                    lead.innerHTML = '<div class="calc-lead__success">Danke für deine Anfrage! Ich melde mich so schnell wie möglich.</div>';
+                    lead.innerHTML =
+                      '<div class="calc-lead__success">' +
+                      calcT(
+                        "calc.lead.success",
+                        "Thank you for your enquiry! I\u2019ll get back to you as soon as possible."
+                      ) +
+                      "</div>";
                   }
                 } else {
-                  hint.textContent = data.message || "Da ist etwas schiefgelaufen. Bitte prüf deine Eingaben.";
+                  hint.textContent =
+                    data.message ||
+                    calcT(
+                      "calc.lead.error_generic",
+                      "Something went wrong. Please check your entries."
+                    );
                 }
               })
               .catch(function () {
-                hint.textContent = "Netzwerkfehler. Bitte versuch es erneut oder schreib direkt an hello@lumencat.de.";
+                hint.textContent =
+                  "Network error. Please try again or write directly to hello@lumencat.de.";
               });
           });
         }
@@ -1589,6 +2146,10 @@
       }
 
       calcRender();
+
+      document.addEventListener("lumencat:langchange", function () {
+        calcRender();
+      });
     </script>
 
     <script
