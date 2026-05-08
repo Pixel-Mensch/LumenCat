@@ -1,377 +1,102 @@
-# 🌌 Lumencat
+# LumenCat
 
-**Webdesign. Automationen. KI.**
+Public website and lead-generation frontend for Lumencat, a freelance web design and digital solutions business.
 
-<p align="center">
-  <img src="Bilder/lumencatLogo.png" alt="Lumencat Logo" width="260">
-</p>
+This repository contains the live multi-page site, the pricing page with an interactive calculator, the blog content, the legal pages, and the PHP form flow used to turn enquiries into email and optional webhook submissions.
 
-<p align="center">
-  <strong>Moderne Websites, intelligente Workflows und smarte Bots für Selbstständige & kleine Unternehmen.</strong>
-</p>
+Live site: `https://lumencat.de`
 
----
+## At a glance
 
-## 🐾 Über Lumencat
+- What it is: a production-minded business website, not a design mockup
+- Who it is for: freelancers, local service businesses, and small companies
+- What it does: presents services, shows reference previews, publishes blog content, and captures project enquiries
+- Stack: HTML5, modular CSS, vanilla JavaScript, PHP, Node.js helper scripts
+- Language model: English-first markup with a client-side German toggle
 
-**Lumencat** ist ein Dienstleistungs- und Tool-Hub, der Unternehmen dabei unterstützt, **online sichtbar**, **effizienter** und **automatisierter** zu werden.
+## Current scope
 
-Von Webdesign bis KI-Assistenten – alles aus einer Hand. Das Projekt kombiniert moderne Frontend-Technologien mit Backend-Automationen und KI-gestützten Workflows, um digitale Erlebnisse zu schaffen, die nicht nur gut aussehen, sondern auch intelligent funktionieren.
+- `index.html`: homepage with positioning, services, maintenance, process, tool highlights, testimonials, and reference previews
+- `services.html`: packages, add-ons, maintenance plans, hosting setup, and an interactive pricing calculator
+- `kontakt.html`: dedicated contact page with AJAX form submission
+- `insights.html`: blog index
+- `impressum.html` and `datenschutz.html`: legal pages
+- `blog/`: four published articles plus one snippet file used for content/layout work
 
----
+## Implemented functionality
 
-## 🚀 Features
+- Dark/light theme toggle with persisted preference
+- English/German UI toggle via `js/i18n.js`
+- Mobile navigation, reveal animations, reduced-motion handling, and hero parallax
+- Contact form with client-side validation, CSRF token loading, honeypot protection, session-based rate limiting, mail delivery, and optional `n8n` webhook forwarding
+- Interactive pricing calculator on `services.html` with direct enquiry handoff to the same PHP endpoint
+- SEO baseline: canonical URLs, Open Graph/Twitter metadata, `robots.txt`, JSON-LD on the homepage, and sitemap generation
+- PWA baseline: `manifest.json` and `sw.js`
 
-### 🖥️ Webdesign & Branding
+## Why it is useful as a portfolio project
 
-- **Moderne, mobile-first Websites** mit responsivem Design
-- **Hochperformante statische Seiten** (optimierte Ladezeiten, AVIF/WebP-Bildformate)
-- **Animierte, interaktive Elemente** (Intersection Observer, Neon-UI, Scroll-Reveal)
-- **Dark/Light Theme-System** mit FOUC-Prävention und System-Präferenz-Erkennung
-- **CI-optimierte Gestaltung** mit konsistentem Branding
-- **SEO-Grundoptimierung** inklusive Meta-Tags, Open Graph, Twitter Cards
+- It combines interface work, content structure, form handling, SEO, and deployment concerns in one codebase.
+- It shows practical, framework-free implementation with HTML, CSS, JavaScript, and PHP close to the platform.
+- It includes user-facing flows that go beyond brochure content: a working contact backend, multilingual UI handling, and a price calculator tied to lead capture.
 
-### 🤖 Automationen & Bots (n8n)
-
-- **Kontaktformular-Flows**: Formular → E-Mail / Google Sheets / CRM
-- **Automatische Lead-Erfassung** und -Weiterleitung
-- **Reminder-Bots** für Termine und Follow-ups
-- **Multi-Channel-Benachrichtigungen**: WhatsApp / Telegram / E-Mail
-- **KI-gestützte Anfragenanalyse**: Automatische Kategorisierung und Priorisierung
-- **Erweiterte Workflows**: PDF-Generierung, Social-Media-Planung, Rechnungsautomatisierung
-
-### 🤝 KI-Assistenten
-
-- **Website-Chatbots** für FAQ, Angebote und Entscheidungshilfe
-- **Automatische Textanalyse** & Kategorisierung von Kontaktanfragen
-- **Individuell trainierte Modelle** basierend auf Kundeninhalten
-- **Flexible Integration**: n8n-Webhooks oder direkte API-Anbindung
-- **Einsatzgebiete**: Kundenservice, Lead-Qualifizierung, Content-Erstellung
-
----
-
-## 📦 Projektstruktur
+## Repository layout
 
 ```text
-lumencat_site/
-│
-├── index.html              # Hauptseite / Landingpage
-├── kontakt.html            # Kontaktformular
-├── shop.html               # Dienstleistungen & Preise
-├── impressum.html          # Impressum
-├── datenschutz.html        # Datenschutzerklärung
-│
-├── css/
-│   └── styles.css          # Hauptstyles (Neon-UI, Dark/Light Mode, Animationen)
-│
-├── js/
-│   └── main.js             # Theme-Toggle, Scroll-Animationen, Menü-Logik, Parallax
-│
-├── Bilder/
-│   ├── lumencatLogo.png    # Hauptlogo
-│   └── optimized/          # Optimierte Bilder (AVIF/WebP, responsive Größen)
-│
-├── scripts/
-│   ├── contact.php         # Kontaktformular-Processing & Webhook-Integration
-│   └── convert-images.js   # Node.js-Skript für Bildoptimierung
-│
-├── package.json            # NPM-Abhängigkeiten & Build-Skripte
-├── robots.txt              # SEO: Crawler-Anweisungen
-├── sitemap.xml             # SEO: Sitemap
-└── README.md               # Diese Datei
+.
+├─ index.html
+├─ services.html
+├─ kontakt.html
+├─ insights.html
+├─ impressum.html
+├─ datenschutz.html
+├─ blog/
+│  ├─ webdesign-lokale-unternehmen.html
+│  ├─ website-vs-social-media.html
+│  ├─ seo-sichtbarkeit.html
+│  ├─ saas-tools-kleine-betriebe.html
+│  └─ insights-cards-snippet.html
+├─ css/
+│  ├─ modules/
+│  └─ pages/
+├─ js/
+│  ├─ main.js
+│  └─ i18n.js
+├─ assets/
+│  └─ images/
+└─ scripts/
+   ├─ contact.php
+   ├─ csrf-token.php
+   ├─ dev-server.js
+   ├─ minify-css.js
+   ├─ minify-js.js
+   ├─ generate-sitemap.js
+   └─ ...
 ```
 
----
+## Local setup
 
-## 🔧 Technologien
+`css/styles.min.css` is generated and not versioned. Build the frontend assets before opening the site locally.
 
-### Frontend
-
-- **HTML5**: Semantisches Markup, SEO-optimiert
-- **CSS3**: Mobile-first Design, CSS Custom Properties, Grid & Flexbox
-- **Vanilla JavaScript (ES6+)**: Theme-System, IntersectionObserver, Motion-Safe-Präferenzen
-- **Bildoptimierung**: AVIF/WebP mit PNG-Fallbacks, responsive `srcset`
-
-### Backend
-
-- **PHP 7.4+**: Formularverarbeitung mit Validierung und Spam-Schutz (Honeypot)
-- **n8n**: Workflow-Automationen, Webhooks, KI-Integration
-
-### Weitere Tools
-
-- **Git / GitHub**: Versionskontrolle (Repository: Pixel-Mensch/LumenCat, Branch: dev)
-- **Hetzner Webhosting**: Deployment-Ziel (PHP, SSL, E-Mail)
-- **Node.js & Sharp**: Bildkonvertierung und Build-Prozesse
-- **Google Sheets**: Datenhaltung für Automationen
-
----
-
-## 📨 Kontaktformular & Automationen
-
-Das Kontaktformular (`kontakt.html` → `contact.php`) unterstützt:
-
-- **Spam-Schutz**: Honeypot-Feld
-- **Validierung**: Server-seitige Prüfung aller Pflichtfelder
-- **JSON-Responses**: Saubere API-Antworten für AJAX-Handling
-- **Multi-Channel-Weiterleitung**:
-  - E-Mail-Versand an konfigurierte Inbox
-  - n8n Webhook für KI-Analyse & Lead-Pipelines
-  - Google Sheets für strukturierte Datenhaltung
-
-### Typischer Automation-Flow
-
-```text
-Besucher füllt Formular aus
-        ↓
-contact.php validiert & verarbeitet
-        ↓
-n8n Webhook empfängt Daten
-        ↓
-KI kategorisiert Anfrage (z.B. OpenAI)
-        ↓
-Lead wird in CRM/Sheets gespeichert
-        ↓
-Automatische E-Mail-Bestätigung an Kunde
-        ↓
-Benachrichtigung an Team (Telegram/Slack)
-```
-
----
-
-## 🖼️ Bildoptimierung
-
-Dieses Projekt enthält ein Node.js-Skript (`scripts/convert-images.js`), um Bilder in optimierte Formate und responsive Größen zu konvertieren.
-
-### Installation & Ausführung
-
-```powershell
-# Abhängigkeiten installieren
+```bash
 npm install
-
-# Bilder konvertieren (Ausgabe: Bilder/optimized/)
-npm run img:convert
-
-# Optional: CSS/JS minifizieren
 npm run build:css
 npm run build:js
-
-# Oder alles zusammen
-npm run build
+npm run sitemap
 ```
 
-**Hinweise:**
+For a static preview:
 
-- Verwendet `sharp` (Node.js-Bibliothek für Bildverarbeitung)
-- Erzeugt AVIF/WebP-Formate in 480px, 800px, 1200px Breiten
-- Windows-Nutzer: ggf. Build-Tools erforderlich (`npm install --global windows-build-tools`)
-
----
-
-## 📁 Installation & Deployment
-
-### 1. Repository klonen
-
-```powershell
-git clone https://github.com/Pixel-Mensch/LumenCat.git
-cd LumenCat
+```bash
+node scripts/dev-server.js
 ```
 
-### 2. Lokale Entwicklung
+To test the PHP form endpoints locally:
 
-```powershell
-# Node.js-Abhängigkeiten installieren (für Build-Skripte)
-npm install
-
-# Bilder optimieren
-npm run img:convert
-
-# Lokalen Server starten (z.B. mit Python)
-python -m http.server 8000
-# Oder mit PHP
+```bash
 php -S localhost:8000
 ```
 
-Website ist dann erreichbar unter `http://localhost:8000`
+## Notes
 
-### 3. Deployment auf Webspace
-
-**Voraussetzungen:**
-
-- Webspace mit PHP 7.4+ (z.B. Hetzner Webhosting S)
-- FTP/SFTP-Zugang oder SSH
-- Domain mit DNS-Einstellungen
-
-**Schritte:**
-
-1. **Dateien hochladen**
-
-   ```powershell
-   # Per FTP/SFTP ins Webroot (z.B. /public_html) kopieren
-   # NICHT hochladen: node_modules/, package.json, scripts/
-   ```
-
-2. **Domain verbinden & SSL aktivieren**
-
-   - Domain-DNS auf Webspace-IP/CNAME zeigen lassen
-   - In Hetzner konsoleH → SSL-Manager → Let's Encrypt aktivieren
-
-3. **contact.php konfigurieren**
-
-   ```php
-   // Zeile ~10 in contact.php anpassen
-   $to = "hello@lumencat.de";  // Empfänger-E-Mail
-   $from = "noreply@lumencat.de";  // Absender-E-Mail
-
-   // Optional: n8n Webhook aktivieren (Zeile ~100)
-   $webhookUrl = "https://n8n.beispiel.de/webhook/lumencat-contact";
-   ```
-
-4. **Testen**
-   - Kontaktformular ausfüllen und absenden
-   - E-Mail-Eingang prüfen
-   - n8n-Workflow testen (falls konfiguriert)
-
-### 4. n8n Webhook einrichten (optional)
-
-1. n8n-Instanz erstellen (Cloud oder Self-Hosted)
-2. Neuen Workflow mit Webhook-Trigger anlegen
-3. Webhook-URL in `contact.php` eintragen
-4. Flow bauen: Webhook → KI-Analyse → CRM → E-Mail
-
-**Beispiel-Flow:**
-
-- **Trigger**: Webhook empfängt Formulardaten
-- **Node 1**: OpenAI kategorisiert Anfrage
-- **Node 2**: Google Sheets speichert Lead
-- **Node 3**: E-Mail-Bestätigung an Kunde
-- **Node 4**: Telegram-Benachrichtigung an Team
-
----
-
-## 🎨 Theme-System
-
-Das Projekt verwendet ein fortgeschrittenes Dark/Light-Theme-System:
-
-### Features
-
-- **FOUC-Prävention**: `:root.theme-light` CSS-Klasse verhindert Flash of Unstyled Content
-- **System-Präferenz**: Automatische Erkennung via `prefers-color-scheme`
-- **localStorage**: Theme-Auswahl bleibt gespeichert
-- **Accessibility**: ARIA-Attribute, Keyboard-Navigation
-- **Smooth Transitions**: Sanfte Übergänge zwischen Themes
-
-### Verwendung
-
-```javascript
-// Theme manuell wechseln
-document.body.classList.toggle("theme-light");
-
-// Aktuelles Theme abrufen
-const currentTheme = localStorage.getItem("theme") || "dark";
-```
-
----
-
-## 🎬 Animationssystem
-
-### Scroll-Reveal-Animationen
-
-- **IntersectionObserver**: Performance-optimierte Scroll-Trigger
-- **prefers-reduced-motion**: Respektiert Betriebssystem-Einstellung
-- **Delay-Klassen**: Gestaffelte Animationen (`.reveal-delay-1`, `.reveal-delay-2`, etc.)
-
-### Parallax-Effekte
-
-- **Motion-Safe**: Deaktiviert bei `prefers-reduced-motion`
-- **requestAnimationFrame**: Smooth 60fps-Performance
-- **Hero-Sektion**: Subtiler Parallax-Scroll-Effekt
-
----
-
-## 💡 Roadmap
-
-### Phase 1 (In Arbeit)
-
-- [x] Vollständige Landingpage mit Brand-Content
-- [x] Shop-Seite mit Preisen & Paketen
-- [x] Theme-System mit FOUC-Prevention
-- [ ] Blog-System (statisch oder CMS-Integration)
-- [ ] Projekt-Portfolio mit Case Studies
-
-### Phase 2 (Geplant)
-
-- [ ] **Vollautomatisierter KI-Lead-Classifier**: Anfragen automatisch nach Priorität sortieren
-- [ ] **Kundenbereich / Dashboard**: Login für Kunden mit Projekt-Übersicht
-- [ ] **Verkauf eigener Tools im Shop**: Digitale Produkte (Templates, Automations-Kits)
-- [ ] **Dynamische Inhalte per JSON**: CMS-ähnliche Content-Verwaltung ohne Backend
-
-### Phase 3 (Vision)
-
-- [ ] **Voll individualisierbarer KI-Website-Assistent**: No-Code-Tool für Kunden
-- [ ] **API für Drittanbieter-Integration**: Lumencat-Services als API
-- [ ] **Mehrsprachigkeit**: EN/DE-Versionen
-- [ ] **A/B-Testing-Framework**: Conversion-Optimierung
-
----
-
-## 🧪 Testing & Qualitätssicherung
-
-### Browser-Kompatibilität
-
-- Chrome/Edge (latest)
-- Firefox (latest)
-- Safari (latest)
-- Mobile Browsers (iOS Safari, Chrome Mobile)
-
-### Performance-Optimierung
-
-- **Lighthouse-Score**: 90+ (Performance, Accessibility, Best Practices, SEO)
-- **Bildoptimierung**: AVIF/WebP mit Fallbacks
-- **CSS/JS-Minifizierung**: Produktions-Builds verfügbar
-- **Lazy Loading**: Bilder außerhalb des Viewports
-
-### Accessibility (WCAG 2.1 Level AA)
-
-- Semantic HTML
-- ARIA-Labels wo nötig
-- Keyboard-Navigation
-- `prefers-reduced-motion` Support
-- Farbkontraste geprüft
-
----
-
-## 📄 Lizenz & Nutzung
-
-**© 2025 Lumencat / Pixel-Mensch**
-
-Dieses Projekt ist proprietär. Alle Rechte vorbehalten.
-
-- **Code**: Nicht zur kommerziellen Nutzung ohne Genehmigung
-- **Branding**: Logo, Design und Markennamen sind geschützt
-- **Lernzwecke**: Code-Ansicht für Portfolio/Referenz erlaubt
-
-Für Lizenzen oder Nutzungsanfragen: `hello@lumencat.de`
-
----
-
-## 📫 Kontakt
-
-**Website**: [https://lumencat.de](https://lumencat.de)  
-**E-Mail**: hello@lumencat.de  
-**GitHub**: [Pixel-Mensch/LumenCat](https://github.com/Pixel-Mensch/LumenCat)
-
----
-
-## 🙏 Credits
-
-- **Entwicklung & Design**: Marc Kommer
-- **Technologien**: PHP, JavaScript, n8n, Sharp
-- **Hosting**: Hetzner
-- **KI-Integration**: OpenAI API (optional)
-
----
-
-<p align="center">
-  <strong>Made with ☕ and 💡 by Lumencat</strong><br>
-  <em>High-Tech Websites, die im Dunkeln leuchten.</em>
-</p>
+- The repository includes source files and helper scripts, plus generated artifacts that are intentionally ignored in Git.
+- The README only describes functionality and structure that are present in the current repository tree.

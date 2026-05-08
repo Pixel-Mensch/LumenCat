@@ -2,11 +2,11 @@ const sharp = require("sharp");
 const fs = require("fs");
 const path = require("path");
 
-// Dieses Skript konvertiert alle PNG/JPG-Bilder im Ordner `Bilder` zu
+// Dieses Skript konvertiert alle PNG/JPG-Bilder im Ordner `assets/images` zu
 // WebP und AVIF und erzeugt zusätzlich skalierte Varianten. Die Ausgaben
 // werden in `assets/images/optimized` geschrieben.
 
-const INPUT_DIR = path.join(__dirname, "..", "Bilder");
+const INPUT_DIR = path.join(__dirname, "..", "assets", "images");
 const OUT_DIR = path.join(INPUT_DIR, "optimized");
 const widths = [480, 800, 1200];
 
